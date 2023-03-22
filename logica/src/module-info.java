@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author suporte
+ *
+ */
+module logica {
+}
