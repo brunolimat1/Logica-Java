@@ -1,0 +1,14 @@
+
+public class MarcaPasso {
+
+	public static void main(String[] args) {
+		int sensor = 50;
+		if (sensor >= 40) {
+			System.out.println("Normal");
+		} else {
+				System.out.println("!!! Acionar pulsos");
+		}
+			
+	}
+
+}
