@@ -1,0 +1,11 @@
+package br.com.logica.inicio;
+
+public class Desconto {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

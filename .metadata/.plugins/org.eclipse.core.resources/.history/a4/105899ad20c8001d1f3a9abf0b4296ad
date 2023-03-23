@@ -1,0 +1,12 @@
+package br.com.logica.desafio01;
+
+public class salario {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Digite o seu salário");
+
+	}
+
+}

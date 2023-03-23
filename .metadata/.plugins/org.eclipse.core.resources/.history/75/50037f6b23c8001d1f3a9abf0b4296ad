@@ -1,0 +1,26 @@
+package br.com.logica.inicio;
+
+import java.util.Scanner;
+
+public class salario {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double sal, med, tra, total, liq;
+		
+		Scanner desconto = new Scanner(System.in);
+		
+		System.out.println("Qual é o seu salário? ");
+		sal = desconto.nextDouble();
+		
+		med = sal * (7 / 100);
+		
+		tra = med * (6.22 / 100);
+		
+		System.out.println("Valor med: "+med);
+		System.out.println("Valor tra: "+tra);
+	
+		
+	}
+
+}

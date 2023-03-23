@@ -1,0 +1,17 @@
+package br.com.logica.inicio;
+
+import java.util.Scanner;
+
+public class Desconto {
+
+	public static void main(String[] args) {
+		
+		double preco, taxa, valor, total;
+		Scanner entrada = new Scanner(System.in);
+		
+		
+		
+
+	}
+
+}
