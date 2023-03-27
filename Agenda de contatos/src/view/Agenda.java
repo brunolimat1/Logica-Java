@@ -126,7 +126,7 @@ public class Agenda extends JFrame {
 		btnAdicionar.setToolTipText("Adicionar Contato");
 		btnAdicionar.setContentAreaFilled(false);
 		btnAdicionar.setBorder(null);
-		btnAdicionar.setBounds(40, 300, 48, 48);
+		btnAdicionar.setBounds(45, 300, 48, 48);
 		contentPane.add(btnAdicionar);
 
 		JButton btnLimpar = new JButton("");
