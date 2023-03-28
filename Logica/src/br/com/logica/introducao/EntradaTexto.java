@@ -10,14 +10,12 @@ public class EntradaTexto {
 		
 		Scanner texto = new Scanner(System.in);
 		
-		 System.out.println("Digite o seu nome:");
-		 
-		 nome = texto.next();
-		 
-		 System.out.println("Olá " + nome);
-		 
-		 
-		 
+		System.out.println("Digite o seu nome:");
+		
+		nome = texto.next();
+		
+		System.out.println("Olá " + nome);
+		
 
 	}
 

@@ -21,7 +21,6 @@ public class Desconto {
 		
 		System.out.println("O valor de desconto é: "+valor);
 		System.out.println("O valor final é: "+total);
-		
 
 	}
 

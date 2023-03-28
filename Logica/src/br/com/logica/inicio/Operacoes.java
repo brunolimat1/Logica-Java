@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Operacoes {
 
+
 	public static void main(String[] args) {
 		
 		//Vamos declarar 2 variáveis para realizar cálculos
@@ -28,6 +29,7 @@ public class Operacoes {
 		System.out.println("O resultado da multiplicação é: " + multiplicar);
 		System.out.println("O resultado da subtração é: " + subtrair);
 		System.out.println("O resultado da divisão é: " + dividir);
+		
 		
 		
 	}
