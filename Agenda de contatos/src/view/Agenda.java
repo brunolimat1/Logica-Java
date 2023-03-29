@@ -1,26 +1,33 @@
 package view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.SystemColor;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import java.awt.Toolkit;
-import java.awt.Window.Type;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
 import java.awt.Cursor;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import model.DAO;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class Agenda extends JFrame {
-
+	//Instanciar objetos JDBC
+	DAO dao = new DAO();
+	private Connection con;
+	
+	/**
+	 * 
+	 */
 	private JPanel contentPane;
 	private JTextField txtID;
 	private JTextField txtNome;
@@ -47,6 +54,13 @@ public class Agenda extends JFrame {
 	 * Create the frame.
 	 */
 	public Agenda() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowActivated(WindowEvent e) {
+				//ativação da janela
+				status();
+			}
+		});
 		setTitle("Agenda de Contatos");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Agenda.class.getResource("/img/note.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -179,4 +193,21 @@ public class Agenda extends JFrame {
 		txtEmail.setText(null);
 	}
 
+	/**
+	 * Método responsável por exibir o status da conexão
+	 */
+	private void status( ) {
+		try {
+			//abrir a conexão
+			con = dao.conectar();
+			if (con == null) {
+				System.out.println("Erro de conexão");
+			} else {
+				System.out.println("Banco conectado");
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
 }// FIM DO CÓDIGO
