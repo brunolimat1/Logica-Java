@@ -33,6 +33,7 @@ public class Agenda extends JFrame {
 	private JTextField txtNome;
 	private JTextField txtFone;
 	private JTextField txtEmail;
+	private JLabel lblStatus;
 
 	/**
 	 * Launch the application.
@@ -169,10 +170,10 @@ public class Agenda extends JFrame {
 		btnNewButton.setBounds(380, 99, 41, 41);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Agenda.class.getResource("/img/dboff3.png")));
-		lblNewLabel.setBounds(10, 11, 24, 24);
-		contentPane.add(lblNewLabel);
+		lblStatus = new JLabel("");
+		lblStatus.setIcon(new ImageIcon(Agenda.class.getResource("/img/dboff3.png")));
+		lblStatus.setBounds(10, 11, 24, 24);
+		contentPane.add(lblStatus);
 		
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.setToolTipText("Sobre");
@@ -201,10 +202,14 @@ public class Agenda extends JFrame {
 			//abrir a conexão
 			con = dao.conectar();
 			if (con == null) {
-				System.out.println("Erro de conexão");
+				//System.out.println("Erro de conexão");
+				lblStatus.setIcon(new ImageIcon(Agenda.class.getResource("/img/dboff3.png")));
 			} else {
-				System.out.println("Banco conectado");
+				//System.out.println("Banco conectado");
+				lblStatus.setIcon(new ImageIcon(Agenda.class.getResource("/img/dbon3.png")));
 			}
+			//NUNCA esquecer de fechar a conexão
+			con.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
