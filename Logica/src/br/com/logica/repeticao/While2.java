@@ -9,7 +9,7 @@ public class While2 {
 		String texto = JOptionPane.showInputDialog("Digite sair para fechar");
 		
 		while(!texto.equals("sair")) {
-			JOptionPane.showMessageDialog(null, "Lê direito cabra!");
+			JOptionPane.showMessageDialog(null, "Lê direito cabaço!");
 			
 			texto = JOptionPane.showInputDialog("Digite sair para fechar");
 		}
