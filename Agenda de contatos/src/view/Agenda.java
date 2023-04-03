@@ -7,7 +7,11 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,6 +19,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import model.DAO;
 import java.awt.event.WindowAdapter;
@@ -24,6 +29,8 @@ public class Agenda extends JFrame {
 	//Instanciar objetos JDBC
 	DAO dao = new DAO();
 	private Connection con;
+	private PreparedStatement pst;
+	private ResultSet rs;
 	
 	/**
 	 * 
@@ -158,30 +165,41 @@ public class Agenda extends JFrame {
 		btnLimpar.setBounds(340, 300, 48, 48);
 		contentPane.add(btnLimpar);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.setBorder(null);
-		btnNewButton.setIcon(new ImageIcon(Agenda.class.getResource("/img/search3.png")));
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnPesquisar = new JButton("");
+		btnPesquisar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		btnPesquisar.setContentAreaFilled(false);
+		btnPesquisar.setBorder(null);
+		btnPesquisar.setIcon(new ImageIcon(Agenda.class.getResource("/img/search3.png")));
+		btnPesquisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// evento clicar no botão
+				buscar();
 			}
+			
 		});
-		btnNewButton.setBounds(380, 99, 41, 41);
-		contentPane.add(btnNewButton);
+		btnPesquisar.setBounds(380, 99, 41, 41);
+		contentPane.add(btnPesquisar);
 		
 		lblStatus = new JLabel("");
 		lblStatus.setIcon(new ImageIcon(Agenda.class.getResource("/img/dboff3.png")));
 		lblStatus.setBounds(10, 11, 24, 24);
 		contentPane.add(lblStatus);
 		
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setToolTipText("Sobre");
-		btnNewButton_1.setContentAreaFilled(false);
-		btnNewButton_1.setBorder(null);
-		btnNewButton_1.setIcon(new ImageIcon(Agenda.class.getResource("/img/about3.png")));
-		btnNewButton_1.setBounds(406, 11, 24, 24);
-		contentPane.add(btnNewButton_1);
+		JButton btnSobre = new JButton("");
+		btnSobre.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//clicar no botão sobre
+				//mostrar a janela sobre
+				Sobre sobre = new Sobre();
+				sobre.setVisible(true);
+			}
+		});
+		btnSobre.setToolTipText("Sobre");
+		btnSobre.setContentAreaFilled(false);
+		btnSobre.setBorder(null);
+		btnSobre.setIcon(new ImageIcon(Agenda.class.getResource("/img/about3.png")));
+		btnSobre.setBounds(406, 11, 24, 24);
+		contentPane.add(btnSobre);
 	}// FIM DO CONSTRUTOR
 
 	/**
@@ -192,7 +210,7 @@ public class Agenda extends JFrame {
 		txtNome.setText(null);
 		txtFone.setText(null);
 		txtEmail.setText(null);
-	}
+	}// fim do método limpar campos
 
 	/**
 	 * Método responsável por exibir o status da conexão
@@ -213,6 +231,45 @@ public class Agenda extends JFrame {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+	}// fim do método status()
+
+	/**
+	 * Método para buscar um contato pelo nome
+	 */
+	private void buscar() {
+		// dica - testar o evento primeiro
+		System.out.println("teste do botão buscar");
+		// dica - testar o evento primeiro
+		// System.out.println("teste do botão buscar");
+		// Criar uma variavel com a query (instrução do banco)
+		String read = "select * from contatos where nome = ?";
+		// tratamento de exceções
+		try {
+			// abrir a conexão
+			con = dao.conectar();
+			// preparar a execução da query (instrução sql - CRUD Read)
+			// O parâmetro 1 substitui ? pelo conteúdo da caixa de texto
+			pst = con.prepareStatement(read);
+			pst.setString(1, txtNome.getText());
+			// executar a query e buscar o resultado
+			rs = pst.executeQuery();
+			// uso da estrutura if else para verificar se existe
+			// rs.next() -> se existir um contato no banco
+			if (rs.next()) {
+				// preencher as caixas de texto com as informações de contato
+				txtID.setText(rs.getString(1)); // 1 campo da tabela (ID)
+				txtFone.setText(rs.getString(3)); // 3 campo da tabela (Fone)
+				txtEmail.setText(rs.getString(4)); // 4 campo da tabela (Email)
+
+			} else {
+				// se não existir um contato no banco
+				System.out.println("Contato não cadastrado");
+			}
+			// fechar a conexão (IMPORTANTE)
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
-	
+
 }// FIM DO CÓDIGO
