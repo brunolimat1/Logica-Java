@@ -19,11 +19,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
 
 import model.DAO;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 public class Agenda extends JFrame {
 	//Instanciar objetos JDBC
@@ -271,5 +268,6 @@ public class Agenda extends JFrame {
 			System.out.println(e);
 		}
 	}
+	
 
 }// FIM DO CÓDIGO
