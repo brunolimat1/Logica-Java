@@ -97,6 +97,8 @@ public class Principal extends JFrame {
 		JButton btnUsers = new JButton("");
 		btnUsers.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Usuarios usuario = new Usuarios();
+				usuario.setVisible(true);
 			}
 		});
 		btnUsers.setFocusable(false);
