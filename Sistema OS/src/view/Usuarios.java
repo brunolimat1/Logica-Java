@@ -22,6 +22,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class Usuarios extends JDialog {
 	DAO dao = new DAO();
@@ -33,7 +34,7 @@ public class Usuarios extends JDialog {
 	private JTextField txtID;
 	private JTextField txtNome;
 	private JTextField txtLogin;
-	private JTextField txtSenha;
+	private JPasswordField txtSenha;
 
 	/**
 	 * Launch the application.
@@ -108,12 +109,6 @@ public class Usuarios extends JDialog {
 			contentPanel.add(txtLogin);
 		}
 		{
-			txtSenha = new JTextField();
-			txtSenha.setColumns(10);
-			txtSenha.setBounds(86, 174, 150, 20);
-			contentPanel.add(txtSenha);
-		}
-		{
 			JButton btnBuscar = new JButton("Buscar");
 			btnBuscar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -122,7 +117,8 @@ public class Usuarios extends JDialog {
 			});
 			btnBuscar.setBounds(105, 227, 89, 23);
 			contentPanel.add(btnBuscar);
-		}
+			getRootPane().setDefaultButton(btnBuscar);		
+			}
 		{
 			JButton btnLimpar = new JButton("Limpar");
 			btnLimpar.addActionListener(new ActionListener() {
@@ -133,7 +129,11 @@ public class Usuarios extends JDialog {
 			btnLimpar.setBounds(235, 227, 89, 23);
 			contentPanel.add(btnLimpar);
 		}
-	}
+
+		txtSenha = new JPasswordField();
+		txtSenha.setBounds(86, 174, 226, 20);
+		contentPanel.add(txtSenha);
+	}// fim do construtor
 
 	/**
 	 * Método responsável por limpar os campos
@@ -174,7 +174,7 @@ public class Usuarios extends JDialog {
 
 			} else {
 				// se não existir um contato no banco
-				JOptionPane.showMessageDialog(null, "Usúario não Cadastrado!");
+				JOptionPane.showMessageDialog(null, "Úsuario não Cadastrado!");
 			}
 			// fechar a conexão (IMPORTANTE)
 			con.close();

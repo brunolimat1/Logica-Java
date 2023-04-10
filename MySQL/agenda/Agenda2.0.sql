@@ -3,8 +3,8 @@
  * @author Bruno Lima
  */
  
- create database dbsistema;
  drop database dbsistema;
+ create database dbsistema;
  use dbsistema;
  show tables;
  
@@ -12,16 +12,21 @@ delete from usuarios WHERE id = 1;
  
 create table usuarios (
 	id int primary key auto_increment,
-    nome varchar(20) not null,
-    login varchar(50) not null,
-    senha varchar(15) not null
+    nome varchar(50) not null,
+    login varchar(15) not null,
+    senha varchar(250) not null
 );
 
 describe usuarios;
 select * from usuarios;
 
 insert into usuarios (nome, login, senha)
-values ('Jorge','Jorgin1@gmail.com','123jorgin');
+values ('Troll','brabo','123456');
 
-update usuarios set login = 'Jorgin1@gmail.com' where id = 1;
+-- uso do md5() para criptografar uma senha
+insert into usuarios (nome, login, senha)
+values ('Jorge','admin', md5('123jorgin'));
+
+
+update usuarios set nome = 'Troll' where id = 2;
 
