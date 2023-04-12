@@ -16,7 +16,7 @@ public class Array1 {
 		};
 		
 		System.out.println(cidades.length);
-		System.out.println(cidades[7]);
+		System.out.println(cidades[6]);
 		System.out.println(cidades[cidades.length-1]);
 
 		

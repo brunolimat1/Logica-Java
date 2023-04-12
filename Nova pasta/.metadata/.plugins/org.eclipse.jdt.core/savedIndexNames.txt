@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\Java\Bruno Lima\SistemaOS Desafio\.metadata\.plugins\org.eclipse.jdt.core
+1535177651.index
+77911474.index
+1865797976.index
