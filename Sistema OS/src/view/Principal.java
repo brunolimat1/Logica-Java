@@ -23,18 +23,30 @@ import javax.swing.border.EmptyBorder;
 
 import model.DAO;
 import javax.swing.SwingConstants;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EtchedBorder;
 
 public class Principal extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
 	private Connection con;
+	@SuppressWarnings("unused")
 	private PreparedStatement pst;
+	@SuppressWarnings("unused")
 	private ResultSet rs;
 
 	private JPanel contentPane;
 	private JLabel lblStatus;
 	private JLabel lblAgenda;
 	private JLabel lblData;
-	private JLabel lblNewLabel;
+	private JLabel lblPrinter;
+	private JButton btnRelatorio;
+	private JButton btnClient;
+	private JButton btnService;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -57,10 +69,10 @@ public class Principal extends JFrame {
 				setarData();
 			}
 		});
-		setTitle("Tela Principal");
+		setTitle("Ordem de Serviços");
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 270, 277);
+		setBounds(100, 100, 640, 480);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -69,28 +81,40 @@ public class Principal extends JFrame {
 
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.activeCaption);
-		panel.setBounds(0, 207, 432, 31);
+		panel.setBounds(0, 410, 624, 31);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 				lblData = new JLabel("");
+				lblData.setFont(new Font("Tahoma", Font.PLAIN, 11));
 				lblData.setHorizontalAlignment(SwingConstants.CENTER);
-				lblData.setBounds(55, 5, 191, 24);
+				lblData.setBounds(424, 5, 162, 24);
 				panel.add(lblData);
 
 		lblStatus = new JLabel("");
-		lblStatus.setBounds(5, 5, 24, 24);
+		lblStatus.setBounds(590, 5, 24, 24);
 		lblStatus.setBorder(null);
 		panel.add(lblStatus);
 		lblStatus.setIcon(new ImageIcon(Principal.class.getResource("/img/databasedesligada.png")));
-
-		lblAgenda = new JLabel("Agenda de Contatos");
-		lblAgenda.setFont(new Font("Bookman Old Style", Font.BOLD, 18));
-		lblAgenda.setBounds(35, 11, 203, 19);
-		contentPane.add(lblAgenda);
+		
+				JButton btnAbout = new JButton("");
+				btnAbout.setContentAreaFilled(false);
+				btnAbout.setBounds(0, 0, 33, 33);
+				panel.add(btnAbout);
+				btnAbout.setBorderPainted(false);
+				btnAbout.setToolTipText("Sobre");
+				btnAbout.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+				btnAbout.setFocusable(false);
+				btnAbout.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						Sobre sobre = new Sobre();
+						sobre.setVisible(true);
+					}
+				});
+				btnAbout.setIcon(new ImageIcon(Principal.class.getResource("/img/about3.png")));
 
 		JButton btnUsers = new JButton("");
-		btnUsers.setBorderPainted(false);
+		btnUsers.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnUsers.setToolTipText("Buscar Usuarios");
 		btnUsers.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -98,31 +122,74 @@ public class Principal extends JFrame {
 				usuario.setVisible(true);
 			}
 		});
-		btnUsers.setFocusable(false);
 		btnUsers.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnUsers.setIcon(new ImageIcon(Principal.class.getResource("/img/users.png")));
-		btnUsers.setBounds(10, 91, 91, 78);
+		btnUsers.setIcon(new ImageIcon(Principal.class.getResource("/img/22193_client_icon.png")));
+		btnUsers.setBounds(238, 74, 128, 128);
 		contentPane.add(btnUsers);
-
-		JButton btnAbout = new JButton("");
-		btnAbout.setBorderPainted(false);
-		btnAbout.setToolTipText("Sobre");
-		btnAbout.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAbout.setFocusable(false);
-		btnAbout.addActionListener(new ActionListener() {
+		
+		lblPrinter = new JLabel("");
+		lblPrinter.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPrinter.setIcon(new ImageIcon(Principal.class.getResource("/img/7309625.png")));
+		lblPrinter.setBounds(53, 157, 128, 128);
+		contentPane.add(lblPrinter);
+		
+		btnRelatorio = new JButton("");
+		btnRelatorio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnRelatorio.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		btnRelatorio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Sobre sobre = new Sobre();
-				sobre.setVisible(true);
 			}
 		});
-		btnAbout.setIcon(new ImageIcon(Principal.class.getResource("/img/about3.png")));
-		btnAbout.setBounds(152, 91, 91, 78);
-		contentPane.add(btnAbout);
+		btnRelatorio.setIcon(new ImageIcon(Principal.class.getResource("/img/34779_clipboard_icon.png")));
+		btnRelatorio.setToolTipText("Relatórios");
+		btnRelatorio.setBounds(461, 248, 128, 128);
+		contentPane.add(btnRelatorio);
 		
-		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Principal.class.getResource("/img/pc.png")));
-		lblNewLabel.setBounds(112, 41, 32, 39);
-		contentPane.add(lblNewLabel);
+		btnClient = new JButton("");
+		btnClient.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnClient.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		btnClient.setIcon(new ImageIcon(Principal.class.getResource("/img/118828_system_users_icon.png")));
+		btnClient.setToolTipText("Buscar Clientes");
+		btnClient.setBounds(238, 248, 128, 128);
+		contentPane.add(btnClient);
+		
+		btnService = new JButton("");
+		btnService.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnService.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		btnService.setIcon(new ImageIcon(Principal.class.getResource("/img/60190_maintenance_icon.png")));
+		btnService.setToolTipText("Serviço");
+		btnService.setBounds(461, 74, 128, 128);
+		contentPane.add(btnService);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBackground(SystemColor.inactiveCaption);
+		panel_1.setBounds(0, 0, 654, 31);
+		contentPane.add(panel_1);
+		
+		JLabel lblData_1 = new JLabel("");
+		lblData_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblData_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblData_1.setBounds(448, 5, 162, 24);
+		panel_1.add(lblData_1);
+		
+		JLabel lblStatus_1 = new JLabel("");
+		lblStatus_1.setBorder(null);
+		lblStatus_1.setBounds(620, 5, 24, 24);
+		panel_1.add(lblStatus_1);
+		
+		JButton btnAbout_1 = new JButton("");
+		btnAbout_1.setToolTipText("Sobre");
+		btnAbout_1.setFocusable(false);
+		btnAbout_1.setContentAreaFilled(false);
+		btnAbout_1.setBorderPainted(false);
+		btnAbout_1.setBounds(0, 0, 33, 33);
+		panel_1.add(btnAbout_1);
+		
+				lblAgenda = new JLabel("3DPrintTechGenius");
+				lblAgenda.setBounds(10, 5, 203, 24);
+				panel_1.add(lblAgenda);
+				lblAgenda.setFont(new Font("Bookman Old Style", Font.BOLD, 20));
 	}
 
 	private void status() {
@@ -151,5 +218,4 @@ public class Principal extends JFrame {
 		DateFormat formatador = DateFormat.getDateInstance(DateFormat.FULL);
 		lblData.setText(formatador.format(data));
 	}
-
 }

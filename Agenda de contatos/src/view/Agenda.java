@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -17,18 +16,23 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import model.DAO;
 
 public class Agenda extends JFrame {
-	//Instanciar objetos JDBC
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	// Instanciar objetos JDBC
 	DAO dao = new DAO();
 	private Connection con;
 	private PreparedStatement pst;
 	private ResultSet rs;
-	
+
 	/**
 	 * 
 	 */
@@ -62,12 +66,11 @@ public class Agenda extends JFrame {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowActivated(WindowEvent e) {
-				//ativação da janela
+				// ativação da janela
 				status();
 			}
 		});
 		setTitle("Agenda de Contatos");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Agenda.class.getResource("/img/note.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 456, 410);
 		contentPane = new JPanel();
@@ -83,6 +86,8 @@ public class Agenda extends JFrame {
 		contentPane.add(lblNewLabel_0);
 
 		txtID = new JTextField();
+		txtID.setEnabled(false);
+		txtID.setEditable(false);
 		txtID.setBounds(93, 70, 40, 20);
 		contentPane.add(txtID);
 		txtID.setColumns(10);
@@ -118,29 +123,40 @@ public class Agenda extends JFrame {
 		txtEmail.setColumns(10);
 
 		JButton btnEditar = new JButton("");
+		btnEditar.setIcon(new ImageIcon(Agenda.class.getResource("/img/edit3.png")));
 		btnEditar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnEditar.setToolTipText("Editar Contato");
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				editarContato();
 			}
 		});
 		btnEditar.setBorder(null);
 		btnEditar.setContentAreaFilled(false);
-		btnEditar.setIcon(new ImageIcon(Agenda.class.getResource("/img/edit3.png")));
 		btnEditar.setBounds(140, 300, 48, 48);
 		contentPane.add(btnEditar);
 
 		JButton btnExcluir = new JButton("");
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				deletar();
+			}
+		});
+		btnExcluir.setIcon(new ImageIcon(Agenda.class.getResource("/img/delete3.png")));
 		btnExcluir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnExcluir.setToolTipText("Excluir Contato");
 		btnExcluir.setContentAreaFilled(false);
 		btnExcluir.setBorder(null);
-		btnExcluir.setIcon(new ImageIcon(Agenda.class.getResource("/img/delete3.png")));
 		btnExcluir.setBounds(240, 300, 48, 48);
 		contentPane.add(btnExcluir);
 
 		JButton btnAdicionar = new JButton("");
 		btnAdicionar.setIcon(new ImageIcon(Agenda.class.getResource("/img/add3.png")));
+		btnAdicionar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				adicionar();
+			}
+		});
 		btnAdicionar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAdicionar.setToolTipText("Adicionar Contato");
 		btnAdicionar.setContentAreaFilled(false);
@@ -149,10 +165,10 @@ public class Agenda extends JFrame {
 		contentPane.add(btnAdicionar);
 
 		JButton btnLimpar = new JButton("");
+		btnLimpar.setIcon(new ImageIcon(Agenda.class.getResource("/img/trash3.png")));
 		btnLimpar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnLimpar.setContentAreaFilled(false);
 		btnLimpar.setBorder(null);
-		btnLimpar.setIcon(new ImageIcon(Agenda.class.getResource("/img/trash3.png")));
 		btnLimpar.setToolTipText("Limpar Tudo");
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -161,32 +177,34 @@ public class Agenda extends JFrame {
 		});
 		btnLimpar.setBounds(340, 300, 48, 48);
 		contentPane.add(btnLimpar);
-		
+
 		JButton btnPesquisar = new JButton("");
+		btnPesquisar.setIcon(new ImageIcon(Agenda.class.getResource("/img/search3.png")));
 		btnPesquisar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		btnPesquisar.setContentAreaFilled(false);
 		btnPesquisar.setBorder(null);
-		btnPesquisar.setIcon(new ImageIcon(Agenda.class.getResource("/img/search3.png")));
 		btnPesquisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// evento clicar no botão
 				buscar();
 			}
-			
+
 		});
 		btnPesquisar.setBounds(380, 99, 41, 41);
 		contentPane.add(btnPesquisar);
-		
+		getRootPane().setDefaultButton(btnPesquisar);
+
 		lblStatus = new JLabel("");
 		lblStatus.setIcon(new ImageIcon(Agenda.class.getResource("/img/dboff3.png")));
 		lblStatus.setBounds(10, 11, 24, 24);
 		contentPane.add(lblStatus);
-		
+
 		JButton btnSobre = new JButton("");
+		btnSobre.setIcon(new ImageIcon(Agenda.class.getResource("/img/about3.png")));
 		btnSobre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//clicar no botão sobre
-				//mostrar a janela sobre
+				// clicar no botão sobre
+				// mostrar a janela sobre
 				Sobre sobre = new Sobre();
 				sobre.setVisible(true);
 			}
@@ -194,7 +212,6 @@ public class Agenda extends JFrame {
 		btnSobre.setToolTipText("Sobre");
 		btnSobre.setContentAreaFilled(false);
 		btnSobre.setBorder(null);
-		btnSobre.setIcon(new ImageIcon(Agenda.class.getResource("/img/about3.png")));
 		btnSobre.setBounds(406, 11, 24, 24);
 		contentPane.add(btnSobre);
 	}// FIM DO CONSTRUTOR
@@ -212,18 +229,18 @@ public class Agenda extends JFrame {
 	/**
 	 * Método responsável por exibir o status da conexão
 	 */
-	private void status( ) {
+	private void status() {
 		try {
-			//abrir a conexão
+			// abrir a conexão
 			con = dao.conectar();
 			if (con == null) {
-				//System.out.println("Erro de conexão");
+				// System.out.println("Erro de conexão");
 				lblStatus.setIcon(new ImageIcon(Agenda.class.getResource("/img/dboff3.png")));
 			} else {
-				//System.out.println("Banco conectado");
+				// System.out.println("Banco conectado");
 				lblStatus.setIcon(new ImageIcon(Agenda.class.getResource("/img/dbon3.png")));
 			}
-			//NUNCA esquecer de fechar a conexão
+			// NUNCA esquecer de fechar a conexão
 			con.close();
 		} catch (Exception e) {
 			System.out.println(e);
@@ -234,8 +251,6 @@ public class Agenda extends JFrame {
 	 * Método para buscar um contato pelo nome
 	 */
 	private void buscar() {
-		// dica - testar o evento primeiro
-		System.out.println("teste do botão buscar");
 		// dica - testar o evento primeiro
 		// System.out.println("teste do botão buscar");
 		// Criar uma variavel com a query (instrução do banco)
@@ -260,14 +275,132 @@ public class Agenda extends JFrame {
 
 			} else {
 				// se não existir um contato no banco
-				System.out.println("Contato não cadastrado");
+				JOptionPane.showMessageDialog(null, "Contato não cadastrado!");
 			}
 			// fechar a conexão (IMPORTANTE)
 			con.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-	}
-	
+	}// fim do método buscar
+
+	/**
+	 * Método para adicionar um novo contato
+	 */
+	private void adicionar() {
+		// System.out.println("teste");
+		// validação de campos obrigatórios
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Prencha o nome do contato");
+			txtNome.requestFocus();
+		} else if (txtFone.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Prencha o fone do contato");
+			txtFone.requestFocus();
+		} else {
+			// lógica principal
+			// CRUD Create
+			String create = "insert into contatos(nome,fone,email) values (?,?,?)";
+			// tratamento de exceções
+			try {
+				// abrir a conexão
+				con = dao.conectar();
+				// preparar a execução da query(instrução sql - CRUD Create)
+				pst = con.prepareStatement(create);
+				pst.setString(1, txtNome.getText());
+				pst.setString(2, txtFone.getText());
+				pst.setString(3, txtEmail.getText());
+				// executa a query(instrução sql (CRUD - Create))
+				pst.executeUpdate();
+				// confirmar
+				JOptionPane.showMessageDialog(null, "Contato adicionado");
+				// limpar os campos
+				limparCampos();
+				// fechar a conexão
+				con.close();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+	}// fim do método adicionar
+
+	/**
+	 * Método para editar um contato (ATENÇÃO! usar o id)
+	 */
+	private void editarContato() {
+		// System.out.println("teste do botão editar");
+		// validação dos campos obrigatórios
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Digite o nome do contato");
+			txtNome.requestFocus();
+		} else if (txtFone.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Digite o fone do contato");
+			txtFone.requestFocus();
+		} else {
+			// lógica principal
+			// CRUD - Update
+			String update = "update contatos set nome=?,fone=?,email=? where id=?";
+			// tratamente de exceções
+			try {
+				// abrir a conexão
+				con = dao.conectar();
+				// preparar a query (instrução sql)
+				pst = con.prepareStatement(update);
+				pst.setString(1, txtNome.getText());
+				pst.setString(2, txtFone.getText());
+				pst.setString(3, txtEmail.getText());
+				pst.setString(4, txtID.getText());
+				// executar a query
+				pst.executeUpdate();
+				// confirmar para o usuário
+				JOptionPane.showMessageDialog(null, "Dados do contato editados com sucesso.");
+				// limpar os campos
+				limparCampos();
+				// fechar a conexão
+				con.close();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+
+	}// fim do método editar contato
+
+	/**
+	 * Método para adicionar um novo contato
+	 */
+	private void deletar() {
+		// System.out.println("teste");
+		// validação de campos obrigatórios
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Prencha o nome do contato");
+			txtNome.requestFocus();
+		} else if (txtFone.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Prencha o fone do contato");
+			txtFone.requestFocus();
+		} else {
+			// lógica principal
+			// CRUD Create
+			String delete = "delete from contatos WHERE id = ";
+			// tratamento de exceções
+			try {
+				// abrir a conexão
+				con = dao.conectar();
+				// preparar a execução da query(instrução sql - CRUD Create)
+				pst = con.prepareStatement(delete);
+				pst.setString(1, txtNome.getText());
+				pst.setString(2, txtFone.getText());
+				pst.setString(3, txtEmail.getText());
+				// executa a query(instrução sql (CRUD - Create))
+				pst.executeUpdate();
+				// confirmar
+				JOptionPane.showMessageDialog(null, "Contato excluido com sucesso");
+				// limpar os campos
+				limparCampos();
+				// fechar a conexão
+				con.close();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+	}// fim do método adicionar
 
 }// FIM DO CÓDIGO

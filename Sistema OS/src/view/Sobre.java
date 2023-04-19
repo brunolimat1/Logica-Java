@@ -51,14 +51,14 @@ public class Sobre extends JDialog {
 			contentPanel.add(lblNewLabel);
 		}
 		
-		JLabel lblNewLabel_1 = new JLabel("Bruno Lima");
+		JLabel lblNewLabel_1 = new JLabel("Autor: Bruno Lima");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(25, 70, 67, 14);
+		lblNewLabel_1.setBounds(25, 55, 101, 14);
 		contentPanel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Sob a licença MIT");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.ITALIC, 12));
-		lblNewLabel_2.setBounds(25, 95, 101, 14);
+		JLabel lblNewLabel_2 = new JLabel("3DPrintTechGenius - Assistência técnica de Impressoras 3D");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_2.setBounds(25, 95, 333, 14);
 		contentPanel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
@@ -66,5 +66,15 @@ public class Sobre extends JDialog {
 		lblNewLabel_3.setIcon(new ImageIcon(Sobre.class.getResource("/img/mit-icon.png")));
 		lblNewLabel_3.setBounds(296, 122, 128, 128);
 		contentPanel.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("Sob a licença MIT");
+		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.ITALIC, 12));
+		lblNewLabel_2_1.setBounds(25, 115, 101, 14);
+		contentPanel.add(lblNewLabel_2_1);
+		
+		JLabel lblNewLabel_2_2 = new JLabel("Sistema OS (Java - MySQL)");
+		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_2_2.setBounds(25, 75, 333, 14);
+		contentPanel.add(lblNewLabel_2_2);
 	}
 }

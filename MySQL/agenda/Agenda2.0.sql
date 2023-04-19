@@ -8,7 +8,7 @@
  use dbsistema;
  show tables;
  
-delete from usuarios WHERE id = 1;
+delete from usuarios WHERE id = 6;
  
 create table usuarios (
 	id int primary key auto_increment,
