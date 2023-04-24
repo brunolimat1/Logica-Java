@@ -3,7 +3,6 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -21,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import model.DAO;
+import utils.Validador;
 
 public class Usuarios extends JDialog {
 	/**
@@ -104,6 +104,7 @@ public class Usuarios extends JDialog {
 			txtNome.setColumns(10);
 			txtNome.setBounds(86, 93, 150, 20);
 			contentPanel.add(txtNome);
+			txtNome.setDocument(new Validador(5));
 		}
 		{
 			txtLogin = new JTextField();
@@ -137,6 +138,7 @@ public class Usuarios extends JDialog {
 			btnLimpar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/trash.png")));
 			btnLimpar.setToolTipText("Limpar");
 			btnLimpar.addActionListener(new ActionListener() {
+
 				public void actionPerformed(ActionEvent e) {
 					limparCampos();
 				}
@@ -182,6 +184,11 @@ public class Usuarios extends JDialog {
 		contentPanel.add(btnEditar);
 
 		JButton btnDeletar = new JButton("");
+		btnDeletar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				excluirContato();
+			}
+		});
 		btnDeletar.setToolTipText("Deletar");
 		btnDeletar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDeletar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/delete3.png")));
@@ -278,7 +285,7 @@ public class Usuarios extends JDialog {
 			}
 		}
 	}// fim do método adicionar
-	
+
 	/**
 	 * Método para editar um contato (ATENÇÃO! usar o id)
 	 */
@@ -320,4 +327,37 @@ public class Usuarios extends JDialog {
 		}
 
 	}// fim do método editar contato
-}
+
+	/**
+	 * Método usado para excluir um contato
+	 */
+	private void excluirContato() {
+		//System.out.println("teste do botão excluir");
+		//validação de exclusão - a variável confirma captura a opção escolhida
+		int confirma = JOptionPane.showConfirmDialog(null, "Confirma a exclusão deste contato?","Atenção!",JOptionPane.YES_NO_OPTION);
+		if (confirma == JOptionPane.YES_OPTION) {
+			//CRUD - Delete
+			String delete = "delete from usuarios where id=?";
+			//tratamento de exceções
+			try {
+				//abrir a conexão
+				con = dao.conectar();
+				//preparar a query (instrução sql)
+				pst = con.prepareStatement(delete);
+				//substituir a ? pelo id do contato
+				pst.setString(1, txtID.getText());
+				//executar a query
+				pst.executeUpdate();
+				//limpar campos
+				limparCampos();
+				//exibir uma mensagem ao usuário
+				JOptionPane.showMessageDialog(null, "Contato excluído");
+				//fechar a conexão
+				con.close();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}		
+	} //fim do método excluirContato
+
+}// FIM DO CÓDIGO

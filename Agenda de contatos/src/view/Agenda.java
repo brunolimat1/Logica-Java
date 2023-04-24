@@ -139,7 +139,7 @@ public class Agenda extends JFrame {
 		JButton btnExcluir = new JButton("");
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				deletar();
+				excluirContato();
 			}
 		});
 		btnExcluir.setIcon(new ImageIcon(Agenda.class.getResource("/img/delete3.png")));
@@ -365,42 +365,35 @@ public class Agenda extends JFrame {
 	}// fim do método editar contato
 
 	/**
-	 * Método para adicionar um novo contato
+	 * Método usado para excluir um contato
 	 */
-	private void deletar() {
-		// System.out.println("teste");
-		// validação de campos obrigatórios
-		if (txtNome.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Prencha o nome do contato");
-			txtNome.requestFocus();
-		} else if (txtFone.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Prencha o fone do contato");
-			txtFone.requestFocus();
-		} else {
-			// lógica principal
-			// CRUD Create
-			String delete = "delete from contatos WHERE id = ";
-			// tratamento de exceções
+	private void excluirContato() {
+		//System.out.println("teste do botão excluir");
+		//validação de exclusão - a variável confirma captura a opção escolhida
+		int confirma = JOptionPane.showConfirmDialog(null, "Confirma a exclusão deste contato?","Atenção!",JOptionPane.YES_NO_OPTION);
+		if (confirma == JOptionPane.YES_OPTION) {
+			//CRUD - Delete
+			String delete = "delete from contatos where id=?";
+			//tratamento de exceções
 			try {
-				// abrir a conexão
+				//abrir a conexão
 				con = dao.conectar();
-				// preparar a execução da query(instrução sql - CRUD Create)
+				//preparar a query (instrução sql)
 				pst = con.prepareStatement(delete);
-				pst.setString(1, txtNome.getText());
-				pst.setString(2, txtFone.getText());
-				pst.setString(3, txtEmail.getText());
-				// executa a query(instrução sql (CRUD - Create))
+				//substituir a ? pelo id do contato
+				pst.setString(1, txtID.getText());
+				//executar a query
 				pst.executeUpdate();
-				// confirmar
-				JOptionPane.showMessageDialog(null, "Contato excluido com sucesso");
-				// limpar os campos
+				//limpar campos
 				limparCampos();
-				// fechar a conexão
+				//exibir uma mensagem ao usuário
+				JOptionPane.showMessageDialog(null, "Contato excluído");
+				//fechar a conexão
 				con.close();
 			} catch (Exception e) {
 				System.out.println(e);
 			}
-		}
-	}// fim do método adicionar
+		}		
+	} //fim do método excluirContato
 
 }// FIM DO CÓDIGO
