@@ -11,6 +11,7 @@ public class Hangar {
 		System.out.println("Ano: "+ boeing777.ano);
 		System.out.println("Cor: "+ boeing777.cor);
 		System.out.println("Envergadura: "+ boeing777.envergadura);
+		boeing777.acelerar();
 		boeing777.aterrissar();
 		boeing777.desligar();
 	}

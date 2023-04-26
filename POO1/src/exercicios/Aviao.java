@@ -25,8 +25,16 @@ public class Aviao extends Carro {
 		for (int i = 1; i < 16; i++) {
 			char numeracao = (char) gerador.nextInt(chassi.length());
 			System.out.print(chassi.charAt(numeracao));
+			
 		}
+		
 		System.out.println(" * ");
 
 	}
+	
+	//polimorfismo
+	public void acelerar() {
+		System.out.println("Vruuummmmm...");
+	}
+	
 }

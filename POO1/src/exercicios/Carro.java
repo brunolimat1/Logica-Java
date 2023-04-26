@@ -44,27 +44,6 @@ public class Carro {
 		}
 		System.out.println(" * ");
 
-		System.out.println();
-
-		System.out.println("AVIÃO");
-		Carro avião = new Carro();
-		avião.ano = 1980;
-		avião.cor = "Branco";
-		avião.envergadura = 79;
-		System.out.println("Ano: " + avião.ano);
-		System.out.println("Cor: " + avião.cor);
-		System.out.println("Envergadura: " + avião.envergadura);
-		avião.ligar();
-		avião.desligar();
-		avião.acelerar();
-		avião.aterrissar();
-		System.out.print("Chassi: * ");
-		for (int i = 1; i < 16; i++) {
-			char numeracao = (char) gerador.nextInt(chassi.length());
-			System.out.print(chassi.charAt(numeracao));
-		}
-		System.out.println(" * ");
-
 	}
 
 	void ligar() {
@@ -76,10 +55,12 @@ public class Carro {
 	}
 
 	void acelerar() {
-		System.out.println("Velocidade máxima");
+		System.out.println("Velocidade Máxima");
 	}
 
 	void aterrissar() {
-		System.out.println("Preparando para pousar");
+		System.out.println("Pousando...");
+		
 	}
+
 }
