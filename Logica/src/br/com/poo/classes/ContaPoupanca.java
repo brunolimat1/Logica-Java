@@ -1,46 +1,30 @@
 package br.com.poo.classes;
 
-public class ContaPoupanca extends ContaBancaria {
+import java.util.Date;
 
-	private double rendimento;
+public class ContaPoupanca extends ContaBancaria{
 
-	public ContaPoupanca() {}
-
-	public ContaPoupanca(double rendimento) {
-		this.rendimento = rendimento;
-	}
-
-	public ContaPoupanca(Long numeroBanco, int agencia, Long numeroConta, String titular, double saldo,double rendimento) {
-		this.rendimento = rendimento;
-		this.setNumeroBanco(numeroBanco);
-		super.setAgencia(agencia);
-		super.setNumeroConta(numeroConta);
-		super.setTitular(titular);
-		super.setSaldo(saldo);
-	}
-
-	public double getRendimento() {
-		return rendimento;
-	}
-
-	public void setRendimento(double rendimento) {
-		this.rendimento = rendimento;
+	private Date aniversario;
+	
+	public String abrirConta(Long nB, Long nA, Long nC, String titular, Double saldo) {
+		super.numeroBanco = nB;
+		super.numeroAgencia = nA;
+		super.numeroConta = nC;
+		super.titular = titular;
+		super.saldo = saldo;
+		return "Conta aberta";
 	}
 	
 	@Override
-	public String sacar(double valor) {
-		String msg = "";
-		if(super.getSaldo() < valor) {
-			msg = "Saldo insuficiente";
+	public String sacar(Double valor) {
+		String retorno = "";
+		if(valor > super.saldo) {
+			retorno = "Saldo insuficiente";
 		}
 		else {
-			msg = "Saque realizado";
-			super.setSaldo(super.getSaldo()-valor);
+			super.saldo -= valor;
+			retorno = "Saque efetuado";
 		}
-		return msg;
+		return retorno;
 	}
-	
-	
-	
-	
 }

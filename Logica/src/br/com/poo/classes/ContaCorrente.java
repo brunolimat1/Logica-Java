@@ -1,68 +1,70 @@
 package br.com.poo.classes;
 
-public class ContaCorrente extends ContaBancaria {
+public class ContaCorrente extends ContaBancaria{
+	
 	private double limite;
 	private double limiteInicial;
-
-	public ContaCorrente() {}
-
-	public ContaCorrente(double limite) {
-		this.limite = limite;
-		limiteInicial = limite;
-	}
 	
-	
-	public ContaCorrente(Long numeroBanco, int agencia, Long numeConta, String titular, double saldo,double limite) {
-		super.setNumeroBanco(numeroBanco);
-		super.setAgencia(agencia);
-		super.setNumeroConta(numeConta);
-		super.setTitular(titular);
-		super.setSaldo(saldo);
-		this.limite = limite;
-		limiteInicial = limite;
+	public String abrirConta(Long nB, Long nA, Long nC,String t,double s, double l) {
+		super.numeroBanco = nB;
+		super.numeroAgencia = nA;
+		super.numeroConta = nC;
+		super.titular = t;
+		super.saldo = s;
+		this.limite = l;
+		this.limiteInicial = l;
+		return "Conta aberta";
+		
 	}
 	
 	@Override
-	public String sacar(double valor) {
+	public String depositar(Double valor) {
 		String msg = "";
 		
-		if(limite+super.getSaldo() < valor) {
+		if(limiteInicial==limite) {
+			super.saldo += valor;
+			msg = "Seu depósito foi efetuado no saldo";
+		}
+		else {
+			double sd = limiteInicial - limite;
+			if(valor > sd) {
+				limite = limiteInicial;
+				super.saldo+= valor-sd;
+				msg = "O depósito cobriu o limite e o restante foi para o saldo";
+			}
+			else {
+				limite+=valor;
+				msg = "O depósito foi direto para o limite da conta";
+			}
+		}
+		
+		return msg;
+	}
+	
+	@Override
+	public String sacar(Double valor) {
+		String msg = "";
+		
+		if(valor > limite+super.saldo) {
 			msg = "Saldo insuficiente";
 		}
-		else if(super.getSaldo() < valor) {
-			
-			this.limite = this.limite - (valor - super.getSaldo());
-			super.setSaldo(0);
-			msg = "Saque realizado.\n Seu limite atual é "+
-			this.limite+"\nSeu saldo é 0";
+		else if(valor > super.saldo) {
+			double sd = valor - super.saldo;
+			super.saldo = 0.0;
+			limite -= sd;
+			msg = "Seu saldo é 0 e seu limite é "+limite+" você está "+sd+" negativo";
 		}
 		else {
-			super.setSaldo(super.getSaldo()-valor);
-			msg = "Saque realizado.\nSeu novo saldo é: "+super.getSaldo();
+			super.saldo -= valor;
+			msg="Seu saldo é "+super.saldo+" e seu limite é "+limite;
 		}
-		return msg;
+	return msg;
 	}
-	
-	@Override
-	public String depositar(double valor) {
-		
-		String msg = "";
-		if(limiteInicial != limite) {
-			
-			super.setSaldo(valor - (limiteInicial - limite));
-			limite += limiteInicial - limite;
-			msg = "Depósito realizado.\nSeu saldo é: "
-			+super.getSaldo()+"\n e seu limite atual é "+
-					limite;
-		}
-		else {
-			super.setSaldo(super.getSaldo()+valor);
-			msg = "Depósito realizado.\nSeu saldo é: "+super.getSaldo();
-		}
-		return msg;
-		
-	}
-	
-	
 	
 }
+
+
+
+
+
+

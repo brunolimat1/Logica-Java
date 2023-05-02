@@ -1,0 +1,44 @@
+Projeto Papelaria será para uma loja física e virtual
+
+	- Itens do dominio:
+		-idusuario, nomeusuario, senha, nivelacesso;
+	   
+	   - Cliente:
+	   		-idcliente,nomecliente,cpf,contato,endereco;
+	   		
+	   - Funcionario:
+	   		-idfuncionario, nomefuncionario, cpf, contato, endereco,cargo;
+	   	   
+	   - Fornecedor:
+	   		-idfornecedor, razaosocial, cnpj, contato, endereco, usuario;
+	   	   
+	   - Categoria:
+	   		-idcategoria, nomecategoria, datacriacao;
+	   		
+	   - Produto:
+	   		-idproduto, nomeproduto, descricao, categoria, fornecedor, preco;
+	   		
+	   - Pedido:
+	   		-idpedido,idusuario,datapedido; 
+	   
+	   - ItensPedido:
+	   		-iditenspedido, idpedido, idproduto,desconto,quantidade, precototal;
+	   
+	   - Pagamento:
+	   		-idpagamento, idpedido,tipo,descricao,valor,parcelas,valorparcela;
+	   		
+	   - Contato:
+	   		- idcontato, telefone,email;
+	   		
+	   - Endereco:
+	   		-idendereco,tipo,logradouro,numero,complemento,cep,bairro;
+	   		
+	   - Operações que devem ser executadas:
+	   		- Cadastro; C
+	   		- Consulta de dados: R
+	   		- Atualização de dados; U
+	   		- Deleção de dados. D
+	   		-> CRUD
+	   		
+	   - Técnicas da Programação Orientada a Objetos:
+	   		
