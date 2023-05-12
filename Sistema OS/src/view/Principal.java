@@ -9,8 +9,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.text.DateFormat;
 import java.util.Date;
 
@@ -19,13 +17,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
 
 import model.DAO;
-import javax.swing.SwingConstants;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EtchedBorder;
 
 public class Principal extends JFrame {
 	/**
@@ -34,18 +30,13 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
 	private Connection con;
-	@SuppressWarnings("unused")
-	private PreparedStatement pst;
-	@SuppressWarnings("unused")
-	private ResultSet rs;
-
 	private JPanel contentPane;
 	private JLabel lblStatus;
 	private JLabel lblAgenda;
 	private JLabel lblData;
 	private JLabel lblPrinter;
 	private JButton btnRelatorio;
-	private JButton btnClient;
+	private JButton btnClients;
 	private JButton btnService;
 
 	public static void main(String[] args) {
@@ -95,7 +86,7 @@ public class Principal extends JFrame {
 		lblStatus.setBounds(590, 5, 24, 24);
 		lblStatus.setBorder(null);
 		panel.add(lblStatus);
-		lblStatus.setIcon(new ImageIcon(Principal.class.getResource("/img/databasedesligada.png")));
+		lblStatus.setIcon(new ImageIcon(Principal.class.getResource("/img/databaseoff.png")));
 		
 				JButton btnAbout = new JButton("");
 				btnAbout.setContentAreaFilled(false);
@@ -111,7 +102,7 @@ public class Principal extends JFrame {
 						sobre.setVisible(true);
 					}
 				});
-				btnAbout.setIcon(new ImageIcon(Principal.class.getResource("/img/about3.png")));
+				btnAbout.setIcon(new ImageIcon(Principal.class.getResource("/img/about.png")));
 
 		JButton btnUsers = new JButton("");
 		btnUsers.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -123,13 +114,13 @@ public class Principal extends JFrame {
 			}
 		});
 		btnUsers.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnUsers.setIcon(new ImageIcon(Principal.class.getResource("/img/22193_client_icon.png")));
+		btnUsers.setIcon(new ImageIcon(Principal.class.getResource("/img/Usuarios.png")));
 		btnUsers.setBounds(238, 74, 128, 128);
 		contentPane.add(btnUsers);
 		
 		lblPrinter = new JLabel("");
 		lblPrinter.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPrinter.setIcon(new ImageIcon(Principal.class.getResource("/img/7309625.png")));
+		lblPrinter.setIcon(new ImageIcon(Principal.class.getResource("/img/printer3d.png")));
 		lblPrinter.setBounds(53, 157, 128, 128);
 		contentPane.add(lblPrinter);
 		
@@ -140,23 +131,29 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnRelatorio.setIcon(new ImageIcon(Principal.class.getResource("/img/34779_clipboard_icon.png")));
+		btnRelatorio.setIcon(new ImageIcon(Principal.class.getResource("/img/clipboard.png")));
 		btnRelatorio.setToolTipText("Relatórios");
 		btnRelatorio.setBounds(461, 248, 128, 128);
 		contentPane.add(btnRelatorio);
 		
-		btnClient = new JButton("");
-		btnClient.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnClient.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		btnClient.setIcon(new ImageIcon(Principal.class.getResource("/img/118828_system_users_icon.png")));
-		btnClient.setToolTipText("Buscar Clientes");
-		btnClient.setBounds(238, 248, 128, 128);
-		contentPane.add(btnClient);
+		btnClients = new JButton("");
+		btnClients.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Clientes cliente = new Clientes();
+				cliente.setVisible(true);
+			}
+		});
+		btnClients.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnClients.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		btnClients.setIcon(new ImageIcon(Principal.class.getResource("/img/clientes.png")));
+		btnClients.setToolTipText("Buscar Clientes");
+		btnClients.setBounds(238, 248, 128, 128);
+		contentPane.add(btnClients);
 		
 		btnService = new JButton("");
 		btnService.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnService.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		btnService.setIcon(new ImageIcon(Principal.class.getResource("/img/60190_maintenance_icon.png")));
+		btnService.setIcon(new ImageIcon(Principal.class.getResource("/img/maintence.png")));
 		btnService.setToolTipText("Serviço");
 		btnService.setBounds(461, 74, 128, 128);
 		contentPane.add(btnService);
@@ -166,25 +163,7 @@ public class Principal extends JFrame {
 		panel_1.setBackground(SystemColor.inactiveCaption);
 		panel_1.setBounds(0, 0, 654, 31);
 		contentPane.add(panel_1);
-		
-		JLabel lblData_1 = new JLabel("");
-		lblData_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblData_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblData_1.setBounds(448, 5, 162, 24);
-		panel_1.add(lblData_1);
-		
-		JLabel lblStatus_1 = new JLabel("");
-		lblStatus_1.setBorder(null);
-		lblStatus_1.setBounds(620, 5, 24, 24);
-		panel_1.add(lblStatus_1);
-		
-		JButton btnAbout_1 = new JButton("");
-		btnAbout_1.setToolTipText("Sobre");
-		btnAbout_1.setFocusable(false);
-		btnAbout_1.setContentAreaFilled(false);
-		btnAbout_1.setBorderPainted(false);
-		btnAbout_1.setBounds(0, 0, 33, 33);
-		panel_1.add(btnAbout_1);
+		setLocationRelativeTo(null);
 		
 				lblAgenda = new JLabel("3DPrintTechGenius");
 				lblAgenda.setBounds(10, 5, 203, 24);
@@ -196,9 +175,9 @@ public class Principal extends JFrame {
 		try {
 			con = dao.conectar();
 			if (con == null) {
-				lblStatus.setIcon(new ImageIcon(Principal.class.getResource("/img/databaseDesligada.png")));
+				lblStatus.setIcon(new ImageIcon(Principal.class.getResource("/img/databaseoff.png")));
 			} else {
-				lblStatus.setIcon(new ImageIcon(Principal.class.getResource("/img/databaseLigada.png")));
+				lblStatus.setIcon(new ImageIcon(Principal.class.getResource("/img/databaseon.png")));
 			}
 		} catch (Exception e) {
 			System.out.println(e);

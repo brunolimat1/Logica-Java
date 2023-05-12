@@ -1,22 +1,22 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Toolkit;
 
-import javax.swing.JButton;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.ImageIcon;
-import java.awt.Color;
-import javax.swing.SwingConstants;
-import java.awt.Window.Type;
-import java.awt.Toolkit;
 
 public class Sobre extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 
 	/**
@@ -37,7 +37,7 @@ public class Sobre extends JDialog {
 	 */
 	public Sobre() {
 		setTitle("Sobre ");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Sobre.class.getResource("/img/about3.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Sobre.class.getResource("/img/about.png")));
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(Color.WHITE);
@@ -63,7 +63,7 @@ public class Sobre extends JDialog {
 		
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setBorder(null);
-		lblNewLabel_3.setIcon(new ImageIcon(Sobre.class.getResource("/img/mit-icon.png")));
+		lblNewLabel_3.setIcon(new ImageIcon(Sobre.class.getResource("/img/mit.png")));
 		lblNewLabel_3.setBounds(296, 122, 128, 128);
 		contentPanel.add(lblNewLabel_3);
 		
@@ -76,5 +76,6 @@ public class Sobre extends JDialog {
 		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_2_2.setBounds(25, 75, 333, 14);
 		contentPanel.add(lblNewLabel_2_2);
+		setLocationRelativeTo(null);
 	}
 }

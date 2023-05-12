@@ -23,20 +23,24 @@ import model.DAO;
 import utils.Validador;
 
 public class Usuarios extends JDialog {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
 	private Connection con;
 	private PreparedStatement pst;
 	private ResultSet rs;
+	
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtID;
 	private JTextField txtNome;
 	private JTextField txtLogin;
 	private JPasswordField txtSenha;
+	private JButton btnBuscar;
+	private JButton btnAdicionar2;
+	private JButton btnEditar2;
+	private JButton btnDeletar2;
+	private JButton btnLimpar2;
+
 
 	/**
 	 * Launch the application.
@@ -95,29 +99,28 @@ public class Usuarios extends JDialog {
 			txtID = new JTextField();
 			txtID.setEditable(false);
 			txtID.setEnabled(false);
-			txtID.setBounds(86, 57, 46, 20);
+			txtID.setBounds(86, 57, 50, 20);
 			contentPanel.add(txtID);
 			txtID.setColumns(10);
 		}
 		{
 			txtNome = new JTextField();
 			txtNome.setColumns(10);
-			txtNome.setBounds(86, 93, 150, 20);
+			txtNome.setBounds(86, 93, 250, 20);
 			contentPanel.add(txtNome);
-			txtNome.setDocument(new Validador(5));
+			txtNome.setDocument(new Validador(30));
 		}
 		{
 			txtLogin = new JTextField();
 			txtLogin.setColumns(10);
-			txtLogin.setBounds(86, 130, 226, 20);
+			txtLogin.setBounds(86, 130, 250, 20);
 			contentPanel.add(txtLogin);
+			txtLogin.setDocument(new Validador(10));
+
 		}
 		{
-			JButton btnBuscar = new JButton("");
+			btnBuscar = new JButton("");
 			btnBuscar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnBuscar.setContentAreaFilled(false);
-			btnBuscar.setBorder(null);
-			btnBuscar.setBorderPainted(false);
 			btnBuscar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/search.png")));
 			btnBuscar.setToolTipText("Buscar");
 			btnBuscar.addActionListener(new ActionListener() {
@@ -125,26 +128,24 @@ public class Usuarios extends JDialog {
 					buscar();
 				}
 			});
-			btnBuscar.setBounds(360, 65, 64, 64);
+			btnBuscar.setBounds(346, 108, 64, 64);
 			contentPanel.add(btnBuscar);
 			getRootPane().setDefaultButton(btnBuscar);
 		}
 		{
-			JButton btnLimpar = new JButton("");
-			btnLimpar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnLimpar.setContentAreaFilled(false);
-			btnLimpar.setBorder(null);
-			btnLimpar.setBorderPainted(false);
-			btnLimpar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/trash.png")));
-			btnLimpar.setToolTipText("Limpar");
-			btnLimpar.addActionListener(new ActionListener() {
+			btnLimpar2 = new JButton("");
+			btnLimpar2.setEnabled(false);
+			btnLimpar2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnLimpar2.setIcon(new ImageIcon(Usuarios.class.getResource("/img/eraser.png")));
+			btnLimpar2.setToolTipText("Limpar");
+			btnLimpar2.addActionListener(new ActionListener() {
 
 				public void actionPerformed(ActionEvent e) {
 					limparCampos();
 				}
 			});
-			btnLimpar.setBounds(360, 200, 64, 64);
-			contentPanel.add(btnLimpar);
+			btnLimpar2.setBounds(348, 200, 64, 64);
+			contentPanel.add(btnLimpar2);
 		}
 
 		txtSenha = new JPasswordField();
@@ -152,50 +153,49 @@ public class Usuarios extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		txtSenha.setBounds(86, 169, 226, 20);
+		txtSenha.setBounds(86, 169, 250, 20);
 		contentPanel.add(txtSenha);
+		txtSenha.setDocument(new Validador(15));
 
-		JButton btnAdicionar = new JButton("");
-		btnAdicionar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAdicionar.addActionListener(new ActionListener() {
+		btnAdicionar2 = new JButton("");
+		btnAdicionar2.setEnabled(false);
+		btnAdicionar2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnAdicionar2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				adicionar();
 			}
 		});
-		btnAdicionar.setToolTipText("Adicionar");
-		btnAdicionar.setBorderPainted(false);
-		btnAdicionar.setContentAreaFilled(false);
-		btnAdicionar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/add3.png")));
-		btnAdicionar.setBounds(30, 200, 64, 64);
-		contentPanel.add(btnAdicionar);
+		btnAdicionar2.setToolTipText("Adicionar");
+		btnAdicionar2.setIcon(new ImageIcon(Usuarios.class.getResource("/img/add.png")));
+		btnAdicionar2.setBounds(30, 200, 64, 64);
+		contentPanel.add(btnAdicionar2);
 
-		JButton btnEditar = new JButton("");
-		btnEditar.addActionListener(new ActionListener() {
+		btnEditar2 = new JButton("");
+		btnEditar2.setEnabled(false);
+		btnEditar2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				editarContato();
 			}
 		});
-		btnEditar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnEditar.setToolTipText("Editar");
-		btnEditar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/edit3.png")));
-		btnEditar.setContentAreaFilled(false);
-		btnEditar.setBorderPainted(false);
-		btnEditar.setBounds(135, 200, 64, 64);
-		contentPanel.add(btnEditar);
+		btnEditar2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnEditar2.setToolTipText("Editar");
+		btnEditar2.setIcon(new ImageIcon(Usuarios.class.getResource("/img/edit.png")));
+		btnEditar2.setBounds(135, 200, 64, 64);
+		contentPanel.add(btnEditar2);
 
-		JButton btnDeletar = new JButton("");
-		btnDeletar.addActionListener(new ActionListener() {
+		btnDeletar2 = new JButton("");
+		btnDeletar2.setEnabled(false);
+		btnDeletar2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				excluirContato();
 			}
 		});
-		btnDeletar.setToolTipText("Deletar");
-		btnDeletar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnDeletar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/delete3.png")));
-		btnDeletar.setContentAreaFilled(false);
-		btnDeletar.setBorderPainted(false);
-		btnDeletar.setBounds(247, 200, 64, 64);
-		contentPanel.add(btnDeletar);
+		btnDeletar2.setToolTipText("Deletar");
+		btnDeletar2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnDeletar2.setIcon(new ImageIcon(Usuarios.class.getResource("/img/trash.png")));
+		btnDeletar2.setBounds(247, 200, 64, 64);
+		contentPanel.add(btnDeletar2);
+		setLocationRelativeTo(null);
 	}// fim do construtor
 
 	/**
@@ -206,6 +206,11 @@ public class Usuarios extends JDialog {
 		txtNome.setText(null);
 		txtLogin.setText(null);
 		txtSenha.setText(null);
+		btnAdicionar2.setEnabled(false);
+		btnEditar2.setEnabled(false);
+		btnDeletar2.setEnabled(false);
+		btnLimpar2.setEnabled(false);
+		btnBuscar.setEnabled(true);
 	}// fim do método limpar campos
 
 	/**
@@ -213,10 +218,9 @@ public class Usuarios extends JDialog {
 	 */
 	private void buscar() {
 		// dica - testar o evento primeiro
-		// dica - testar o evento primeiro
 		// System.out.println("teste do botão buscar");
 		// Criar uma variavel com a query (instrução do banco)
-		String read = "select * from usuarios where nome = ?";
+		String read = "select * from usuarios where login = ?";
 		// tratamento de exceções
 		try {
 			// abrir a conexão
@@ -224,7 +228,7 @@ public class Usuarios extends JDialog {
 			// preparar a execução da query (instrução sql - CRUD Read)
 			// O parâmetro 1 substitui ? pelo conteúdo da caixa de texto
 			pst = con.prepareStatement(read);
-			pst.setString(1, txtNome.getText());
+			pst.setString(1, txtLogin.getText());
 			// executar a query e buscar o resultado
 			rs = pst.executeQuery();
 			// uso da estrutura if else para verificar se existe
@@ -232,12 +236,19 @@ public class Usuarios extends JDialog {
 			if (rs.next()) {
 				// preencher as caixas de texto com as informações de contato
 				txtID.setText(rs.getString(1)); // 1 campo da tabela (ID)
-				txtLogin.setText(rs.getString(3)); // 3 campo da tabela (Fone)
-				txtSenha.setText(rs.getString(4)); // 4 campo da tabela (Email)
+				txtNome.setText(rs.getString(2)); // 2 campo da tabela (Nome)
+				txtLogin.setText(rs.getString(3)); // 3 campo da tabela (Login)
+				txtSenha.setText(rs.getString(4)); // 4 campo da tabela (Senha)
+				// habilitar botões
+				btnEditar2.setEnabled(true);
+				btnDeletar2.setEnabled(true);
+				btnLimpar2.setEnabled(true);
 
 			} else {
 				// se não existir um contato no banco
-				JOptionPane.showMessageDialog(null, "Úsuario não Cadastrado!");
+				JOptionPane.showMessageDialog(null, "Usuário não Cadastrado!");
+				btnAdicionar2.setEnabled(true);
+				btnLimpar2.setEnabled(true);
 			}
 			// fechar a conexão (IMPORTANTE)
 			con.close();
@@ -249,16 +260,18 @@ public class Usuarios extends JDialog {
 	/**
 	 * Método para adicionar um novo contato
 	 */
-	@SuppressWarnings("deprecation")
 	private void adicionar() {
-		// System.out.println("teste");
+		String senha = new String(txtSenha.getPassword());
 		// validação de campos obrigatórios
 		if (txtNome.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Prencha o nome do contato");
+			JOptionPane.showMessageDialog(null, "Prencha o Nome do Usuário!");
 			txtNome.requestFocus();
 		} else if (txtLogin.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Prencha o login do contato");
+			JOptionPane.showMessageDialog(null, "Prencha o Login do Usuário!");
 			txtLogin.requestFocus();
+		} else if (senha.length() == 0) {
+			JOptionPane.showMessageDialog(null, "Digite a Senha do Usuário!");
+			txtSenha.requestFocus();
 		} else {
 			// lógica principal
 			// CRUD Create
@@ -271,11 +284,11 @@ public class Usuarios extends JDialog {
 				pst = con.prepareStatement(create);
 				pst.setString(1, txtNome.getText());
 				pst.setString(2, txtLogin.getText());
-				pst.setString(3, txtSenha.getText());
+				pst.setString(3, senha);
 				// executa a query(instrução sql (CRUD - Create))
 				pst.executeUpdate();
 				// confirmar
-				JOptionPane.showMessageDialog(null, "Contato adicionado");
+				JOptionPane.showMessageDialog(null, "Usuário adicionado!");
 				// limpar os campos
 				limparCampos();
 				// fechar a conexão
@@ -289,16 +302,19 @@ public class Usuarios extends JDialog {
 	/**
 	 * Método para editar um contato (ATENÇÃO! usar o id)
 	 */
-	@SuppressWarnings("deprecation")
 	private void editarContato() {
+		String senha = new String(txtSenha.getPassword());
 		// System.out.println("teste do botão editar");
 		// validação dos campos obrigatórios
 		if (txtNome.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o nome do contato");
+			JOptionPane.showMessageDialog(null, "Digite o Nome do Usuário!");
 			txtNome.requestFocus();
 		} else if (txtLogin.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Digite o fone do contato");
+			JOptionPane.showMessageDialog(null, "Digite o Login do Usuário!");
 			txtLogin.requestFocus();
+		} else if (senha.length() == 0) {
+			JOptionPane.showMessageDialog(null, "Digite a Senha do Usuário!");
+			txtSenha.requestFocus();
 		} else {
 			// lógica principal
 			// CRUD - Update
@@ -311,12 +327,12 @@ public class Usuarios extends JDialog {
 				pst = con.prepareStatement(update);
 				pst.setString(1, txtNome.getText());
 				pst.setString(2, txtLogin.getText());
-				pst.setString(3, txtSenha.getText());
+				pst.setString(3, senha);
 				pst.setString(4, txtID.getText());
 				// executar a query
 				pst.executeUpdate();
 				// confirmar para o usuário
-				JOptionPane.showMessageDialog(null, "Dados do contato editados com sucesso.");
+				JOptionPane.showMessageDialog(null, "Dados do Usuário Editados com Sucesso.");
 				// limpar os campos
 				limparCampos();
 				// fechar a conexão
@@ -332,32 +348,45 @@ public class Usuarios extends JDialog {
 	 * Método usado para excluir um contato
 	 */
 	private void excluirContato() {
-		//System.out.println("teste do botão excluir");
-		//validação de exclusão - a variável confirma captura a opção escolhida
-		int confirma = JOptionPane.showConfirmDialog(null, "Confirma a exclusão deste contato?","Atenção!",JOptionPane.YES_NO_OPTION);
-		if (confirma == JOptionPane.YES_OPTION) {
-			//CRUD - Delete
-			String delete = "delete from usuarios where id=?";
-			//tratamento de exceções
-			try {
-				//abrir a conexão
-				con = dao.conectar();
-				//preparar a query (instrução sql)
-				pst = con.prepareStatement(delete);
-				//substituir a ? pelo id do contato
-				pst.setString(1, txtID.getText());
-				//executar a query
-				pst.executeUpdate();
-				//limpar campos
-				limparCampos();
-				//exibir uma mensagem ao usuário
-				JOptionPane.showMessageDialog(null, "Contato excluído");
-				//fechar a conexão
-				con.close();
-			} catch (Exception e) {
-				System.out.println(e);
+		String senha = new String(txtSenha.getPassword());
+		// validação de exclusão - a variável confirma captura a opção escolhida
+		// validação dos campos obrigatórios
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Digite o Nome do Usuário!");
+			txtNome.requestFocus();
+		} else if (txtLogin.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Digite o Login do Usuário!");
+			txtLogin.requestFocus();
+		} else if (senha.length() == 0) {
+			JOptionPane.showMessageDialog(null, "Digite a Senha do Usuário!");
+			txtSenha.requestFocus();
+		} else {
+			int confirma = JOptionPane.showConfirmDialog(null, "Confirma a exclusão deste usuário?", "Atenção!",
+					JOptionPane.YES_NO_OPTION);
+			if (confirma == JOptionPane.YES_OPTION) {
+				// CRUD - Delete
+				String delete = "delete from usuarios where id=?";
+				// tratamento de exceções
+				try {
+					// abrir a conexão
+					con = dao.conectar();
+					// preparar a query (instrução sql)
+					pst = con.prepareStatement(delete);
+					// substituir a ? pelo id do contato
+					pst.setString(1, txtID.getText());
+					// executar a query
+					pst.executeUpdate();
+					// limpar campos
+					limparCampos();
+					// exibir uma mensagem ao usuário
+					JOptionPane.showMessageDialog(null, "Usuário excluído!");
+					// fechar a conexão
+					con.close();
+				} catch (Exception e) {
+					System.out.println(e);
+				}
 			}
-		}		
-	} //fim do método excluirContato
+		} // fim do método excluirContato
 
+	}
 }// FIM DO CÓDIGO
