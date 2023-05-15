@@ -79,7 +79,7 @@ public class Principal extends JFrame {
 				lblData = new JLabel("");
 				lblData.setFont(new Font("Tahoma", Font.PLAIN, 11));
 				lblData.setHorizontalAlignment(SwingConstants.CENTER);
-				lblData.setBounds(424, 5, 162, 24);
+				lblData.setBounds(412, 5, 176, 24);
 				panel.add(lblData);
 
 		lblStatus = new JLabel("");

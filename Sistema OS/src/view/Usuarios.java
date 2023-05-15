@@ -386,7 +386,7 @@ public class Usuarios extends JDialog {
 					System.out.println(e);
 				}
 			}
-		} // fim do método excluirContato
+		} 
 
-	}
+	}// fim do método excluirContato
 }// FIM DO CÓDIGO
