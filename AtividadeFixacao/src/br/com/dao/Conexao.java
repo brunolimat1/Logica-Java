@@ -1,4 +1,4 @@
-package br.com.projeto.papelaria.dao;
+package br.com.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,13 +13,13 @@ public abstract class Conexao {
 	protected ResultSet rs = null;
 
 	@SuppressWarnings("deprecation")
-	protected void abrirBanco() {
+	protected void abrirConexao() {
 		try {
 			// Carregando o drivre de comunicação com o banco de dados mysql
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 
 			// Passar url, nome de usuario, senha e timezone
-			con = DriverManager.getConnection("jdbc:mysql://10.26.44.234:6020/papelariadb?usetimezone=true", "root", "123@senac");
+			con = DriverManager.getConnection("jdbc:mysql://10.26.44.234:6020/suportedb?usetimezone=true", "root", "123@senac");
 
 		} catch (ClassNotFoundException cnf) {
 			System.out.println("Erro ao carregar o driver ->" + cnf.getMessage());
@@ -31,11 +31,11 @@ public abstract class Conexao {
 
 	}
 
-	protected void fecharBanco() {
+	protected void fecharConexao() {
 		try {
 			con.close();
 		} catch (Exception se) {
-			System.out.println("Não foi possivel fechar o banco" + se.getMessage());
+			System.out.println("Não foi possivel fechar o Chamado" + se.getMessage());
 		}
 
 	}

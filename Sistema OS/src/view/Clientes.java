@@ -34,7 +34,7 @@ public class Clientes extends JDialog {
 	private Connection con;
 	private PreparedStatement pst;
 	private ResultSet rs;
-	
+
 	private JTextField txtNome;
 	private JTextField txtEmail;
 	private JTextField txtEndereco;
@@ -47,7 +47,7 @@ public class Clientes extends JDialog {
 	private JButton btnExcluir;
 	private JButton btnEditar;
 	private JButton btnBuscar;
-	
+	private int idcliente = 0;
 
 	/**
 	 * Launch the application.
@@ -72,79 +72,79 @@ public class Clientes extends JDialog {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Clientes() {
 		setBounds(100, 100, 452, 648);
-		
+
 		JPanel contentPanel = new JPanel();
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("Cadastro de Clientes");
 		lblNewLabel.setBounds(145, 5, 151, 19);
 		lblNewLabel.setFont(new Font("Swis721 Lt BT", Font.BOLD, 15));
 		contentPanel.add(lblNewLabel);
-		
+
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
 		lblNome.setBounds(10, 35, 50, 19);
 		contentPanel.add(lblNome);
-		
+
 		txtNome = new JTextField();
 		txtNome.setBounds(10, 58, 414, 20);
 		contentPanel.add(txtNome);
 		txtNome.setColumns(10);
-		
+
 		JLabel lblEmail = new JLabel("E-mail:");
 		lblEmail.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
 		lblEmail.setBounds(10, 89, 50, 19);
 		contentPanel.add(lblEmail);
-		
+
 		txtEmail = new JTextField();
 		txtEmail.setColumns(10);
 		txtEmail.setBounds(10, 112, 414, 20);
 		contentPanel.add(txtEmail);
-		
+
 		JLabel lblTelefone = new JLabel("Telefone:");
 		lblTelefone.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
 		lblTelefone.setBounds(10, 143, 64, 19);
 		contentPanel.add(lblTelefone);
-		
+
 		JLabel lblCep = new JLabel("CEP:");
 		lblCep.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
 		lblCep.setBounds(220, 143, 38, 19);
 		contentPanel.add(lblCep);
-		
+
 		JLabel lblEndereco = new JLabel("Endereço:");
 		lblEndereco.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
 		lblEndereco.setBounds(10, 197, 74, 19);
 		contentPanel.add(lblEndereco);
-		
+
 		txtEndereco = new JTextField();
 		txtEndereco.setColumns(10);
 		txtEndereco.setBounds(10, 220, 414, 20);
 		contentPanel.add(txtEndereco);
-		
+
 		JLabel lblEquipamentoDefeituoso = new JLabel("Equipamento Defeituoso:");
 		lblEquipamentoDefeituoso.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
 		lblEquipamentoDefeituoso.setBounds(10, 251, 170, 19);
 		contentPanel.add(lblEquipamentoDefeituoso);
-		
+
 		txtEquipamento = new JComboBox();
-		txtEquipamento.setModel(new DefaultComboBoxModel(new String[] {"", "Impressora Sti"}));
+		txtEquipamento.setModel(new DefaultComboBoxModel(new String[] { "", "Impressora Sti" }));
 		txtEquipamento.setFont(new Font("Swis721 Lt BT", Font.BOLD, 15));
 		txtEquipamento.setBounds(10, 275, 414, 25);
 		contentPanel.add(txtEquipamento);
-		
+
 		JLabel lblDescrevaOsProblemas = new JLabel("Descreva os problemas encontrados no equipamento:");
 		lblDescrevaOsProblemas.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
 		lblDescrevaOsProblemas.setBounds(10, 311, 358, 19);
 		contentPanel.add(lblDescrevaOsProblemas);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 341, 414, 177);
 		contentPanel.add(scrollPane);
-		
+
 		txtProblema = new JTextArea();
 		scrollPane.setViewportView(txtProblema);
-		
+
 		btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.setEnabled(false);
 		btnCadastrar.addActionListener(new ActionListener() {
@@ -152,7 +152,7 @@ public class Clientes extends JDialog {
 				cadastrar();
 			}
 		});
-		
+
 		btnLimpar = new JButton("Limpar");
 		btnLimpar.setEnabled(false);
 		btnLimpar.addActionListener(new ActionListener() {
@@ -164,23 +164,29 @@ public class Clientes extends JDialog {
 		contentPanel.add(btnLimpar);
 		btnCadastrar.setBounds(10, 529, 102, 23);
 		contentPanel.add(btnCadastrar);
-		
+
 		MaskFormatter tel = null;
-		try {	tel = new MaskFormatter("(##) #####.####"); }
-		catch(Exception e) { e.printStackTrace();}
-		
+		try {
+			tel = new MaskFormatter("(##) #####.####");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		txtTelefone = new JFormattedTextField(tel);
 		txtTelefone.setBounds(10, 166, 204, 19);
 		contentPanel.add(txtTelefone);
-		
+
 		MaskFormatter cep = null;
-		try {	cep = new MaskFormatter("#####-###"); }
-		catch(Exception e) { e.printStackTrace();}
-		
+		try {
+			cep = new MaskFormatter("#####-###");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		txtCep = new JFormattedTextField(cep);
 		txtCep.setBounds(220, 166, 204, 19);
 		contentPanel.add(txtCep);
-		
+
 		btnEditar = new JButton("Editar");
 		btnEditar.setEnabled(false);
 		btnEditar.addActionListener(new ActionListener() {
@@ -190,7 +196,7 @@ public class Clientes extends JDialog {
 		});
 		btnEditar.setBounds(324, 529, 102, 23);
 		contentPanel.add(btnEditar);
-		
+
 		btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -199,7 +205,7 @@ public class Clientes extends JDialog {
 		});
 		btnBuscar.setBounds(164, 553, 102, 23);
 		contentPanel.add(btnBuscar);
-		
+
 		btnExcluir = new JButton("Excluir");
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -210,8 +216,8 @@ public class Clientes extends JDialog {
 		btnExcluir.setBounds(322, 575, 102, 23);
 		contentPanel.add(btnExcluir);
 
-	}//FIM DO CONSTRUTOR
-	
+	}// FIM DO CONSTRUTOR
+
 	private void limpar() {
 		txtNome.setText(null);
 		txtEmail.setText(null);
@@ -226,9 +232,9 @@ public class Clientes extends JDialog {
 		btnExcluir.setEnabled(false);
 		btnLimpar.setEnabled(false);
 	}
-	
+
 	private void cadastrar() {
-		if(txtNome.getText().isEmpty()) {
+		if (txtNome.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente!");
 			txtNome.requestFocus();
 		} else if (txtEmail.getText().isEmpty()) {
@@ -270,9 +276,9 @@ public class Clientes extends JDialog {
 			}
 		}
 	}
-	
+
 	private void editar() {
-		if(txtNome.getText().isEmpty()) {
+		if (txtNome.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente!");
 			txtNome.requestFocus();
 		} else if (txtEmail.getText().isEmpty()) {
@@ -294,30 +300,30 @@ public class Clientes extends JDialog {
 			JOptionPane.showMessageDialog(null, "Descreva os Problemas que o Equipamento apresenta!");
 			txtProblema.requestFocus();
 		} else {
-						String update = "update clientes set nome=?,email=?,telefone=?,cep=?,endereco=?,equipamento=?,problema=? where id=?";
-						try {
-							con = dao.conectar();
-							pst = con.prepareStatement(update);
-							pst.setString(1, null);
-							pst.setString(2, txtNome.getText());
-							pst.setString(3, txtEmail.getText());
-							pst.setString(4, txtTelefone.getText());
-							pst.setString(5, txtCep.getText());
-							pst.setString(6, txtEndereco.getText());
-							pst.setString(7, (String) txtEquipamento.getSelectedItem());
-							pst.setString(8, txtProblema.getText());
-							pst.executeUpdate();
-							JOptionPane.showMessageDialog(null, "Dados do Cliente Editados com Sucesso.");
-							limpar();
-							con.close();
+			String update = "update clientes set nome=?,email=?,telefone=?,cep=?,endereco=?,equipamento=?,problema=? where id=?";
+			try {
+				con = dao.conectar();
+				pst = con.prepareStatement(update);
+				pst.setInt(8, idcliente);
+				pst.setString(1, txtNome.getText());
+				pst.setString(2, txtEmail.getText());
+				pst.setString(3, txtTelefone.getText());
+				pst.setString(4, txtCep.getText());
+				pst.setString(5, txtEndereco.getText());
+				pst.setString(6, txtEquipamento.getSelectedItem().toString());
+				pst.setString(7, txtProblema.getText());
+				pst.executeUpdate();
+				JOptionPane.showMessageDialog(null, "Dados do Cliente Editados com Sucesso.");
+				limpar();
+				con.close();
 			} catch (Exception e) {
 				System.out.println(e);
 			}
 		}
 	}
-	
+
 	private void excluir() {
-		if(txtNome.getText().isEmpty()) {
+		if (txtNome.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente!");
 			txtNome.requestFocus();
 		} else if (txtEmail.getText().isEmpty()) {
@@ -343,7 +349,7 @@ public class Clientes extends JDialog {
 					JOptionPane.YES_NO_OPTION);
 			if (confirma == JOptionPane.YES_OPTION) {
 				// CRUD - Delete
-				String delete = "delete from clientes where id='?'";
+				String delete = "delete from clientes where id=?";
 				// tratamento de exceções
 				try {
 					// abrir a conexão
@@ -351,7 +357,7 @@ public class Clientes extends JDialog {
 					// preparar a query (instrução sql)
 					pst = con.prepareStatement(delete);
 					// substituir a ? pelo id do contato
-					pst.setString(1, txtNome.getText());
+					pst.setInt(1, idcliente);
 					// executar a query
 					pst.executeUpdate();
 					// limpar campos
@@ -364,12 +370,12 @@ public class Clientes extends JDialog {
 					System.out.println(e);
 				}
 			}
-		} 
+		}
 
 	}
-	
+
 	private void buscar() {
-		if(txtNome.getText().isEmpty()) {
+		if (txtNome.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente para buscar!");
 			txtNome.requestFocus();
 		} else {
@@ -380,14 +386,15 @@ public class Clientes extends JDialog {
 				pst.setString(1, txtNome.getText());
 				rs = pst.executeQuery();
 				if (rs.next()) {
-					txtNome.setText(rs.getString(2)); 
-					txtEmail.setText(rs.getString(3)); 
-					txtTelefone.setText(rs.getString(4)); 
+					idcliente = rs.getInt(1);
+					txtNome.setText(rs.getString(2));
+					txtEmail.setText(rs.getString(3));
+					txtTelefone.setText(rs.getString(4));
 					txtCep.setText(rs.getString(5));
 					txtEndereco.setText(rs.getString(6));
 					txtEquipamento.setSelectedItem(rs.getString(7));
 					txtProblema.setText(rs.getString(8));
-					
+
 					btnEditar.setEnabled(true);
 					btnExcluir.setEnabled(true);
 					btnLimpar.setEnabled(true);
@@ -403,4 +410,4 @@ public class Clientes extends JDialog {
 			}
 		}
 	}
-}//FIM DO CÓDIGO
+}// FIM DO CÓDIGO
