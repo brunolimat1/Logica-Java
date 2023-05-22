@@ -22,10 +22,14 @@ drop table clientes;
 create table clientes (
 	id int primary key auto_increment,
     nome varchar(50) not null,
-    email varchar (50) not null,
     telefone varchar (15) not null,
 	cep varchar (50) not null,
     endereco varchar (150) not null,
+    numero varchar (50) not null,
+    complemento varchar (50) not null,
+    bairro varchar (150) not null,
+    cidade varchar (150) not null,
+    uf varchar (10) not null,
     equipamento varchar (150) not null,
     problema varchar (200) not null
 );
