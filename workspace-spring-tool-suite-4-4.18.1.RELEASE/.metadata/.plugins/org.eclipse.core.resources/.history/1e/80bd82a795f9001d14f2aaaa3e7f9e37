@@ -1,0 +1,10 @@
+package objetos;
+
+public class StudentTest {
+	
+	public static void main(String[] args) {
+		Student account1 = new Student("Jane Green", 93.5);
+		
+	}
+
+}

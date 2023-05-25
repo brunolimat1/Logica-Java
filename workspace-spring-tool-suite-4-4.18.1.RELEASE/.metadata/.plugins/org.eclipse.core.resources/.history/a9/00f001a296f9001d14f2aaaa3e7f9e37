@@ -1,0 +1,12 @@
+package objetos;
+ // Resolvendo o problema da média da classe usando a repetição controlada por contador.
+import java.util.Scanner; // programa utiliza a classe Scanner
+
+public class ClassAverage {
+
+	public static void main(String[] args) {
+		// cria Scanner para obter a entrada a partir da janela de comando
+		Scanner input = new Scanner(System.in);
+	}
+
+}

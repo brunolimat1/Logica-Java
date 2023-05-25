@@ -1,0 +1,15 @@
+package classes;
+
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
+public class DrawPanel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public DrawPanel() {
+
+	}
+
+}

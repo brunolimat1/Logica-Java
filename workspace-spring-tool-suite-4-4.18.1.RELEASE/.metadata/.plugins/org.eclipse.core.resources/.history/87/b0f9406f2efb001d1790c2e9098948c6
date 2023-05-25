@@ -1,0 +1,25 @@
+package com.projeto.primeiro.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PrimeiroController {
+
+	@GetMapping("/dados")
+	public String dados() {
+		return "Olá, tudo bem!";
+	}
+
+	@GetMapping("/listaprodutos")
+	public List<List<String>> produtos() {
+		List<List<String>> lst = new ArrayList<String>();
+		lst.add("Mouse");
+		lst.add("Teclado");
+		lst.add("Telefone");
+		return lst;
+	}
+
+}

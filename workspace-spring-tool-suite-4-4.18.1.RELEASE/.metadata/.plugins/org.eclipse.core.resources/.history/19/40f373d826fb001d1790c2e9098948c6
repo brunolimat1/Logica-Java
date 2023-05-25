@@ -1,0 +1,9 @@
+package objetos;
+
+public class ForCounter {
+
+	public static void main(String[] args) {
+
+	}
+
+}
