@@ -45,9 +45,6 @@ select * from clientes where nome = "";
 insert into usuarios (nome, login, senha)
 values ('Troll','brabo','123456');
 
-insert into clientes (nome, email, telefone, cep, endereco)
-values ('ricardo','ricardoalmeida@hotmail.com','11965527913','03939050','rua alameda filho');
-
 -- uso do md5() para criptografar uma senha
 insert into usuarios (nome, login, senha)
 values ('Jorge','admin', md5('admin'));
