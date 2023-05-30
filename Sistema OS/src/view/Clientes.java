@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +14,7 @@ import java.sql.ResultSet;
 import java.util.Iterator;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -29,6 +32,10 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import model.DAO;
+import javax.swing.JList;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.Toolkit;
 
 public class Clientes extends JDialog {
 
@@ -51,7 +58,6 @@ public class Clientes extends JDialog {
 	private JButton btnLimpar;
 	private JButton btnExcluir;
 	private JButton btnEditar;
-	private JButton btnBuscar;
 	private JTextField txtID;
 	private JTextField txtComplemento;
 	private JLabel lblNmero;
@@ -62,6 +68,9 @@ public class Clientes extends JDialog {
 	private JLabel lblUF;
 	private JComboBox<?> cboUf;
 	private JTextField txtNumero;
+	private JScrollPane scrollPane_1;
+	@SuppressWarnings("rawtypes")
+	private JList listClientes;
 
 	/**
 	 * Launch the application.
@@ -85,11 +94,37 @@ public class Clientes extends JDialog {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Clientes() {
+		setTitle("Clientes");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Clientes.class.getResource("/img/clientes.png")));
+		getContentPane().addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// clicar no painel do JDialog
+				scrollPane_1.setVisible(false);
+				txtNome.setText(null);
+			}
+		});
 		setBounds(100, 100, 760, 670);
 
 		JPanel contentPanel = new JPanel();
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
+
+		scrollPane_1 = new JScrollPane();
+		scrollPane_1.setVisible(false);
+		scrollPane_1.setBorder(null);
+		scrollPane_1.setBounds(60, 120, 674, 82);
+		contentPanel.add(scrollPane_1);
+
+		listClientes = new JList();
+		listClientes.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				buscarClienteLista();
+			}
+		});
+		listClientes.setBorder(null);
+		scrollPane_1.setViewportView(listClientes);
 
 		JLabel lblNewLabel = new JLabel("Cadastro de Clientes");
 		lblNewLabel.setBounds(289, 11, 151, 19);
@@ -102,6 +137,12 @@ public class Clientes extends JDialog {
 		contentPanel.add(lblNome);
 
 		txtNome = new JTextField();
+		txtNome.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				listarClientes();
+			}
+		});
 		txtNome.setBounds(60, 103, 674, 20);
 		contentPanel.add(txtNome);
 		txtNome.setColumns(10);
@@ -150,7 +191,6 @@ public class Clientes extends JDialog {
 		scrollPane.setViewportView(txtProblema);
 
 		btnCadastrar = new JButton("Cadastrar");
-		btnCadastrar.setEnabled(false);
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cadastrar();
@@ -200,15 +240,6 @@ public class Clientes extends JDialog {
 		});
 		btnEditar.setBounds(632, 543, 102, 23);
 		contentPanel.add(btnEditar);
-
-		btnBuscar = new JButton("Buscar");
-		btnBuscar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				buscar();
-			}
-		});
-		btnBuscar.setBounds(324, 567, 102, 23);
-		contentPanel.add(btnBuscar);
 
 		btnExcluir = new JButton("Excluir");
 		btnExcluir.addActionListener(new ActionListener() {
@@ -286,7 +317,7 @@ public class Clientes extends JDialog {
 		});
 		btnBuscarCep.setBounds(551, 134, 102, 28);
 		contentPanel.add(btnBuscarCep);
-		
+
 		txtNumero = new JTextField();
 		txtNumero.setColumns(10);
 		txtNumero.setBounds(599, 181, 135, 20);
@@ -309,7 +340,6 @@ public class Clientes extends JDialog {
 		txtProblema.setText(null);
 		btnCadastrar.setEnabled(false);
 		btnEditar.setEnabled(false);
-		btnBuscar.setEnabled(true);
 		btnExcluir.setEnabled(false);
 		btnLimpar.setEnabled(false);
 	}
@@ -327,7 +357,22 @@ public class Clientes extends JDialog {
 		} else if (txtEndereco.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Endereço do Cliente!");
 			txtEndereco.requestFocus();
-		} else if (txtEquipamento.getSelectedItem() == null || txtEquipamento.getSelectedIndex() == 0) {
+		} else if (txtNumero.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Número de Residência do Cliente!");
+			txtNumero.requestFocus();
+		} else if (txtComplemento.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Complemento da Residência do Cliente!");
+			txtComplemento.requestFocus();
+		} else if (txtBairro.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Bairro do Cliente!");
+			txtBairro.requestFocus();
+		} else if (txtCidade.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha a Cidade do Cliente!");
+			txtCidade.requestFocus();
+		} else if (cboUf.getSelectedItem().equals("")) {
+			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
+			cboUf.requestFocus();
+		} else if (txtEquipamento.getSelectedItem().equals("")) {
 			JOptionPane.showMessageDialog(null, "Coloque o Equipamento Defeituoso!");
 			txtEquipamento.requestFocus();
 		} else if (txtProblema.getText().isEmpty()) {
@@ -372,7 +417,7 @@ public class Clientes extends JDialog {
 		} else if (txtEndereco.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Endereço do Cliente!");
 			txtEndereco.requestFocus();
-		} else if (txtEquipamento.getSelectedItem() == null || txtEquipamento.getSelectedIndex() == 0) {
+		} else if (txtEquipamento.getSelectedItem().equals("")) {
 			JOptionPane.showMessageDialog(null, "Coloque o Equipamento Defeituoso!");
 			txtEquipamento.requestFocus();
 		} else if (txtProblema.getText().isEmpty()) {
@@ -418,7 +463,7 @@ public class Clientes extends JDialog {
 		} else if (txtEndereco.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Endereço do Cliente!");
 			txtEndereco.requestFocus();
-		} else if (txtEquipamento.getSelectedItem() == null || txtEquipamento.getSelectedIndex() == 0) {
+		} else if (txtEquipamento.getSelectedItem().equals("")) {
 			JOptionPane.showMessageDialog(null, "Coloque o Equipamento Defeituoso!");
 			txtEquipamento.requestFocus();
 		} else if (txtProblema.getText().isEmpty()) {
@@ -454,18 +499,67 @@ public class Clientes extends JDialog {
 
 	}
 
-	private void buscar() {
-		if (txtNome.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente para buscar!");
-			txtNome.requestFocus();
-		} else {
-			String read = "select * from clientes where nome = ?";
+	/**
+	 * Método usado para listar o nome dos usuários na lista
+	 */
+	@SuppressWarnings("unchecked")
+	private void listarClientes() {
+		// System.out.println("teste");
+		// a linha abaixo cria um objeto usando como referência um vetor dinâmico, este
+		// objeto irá temporariamente armazenar os nomes
+		DefaultListModel<String> modelo = new DefaultListModel<>();
+		// setar o modelo (vetor na lista)
+		listClientes.setModel(modelo);
+		// Query (instrução sql)
+		String readLista = "select * from clientes where nome like '" + txtNome.getText() + "%'" + "order by nome";
+		try {
+			// abrir a conexão
+			con = dao.conectar();
+			// preparar a query (instrução sql)
+			pst = con.prepareStatement(readLista);
+			// executar a query e trazer o resultado para lista
+			rs = pst.executeQuery();
+			// uso do while para trazer os usuários enquanto existir
+			while (rs.next()) {
+				// mostrar a barra de rolagem (scrollpane)
+				scrollPane_1.setVisible(true);
+				// adicionar os usuarios no vetor -> lista
+				modelo.addElement(rs.getString(2));
+				// esconder o scrollpane se nenhuma letra for digitada
+				if (txtNome.getText().isEmpty()) {
+					scrollPane_1.setVisible(false);
+				}
+			}
+			// fechar a conexão
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	/**
+	 * Método que busca o usuário selecionado da lista
+	 */
+	private void buscarClienteLista() {
+		// System.out.println("teste");
+		// variável que captura o índice da linha da lista
+		int linha = listClientes.getSelectedIndex();
+		if (linha >= 0) {
+			// Query (instrução sql)
+			// limit (0,1) -> seleciona o índice 0 e 1 usuário da lista
+			String readListaCliente = "select * from clientes where nome like '" + txtNome.getText() + "%'"
+					+ "order by nome limit " + (linha) + " , 1";
 			try {
+				// abrir a conexão
 				con = dao.conectar();
-				pst = con.prepareStatement(read);
-				pst.setString(1, txtNome.getText());
+				// preparar a query para execução
+				pst = con.prepareStatement(readListaCliente);
+				// executar e obter o resultado
 				rs = pst.executeQuery();
 				if (rs.next()) {
+					// esconder a lista
+					scrollPane_1.setVisible(false);
+					// setar os campos
 					txtID.setText(rs.getString(1));
 					txtNome.setText(rs.getString(2));
 					txtTelefone.setText(rs.getString(3));
@@ -478,21 +572,21 @@ public class Clientes extends JDialog {
 					cboUf.setSelectedItem(rs.getString(10));
 					txtEquipamento.setSelectedItem(rs.getString(11));
 					txtProblema.setText(rs.getString(12));
-					
-
+					btnCadastrar.setEnabled(true);
 					btnEditar.setEnabled(true);
 					btnExcluir.setEnabled(true);
 					btnLimpar.setEnabled(true);
-
 				} else {
-					JOptionPane.showMessageDialog(null, "Cliente não Cadastrado!");
-					btnCadastrar.setEnabled(true);
-					btnLimpar.setEnabled(true);
+					JOptionPane.showMessageDialog(null, "Usuário inexistente");
 				}
+				// fechar a conexão
 				con.close();
 			} catch (Exception e) {
 				System.out.println(e);
 			}
+		} else {
+			// se não existir no banco um usuário da lista
+			scrollPane_1.setVisible(false);
 		}
 	}
 
@@ -526,14 +620,16 @@ public class Clientes extends JDialog {
 				if (element.getQualifiedName().equals("resultado")) {
 					resultado = element.getText();
 					if (resultado.equals("1")) {
-						} else {
-							JOptionPane.showMessageDialog(null, "CEP não encontrado");
-						}
+					} else {
+						JOptionPane.showMessageDialog(null, "CEP não encontrado");
 					}
 				}
-				txtEndereco.setText(tipoLogradouro + " " + logradouro);
+
+			}
+			txtEndereco.setText(tipoLogradouro + " " + logradouro);
 		} catch (Exception e) {
-				System.out.println(e);
+			System.out.println(e);
 		}
+
 	}
 }// FIM DO CÓDIGO

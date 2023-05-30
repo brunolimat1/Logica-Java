@@ -24,6 +24,7 @@ import javax.swing.border.BevelBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class Usuarios extends JDialog {
 
@@ -41,6 +42,7 @@ public class Usuarios extends JDialog {
 	private JTextField txtNome;
 	private JTextField txtLogin;
 	private JPasswordField txtSenha;
+	@SuppressWarnings("rawtypes")
 	private JList listUsers;
 	private JScrollPane scrollPane;
 	private JButton btnAdicionar;
@@ -69,7 +71,9 @@ public class Usuarios extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
+	@SuppressWarnings("rawtypes")
 	public Usuarios() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Usuarios.class.getResource("/img/Usuarios.png")));
 		getContentPane().addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -214,6 +218,7 @@ public class Usuarios extends JDialog {
 	/**
 	 * Método usado para listar o nome dos usuários na lista
 	 */
+	@SuppressWarnings("unchecked")
 	private void listarUsuarios() {
 		// System.out.println("teste");
 		// a linha abaixo cria um objeto usando como referência um vetor dinâmico, este

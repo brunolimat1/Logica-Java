@@ -125,6 +125,7 @@ public class Principal extends JFrame {
 		contentPane.add(lblPrinter);
 		
 		btnRelatorio = new JButton("");
+		btnRelatorio.setEnabled(false);
 		btnRelatorio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRelatorio.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnRelatorio.addActionListener(new ActionListener() {
@@ -151,6 +152,7 @@ public class Principal extends JFrame {
 		contentPane.add(btnClients);
 		
 		btnService = new JButton("");
+		btnService.setEnabled(false);
 		btnService.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnService.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnService.setIcon(new ImageIcon(Principal.class.getResource("/img/maintence.png")));
