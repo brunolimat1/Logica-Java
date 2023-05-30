@@ -1,0 +1,36 @@
+package com.projeto.primeiro.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PrimeiroController {
+
+	@GetMapping("/dados")
+	public String dados() {
+		return "Olá, tudo bem!";
+	}
+
+	@GetMapping("/listaprodutos")
+	public List<List<String>> produtos() {
+		List<List<String>> lst = new ArrayList<List<String>>();
+		
+		List<String> categoria = new ArrayList<String>();
+		categoria.add("Informática");
+		categoria.add("Material escritório");
+		categoria.add("Escolar");
+		
+		List<String> produto = new ArrayList<String>();
+		produto.add("Mouse");
+		produto.add("Teclado");
+		produto.add("Telefone");
+		
+		lst.add(produto);
+		lst.add(categoria);
+		
+		return lst;
+	}
+
+}

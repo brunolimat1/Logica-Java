@@ -1,0 +1,14 @@
+package com.projeto.primeiro.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PrimeiroController {
+	
+	@GetMapping("/dados")
+	public String dados() {
+		return "Olá, tudo bem!";
+	}
+	
+
+}

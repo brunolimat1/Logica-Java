@@ -1,0 +1,14 @@
+package classes;
+
+import javax.swing.JPanel;
+
+public class DrawSmiley extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public DrawSmiley() {
+
+	}
+
+}

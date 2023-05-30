@@ -1,0 +1,13 @@
+package objetos;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class ShapesTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

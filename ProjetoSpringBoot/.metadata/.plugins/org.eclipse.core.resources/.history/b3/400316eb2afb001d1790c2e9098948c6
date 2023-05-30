@@ -1,0 +1,12 @@
+package objetos;
+
+import classes.DrawSmiley;
+import javax.swing.JFrame;
+
+public class DrawSmileyTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}
