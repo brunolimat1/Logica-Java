@@ -348,10 +348,10 @@ public class Clientes extends JDialog {
 		if (txtNome.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente!");
 			txtNome.requestFocus();
-		} else if (txtTelefone.getText().isEmpty()) {
+		} else if (txtTelefone.getText().equals("(  )      .    ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o Telefone do Cliente!");
 			txtTelefone.requestFocus();
-		} else if (txtCep.getText().isEmpty()) {
+		} else if (txtCep.getText().equals("     -   ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
 			txtCep.requestFocus();
 		} else if (txtEndereco.getText().isEmpty()) {
@@ -408,15 +408,30 @@ public class Clientes extends JDialog {
 		if (txtNome.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente!");
 			txtNome.requestFocus();
-		} else if (txtTelefone.getText().isEmpty()) {
+		} else if (txtTelefone.getText().equals("(  )      .    ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o Telefone do Cliente!");
 			txtTelefone.requestFocus();
-		} else if (txtCep.getText().isEmpty()) {
+		} else if (txtCep.getText().equals("     -   ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
 			txtCep.requestFocus();
 		} else if (txtEndereco.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Endereço do Cliente!");
 			txtEndereco.requestFocus();
+		} else if (txtNumero.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Número de Residência do Cliente!");
+			txtNumero.requestFocus();
+		} else if (txtComplemento.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Complemento da Residência do Cliente!");
+			txtComplemento.requestFocus();
+		} else if (txtBairro.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Bairro do Cliente!");
+			txtBairro.requestFocus();
+		} else if (txtCidade.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha a Cidade do Cliente!");
+			txtCidade.requestFocus();
+		} else if (cboUf.getSelectedItem().equals("")) {
+			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
+			cboUf.requestFocus();
 		} else if (txtEquipamento.getSelectedItem().equals("")) {
 			JOptionPane.showMessageDialog(null, "Coloque o Equipamento Defeituoso!");
 			txtEquipamento.requestFocus();
@@ -454,15 +469,30 @@ public class Clientes extends JDialog {
 		if (txtNome.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente!");
 			txtNome.requestFocus();
-		} else if (txtTelefone.getText().isEmpty()) {
+		} else if (txtTelefone.getText().equals("(  )      .    ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o Telefone do Cliente!");
 			txtTelefone.requestFocus();
-		} else if (txtCep.getText().isEmpty()) {
+		} else if (txtCep.getText().equals("     -   ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
 			txtCep.requestFocus();
 		} else if (txtEndereco.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Endereço do Cliente!");
 			txtEndereco.requestFocus();
+		} else if (txtNumero.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Número de Residência do Cliente!");
+			txtNumero.requestFocus();
+		} else if (txtComplemento.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Complemento da Residência do Cliente!");
+			txtComplemento.requestFocus();
+		} else if (txtBairro.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Bairro do Cliente!");
+			txtBairro.requestFocus();
+		} else if (txtCidade.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha a Cidade do Cliente!");
+			txtCidade.requestFocus();
+		} else if (cboUf.getSelectedItem().equals("")) {
+			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
+			cboUf.requestFocus();
 		} else if (txtEquipamento.getSelectedItem().equals("")) {
 			JOptionPane.showMessageDialog(null, "Coloque o Equipamento Defeituoso!");
 			txtEquipamento.requestFocus();
@@ -594,42 +624,48 @@ public class Clientes extends JDialog {
 	 * buscarCep
 	 */
 	private void buscarCep() {
-		String logradouro = "";
-		String tipoLogradouro = "";
-		String resultado = null;
-		String cep = txtCep.getText();
-		try {
-			URL url = new URL("http://cep.republicavirtual.com.br/web_cep.php?cep=" + cep + "&formato=xml");
-			SAXReader xml = new SAXReader();
-			Document documento = xml.read(url);
-			Element root = documento.getRootElement();
-			for (Iterator<Element> it = root.elementIterator(); it.hasNext();) {
-				Element element = it.next();
-				if (element.getQualifiedName().equals("cidade")) {
-					txtCidade.setText(element.getText());
-				}
-				if (element.getQualifiedName().equals("bairro")) {
-					txtBairro.setText(element.getText());
-				}
-				if (element.getQualifiedName().equals("uf")) {
-					cboUf.setSelectedItem(element.getText());
-				}
-				if (element.getQualifiedName().equals("logradouro")) {
-					logradouro = element.getText();
-				}
-				if (element.getQualifiedName().equals("resultado")) {
-					resultado = element.getText();
-					if (resultado.equals("1")) {
-					} else {
-						JOptionPane.showMessageDialog(null, "CEP não encontrado");
+		if (txtCep.getText().equals("     -   ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
+			txtCep.requestFocus();
+		} else {
+			String logradouro = "";
+			String tipoLogradouro = "";
+			String resultado = null;
+			String cep = txtCep.getText();
+			try {
+				URL url = new URL("http://cep.republicavirtual.com.br/web_cep.php?cep=" + cep + "&formato=xml");
+				SAXReader xml = new SAXReader();
+				Document documento = xml.read(url);
+				Element root = documento.getRootElement();
+				for (Iterator<Element> it = root.elementIterator(); it.hasNext();) {
+					Element element = it.next();
+					if (element.getQualifiedName().equals("cidade")) {
+						txtCidade.setText(element.getText());
 					}
+					if (element.getQualifiedName().equals("bairro")) {
+						txtBairro.setText(element.getText());
+					}
+					if (element.getQualifiedName().equals("uf")) {
+						cboUf.setSelectedItem(element.getText());
+					}
+					if (element.getQualifiedName().equals("logradouro")) {
+						logradouro = element.getText();
+					}
+					if (element.getQualifiedName().equals("resultado")) {
+						resultado = element.getText();
+						if (resultado.equals("1")) {
+						} else {
+							JOptionPane.showMessageDialog(null, "CEP não encontrado");
+						}
+					}
+
 				}
-
+				txtEndereco.setText(tipoLogradouro + " " + logradouro);
+			} catch (Exception e) {
+				System.out.println(e);
 			}
-			txtEndereco.setText(tipoLogradouro + " " + logradouro);
-		} catch (Exception e) {
-			System.out.println(e);
-		}
 
+		}
 	}
-}// FIM DO CÓDIGO
+}
+// FIM DO CÓDIGO
