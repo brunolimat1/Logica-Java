@@ -105,6 +105,7 @@ public class Principal extends JFrame {
 				btnAbout.setIcon(new ImageIcon(Principal.class.getResource("/img/about.png")));
 
 		JButton btnUsers = new JButton("");
+		btnUsers.setFocusPainted(false);
 		btnUsers.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnUsers.setToolTipText("Buscar Usuarios");
 		btnUsers.addActionListener(new ActionListener() {
@@ -115,7 +116,7 @@ public class Principal extends JFrame {
 		});
 		btnUsers.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnUsers.setIcon(new ImageIcon(Principal.class.getResource("/img/Usuarios.png")));
-		btnUsers.setBounds(238, 74, 128, 128);
+		btnUsers.setBounds(240, 42, 182, 176);
 		contentPane.add(btnUsers);
 		
 		lblPrinter = new JLabel("");
@@ -125,6 +126,7 @@ public class Principal extends JFrame {
 		contentPane.add(lblPrinter);
 		
 		btnRelatorio = new JButton("");
+		btnRelatorio.setFocusPainted(false);
 		btnRelatorio.setEnabled(false);
 		btnRelatorio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRelatorio.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -134,10 +136,11 @@ public class Principal extends JFrame {
 		});
 		btnRelatorio.setIcon(new ImageIcon(Principal.class.getResource("/img/clipboard.png")));
 		btnRelatorio.setToolTipText("Relatórios");
-		btnRelatorio.setBounds(461, 248, 128, 128);
+		btnRelatorio.setBounds(432, 229, 182, 170);
 		contentPane.add(btnRelatorio);
 		
 		btnClients = new JButton("");
+		btnClients.setFocusPainted(false);
 		btnClients.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clientes cliente = new Clientes();
@@ -148,16 +151,17 @@ public class Principal extends JFrame {
 		btnClients.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnClients.setIcon(new ImageIcon(Principal.class.getResource("/img/clientes.png")));
 		btnClients.setToolTipText("Buscar Clientes");
-		btnClients.setBounds(238, 248, 128, 128);
+		btnClients.setBounds(238, 229, 184, 170);
 		contentPane.add(btnClients);
 		
 		btnService = new JButton("");
+		btnService.setFocusPainted(false);
 		btnService.setEnabled(false);
 		btnService.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnService.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnService.setIcon(new ImageIcon(Principal.class.getResource("/img/maintence.png")));
 		btnService.setToolTipText("Serviço");
-		btnService.setBounds(461, 74, 128, 128);
+		btnService.setBounds(432, 42, 182, 176);
 		contentPane.add(btnService);
 		
 		JPanel panel_1 = new JPanel();

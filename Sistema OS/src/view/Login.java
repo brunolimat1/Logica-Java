@@ -91,6 +91,7 @@ public class Login extends JFrame {
 		contentPane.add(lblSenha);
 
 		JButton btnAcessar = new JButton("");
+		btnAcessar.setFocusPainted(false);
 		btnAcessar.setIcon(new ImageIcon(Login.class.getResource("/img/Login.png")));
 		btnAcessar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnAcessar.setContentAreaFilled(false);

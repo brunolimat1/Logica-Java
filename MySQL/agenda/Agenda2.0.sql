@@ -26,12 +26,10 @@ create table clientes (
 	cep varchar (50) not null,
     endereco varchar (150) not null,
     numero varchar (50) not null,
-    complemento varchar (50) not null,
+    complemento varchar (50),
     bairro varchar (150) not null,
     cidade varchar (150) not null,
-    uf varchar (10) not null,
-    equipamento varchar (150) not null,
-    problema varchar (200) not null
+    uf varchar (10) not null
 );
 
 describe usuarios;

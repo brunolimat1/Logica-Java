@@ -3,8 +3,11 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
@@ -15,15 +18,16 @@ import java.util.Iterator;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
@@ -32,10 +36,6 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import model.DAO;
-import javax.swing.JList;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.Toolkit;
 
 public class Clientes extends JDialog {
 
@@ -50,8 +50,6 @@ public class Clientes extends JDialog {
 
 	private JTextField txtNome;
 	private JTextField txtEndereco;
-	private JComboBox<?> txtEquipamento;
-	private JTextArea txtProblema;
 	private JFormattedTextField txtTelefone;
 	private JFormattedTextField txtCep;
 	private JButton btnCadastrar;
@@ -101,10 +99,9 @@ public class Clientes extends JDialog {
 			public void mouseClicked(MouseEvent e) {
 				// clicar no painel do JDialog
 				scrollPane_1.setVisible(false);
-				txtNome.setText(null);
 			}
 		});
-		setBounds(100, 100, 760, 670);
+		setBounds(100, 100, 760, 500);
 
 		JPanel contentPanel = new JPanel();
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -167,47 +164,29 @@ public class Clientes extends JDialog {
 		txtEndereco.setBounds(84, 181, 428, 20);
 		contentPanel.add(txtEndereco);
 
-		JLabel lblEquipamentoDefeituoso = new JLabel("Equipamento Defeituoso:");
-		lblEquipamentoDefeituoso.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
-		lblEquipamentoDefeituoso.setBounds(10, 304, 170, 19);
-		contentPanel.add(lblEquipamentoDefeituoso);
-
-		txtEquipamento = new JComboBox();
-		txtEquipamento.setModel(new DefaultComboBoxModel(new String[] { "", "Impressora Sti" }));
-		txtEquipamento.setFont(new Font("Swis721 Lt BT", Font.BOLD, 15));
-		txtEquipamento.setBounds(10, 328, 724, 25);
-		contentPanel.add(txtEquipamento);
-
-		JLabel lblDescrevaOsProblemas = new JLabel("Descreva os problemas encontrados no equipamento:");
-		lblDescrevaOsProblemas.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
-		lblDescrevaOsProblemas.setBounds(10, 372, 358, 19);
-		contentPanel.add(lblDescrevaOsProblemas);
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 402, 724, 130);
-		contentPanel.add(scrollPane);
-
-		txtProblema = new JTextArea();
-		scrollPane.setViewportView(txtProblema);
-
-		btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar = new JButton("");
+		btnCadastrar.setFocusPainted(false);
+		btnCadastrar.setIcon(new ImageIcon(Clientes.class.getResource("/img/add.png")));
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cadastrar();
 			}
 		});
 
-		btnLimpar = new JButton("Limpar");
+		btnLimpar = new JButton("");
+		btnLimpar.setFocusPainted(false);
 		btnLimpar.setEnabled(false);
+		btnLimpar.setIcon(new ImageIcon(Clientes.class.getResource("/img/eraser.png")));
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				limpar();
 			}
 		});
-		btnLimpar.setBounds(10, 589, 102, 23);
+		btnLimpar.setBounds(10, 386, 64, 64);
 		contentPanel.add(btnLimpar);
-		btnCadastrar.setBounds(10, 543, 102, 23);
+		btnCadastrar.setBounds(10, 304, 64, 64);
 		contentPanel.add(btnCadastrar);
+		getRootPane().setDefaultButton(btnCadastrar);
 
 		MaskFormatter tel = null;
 		try {
@@ -231,24 +210,28 @@ public class Clientes extends JDialog {
 		txtCep.setBounds(337, 139, 204, 19);
 		contentPanel.add(txtCep);
 
-		btnEditar = new JButton("Editar");
+		btnEditar = new JButton("");
+		btnEditar.setFocusPainted(false);
+		btnEditar.setIcon(new ImageIcon(Clientes.class.getResource("/img/edit.png")));
 		btnEditar.setEnabled(false);
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				editar();
 			}
 		});
-		btnEditar.setBounds(632, 543, 102, 23);
+		btnEditar.setBounds(670, 304, 64, 64);
 		contentPanel.add(btnEditar);
 
-		btnExcluir = new JButton("Excluir");
+		btnExcluir = new JButton("");
+		btnExcluir.setFocusPainted(false);
+		btnExcluir.setIcon(new ImageIcon(Clientes.class.getResource("/img/trash.png")));
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				excluir();
 			}
 		});
 		btnExcluir.setEnabled(false);
-		btnExcluir.setBounds(632, 589, 102, 23);
+		btnExcluir.setBounds(670, 386, 64, 64);
 		contentPanel.add(btnExcluir);
 
 		JLabel lblidCliente = new JLabel("ID:");
@@ -257,6 +240,8 @@ public class Clientes extends JDialog {
 		contentPanel.add(lblidCliente);
 
 		txtID = new JTextField();
+		txtID.setEnabled(false);
+		txtID.setEditable(false);
 		txtID.setColumns(10);
 		txtID.setBounds(35, 64, 64, 20);
 		contentPanel.add(txtID);
@@ -322,6 +307,12 @@ public class Clientes extends JDialog {
 		txtNumero.setColumns(10);
 		txtNumero.setBounds(599, 181, 135, 20);
 		contentPanel.add(txtNumero);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(Clientes.class.getResource("/img/clientes.png")));
+		lblNewLabel_1.setFont(new Font("Swis721 Lt BT", Font.BOLD, 15));
+		lblNewLabel_1.setBounds(300, 322, 128, 128);
+		contentPanel.add(lblNewLabel_1);
 
 	}// FIM DO CONSTRUTOR
 
@@ -336,9 +327,6 @@ public class Clientes extends JDialog {
 		txtBairro.setText(null);
 		txtCidade.setText(null);
 		cboUf.setSelectedItem(null);
-		txtEquipamento.setSelectedItem(null);
-		txtProblema.setText(null);
-		btnCadastrar.setEnabled(false);
 		btnEditar.setEnabled(false);
 		btnExcluir.setEnabled(false);
 		btnLimpar.setEnabled(false);
@@ -360,9 +348,6 @@ public class Clientes extends JDialog {
 		} else if (txtNumero.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Número de Residência do Cliente!");
 			txtNumero.requestFocus();
-		} else if (txtComplemento.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha o Complemento da Residência do Cliente!");
-			txtComplemento.requestFocus();
 		} else if (txtBairro.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Bairro do Cliente!");
 			txtBairro.requestFocus();
@@ -372,14 +357,8 @@ public class Clientes extends JDialog {
 		} else if (cboUf.getSelectedItem().equals("")) {
 			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
 			cboUf.requestFocus();
-		} else if (txtEquipamento.getSelectedItem().equals("")) {
-			JOptionPane.showMessageDialog(null, "Coloque o Equipamento Defeituoso!");
-			txtEquipamento.requestFocus();
-		} else if (txtProblema.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Descreva os Problemas que o Equipamento apresenta!");
-			txtProblema.requestFocus();
 		} else {
-			String create = "insert into clientes (nome, telefone, cep, endereco, numero, complemento, bairro, cidade, uf, equipamento, problema) values (?,?,?,?,?,?,?,?,?,?,?)";
+			String create = "insert into clientes (nome, telefone, cep, endereco, numero, complemento, bairro, cidade, uf) values (?,?,?,?,?,?,?,?,?)";
 			try {
 				con = dao.conectar();
 				pst = con.prepareStatement(create);
@@ -392,8 +371,6 @@ public class Clientes extends JDialog {
 				pst.setString(7, txtBairro.getText());
 				pst.setString(8, txtCidade.getText());
 				pst.setString(9, cboUf.getSelectedItem().toString());
-				pst.setString(10, txtEquipamento.getSelectedItem().toString());
-				pst.setString(11, txtProblema.getText());
 				pst.executeUpdate();
 				JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
 				limpar();
@@ -432,12 +409,6 @@ public class Clientes extends JDialog {
 		} else if (cboUf.getSelectedItem().equals("")) {
 			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
 			cboUf.requestFocus();
-		} else if (txtEquipamento.getSelectedItem().equals("")) {
-			JOptionPane.showMessageDialog(null, "Coloque o Equipamento Defeituoso!");
-			txtEquipamento.requestFocus();
-		} else if (txtProblema.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Descreva os Problemas que o Equipamento apresenta!");
-			txtProblema.requestFocus();
 		} else {
 			String update = "update clientes set nome=?,telefone=?,cep=?,endereco=?,numero=?,complemento=?,bairro=?,cidade=?,uf=?,equipamento=?,problema=? where id=?";
 			try {
@@ -453,8 +424,6 @@ public class Clientes extends JDialog {
 				pst.setString(7, txtBairro.getText());
 				pst.setString(8, txtCidade.getText());
 				pst.setString(9, cboUf.getSelectedItem().toString());
-				pst.setString(10, txtEquipamento.getSelectedItem().toString());
-				pst.setString(11, txtProblema.getText());
 				pst.executeUpdate();
 				JOptionPane.showMessageDialog(null, "Dados do Cliente Editados com Sucesso.");
 				limpar();
@@ -493,12 +462,6 @@ public class Clientes extends JDialog {
 		} else if (cboUf.getSelectedItem().equals("")) {
 			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
 			cboUf.requestFocus();
-		} else if (txtEquipamento.getSelectedItem().equals("")) {
-			JOptionPane.showMessageDialog(null, "Coloque o Equipamento Defeituoso!");
-			txtEquipamento.requestFocus();
-		} else if (txtProblema.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Descreva os Problemas que o Equipamento apresenta!");
-			txtProblema.requestFocus();
 		} else {
 			int confirma = JOptionPane.showConfirmDialog(null, "Confirma a exclusão deste usuário?", "Atenção!",
 					JOptionPane.YES_NO_OPTION);
@@ -600,8 +563,6 @@ public class Clientes extends JDialog {
 					txtBairro.setText(rs.getString(8));
 					txtCidade.setText(rs.getString(9));
 					cboUf.setSelectedItem(rs.getString(10));
-					txtEquipamento.setSelectedItem(rs.getString(11));
-					txtProblema.setText(rs.getString(12));
 					btnCadastrar.setEnabled(true);
 					btnEditar.setEnabled(true);
 					btnExcluir.setEnabled(true);

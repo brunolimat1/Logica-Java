@@ -162,6 +162,7 @@ public class Usuarios extends JDialog {
 		getContentPane().add(lblNewLabel_3);
 
 		btnLimpar = new JButton("");
+		btnLimpar.setFocusPainted(false);
 		btnLimpar.setContentAreaFilled(false);
 		btnLimpar.setEnabled(false);
 		btnLimpar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/eraser.png")));
@@ -178,6 +179,7 @@ public class Usuarios extends JDialog {
 		getContentPane().add(txtSenha);
 
 		btnAdicionar = new JButton("");
+		btnAdicionar.setFocusPainted(false);
 		btnAdicionar.setContentAreaFilled(false);
 		btnAdicionar.setEnabled(false);
 		btnAdicionar.setIcon(new ImageIcon(Usuarios.class.getResource("/img/add.png")));
@@ -190,6 +192,7 @@ public class Usuarios extends JDialog {
 		getContentPane().add(btnAdicionar);
 
 		btnEditar = new JButton("");
+		btnEditar.setFocusPainted(false);
 		btnEditar.setContentAreaFilled(false);
 		btnEditar.setEnabled(false);
 		btnEditar.addActionListener(new ActionListener() {
@@ -202,6 +205,7 @@ public class Usuarios extends JDialog {
 		getContentPane().add(btnEditar);
 
 		btnExcluir = new JButton("");
+		btnExcluir.setFocusPainted(false);
 		btnExcluir.setContentAreaFilled(false);
 		btnExcluir.setEnabled(false);
 		btnExcluir.addActionListener(new ActionListener() {
