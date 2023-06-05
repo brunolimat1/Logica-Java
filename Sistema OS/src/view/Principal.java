@@ -155,8 +155,12 @@ public class Principal extends JFrame {
 		contentPane.add(btnClients);
 		
 		btnService = new JButton("");
-		btnService.setFocusPainted(false);
-		btnService.setEnabled(false);
+		btnService.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Servicos servicos = new Servicos();
+				servicos.setVisible(true);
+			}
+		});
 		btnService.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnService.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnService.setIcon(new ImageIcon(Principal.class.getResource("/img/maintence.png")));

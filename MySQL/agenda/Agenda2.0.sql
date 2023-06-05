@@ -20,7 +20,7 @@ create table usuarios (
 drop table clientes;
 
 create table clientes (
-	id int primary key auto_increment,
+	idcli int primary key auto_increment,
     nome varchar(50) not null,
     telefone varchar (15) not null,
 	cep varchar (50) not null,
@@ -54,3 +54,20 @@ update clientes set nome = 'ricardo' where id = 1;
 -- login(autenticação)
 select * from usuarios where login = "admin" and senha = md5('admin');
 
+drop table servicos;
+
+create table servicos (
+    os int primary key auto_increment,
+    data_os timestamp default current_timestamp,
+	equipamentos varchar (100) not null,
+    defeito varchar (150) not null,
+    valor decimal (10,2),
+    id int not null,
+    foreign key (id) references clientes(idcli)
+);
+
+select * from servicos
+inner join clientes
+on servicos.id = clientes.idcli;
+
+select * from servicos;

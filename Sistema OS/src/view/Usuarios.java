@@ -109,6 +109,7 @@ public class Usuarios extends JDialog {
 		getContentPane().add(lblNewLabel);
 
 		txtID = new JTextField();
+		txtID.setEditable(false);
 		txtID.setBounds(64, 35, 86, 20);
 		getContentPane().add(txtID);
 		txtID.setColumns(10);

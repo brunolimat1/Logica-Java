@@ -240,7 +240,6 @@ public class Clientes extends JDialog {
 		contentPanel.add(lblidCliente);
 
 		txtID = new JTextField();
-		txtID.setEnabled(false);
 		txtID.setEditable(false);
 		txtID.setColumns(10);
 		txtID.setBounds(35, 64, 64, 20);
