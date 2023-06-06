@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,6 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import model.DAO;
+import utils.Validador;
 
 public class Servicos extends JDialog {
 	DAO dao = new DAO();
@@ -91,7 +93,10 @@ public class Servicos extends JDialog {
 
 		txtOS = new JTextField();
 		txtOS.addKeyListener(new KeyAdapter() {
-
+			@Override
+			public void keyTyped(KeyEvent e) {
+				OnlyNumber(e);
+			}
 		});
 		txtOS.addMouseListener(new MouseAdapter() {
 
@@ -99,21 +104,33 @@ public class Servicos extends JDialog {
 		txtOS.setBounds(55, 36, 131, 20);
 		contentPanel.add(txtOS);
 		txtOS.setColumns(10);
+		txtOS.setDocument(new Validador(5));
 
 		txtEquipamentos = new JTextField();
 		txtEquipamentos.setColumns(10);
 		txtEquipamentos.setBounds(118, 151, 468, 20);
 		contentPanel.add(txtEquipamentos);
+		txtEquipamentos.setDocument(new Validador(150));
+	
 
 		txtDefeito = new JTextField();
 		txtDefeito.setColumns(10);
 		txtDefeito.setBounds(75, 205, 513, 20);
 		contentPanel.add(txtDefeito);
+		txtDefeito.setDocument(new Validador(100));
 
 		txtValor = new JTextField();
+		txtValor.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				OnlyNumber(e);
+				
+			}
+		});
 		txtValor.setColumns(10);
 		txtValor.setBounds(65, 269, 138, 20);
 		contentPanel.add(txtValor);
+		txtValor.setDocument(new Validador(100));
 
 		btnBuscar = new JButton("");
 		btnBuscar.setIcon(new ImageIcon(Servicos.class.getResource("/img/search.png")));
@@ -160,9 +177,17 @@ public class Servicos extends JDialog {
 		contentPanel.add(lblIdDoCliente);
 
 		txtID = new JTextField();
+		txtID.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				OnlyNumber(e);
+				
+			}
+		});
 		txtID.setColumns(10);
 		txtID.setBounds(448, 38, 138, 20);
 		contentPanel.add(txtID);
+		txtID.setDocument(new Validador(5));
 
 		btnLimpar = new JButton("");
 		btnLimpar.setIcon(new ImageIcon(Servicos.class.getResource("/img/eraser.png")));
@@ -175,8 +200,10 @@ public class Servicos extends JDialog {
 		contentPanel.add(btnLimpar);
 
 		txtData = new JFormattedTextField();
+		txtData.setEditable(false);
 		txtData.setBounds(65, 91, 138, 20);
 		contentPanel.add(txtData);
+		txtOS.setDocument(new Validador(100));
 	}
 
 	private void limparCampos() {
@@ -329,6 +356,13 @@ public class Servicos extends JDialog {
 				}
 			}
 		}
-
 	}
+	
+	public void OnlyNumber(KeyEvent e) {
+		char c = e.getKeyChar();
+		if(Character.isLetter(c)) {
+			e.consume();
+		}
+	}
+	
 }
