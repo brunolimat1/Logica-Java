@@ -6,17 +6,21 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -38,13 +42,17 @@ public class Servicos extends JDialog {
 	private JTextField txtEquipamentos;
 	private JTextField txtDefeito;
 	private JTextField txtValor;
-	private JTextField txtID;
+	private JTextField txtNome;
 	private JButton btnBuscar;
 	private JButton btnAdicionar;
 	private JButton btnEditar;
 	private JButton btnExcluir;
 	private JButton btnLimpar;
 	private JFormattedTextField txtData;
+	@SuppressWarnings("rawtypes")
+	private JList listID;
+	private JScrollPane scrollPane;
+	private JTextField txtID;
 
 	/**
 	 * Launch the application.
@@ -62,13 +70,36 @@ public class Servicos extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
+	@SuppressWarnings("rawtypes")
 	public Servicos() {
 		setTitle("Serviços");
 		setBounds(100, 100, 612, 452);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				scrollPane.setVisible(false);
+			}
+		});
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
+		
+				scrollPane = new JScrollPane();
+				scrollPane.setVisible(false);
+				scrollPane.setBorder(null);
+				scrollPane.setBounds(448, 44, 138, 64);
+				contentPanel.add(scrollPane);
+				
+				
+						listID = new JList();
+						scrollPane.setViewportView(listID);
+						listID.addMouseListener(new MouseAdapter() {
+							@Override
+							public void mouseClicked(MouseEvent e) {
+								buscarClienteLista();
+							}
+						});
 		{
 			JLabel lblNewLabel = new JLabel("OS:");
 			lblNewLabel.setBounds(27, 39, 24, 14);
@@ -92,6 +123,7 @@ public class Servicos extends JDialog {
 		contentPanel.add(lblValor);
 
 		txtOS = new JTextField();
+		txtOS.setEditable(false);
 		txtOS.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -104,33 +136,32 @@ public class Servicos extends JDialog {
 		txtOS.setBounds(55, 36, 131, 20);
 		contentPanel.add(txtOS);
 		txtOS.setColumns(10);
-		txtOS.setDocument(new Validador(5));
+		txtOS.setDocument(new Validador(10));
 
 		txtEquipamentos = new JTextField();
 		txtEquipamentos.setColumns(10);
 		txtEquipamentos.setBounds(118, 151, 468, 20);
 		contentPanel.add(txtEquipamentos);
-		txtEquipamentos.setDocument(new Validador(150));
-	
+		txtEquipamentos.setDocument(new Validador(60));
 
 		txtDefeito = new JTextField();
 		txtDefeito.setColumns(10);
 		txtDefeito.setBounds(75, 205, 513, 20);
 		contentPanel.add(txtDefeito);
-		txtDefeito.setDocument(new Validador(100));
+		txtDefeito.setDocument(new Validador(60));
 
 		txtValor = new JTextField();
 		txtValor.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				OnlyNumber(e);
-				
+
 			}
 		});
 		txtValor.setColumns(10);
 		txtValor.setBounds(65, 269, 138, 20);
 		contentPanel.add(txtValor);
-		txtValor.setDocument(new Validador(100));
+		txtValor.setDocument(new Validador(10));
 
 		btnBuscar = new JButton("");
 		btnBuscar.setIcon(new ImageIcon(Servicos.class.getResource("/img/search.png")));
@@ -172,22 +203,22 @@ public class Servicos extends JDialog {
 		btnExcluir.setBounds(337, 333, 64, 64);
 		contentPanel.add(btnExcluir);
 
-		JLabel lblIdDoCliente = new JLabel("ID do Cliente:");
-		lblIdDoCliente.setBounds(369, 41, 80, 14);
+		JLabel lblIdDoCliente = new JLabel("Cliente:");
+		lblIdDoCliente.setBounds(401, 26, 46, 14);
 		contentPanel.add(lblIdDoCliente);
 
-		txtID = new JTextField();
-		txtID.addKeyListener(new KeyAdapter() {
+		txtNome = new JTextField();
+		txtNome.addKeyListener(new KeyAdapter() {
+
 			@Override
-			public void keyTyped(KeyEvent e) {
-				OnlyNumber(e);
-				
+			public void keyReleased(KeyEvent e) {
+				listarClientes();
 			}
 		});
-		txtID.setColumns(10);
-		txtID.setBounds(448, 38, 138, 20);
-		contentPanel.add(txtID);
-		txtID.setDocument(new Validador(5));
+		txtNome.setColumns(10);
+		txtNome.setBounds(448, 23, 138, 20);
+		contentPanel.add(txtNome);
+		txtNome.setDocument(new Validador(20));
 
 		btnLimpar = new JButton("");
 		btnLimpar.setIcon(new ImageIcon(Servicos.class.getResource("/img/eraser.png")));
@@ -203,7 +234,24 @@ public class Servicos extends JDialog {
 		txtData.setEditable(false);
 		txtData.setBounds(65, 91, 138, 20);
 		contentPanel.add(txtData);
-		txtOS.setDocument(new Validador(100));
+		txtData.setDocument(new Validador(20));
+		
+		JLabel lblId = new JLabel("ID:");
+		lblId.setBounds(423, 51, 24, 14);
+		contentPanel.add(lblId);
+		
+		txtID = new JTextField();
+		txtID.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				OnlyNumber(e);
+
+			}
+		});
+		txtID.setEditable(false);
+		txtID.setColumns(10);
+		txtID.setBounds(448, 48, 64, 20);
+		contentPanel.add(txtID);
 	}
 
 	private void limparCampos() {
@@ -212,14 +260,92 @@ public class Servicos extends JDialog {
 		txtEquipamentos.setText(null);
 		txtDefeito.setText(null);
 		txtValor.setText(null);
+		txtNome.setText(null);
 		txtID.setText(null);
 	}
 
+	/**
+	 * Método usado para listar o nome dos usuários na lista
+	 */
+	@SuppressWarnings("unchecked")
+	private void listarClientes() {
+		// System.out.println("teste");
+		// a linha abaixo cria um objeto usando como referência um vetor dinâmico, este
+		// objeto irá temporariamente armazenar os nomes
+		DefaultListModel<String> modelo = new DefaultListModel<>();
+		// setar o modelo (vetor na lista)
+		listID.setModel(modelo);
+		// Query (instrução sql)
+		String readLista = "select * from clientes where nome like '" + txtNome.getText() + "%'" + "order by nome";
+		try {
+			// abrir a conexão
+			con = dao.conectar();
+			// preparar a query (instrução sql)
+			pst = con.prepareStatement(readLista);
+			// executar a query e trazer o resultado para lista
+			rs = pst.executeQuery();
+			// uso do while para trazer os usuários enquanto existir
+			while (rs.next()) {
+				// mostrar a barra de rolagem (scrollpane)
+				scrollPane.setVisible(true);
+				// adicionar os usuarios no vetor -> lista
+				modelo.addElement(rs.getString(2));
+				// esconder o scrollpane se nenhuma letra for digitada
+				if (txtNome.getText().isEmpty()) {
+					scrollPane.setVisible(false);
+				}
+			}
+			// fechar a conexão
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	/**
+	 * Método que busca o usuário selecionado da lista
+	 */
+	private void buscarClienteLista() {
+		// System.out.println("teste");
+		// variável que captura o índice da linha da lista
+		int linha = listID.getSelectedIndex();
+		if (linha >= 0) {
+			// Query (instrução sql)
+			// limit (0,1) -> seleciona o índice 0 e 1 usuário da lista
+			String readListaCliente = "select * from clientes where idcli like '" + txtID.getText() + "%'"
+					+ "order by idcli limit " + (linha) + " , 1";
+			try {
+				// abrir a conexão
+				con = dao.conectar();
+				// preparar a query para execução
+				pst = con.prepareStatement(readListaCliente);
+				// executar e obter o resultado
+				rs = pst.executeQuery();
+				if (rs.next()) {
+					// esconder a lista
+					scrollPane.setVisible(false);
+					// setar os campos
+					txtNome.setText(rs.getString(2));
+					txtID.setText(rs.getString(1));
+				} else {
+					JOptionPane.showMessageDialog(null, "ID inexistente");
+				}
+				// fechar a conexão
+				con.close();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		} else {
+			// se não existir no banco um usuário da lista
+			scrollPane.setVisible(false);
+		}
+	}
+
 	private void adicionar() {
-		if (txtID.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha o ID!");
-			txtID.requestFocus();
-		} else if (txtEquipamentos.getText().isEmpty()) {
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Escolha o Cliente");
+			txtNome.requestFocus();
+		}else if (txtEquipamentos.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha os Equipamentos!");
 			txtEquipamentos.requestFocus();
 		} else if (txtDefeito.getText().isEmpty()) {
@@ -249,35 +375,34 @@ public class Servicos extends JDialog {
 	}// fim do método adicionar
 
 	private void buscar() {
-		if (txtOS.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha a OS!");
-			txtOS.requestFocus();
-		} else {
-			String read = "select * from servicos where OS = ?";
-			try {
-				con = dao.conectar();
-				pst = con.prepareStatement(read);
-				pst.setString(1, txtOS.getText());
-				rs = pst.executeQuery();
-				if (rs.next()) {
-					txtOS.setText(rs.getString(1));
-					txtData.setText(rs.getString(2));
-					txtEquipamentos.setText(rs.getString(3));
-					txtDefeito.setText(rs.getString(4));
-					txtValor.setText(rs.getString(5));
-					txtID.setText(rs.getString(6));
-				} else {
-					JOptionPane.showMessageDialog(null, "OS não cadastrada!");
-				}
-				con.close();
-			} catch (Exception e) {
-				System.out.println(e);
+		String OS = JOptionPane.showInputDialog(null, "Digite o OS para buscar!");
+		try {
+		String read = "select * from servicos where OS = ?";
+			con = dao.conectar();
+			pst = con.prepareStatement(read);
+			pst.setString(1, OS);
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				txtOS.setText(rs.getString(1));
+				txtData.setText(rs.getString(2));
+				txtEquipamentos.setText(rs.getString(3));
+				txtDefeito.setText(rs.getString(4));
+				txtValor.setText(rs.getString(5));
+			} else {
+				JOptionPane.showMessageDialog(null, "OS não cadastrada!");
 			}
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
 		}
+
 	}// fim do método buscar
 
 	private void editar() {
-		if (txtOS.getText().isEmpty()) {
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Escolha o Cliente");
+			txtNome.requestFocus();
+		} else if (txtOS.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha a OS!");
 			txtOS.requestFocus();
 		} else if (txtData.getText().equals("  /  /    ")) {
@@ -314,7 +439,10 @@ public class Servicos extends JDialog {
 	}
 
 	private void excluir() {
-		if (txtOS.getText().isEmpty()) {
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Escolha o Cliente");
+			txtNome.requestFocus();
+		} else if (txtOS.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha a OS!");
 			txtOS.requestFocus();
 		} else if (txtData.getText().equals("  /  /    ")) {
@@ -334,7 +462,7 @@ public class Servicos extends JDialog {
 					JOptionPane.YES_NO_OPTION);
 			if (confirma == JOptionPane.YES_OPTION) {
 				// CRUD - Delete
-				String delete = "delete from servicos where id=?";
+				String delete = "delete from servicos where OS=?";
 				// tratamento de exceções
 				try {
 					// abrir a conexão
@@ -342,7 +470,7 @@ public class Servicos extends JDialog {
 					// preparar a query (instrução sql)
 					pst = con.prepareStatement(delete);
 					// substituir a ? pelo id do contato
-					pst.setString(1, txtID.getText());
+					pst.setString(1, txtOS.getText());
 					// executar a query
 					pst.executeUpdate();
 					// limpar campos
@@ -357,12 +485,11 @@ public class Servicos extends JDialog {
 			}
 		}
 	}
-	
+
 	public void OnlyNumber(KeyEvent e) {
 		char c = e.getKeyChar();
-		if(Character.isLetter(c)) {
+		if (Character.isLetter(c)) {
 			e.consume();
 		}
 	}
-	
 }

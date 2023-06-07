@@ -466,7 +466,7 @@ public class Clientes extends JDialog {
 					JOptionPane.YES_NO_OPTION);
 			if (confirma == JOptionPane.YES_OPTION) {
 				// CRUD - Delete
-				String delete = "delete from clientes where id=?";
+				String delete = "delete from clientes where idcli=?";
 				// tratamento de exceções
 				try {
 					// abrir a conexão
@@ -480,9 +480,12 @@ public class Clientes extends JDialog {
 					// limpar campos
 					limpar();
 					// exibir uma mensagem ao usuário
-					JOptionPane.showMessageDialog(null, "Cliente Excluído!");
 					// fechar a conexão
 					con.close();
+					JOptionPane.showMessageDialog(null, "Cliente Excluído!");
+				} catch (java.sql.SQLIntegrityConstraintViolationException se) {
+					JOptionPane.showInternalMessageDialog(null, "Este Cliente tem um Serviço OS pendente!");
+					System.out.println(se);
 				} catch (Exception e) {
 					System.out.println(e);
 				}
