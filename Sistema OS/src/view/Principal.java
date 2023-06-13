@@ -127,7 +127,6 @@ public class Principal extends JFrame {
 		
 		btnRelatorio = new JButton("");
 		btnRelatorio.setFocusPainted(false);
-		btnRelatorio.setEnabled(false);
 		btnRelatorio.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnRelatorio.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnRelatorio.addActionListener(new ActionListener() {

@@ -14,15 +14,10 @@ public class ClienteController {
 
 	@Autowired
 	private ClienteRepository clienteRepo;
-	
+
 	@GetMapping("/clientes/listar")
-	public List<Cliente> listar(){
+	public List<Cliente> listar() {
 		return clienteRepo.findAll();
 	}
-	
-	@GetMapping("OlaMundo")
-	public String index() {
-		return "Olá, Mundo";
-	}
-	
+
 }
