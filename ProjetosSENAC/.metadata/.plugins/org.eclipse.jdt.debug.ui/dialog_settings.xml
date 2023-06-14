@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Agenda de contatos/src&amp;lt;view{Agenda.java[Agenda&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Desafios/src&amp;lt;view{ContaBancaria.java[ContaBancaria&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Logica/src&amp;lt;br.com.logica.desvioif{JanelaMedia.java[JanelaMedia&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=Estruturas/src&amp;lt;br.com.estruturas.funcoes{AplicarFuncao.java[AplicarFuncao&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="508"/>
+			<item key="DIALOG_Y_ORIGIN" value="105"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+	<section name="expressionHistory">
+	</section>
+</section>

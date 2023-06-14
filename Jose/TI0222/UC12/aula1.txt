@@ -1,0 +1,109 @@
+Busca automática de CEP
+Material de apoio:
+https://github.com/professorjosedeassis/cep
+
+AC
+AL
+AP
+AM
+BA
+CE
+DF
+ES
+GO
+MA
+MT
+MS
+MG
+PA
+PB
+PR
+PE
+PI
+RJ
+RN
+RS
+RO
+RR
+SC
+SP
+SE
+TO
+
+___________________________________________________________________________
+
+/**
+ * buscarCep
+ */
+private void buscarCep() {
+	String logradouro = "";
+	String tipoLogradouro = "";
+	String resultado = null;
+	String cep = txtCep.getText();
+	try {
+		URL url = new URL("http://cep.republicavirtual.com.br/web_cep.php?cep=" + cep + "&formato=xml");
+		SAXReader xml = new SAXReader();
+		Document documento = xml.read(url);
+		Element root = documento.getRootElement();
+		for (Iterator<Element> it = root.elementIterator(); it.hasNext();) {
+			Element element = it.next();
+			if (element.getQualifiedName().equals("cidade")) {
+				txtCidade.setText(element.getText());
+			}
+			if (element.getQualifiedName().equals("bairro")) {
+				txtBairro.setText(element.getText());
+			}
+			if (element.getQualifiedName().equals("uf")) {
+				cboUf.setSelectedItem(element.getText());
+			}
+			if (element.getQualifiedName().equals("tipo_logradouro")) {
+				txtLogradouro = element.getText();
+			}
+			if (element.getQualifiedName().equals("logradouro")) {
+				logradouro = element.getText();
+			}
+			if (element.getQualifiedName().equals("resultado")) {
+				resultado = element.getText();
+				if (resultado.equals("1")) {
+					lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/check.png")));
+					} else {
+						JOptionPane.showMessageDialog(null, "CEP não encontrado");
+					}
+				}
+			}
+			txtEndereco.setText(tipoLogradouro + " " + logradouro);
+	} catch (Exception e) {
+			System.out.println(e);
+	}
+}
+
+___________________________________________________________________
+
+Atividade de avaliação - sistema OS - tela de clientes
+- No banco de dados refazer a tabela de clientes acrescentando os 
+  campos de endereço
+- Desenvolver a busca automática de endereço pelo CEP
+- Refazer os métodos do CRUD adicionando os campos do endereço
+- Fazer validações
+
+___________________________________________________________________
+/*** Trabalhando com JComboBox ***/
+- Uso do combobox (Exemplo: UF - Tela de clientes)
+
+  //validar um combobox(preenchimento obrigatório)
+  if(cboUf.getSelectedItem().equals(""))
+
+  //limpar um combobox
+  cboUf.setSelectedItem("");
+
+  //obter o valor de um combobox (gravar no banco)
+  cboUf.getSelectedItem().toString()
+
+  //setar um combobox (obter do banco e mostrar no combobox)
+  cboUf.setSelectedItem(rs.getString(5))  //(5) -> "exemplo"
+
+
+
+
+
+

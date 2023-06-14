@@ -1,0 +1,35 @@
+Planejamento
+UC 10 - Banco de dados (18 aulas)
+- servidor
+- crud
+- sistemas
+
+UC 12 - Desenvolvimento de sistemas para comércio de bens e serviços (Java - MySQL)
+
+UC 11 - Testes, metodologias, documentação
+
+_____________________________________________
+UC-10
+
+Material de apoio:
+https://github.com/professorjosedeassis/mysql
+
+Ambiente de desenvolvimento:
+- Servidor MySQL
+- Workbench
+
+______________________________________________
+Projeto agenda de contatos
+id (chave primária PK)
+Nome (obrigatório)
+Fone (obrigatório)
+E-mail 
+
+
+
+
+
+
+
+
+ 

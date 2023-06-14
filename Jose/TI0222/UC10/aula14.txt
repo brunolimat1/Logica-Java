@@ -1,0 +1,38 @@
+Validações
+- Testes
+- Correções de BUGs
+- UX
+
+* Ferramentas
+- Validação de campos obrigatórios (if else)
+- Limitar número máximo de caracteres (PlainDocument)
+- Permitir determinados caracteres (Key typed)
+- Botões (desativar / ativar)
+
+______________________________________________________
+Atividade de avaliação - Sistema OS
+
+Validar a tela de usuários do sistema OS
+- campos com preenchimento obrigatório
+- limite de caracteres
+- validação de botões
+- Ícones e acessibilidade nos botões
+
+
+// validação (login duplicado)
+// tratamento de exceção em caso de duplicação do login
+try {
+...
+	} catch (java.sql.SQLIntegrityConstraintViolationException e1) {
+		JOptionPane.showMessageDialog(null, "Usuário não adicionado.\nEste login já está sendo utilizado.");
+		txtLogin.setText(null);
+		txtLogin.requestFocus();
+	} catch (Exception e2) {
+		System.out.println(e2);
+}
+
+
+
+
+
+

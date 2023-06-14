@@ -1,0 +1,8 @@
+CRUD - Update (Agenda de contatos)
+
+______________________________________
+Atividade de avaliação (sistema OS)
+
+CRUD - Update (tela de usuários)
+- validar campos obrigatórios
+- botão editar novo usuário

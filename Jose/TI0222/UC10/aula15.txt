@@ -1,0 +1,13 @@
+Autenticação de usuários (tela de login)
+
+//Captura segura de senhas
+
+capturaSenha.length() == 0
+String capturaSenha = new String(txtSenha.getPassword());
+pst.setString(3, capturaSenha);
+
+Atividade:
+Na tela de login:
+- Criar um rodapé com um ícone que represente o status de conexão com o banco
+- Associar o enter ao botão acessar
+- Personalizar (ícones, logo cliente etc)

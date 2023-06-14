@@ -1,0 +1,68 @@
+/**
+	 * Método para buscar um contato pelo nome
+	 */
+	private void buscar() {
+		//dica - testar o evento primeiro
+		//System.out.println("teste do botão buscar");
+		
+		// Criar uma variável com a query (instrução do banco)
+		String read = "select * from contatos where nome = ?";
+		//tratamento de exceções
+		try {
+			//abrir a conexão
+			con = dao.conectar();
+			//preparar a execução da query(instrução sql - CRUD Read)
+			// O parâmetro 1 substitui a ? pelo conteúdo da caixa de texto
+			pst = con.prepareStatement(read);
+			pst.setString(1, txtNome.getText());
+			// executar a query e buscar o resultado
+			rs = pst.executeQuery();
+			// uso da estrura if else para verificar se existe o contato
+			// rs.next() -> se existir um contato no banco
+			if (rs.next()) {
+				//preencher as caixas de texto com as informações
+				txtID.setText(rs.getString(1)); //1º campo da tabela ID
+				txtFone.setText(rs.getString(3)); //3º campo (Fone)
+				txtEmail.setText(rs.getString(4)); //4º campo (Email)
+			} else {
+				//se não existir um contato no banco
+				System.out.println("Contato não cadastrado");
+			}
+			// fechar a conexão (IMPORTANTE!)
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+
+
+______________________________________________________________________________
+
+/**
+	 * Método responsável por setar a data no rodapé
+	 */
+	private void setarData() {
+		// criar objeto para trazer a data do sistema
+		Date data = new Date();
+		// criar objeto para formatar a data
+		DateFormat formatador = DateFormat.getDateInstance(DateFormat.FULL);
+		// alterar o texto da label pela data atual formatada
+		lblData.setText(formatador.format(data));
+	}
+
+//definir caracteres permitidos na caixa de texto
+public void keyTyped(KeyEvent e) {
+				// digitação...
+				// definir caracteres permitidos
+				String caracteres = "0123456789.";
+				// se for digitado algum caractere não permitido
+				if (!caracteres.contains(e.getKeyChar() + "")) {
+					// ignorar
+					e.consume();
+				}
+			}
+
+
+
+

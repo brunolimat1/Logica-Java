@@ -1,0 +1,637 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Iterator;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
+
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+import model.DAO;
+
+public class Clientes extends JDialog {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	DAO dao = new DAO();
+	private Connection con;
+	private PreparedStatement pst;
+	private ResultSet rs;
+
+	private JTextField txtNome;
+	private JTextField txtEndereco;
+	private JFormattedTextField txtTelefone;
+	private JFormattedTextField txtCep;
+	private JButton btnCadastrar;
+	private JButton btnLimpar;
+	private JButton btnExcluir;
+	private JButton btnEditar;
+	private JTextField txtID;
+	private JTextField txtComplemento;
+	private JLabel lblNmero;
+	private JLabel lblBairro;
+	private JTextField txtBairro;
+	private JLabel lblCidade;
+	private JTextField txtCidade;
+	private JLabel lblUF;
+	private JComboBox<?> cboUf;
+	private JTextField txtNumero;
+	private JScrollPane scrollPane_1;
+	@SuppressWarnings("rawtypes")
+	private JList listClientes;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Clientes dialog = new Clientes();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public Clientes() {
+		setTitle("Clientes");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Clientes.class.getResource("/img/clientes.png")));
+		getContentPane().addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// clicar no painel do JDialog
+				scrollPane_1.setVisible(false);
+			}
+		});
+		setBounds(100, 100, 760, 500);
+
+		JPanel contentPanel = new JPanel();
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+
+		scrollPane_1 = new JScrollPane();
+		scrollPane_1.setVisible(false);
+		scrollPane_1.setBorder(null);
+		scrollPane_1.setBounds(60, 120, 674, 82);
+		contentPanel.add(scrollPane_1);
+
+		listClientes = new JList();
+		listClientes.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				buscarClienteLista();
+			}
+		});
+		listClientes.setBorder(null);
+		scrollPane_1.setViewportView(listClientes);
+
+		JLabel lblNewLabel = new JLabel("Cadastro de Clientes");
+		lblNewLabel.setBounds(289, 11, 151, 19);
+		lblNewLabel.setFont(new Font("Swis721 Lt BT", Font.BOLD, 15));
+		contentPanel.add(lblNewLabel);
+
+		JLabel lblNome = new JLabel("Nome:");
+		lblNome.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblNome.setBounds(10, 102, 50, 19);
+		contentPanel.add(lblNome);
+
+		txtNome = new JTextField();
+		txtNome.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				listarClientes();
+			}
+		});
+		txtNome.setBounds(60, 103, 674, 20);
+		contentPanel.add(txtNome);
+		txtNome.setColumns(10);
+
+		JLabel lblTelefone = new JLabel("Telefone:");
+		lblTelefone.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblTelefone.setBounds(10, 139, 64, 19);
+		contentPanel.add(lblTelefone);
+
+		JLabel lblCep = new JLabel("CEP:");
+		lblCep.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblCep.setBounds(298, 138, 38, 19);
+		contentPanel.add(lblCep);
+
+		JLabel lblEndereco = new JLabel("Endereço:");
+		lblEndereco.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblEndereco.setBounds(10, 180, 74, 19);
+		contentPanel.add(lblEndereco);
+
+		txtEndereco = new JTextField();
+		txtEndereco.setColumns(10);
+		txtEndereco.setBounds(84, 181, 428, 20);
+		contentPanel.add(txtEndereco);
+
+		btnCadastrar = new JButton("");
+		btnCadastrar.setFocusPainted(false);
+		btnCadastrar.setIcon(new ImageIcon(Clientes.class.getResource("/img/add.png")));
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cadastrar();
+			}
+		});
+
+		btnLimpar = new JButton("");
+		btnLimpar.setFocusPainted(false);
+		btnLimpar.setEnabled(false);
+		btnLimpar.setIcon(new ImageIcon(Clientes.class.getResource("/img/eraser.png")));
+		btnLimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				limpar();
+			}
+		});
+		btnLimpar.setBounds(10, 386, 64, 64);
+		contentPanel.add(btnLimpar);
+		btnCadastrar.setBounds(10, 304, 64, 64);
+		contentPanel.add(btnCadastrar);
+		getRootPane().setDefaultButton(btnCadastrar);
+
+		MaskFormatter tel = null;
+		try {
+			tel = new MaskFormatter("(##) #####.####");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		txtTelefone = new JFormattedTextField(tel);
+		txtTelefone.setBounds(84, 140, 204, 19);
+		contentPanel.add(txtTelefone);
+
+		MaskFormatter cep = null;
+		try {
+			cep = new MaskFormatter("#####-###");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		txtCep = new JFormattedTextField(cep);
+		txtCep.setBounds(337, 139, 204, 19);
+		contentPanel.add(txtCep);
+
+		btnEditar = new JButton("");
+		btnEditar.setFocusPainted(false);
+		btnEditar.setIcon(new ImageIcon(Clientes.class.getResource("/img/edit.png")));
+		btnEditar.setEnabled(false);
+		btnEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				editar();
+			}
+		});
+		btnEditar.setBounds(670, 304, 64, 64);
+		contentPanel.add(btnEditar);
+
+		btnExcluir = new JButton("");
+		btnExcluir.setFocusPainted(false);
+		btnExcluir.setIcon(new ImageIcon(Clientes.class.getResource("/img/trash.png")));
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				excluir();
+			}
+		});
+		btnExcluir.setEnabled(false);
+		btnExcluir.setBounds(670, 386, 64, 64);
+		contentPanel.add(btnExcluir);
+
+		JLabel lblidCliente = new JLabel("ID:");
+		lblidCliente.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblidCliente.setBounds(10, 63, 50, 19);
+		contentPanel.add(lblidCliente);
+
+		txtID = new JTextField();
+		txtID.setEditable(false);
+		txtID.setColumns(10);
+		txtID.setBounds(35, 64, 64, 20);
+		contentPanel.add(txtID);
+
+		JLabel lblComplemento = new JLabel("Complemento:");
+		lblComplemento.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblComplemento.setBounds(10, 221, 102, 19);
+		contentPanel.add(lblComplemento);
+
+		txtComplemento = new JTextField();
+		txtComplemento.setColumns(10);
+		txtComplemento.setBounds(111, 222, 270, 20);
+		contentPanel.add(txtComplemento);
+
+		lblNmero = new JLabel("Número:");
+		lblNmero.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblNmero.setBounds(535, 180, 74, 19);
+		contentPanel.add(lblNmero);
+
+		lblBairro = new JLabel("Bairro:");
+		lblBairro.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblBairro.setBounds(391, 221, 74, 19);
+		contentPanel.add(lblBairro);
+
+		txtBairro = new JTextField();
+		txtBairro.setColumns(10);
+		txtBairro.setBounds(445, 220, 289, 20);
+		contentPanel.add(txtBairro);
+
+		lblCidade = new JLabel("Cidade:");
+		lblCidade.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblCidade.setBounds(10, 260, 102, 19);
+		contentPanel.add(lblCidade);
+
+		txtCidade = new JTextField();
+		txtCidade.setColumns(10);
+		txtCidade.setBounds(67, 261, 314, 20);
+		contentPanel.add(txtCidade);
+
+		lblUF = new JLabel("UF:");
+		lblUF.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+		lblUF.setBounds(402, 262, 38, 19);
+		contentPanel.add(lblUF);
+
+		cboUf = new JComboBox();
+		cboUf.setModel(new DefaultComboBoxModel(
+				new String[] { "", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA",
+						"PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+		cboUf.setFont(new Font("Swis721 Lt BT", Font.BOLD, 15));
+		cboUf.setBounds(444, 257, 290, 25);
+		contentPanel.add(cboUf);
+
+		JButton btnBuscarCep = new JButton("Buscar CEP");
+		btnBuscarCep.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				buscarCep();
+			}
+		});
+		btnBuscarCep.setBounds(551, 134, 102, 28);
+		contentPanel.add(btnBuscarCep);
+
+		txtNumero = new JTextField();
+		txtNumero.setColumns(10);
+		txtNumero.setBounds(599, 181, 135, 20);
+		contentPanel.add(txtNumero);
+
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(Clientes.class.getResource("/img/clientes.png")));
+		lblNewLabel_1.setFont(new Font("Swis721 Lt BT", Font.BOLD, 15));
+		lblNewLabel_1.setBounds(300, 322, 128, 128);
+		contentPanel.add(lblNewLabel_1);
+
+	}// FIM DO CONSTRUTOR
+
+	private void limpar() {
+		txtID.setText(null);
+		txtNome.setText(null);
+		txtTelefone.setText(null);
+		txtCep.setText(null);
+		txtEndereco.setText(null);
+		txtNumero.setText(null);
+		txtComplemento.setText(null);
+		txtBairro.setText(null);
+		txtCidade.setText(null);
+		cboUf.setSelectedItem(null);
+		btnEditar.setEnabled(false);
+		btnExcluir.setEnabled(false);
+		btnLimpar.setEnabled(false);
+	}
+
+	private void cadastrar() {
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente!");
+			txtNome.requestFocus();
+		} else if (txtTelefone.getText().equals("(  )      .    ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o Telefone do Cliente!");
+			txtTelefone.requestFocus();
+		} else if (txtCep.getText().equals("     -   ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
+			txtCep.requestFocus();
+		} else if (txtEndereco.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Endereço do Cliente!");
+			txtEndereco.requestFocus();
+		} else if (txtNumero.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Número de Residência do Cliente!");
+			txtNumero.requestFocus();
+		} else if (txtBairro.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Bairro do Cliente!");
+			txtBairro.requestFocus();
+		} else if (txtCidade.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha a Cidade do Cliente!");
+			txtCidade.requestFocus();
+		} else if (cboUf.getSelectedItem().equals("")) {
+			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
+			cboUf.requestFocus();
+		} else {
+			String create = "insert into clientes (nome, telefone, cep, endereco, numero, complemento, bairro, cidade, uf) values (?,?,?,?,?,?,?,?,?)";
+			try {
+				con = dao.conectar();
+				pst = con.prepareStatement(create);
+				pst.setString(1, txtNome.getText());
+				pst.setString(2, txtTelefone.getText());
+				pst.setString(3, txtCep.getText());
+				pst.setString(4, txtEndereco.getText());
+				pst.setString(5, txtNumero.getText());
+				pst.setString(6, txtComplemento.getText());
+				pst.setString(7, txtBairro.getText());
+				pst.setString(8, txtCidade.getText());
+				pst.setString(9, cboUf.getSelectedItem().toString());
+				pst.executeUpdate();
+				JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
+				limpar();
+				con.close();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+	}
+
+	private void editar() {
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente!");
+			txtNome.requestFocus();
+		} else if (txtTelefone.getText().equals("(  )      .    ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o Telefone do Cliente!");
+			txtTelefone.requestFocus();
+		} else if (txtCep.getText().equals("     -   ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
+			txtCep.requestFocus();
+		} else if (txtEndereco.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Endereço do Cliente!");
+			txtEndereco.requestFocus();
+		} else if (txtNumero.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Número de Residência do Cliente!");
+			txtNumero.requestFocus();
+		} else if (txtComplemento.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Complemento da Residência do Cliente!");
+			txtComplemento.requestFocus();
+		} else if (txtBairro.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Bairro do Cliente!");
+			txtBairro.requestFocus();
+		} else if (txtCidade.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha a Cidade do Cliente!");
+			txtCidade.requestFocus();
+		} else if (cboUf.getSelectedItem().equals("")) {
+			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
+			cboUf.requestFocus();
+		} else {
+			String update = "update clientes set nome=?,telefone=?,cep=?,endereco=?,numero=?,complemento=?,bairro=?,cidade=?,uf=?,equipamento=?,problema=? where id=?";
+			try {
+				con = dao.conectar();
+				pst = con.prepareStatement(update);
+				pst.setString(12, txtID.getText());
+				pst.setString(1, txtNome.getText());
+				pst.setString(2, txtTelefone.getText());
+				pst.setString(3, txtCep.getText());
+				pst.setString(4, txtEndereco.getText());
+				pst.setString(5, txtNumero.getText());
+				pst.setString(6, txtComplemento.getText());
+				pst.setString(7, txtBairro.getText());
+				pst.setString(8, txtCidade.getText());
+				pst.setString(9, cboUf.getSelectedItem().toString());
+				pst.executeUpdate();
+				JOptionPane.showMessageDialog(null, "Dados do Cliente Editados com Sucesso.");
+				limpar();
+				con.close();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+	}
+
+	private void excluir() {
+		if (txtNome.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Nome do Cliente!");
+			txtNome.requestFocus();
+		} else if (txtTelefone.getText().equals("(  )      .    ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o Telefone do Cliente!");
+			txtTelefone.requestFocus();
+		} else if (txtCep.getText().equals("     -   ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
+			txtCep.requestFocus();
+		} else if (txtEndereco.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Endereço do Cliente!");
+			txtEndereco.requestFocus();
+		} else if (txtNumero.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Número de Residência do Cliente!");
+			txtNumero.requestFocus();
+		} else if (txtComplemento.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Complemento da Residência do Cliente!");
+			txtComplemento.requestFocus();
+		} else if (txtBairro.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha o Bairro do Cliente!");
+			txtBairro.requestFocus();
+		} else if (txtCidade.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha a Cidade do Cliente!");
+			txtCidade.requestFocus();
+		} else if (cboUf.getSelectedItem().equals("")) {
+			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
+			cboUf.requestFocus();
+		} else {
+			int confirma = JOptionPane.showConfirmDialog(null, "Confirma a exclusão deste usuário?", "Atenção!",
+					JOptionPane.YES_NO_OPTION);
+			if (confirma == JOptionPane.YES_OPTION) {
+				try {
+
+				} catch (java.sql.SQLIntegrityConstraintViolationException se) {
+					JOptionPane.showMessageDialog(null, "Este Cliente tem um Serviço OS pendente!");
+					System.out.println(se);
+					// CRUD - Delete
+					String delete = "delete from clientes where idcli=?";
+					// tratamento de exceções
+					try {
+						// abrir a conexão
+						con = dao.conectar();
+						// preparar a query (instrução sql)
+						pst = con.prepareStatement(delete);
+						// substituir a ? pelo id do contato
+						pst.setString(1, txtID.getText());
+						// executar a query
+						pst.executeUpdate();
+						// limpar campos
+						limpar();
+						// exibir uma mensagem ao usuário
+						JOptionPane.showMessageDialog(null, "Cliente Excluído!");
+						// fechar a conexão
+						con.close();
+					} catch (Exception e) {
+						System.out.println(e);
+					}
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * Método usado para listar o nome dos usuários na lista
+	 */
+	@SuppressWarnings("unchecked")
+	private void listarClientes() {
+		// System.out.println("teste");
+		// a linha abaixo cria um objeto usando como referência um vetor dinâmico, este
+		// objeto irá temporariamente armazenar os nomes
+		DefaultListModel<String> modelo = new DefaultListModel<>();
+		// setar o modelo (vetor na lista)
+		listClientes.setModel(modelo);
+		// Query (instrução sql)
+		String readLista = "select * from clientes where nome like '" + txtNome.getText() + "%'" + "order by nome";
+		try {
+			// abrir a conexão
+			con = dao.conectar();
+			// preparar a query (instrução sql)
+			pst = con.prepareStatement(readLista);
+			// executar a query e trazer o resultado para lista
+			rs = pst.executeQuery();
+			// uso do while para trazer os usuários enquanto existir
+			while (rs.next()) {
+				// mostrar a barra de rolagem (scrollpane)
+				scrollPane_1.setVisible(true);
+				// adicionar os usuarios no vetor -> lista
+				modelo.addElement(rs.getString(2));
+				// esconder o scrollpane se nenhuma letra for digitada
+				if (txtNome.getText().isEmpty()) {
+					scrollPane_1.setVisible(false);
+				}
+			}
+			// fechar a conexão
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	/**
+	 * Método que busca o usuário selecionado da lista
+	 */
+	private void buscarClienteLista() {
+		// System.out.println("teste");
+		// variável que captura o índice da linha da lista
+		int linha = listClientes.getSelectedIndex();
+		if (linha >= 0) {
+			// Query (instrução sql)
+			// limit (0,1) -> seleciona o índice 0 e 1 usuário da lista
+			String readListaCliente = "select * from clientes where nome like '" + txtNome.getText() + "%'"
+					+ "order by nome limit " + (linha) + " , 1";
+			try {
+				// abrir a conexão
+				con = dao.conectar();
+				// preparar a query para execução
+				pst = con.prepareStatement(readListaCliente);
+				// executar e obter o resultado
+				rs = pst.executeQuery();
+				if (rs.next()) {
+					// esconder a lista
+					scrollPane_1.setVisible(false);
+					// setar os campos
+					txtID.setText(rs.getString(1));
+					txtNome.setText(rs.getString(2));
+					txtTelefone.setText(rs.getString(3));
+					txtCep.setText(rs.getString(4));
+					txtEndereco.setText(rs.getString(5));
+					txtNumero.setText(rs.getString(6));
+					txtComplemento.setText(rs.getString(7));
+					txtBairro.setText(rs.getString(8));
+					txtCidade.setText(rs.getString(9));
+					cboUf.setSelectedItem(rs.getString(10));
+					btnCadastrar.setEnabled(true);
+					btnEditar.setEnabled(true);
+					btnExcluir.setEnabled(true);
+					btnLimpar.setEnabled(true);
+				} else {
+					JOptionPane.showMessageDialog(null, "Usuário inexistente");
+				}
+				// fechar a conexão
+				con.close();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		} else {
+			// se não existir no banco um usuário da lista
+			scrollPane_1.setVisible(false);
+		}
+	}
+
+	/**
+	 * buscarCep
+	 */
+	private void buscarCep() {
+		if (txtCep.getText().equals("     -   ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
+			txtCep.requestFocus();
+		} else {
+			String logradouro = "";
+			String tipoLogradouro = "";
+			String resultado = null;
+			String cep = txtCep.getText();
+			try {
+				URL url = new URL("http://cep.republicavirtual.com.br/web_cep.php?cep=" + cep + "&formato=xml");
+				SAXReader xml = new SAXReader();
+				Document documento = xml.read(url);
+				Element root = documento.getRootElement();
+				for (Iterator<Element> it = root.elementIterator(); it.hasNext();) {
+					Element element = it.next();
+					if (element.getQualifiedName().equals("cidade")) {
+						txtCidade.setText(element.getText());
+					}
+					if (element.getQualifiedName().equals("bairro")) {
+						txtBairro.setText(element.getText());
+					}
+					if (element.getQualifiedName().equals("uf")) {
+						cboUf.setSelectedItem(element.getText());
+					}
+					if (element.getQualifiedName().equals("logradouro")) {
+						logradouro = element.getText();
+					}
+					if (element.getQualifiedName().equals("resultado")) {
+						resultado = element.getText();
+						if (resultado.equals("1")) {
+						} else {
+							JOptionPane.showMessageDialog(null, "CEP não encontrado");
+						}
+					}
+
+				}
+				txtEndereco.setText(tipoLogradouro + " " + logradouro);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+
+		}
+	}
+}
+// FIM DO CÓDIGO

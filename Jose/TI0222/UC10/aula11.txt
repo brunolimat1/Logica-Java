@@ -1,0 +1,22 @@
+Introdução à POO
+material de apoio:
+https://professorjosedeassis.github.io/javaSE/
+
+Herança
+
+Atividade POO exercício 1 - slide 66
+
+________________________________________________
+
+CRUD - Delete
+
+Validações (Número máximo de caracteres na caixa de texto)
+ 
+______________________________________
+Atividade de avaliação (sistema OS)
+
+CRUD - Delete (tela de usuários)
+- botão excluir usuário
+
+Validação:
+- validar número máximo de caracteres nas caixas de texto

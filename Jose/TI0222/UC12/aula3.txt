@@ -1,0 +1,4 @@
+Atividade de avaliação
+- Desenvolver a busca avançada(estilo google) na tela de clientes
+(eliminar o botão de busca)
+- Fazer validações

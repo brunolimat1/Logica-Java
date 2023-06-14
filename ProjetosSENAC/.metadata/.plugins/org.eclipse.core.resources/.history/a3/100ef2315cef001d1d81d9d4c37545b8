@@ -1,0 +1,258 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
+
+public class Cadastro extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtNome;
+	private JTextField txtEmail;
+	private JTextField txtFone;
+	private JTextField txtValor;
+	private JTextField txtTecnico;
+	private JTextField txtSolução;
+	private JComboBox comboBox;
+	private JTextArea txtAreaProblema;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Cadastro frame = new Cadastro();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public Cadastro() {
+		setTitle("Ordem de Serviços");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 481, 707);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		JLabel lblNewLabel = new JLabel("Cadastro de Clientes");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel.setBounds(140, 11, 167, 20);
+		contentPane.add(lblNewLabel);
+
+		JLabel lblNome = new JLabel("Nome: ");
+		lblNome.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lblNome.setBounds(10, 48, 58, 14);
+		contentPane.add(lblNome);
+
+		JLabel lblEmail = new JLabel("E-mail:");
+		lblEmail.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lblEmail.setBounds(10, 93, 46, 14);
+		contentPane.add(lblEmail);
+
+		JLabel lblFone = new JLabel("Telefone: ");
+		lblFone.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lblFone.setBounds(10, 138, 66, 14);
+		contentPane.add(lblFone);
+
+		JLabel lblEqDef = new JLabel("Equipamento defeituoso:");
+		lblEqDef.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lblEqDef.setBounds(10, 184, 153, 20);
+		contentPane.add(lblEqDef);
+
+		JLabel lblProblemDiag = new JLabel("Descreva os problemas diagnosticados no equipamento:");
+		lblProblemDiag.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lblProblemDiag.setBounds(10, 247, 326, 20);
+		contentPane.add(lblProblemDiag);
+
+		JLabel lblSolucao = new JLabel("Solução:");
+		lblSolucao.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lblSolucao.setBounds(10, 462, 58, 19);
+		contentPane.add(lblSolucao);
+
+		JLabel lbldatarecebe = new JLabel("Data de recebimento do equipamento:");
+		lbldatarecebe.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lbldatarecebe.setBounds(10, 502, 228, 20);
+		contentPane.add(lbldatarecebe);
+
+		JLabel lbldataret = new JLabel("Data de retiro do equipamento:");
+		lbldataret.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lbldataret.setBounds(10, 542, 267, 19);
+		contentPane.add(lbldataret);
+
+		JLabel lblValor = new JLabel("Valor Total:");
+		lblValor.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lblValor.setBounds(10, 582, 90, 19);
+		contentPane.add(lblValor);
+
+		JLabel lblTecnico = new JLabel("Técnico que realizará o concerto:");
+		lblTecnico.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		lblTecnico.setBounds(10, 622, 267, 18);
+		contentPane.add(lblTecnico);
+
+		txtNome = new JTextField();
+		txtNome.setBounds(10, 62, 414, 20);
+		contentPane.add(txtNome);
+		txtNome.setColumns(10);
+
+		txtEmail = new JTextField();
+		txtEmail.setColumns(10);
+		txtEmail.setBounds(10, 107, 414, 20);
+		contentPane.add(txtEmail);
+
+		txtFone = new JTextField();
+		txtFone.setColumns(10);
+		txtFone.setBounds(10, 153, 200, 20);
+		contentPane.add(txtFone);
+
+		comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "", "HD ou SSD" }));
+		comboBox.setBounds(10, 213, 414, 23);
+		contentPane.add(comboBox);
+
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 269, 414, 120);
+		contentPane.add(scrollPane);
+
+		txtAreaProblema = new JTextArea();
+		scrollPane.setViewportView(txtAreaProblema);
+
+		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				if (txtNome.getText().trim().equals("") || txtEmail.getText().trim().equals("") || txtFone.getText().trim().equals("")) {
+					JOptionPane.showMessageDialog(null, "Você deve preencher os campos");
+					
+					String s = Cadastro.cadastrar(txtNome.getText(), txtEmail.getText(), txtFone.getText());
+					JOptionPane.showMessageDialog(null, s);
+
+				}
+			}
+		});
+		btnCadastrar.setBounds(234, 400, 102, 23);
+		contentPane.add(btnCadastrar);
+
+		JButton btnLimpar = new JButton("Limpar");
+		btnLimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				limparCampos();
+			}
+		});
+		btnLimpar.setBounds(70, 400, 102, 23);
+		contentPane.add(btnLimpar);
+
+		JLabel lblNewLabel_3 = new JLabel("*");
+		lblNewLabel_3.setForeground(new Color(255, 0, 0));
+		lblNewLabel_3.setBackground(new Color(128, 0, 0));
+		lblNewLabel_3.setBounds(52, 49, 120, 14);
+		contentPane.add(lblNewLabel_3);
+
+		JLabel lblNewLabel_3_1 = new JLabel("*");
+		lblNewLabel_3_1.setForeground(Color.RED);
+		lblNewLabel_3_1.setBackground(new Color(128, 0, 0));
+		lblNewLabel_3_1.setBounds(52, 94, 120, 14);
+		contentPane.add(lblNewLabel_3_1);
+
+		JLabel lblNewLabel_3_2 = new JLabel("*");
+		lblNewLabel_3_2.setForeground(Color.RED);
+		lblNewLabel_3_2.setBackground(new Color(128, 0, 0));
+		lblNewLabel_3_2.setBounds(70, 139, 120, 14);
+		contentPane.add(lblNewLabel_3_2);
+
+		JLabel lblNewLabel_3_3 = new JLabel("*");
+		lblNewLabel_3_3.setForeground(Color.RED);
+		lblNewLabel_3_3.setBackground(new Color(128, 0, 0));
+		lblNewLabel_3_3.setBounds(157, 188, 120, 14);
+		contentPane.add(lblNewLabel_3_3);
+
+		JLabel lblNewLabel_3_4 = new JLabel("*");
+		lblNewLabel_3_4.setForeground(Color.RED);
+		lblNewLabel_3_4.setBackground(new Color(128, 0, 0));
+		lblNewLabel_3_4.setBounds(338, 251, 86, 14);
+		contentPane.add(lblNewLabel_3_4);
+
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(234, 503, 221, 20);
+		contentPane.add(comboBox_1);
+
+		txtValor = new JTextField();
+		txtValor.setEditable(false);
+		txtValor.setColumns(10);
+		txtValor.setBounds(83, 582, 200, 20);
+		contentPane.add(txtValor);
+
+		txtTecnico = new JTextField();
+		txtTecnico.setEditable(false);
+		txtTecnico.setColumns(10);
+		txtTecnico.setBounds(210, 620, 245, 20);
+		contentPane.add(txtTecnico);
+
+		txtSolução = new JTextField();
+		txtSolução.setEditable(false);
+		txtSolução.setColumns(10);
+		txtSolução.setBounds(62, 460, 393, 20);
+		contentPane.add(txtSolução);
+
+		JComboBox comboBox_1_1 = new JComboBox();
+		comboBox_1_1.setBounds(194, 541, 261, 20);
+		contentPane.add(comboBox_1_1);
+	}
+
+	private void limparCampos() {
+		txtNome.setText(null);
+		txtEmail.setText(null);
+		txtFone.setText(null);
+		comboBox.setSelectedItem(null);
+		txtAreaProblema.setText(null);;
+		
+	}
+	
+	@SuppressWarnings("finally")
+	public static String cadastrar(String nome_arquivo, String conteudo, String string) {
+		String msg = "";
+		FileWriter arquivo = null;
+		
+		try {
+			arquivo = new FileWriter(nome_arquivo);
+			arquivo.write(conteudo);
+			msg = "O arquivo "+nome_arquivo+"foi criado e escrito";
+		}
+		catch (Exception e) {
+			System.out.println("Erro ao tratar o arquivo -> "+e.getMessage() );
+			msg = "Erro ao tratar o arquivo -> "+e.getMessage();
+		}
+		finally {
+			try {arquivo.close();}catch (Exception ex) {ex.printStackTrace();
+			}
+			return msg;
+		}
+	}
+}

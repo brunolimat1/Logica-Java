@@ -1,0 +1,10 @@
+Desafio individual.
+
+- escolher um projeto de sistema de gestão de serviços (OS)
+- personalizar a tela principal e a tela sobre (logo, ícones etc)
+  obs: Pode ser reutilizado o projeto modelo
+- criar no banco de dados uma tabela de nome clientes
+- criar os campos da tabela clientes de acordo com o projeto escolhido
+- criar a tela de clientes (fazer a ligação com o botão)
+- desenvolver o CRUD completo desta tela de cadastro de clientes
+- atenção às validações e experiência do usuário (UX)

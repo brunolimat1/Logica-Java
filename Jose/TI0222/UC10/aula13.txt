@@ -1,0 +1,32 @@
+Desenvolvimento de um APP para calcular o valor do serviço:
+
+Conclusão do aplicativo - publicação
+
+Passo 1)
+Revisar e debugar o APP
+
+Passo 2)
+Remover epaços em branco e comentários desnecessários
+
+Passo 3)
+Identar (alinhar) o código)
+<ctrl><shift><f>
+
+Passo 4)
+Simplicar e minimizar recursos (variáveis e métodos)
+
+Passo 5)
+Fazer um teste final
+
+Passo 6)
+Gerar o executável (.jar)
+- botão direito do mouse no projeto
+- export
+- Java
+- Runnable JAR file
+- Launch configuration (selecionar a classe)
+- Browse (destino)
+
+
+
+ 

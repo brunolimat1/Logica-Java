@@ -1,0 +1,27 @@
+Atividade de avaliação (individual)
+Sistema OS
+1) Criar um banco de dados (feito)
+2) Criar uma tabela de usuarios (feito)
+   id
+   nome
+   login
+   senha
+3) Cadastrar um usuário (feito)
+4) Criar a estrutura de pastas do projeto (feito)
+5) Criar um ícone para o status do banco na tela principal (feito)
+6) Criar um botão sobre (usar ícone e acessibilidade)
+7) Criar a tela sobre (usar JDialog), inserir o seu nome,
+   tipo de licença (MIT)
+8) Link do botão sobre com a tela sobre
+9) Criar uma tela de usuários (Usuarios) usando JDialog (feito)
+10) Criar um botão de usuários na tela principal e fazer o link
+    com a tela de Usuários (feito)
+11) Desenhar a estrutura (JLabel, JTextField, JButton) na tela
+    de usuários (feito)
+12) Criar 2 botões (limpar e buscar) na tela de usuários (feito)
+13) Adicionar ícones aos botões e configurar acessibilidade
+    (hand cursor, tool tip text)
+14) Botão limpar (criar um método para limpar os campos)
+15) Botão buscar (criar um método para buscar o usuário) (feito)
+    Habilitar a tecla <Enter> na busca do usuário
+    

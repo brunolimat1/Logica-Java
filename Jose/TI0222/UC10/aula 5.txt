@@ -1,0 +1,5 @@
+JDBC:
+Material de apoio:
+https://professorjosedeassis.github.io/infox/
+
+CRUD (Java -> MySQL)

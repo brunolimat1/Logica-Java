@@ -1,0 +1,13 @@
+- CRUD CREATE (agenda de contatos)
+______________________________________
+Personalização de GitHub
+Selo de metadados:
+https://shields.io/
+
+______________________________________
+Atividade de avaliação (sistema OS)
+
+CRUD - Create (tela de usuários)
+- validar campos obrigatórios
+- botão adicionar novo usuário
+

@@ -1,0 +1,17 @@
+Relacionamento de tabelas
+
+Material de apoio:
+https://github.com/professorjosedeassis/mysql/tree/master/aula4
+
+Atividade de avaliação:
+1) Criar a tabela de serviços e relacionar com a tabela clientes (1 - N)
+2) Criar a tela de serviços (linkar com a tela principal)
+3) Fazer o CRUD OK
+4) UX e validações
+   - ícones | OK
+   - acessibilidade
+   - busca avançada do cliente (ID)
+   - validação de campos obrigatórios
+   - campos id, os e valor (só aceitar números) | OK
+   - validar máximo de caracteres por campo | OK
+   - validar na tela de clientes a exclusão de um cliente se houver serviço

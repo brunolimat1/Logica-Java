@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="src/" kind="src" path=""/>
+	<classpathentry kind="lib" path="j2ssh-core.jar"/>
+	<classpathentry kind="lib" path="uhttpd-0.0.6.jar"/>
+	<classpathentry kind="lib" path="maverick-synergy-client-3.0.9-all.jar"/>
+	<classpathentry kind="lib" path="ganymed-ssh2-build210.jar"/>
+	<classpathentry kind="lib" path="jsch-0.1.55.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,48 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+public class Clientes extends JDialog {
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Clientes dialog = new Clientes();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Clientes() {
+		setTitle("Cadastro");
+		setBounds(100, 100, 456, 634);
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Cadastro de Clientes");
+		lblNewLabel.setFont(new Font("Bookman Old Style", Font.BOLD, 17));
+		lblNewLabel.setBounds(123, 11, 185, 14);
+		getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nome");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_1.setBounds(10, 48, 46, 14);
+		getContentPane().add(lblNewLabel_1);
+
+	}
+
+}

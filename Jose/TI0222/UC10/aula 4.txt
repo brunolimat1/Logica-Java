@@ -1,0 +1,23 @@
+JDBC
+Material de apoio:
+https://professorjosedeassis.github.io/infox/
+
+Dicas eclipse:
+<ctrl><shift><f> alinhamento do código
+<ctrl><shift><o> importação automática
+<alt><shift><y> quebra de linha
+try <ctrl><espaço>  (try - catch)
+
+____________________________________________
+BACK-UP / RESTORE
+
+Back-up: copiar a pasta do projeto no workspace
+
+Restore:
+Passo 1: Copiar a pasta para o workspace
+Passo 2: Eclipse: File -> import
+Passo 3: General -> existing projects into workspace
+Passo 4: root dierctory -> selecionar o worspace
+passo 5: Selecionar o projeto
+
+

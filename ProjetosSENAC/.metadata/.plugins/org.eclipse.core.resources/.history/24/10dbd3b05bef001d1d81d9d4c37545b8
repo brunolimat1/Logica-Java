@@ -1,0 +1,78 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+
+public class Clientes extends JDialog {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Clientes dialog = new Clientes();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Clientes() {
+		setTitle("Cadastro de Clientes");
+		setBounds(100, 100, 584, 439);
+
+		setLocationRelativeTo(null);
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Nome Completo:");
+		lblNewLabel.setBounds(10, 11, 79, 14);
+		getContentPane().add(lblNewLabel);
+		
+		JLabel lblEmail = new JLabel("Email:");
+		lblEmail.setBounds(10, 36, 34, 14);
+		getContentPane().add(lblEmail);
+		
+		JLabel lblSenha = new JLabel("Senha:");
+		lblSenha.setBounds(10, 61, 34, 14);
+		getContentPane().add(lblSenha);
+		
+		JLabel lblCpf = new JLabel("CPF:");
+		lblCpf.setBounds(10, 86, 23, 14);
+		getContentPane().add(lblCpf);
+		
+		JLabel lblTelefone = new JLabel("Telefone:");
+		lblTelefone.setBounds(10, 111, 46, 14);
+		getContentPane().add(lblTelefone);
+		
+		JLabel lblGnero = new JLabel("Gênero:");
+		lblGnero.setBounds(214, 11, 39, 14);
+		getContentPane().add(lblGnero);
+		
+		JLabel lblDataDeNascimentos = new JLabel("Data de Nascimento:");
+		lblDataDeNascimentos.setBounds(214, 36, 100, 14);
+		getContentPane().add(lblDataDeNascimentos);
+		
+		JLabel lblEndereo = new JLabel("Endereço:");
+		lblEndereo.setBounds(214, 61, 100, 14);
+		getContentPane().add(lblEndereo);
+		
+		JLabel lblEstadoCivil = new JLabel("Estado Civil:");
+		lblEstadoCivil.setBounds(214, 86, 59, 14);
+		getContentPane().add(lblEstadoCivil);
+	}
+}

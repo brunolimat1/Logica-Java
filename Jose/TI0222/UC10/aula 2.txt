@@ -1,0 +1,37 @@
+Projeto agenda de contatos:
+Desenvolvimento da interface gráfica
+
+Dicas:
+<ctrl><shift><f> alinhamento do código
+
+Métodos no java: (código que pode ser reutilizado)
+Para criar um método simples usamos a palavra void, seguido do nome do método:
+Exemplo:
+private void limparCampos() {}
+
+Material de apoio:
+https://joseassis.com.br/cursos/java.html
+
+____________________________________________________
+Back-up / restore (projeto Java - Eclipse)
+
+Back-up:
+1) Pasta workspace
+2) Copiar a pasta inteira do projeto
+
+Restore:
+1) Copiar a pasta do projeto para o workspace
+2) No eclipse:
+   File -> Import
+   Expandir a pasta General -> Existing projects into workspace
+   Select root directory [browse] -> selecionar o workspace
+   Selecionar o projeto a ser importado
+
+
+
+
+
+
+
+
+

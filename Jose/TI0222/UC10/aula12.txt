@@ -1,0 +1,42 @@
+Introdução à POO
+material de apoio:
+https://professorjosedeassis.github.io/javaSE/
+
+Polimorfismo
+Atividade: Slide 67
+_____________________________________________
+
+Desenvolvimento de um APP para calcular o valor
+de um serviço.
+
+1º Passo) Definir a remuneração mensal
+7000,00
+2º Passo) Somar 30%(remuneração) (recursos (impostos, reserva de emergência etc))
+2100,00
+3º Passo) Somar 20%(remuneração) (investimento)
+1400,00
+4º Passo) Saber(definir) o custo operacional
+1000,00
+5º Passo) Carga horária mensal
+160
+
+hora de serviço: (7000,00 + 2100,00 + 1400,00 + 1000) / 160
+valor da hora: 72,00
+
+
+exemplo: site simples (16 horas)
+total do serviço = 72,00 * 16 = 1152,00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
