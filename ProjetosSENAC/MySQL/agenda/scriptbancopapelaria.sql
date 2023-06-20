@@ -39,6 +39,7 @@ de um-para-muitos, ou seja,  um contato para mais de um cliente.
 
 
 
+
 ALTER TABLE cliente
 ADD constraint `fk_cliente_pk_contato`
 FOREIGN KEY (`idcontato`)

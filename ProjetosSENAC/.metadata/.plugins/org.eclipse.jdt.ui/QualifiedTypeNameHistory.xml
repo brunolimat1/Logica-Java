@@ -28,7 +28,6 @@
     <fullyQualifiedTypeName name="javax.swing.JInternalFrame"/>
     <fullyQualifiedTypeName name="javax.swing.text.MaskFormatter"/>
     <fullyQualifiedTypeName name="javax.swing.JDesktopPane"/>
-    <fullyQualifiedTypeName name="javax.swing.JFormattedTextField.AbstractFormatter"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="br.com.projeto.papelaria.repository.AtualizarApagar"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
@@ -43,4 +42,5 @@
     <fullyQualifiedTypeName name="utils.Validador"/>
     <fullyQualifiedTypeName name="java.sql.SQLIntegrityConstraintViolationException"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="javax.swing.JFormattedTextField.AbstractFormatter"/>
 </qualifiedTypeNameHistroy>

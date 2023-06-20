@@ -79,7 +79,6 @@ public class Usuarios extends JDialog {
 			public void mouseClicked(MouseEvent e) {
 				// clicar no painel do JDialog
 				scrollPane.setVisible(false);
-				txtNome.setText(null);
 			}
 		});
 		setTitle("Usuários");
@@ -400,7 +399,7 @@ public class Usuarios extends JDialog {
 	private void editarContato() {
 		// lógica principal
 		// CRUD - Update
-		String update = "update usuarios set nome=?, login=?, senha=? where id=?";
+		String update = "update usuarios set nome=?, login=?, senha=? where id=md5(?)";
 		// tratamente de exceções
 		try {
 			// abrir a conexão

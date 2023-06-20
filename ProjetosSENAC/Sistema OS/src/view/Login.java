@@ -122,7 +122,7 @@ public class Login extends JFrame {
 		lblStatus.setIcon(new ImageIcon(Login.class.getResource("/img/databaseoff.png")));
 
 		lblData = new JLabel("");
-		lblData.setBounds(118, 7, 195, 14);
+		lblData.setBounds(102, 7, 211, 14);
 		panel.add(lblData);
 		
 		lblNewLabel = new JLabel("");

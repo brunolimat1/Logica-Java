@@ -23,6 +23,7 @@ create table clientes (
 	idcli int primary key auto_increment,
     nome varchar(50) not null,
     telefone varchar (15) not null,
+    cpf varchar (50) not null,
 	cep varchar (50) not null,
     endereco varchar (150) not null,
     numero varchar (50) not null,
@@ -45,7 +46,7 @@ values ('Troll','brabo','123456');
 
 -- uso do md5() para criptografar uma senha
 insert into usuarios (nome, login, senha)
-values ('Jorge','admin', md5('admin'));
+values ('bruno','admin', md5('admin'));
 
 update usuarios set nome = 'robson vaamonde' where id = 3;
 
@@ -65,6 +66,9 @@ create table servicos (
     id int not null,
     foreign key (id) references clientes(idcli)
 );
+
+ALTER TABLE clientes
+ADD constraint `id` UNIQUE (`idcli`); 
 
 select * from servicos
 inner join clientes

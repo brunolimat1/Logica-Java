@@ -69,6 +69,7 @@ public class Clientes extends JDialog {
 	private JScrollPane scrollPane_1;
 	@SuppressWarnings("rawtypes")
 	private JList listClientes;
+	private JFormattedTextField txtCpf;
 
 	/**
 	 * Launch the application.
@@ -108,20 +109,20 @@ public class Clientes extends JDialog {
 		contentPanel.setLayout(null);
 
 		scrollPane_1 = new JScrollPane();
-		scrollPane_1.setVisible(false);
 		scrollPane_1.setBorder(null);
-		scrollPane_1.setBounds(60, 120, 674, 82);
+		scrollPane_1.setBounds(60, 124, 380, 19);
 		contentPanel.add(scrollPane_1);
-
-		listClientes = new JList();
-		listClientes.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				buscarClienteLista();
-			}
-		});
-		listClientes.setBorder(null);
-		scrollPane_1.setViewportView(listClientes);
+		
+				listClientes = new JList();
+				listClientes.setVisible(false);
+				scrollPane_1.setViewportView(listClientes);
+				listClientes.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						buscarClienteLista();
+					}
+				});
+				listClientes.setBorder(null);
 
 		JLabel lblNewLabel = new JLabel("Cadastro de Clientes");
 		lblNewLabel.setBounds(289, 11, 151, 19);
@@ -130,7 +131,7 @@ public class Clientes extends JDialog {
 
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
-		lblNome.setBounds(10, 102, 50, 19);
+		lblNome.setBounds(10, 105, 64, 19);
 		contentPanel.add(lblNome);
 
 		txtNome = new JTextField();
@@ -140,18 +141,18 @@ public class Clientes extends JDialog {
 				listarClientes();
 			}
 		});
-		txtNome.setBounds(60, 103, 674, 20);
+		txtNome.setBounds(60, 105, 380, 20);
 		contentPanel.add(txtNome);
 		txtNome.setColumns(10);
 
 		JLabel lblTelefone = new JLabel("Telefone:");
 		lblTelefone.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
-		lblTelefone.setBounds(10, 139, 64, 19);
+		lblTelefone.setBounds(456, 105, 64, 19);
 		contentPanel.add(lblTelefone);
 
 		JLabel lblCep = new JLabel("CEP:");
 		lblCep.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
-		lblCep.setBounds(298, 138, 38, 19);
+		lblCep.setBounds(10, 145, 38, 19);
 		contentPanel.add(lblCep);
 
 		JLabel lblEndereco = new JLabel("Endereço:");
@@ -196,7 +197,7 @@ public class Clientes extends JDialog {
 		}
 
 		txtTelefone = new JFormattedTextField(tel);
-		txtTelefone.setBounds(84, 140, 204, 19);
+		txtTelefone.setBounds(530, 105, 204, 19);
 		contentPanel.add(txtTelefone);
 
 		MaskFormatter cep = null;
@@ -207,7 +208,7 @@ public class Clientes extends JDialog {
 		}
 
 		txtCep = new JFormattedTextField(cep);
-		txtCep.setBounds(337, 139, 204, 19);
+		txtCep.setBounds(49, 146, 204, 19);
 		contentPanel.add(txtCep);
 
 		btnEditar = new JButton("");
@@ -299,7 +300,7 @@ public class Clientes extends JDialog {
 				buscarCep();
 			}
 		});
-		btnBuscarCep.setBounds(551, 134, 102, 28);
+		btnBuscarCep.setBounds(263, 141, 102, 28);
 		contentPanel.add(btnBuscarCep);
 
 		txtNumero = new JTextField();
@@ -312,6 +313,22 @@ public class Clientes extends JDialog {
 		lblNewLabel_1.setFont(new Font("Swis721 Lt BT", Font.BOLD, 15));
 		lblNewLabel_1.setBounds(300, 322, 128, 128);
 		contentPanel.add(lblNewLabel_1);
+				
+				JLabel lblCpf = new JLabel("CPF:");
+				lblCpf.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
+				lblCpf.setBounds(484, 144, 64, 19);
+				contentPanel.add(lblCpf);
+				
+				MaskFormatter cpf = null;
+				try {
+					cpf = new MaskFormatter("###.###.###-##");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+				txtCpf = new JFormattedTextField(cpf);
+				txtCpf.setBounds(530, 145, 204, 19);
+				contentPanel.add(txtCpf);
 
 	}// FIM DO CONSTRUTOR
 
@@ -387,6 +404,9 @@ public class Clientes extends JDialog {
 		} else if (txtTelefone.getText().equals("(  )      .    ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o Telefone do Cliente!");
 			txtTelefone.requestFocus();
+		} else if (txtCpf.getText().equals("   .   .   -  ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o CPF do Cliente!");
+			txtCpf.requestFocus();
 		} else if (txtCep.getText().equals("     -   ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
 			txtCep.requestFocus();
@@ -409,13 +429,14 @@ public class Clientes extends JDialog {
 			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
 			cboUf.requestFocus();
 		} else {
-			String update = "update clientes set nome=?,telefone=?,cep=?,endereco=?,numero=?,complemento=?,bairro=?,cidade=?,uf=?,equipamento=?,problema=? where id=?";
+			String update = "update clientes set nome=?,telefone=?,cpf=?,cep=?,endereco=?,numero=?,complemento=?,bairro=?,cidade=?,uf=? where idcli=?";
 			try {
 				con = dao.conectar();
 				pst = con.prepareStatement(update);
-				pst.setString(12, txtID.getText());
+				pst.setString(10, txtID.getText());
 				pst.setString(1, txtNome.getText());
 				pst.setString(2, txtTelefone.getText());
+				pst.setString(3, txtCpf.getText());
 				pst.setString(3, txtCep.getText());
 				pst.setString(4, txtEndereco.getText());
 				pst.setString(5, txtNumero.getText());

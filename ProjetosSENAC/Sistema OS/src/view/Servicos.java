@@ -312,8 +312,8 @@ public class Servicos extends JDialog {
 		if (linha >= 0) {
 			// Query (instrução sql)
 			// limit (0,1) -> seleciona o índice 0 e 1 usuário da lista
-			String readListaCliente = "select * from clientes where idcli like '" + txtID.getText() + "%'"
-					+ "order by idcli limit " + (linha) + " , 1";
+			String readListaCliente = "select * from clientes where nome like '" + txtID.getText() + "%'"
+					+ "order by nome limit " + (linha) + " , 1";
 			try {
 				// abrir a conexão
 				con = dao.conectar();
