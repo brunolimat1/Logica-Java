@@ -6,7 +6,7 @@ numero varchar(10) not null,
 complemento varchar(50),
 cep varchar(10) not null,
 bairro varchar(30) not null
-) engine innodb charset=utf8mb4 collate=utf8mb4_general_ci;
+) engine innodb charset=utf8mb4 collate=utf8mb4_genidcontatoeral_ci;
 
 create table contato(
 idcontato bigint auto_increment primary key,

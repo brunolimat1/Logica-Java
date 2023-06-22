@@ -26,7 +26,6 @@ import javax.swing.border.EmptyBorder;
 
 import model.DAO;
 import utils.Validador;
-import java.awt.Canvas;
 
 public class Servicos extends JDialog {
 	DAO dao = new DAO();
