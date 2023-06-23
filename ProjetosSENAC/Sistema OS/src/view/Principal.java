@@ -131,12 +131,16 @@ public class Principal extends JFrame {
 		btnRelatorio.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnRelatorio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Relatorios relatorio = new Relatorios();
+				relatorio.setVisible(true);
 			}
 		});
 		btnRelatorio.setIcon(new ImageIcon(Principal.class.getResource("/img/clipboard.png")));
 		btnRelatorio.setToolTipText("Relatórios");
 		btnRelatorio.setBounds(432, 229, 182, 170);
 		contentPane.add(btnRelatorio);
+	
+		
 		
 		btnClients = new JButton("");
 		btnClients.setFocusPainted(false);
@@ -163,7 +167,7 @@ public class Principal extends JFrame {
 		btnService.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnService.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		btnService.setIcon(new ImageIcon(Principal.class.getResource("/img/maintence.png")));
-		btnService.setToolTipText("Serviço");
+		btnService.setToolTipText("Serviços");
 		btnService.setBounds(432, 42, 182, 176);
 		contentPane.add(btnService);
 		

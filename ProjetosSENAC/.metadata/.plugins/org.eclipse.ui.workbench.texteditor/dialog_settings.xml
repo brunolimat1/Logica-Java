@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="scrollPane"/>
+		<item key="selection" value="txtCpf"/>
 		<list key="findhistory">
+			<item value="txtTelefone_1"/>
+			<item value="Cpf"/>
 			<item value="scrollPane_1"/>
 			<item value="listID_1"/>
 			<item value="cliente"/>
@@ -20,6 +22,7 @@
 			<item value="btnAdicionar_1"/>
 		</list>
 		<list key="replacehistory">
+			<item value="txtCpf"/>
 			<item value="scrollPane"/>
 			<item value="listID"/>
 			<item value="getCliente()"/>

@@ -1,12 +1,16 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,9 +28,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import model.DAO;
 import utils.Validador;
-import java.awt.Canvas;
 
 public class Servicos extends JDialog {
 	DAO dao = new DAO();
@@ -54,6 +63,7 @@ public class Servicos extends JDialog {
 	private JList listID;
 	private JScrollPane scrollPane;
 	private JTextField txtID;
+	private JButton btnPrint;
 
 	/**
 	 * Launch the application.
@@ -85,22 +95,21 @@ public class Servicos extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		
-				scrollPane = new JScrollPane();
-				scrollPane.setVisible(false);
-				scrollPane.setBorder(null);
-				scrollPane.setBounds(448, 44, 138, 64);
-				contentPanel.add(scrollPane);
-				
-				
-						listID = new JList();
-						scrollPane.setViewportView(listID);
-						listID.addMouseListener(new MouseAdapter() {
-							@Override
-							public void mouseClicked(MouseEvent e) {
-								buscarClienteLista();
-							}
-						});
+
+		scrollPane = new JScrollPane();
+		scrollPane.setVisible(false);
+		scrollPane.setBorder(null);
+		scrollPane.setBounds(448, 44, 138, 64);
+		contentPanel.add(scrollPane);
+
+		listID = new JList();
+		scrollPane.setViewportView(listID);
+		listID.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				buscarClienteLista();
+			}
+		});
 		{
 			JLabel lblNewLabel = new JLabel("OS:");
 			lblNewLabel.setBounds(27, 39, 24, 14);
@@ -191,7 +200,7 @@ public class Servicos extends JDialog {
 				editar();
 			}
 		});
-		btnEditar.setBounds(177, 333, 64, 64);
+		btnEditar.setBounds(151, 333, 64, 64);
 		contentPanel.add(btnEditar);
 
 		btnExcluir = new JButton("");
@@ -201,7 +210,7 @@ public class Servicos extends JDialog {
 				excluir();
 			}
 		});
-		btnExcluir.setBounds(337, 333, 64, 64);
+		btnExcluir.setBounds(275, 333, 64, 64);
 		contentPanel.add(btnExcluir);
 
 		JLabel lblIdDoCliente = new JLabel("Cliente:");
@@ -228,7 +237,7 @@ public class Servicos extends JDialog {
 				limparCampos();
 			}
 		});
-		btnLimpar.setBounds(484, 333, 64, 64);
+		btnLimpar.setBounds(395, 333, 64, 64);
 		contentPanel.add(btnLimpar);
 
 		txtData = new JFormattedTextField();
@@ -236,11 +245,11 @@ public class Servicos extends JDialog {
 		txtData.setBounds(65, 91, 138, 20);
 		contentPanel.add(txtData);
 		txtData.setDocument(new Validador(20));
-		
+
 		JLabel lblId = new JLabel("ID:");
 		lblId.setBounds(423, 51, 24, 14);
 		contentPanel.add(lblId);
-		
+
 		txtID = new JTextField();
 		txtID.addKeyListener(new KeyAdapter() {
 			@Override
@@ -253,6 +262,16 @@ public class Servicos extends JDialog {
 		txtID.setColumns(10);
 		txtID.setBounds(448, 48, 64, 20);
 		contentPanel.add(txtID);
+
+		btnPrint = new JButton("");
+		btnPrint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				imprimirOS();
+			}
+		});
+		btnPrint.setIcon(new ImageIcon(Servicos.class.getResource("/img/print.png")));
+		btnPrint.setBounds(504, 333, 72, 67);
+		contentPanel.add(btnPrint);
 	}
 
 	private void limparCampos() {
@@ -313,7 +332,7 @@ public class Servicos extends JDialog {
 		if (linha >= 0) {
 			// Query (instrução sql)
 			// limit (0,1) -> seleciona o índice 0 e 1 usuário da lista
-			String readListaCliente = "select * from clientes where nome like '" + txtID.getText() + "%'"
+			String readListaCliente = "select * from clientes where nome like '" + txtNome.getText() + "%'"
 					+ "order by nome limit " + (linha) + " , 1";
 			try {
 				// abrir a conexão
@@ -346,7 +365,7 @@ public class Servicos extends JDialog {
 		if (txtNome.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Escolha o Cliente");
 			txtNome.requestFocus();
-		}else if (txtEquipamentos.getText().isEmpty()) {
+		} else if (txtEquipamentos.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha os Equipamentos!");
 			txtEquipamentos.requestFocus();
 		} else if (txtDefeito.getText().isEmpty()) {
@@ -378,7 +397,7 @@ public class Servicos extends JDialog {
 	private void buscar() {
 		String OS = JOptionPane.showInputDialog(null, "Digite o OS para buscar!");
 		try {
-		String read = "select * from servicos where OS = ?";
+			String read = "select * from servicos inner join clientes on servicos.id = clientes.idcli where OS = ?";
 			con = dao.conectar();
 			pst = con.prepareStatement(read);
 			pst.setString(1, OS);
@@ -389,6 +408,8 @@ public class Servicos extends JDialog {
 				txtEquipamentos.setText(rs.getString(3));
 				txtDefeito.setText(rs.getString(4));
 				txtValor.setText(rs.getString(5));
+				txtID.setText(rs.getString(7));
+				txtNome.setText(rs.getString(8));
 			} else {
 				JOptionPane.showMessageDialog(null, "OS não cadastrada!");
 			}
@@ -487,10 +508,90 @@ public class Servicos extends JDialog {
 		}
 	}
 
+	/**
+	 * Impressão da OS
+	 */
+	private void imprimirOS() {
+		// instanciar objeto para usar os métodos da biblioteca
+		Document document = new Document();
+		if (txtOS.getText().isEmpty()) {
+			JOptionPane.showInternalMessageDialog(null, "Selecione o número da OS antes de imprimir!");
+			txtOS.requestFocus();
+		} else {
+			// documento pdf
+			try {
+				// criar um documento em branco (pdf) de nome clientes.pdf
+				PdfWriter.getInstance(document, new FileOutputStream("os.pdf"));
+				// abrir o documento (formatar e inserir o conteúdo)
+				document.open();
+				String readOS = "select * from servicos inner join clientes on servicos.id = clientes.idcli where OS=?";
+				// conexão com o banco
+				try {
+					// abrir a conexão
+					con = dao.conectar();
+					// preparar a execução da query (instrução sql)
+					pst = con.prepareStatement(readOS);
+					pst.setString(1, txtOS.getText());
+					// executar a query
+					rs = pst.executeQuery();
+					// se existir a OS
+					if (rs.next()) {
+						// document.add(new Paragraph("OS: " + rs.getString(1)));
+						Paragraph os = new Paragraph("OS: " + rs.getString(1));
+						os.setAlignment(Element.ALIGN_LEFT);
+						document.add(os);
+						
+						Paragraph nome = new Paragraph("Nome: " + rs.getString(8));
+						nome.setAlignment(Element.ALIGN_LEFT);
+						document.add(nome);
+
+						Paragraph DataOs = new Paragraph("Data OS: " + rs.getString(2));
+						DataOs.setAlignment(Element.ALIGN_LEFT);
+						document.add(DataOs);
+
+						Paragraph equipamento = new Paragraph("Equipamento: " + rs.getString(3));
+						equipamento.setAlignment(Element.ALIGN_LEFT);
+						document.add(equipamento);
+
+						Paragraph Defeito = new Paragraph("Defeito: " + rs.getString(4));
+						Defeito.setAlignment(Element.ALIGN_LEFT);
+						document.add(Defeito);
+
+						Paragraph Valor = new Paragraph("Valor: " + rs.getString(5));
+						Valor.setAlignment(Element.ALIGN_LEFT);
+						document.add(Valor);
+
+						// imprimir imagens
+						Image imagem = Image.getInstance(Servicos.class.getResource("/img/printer3d.png"));
+						imagem.scaleToFit(128, 128);
+						imagem.setAbsolutePosition(20, 550);
+						document.add(imagem);
+					}
+					// fechar a conexão com o banco
+					con.close();
+				} catch (IOException se) {
+					JOptionPane.showInternalMessageDialog(null, "OS não encontrada.");
+				}
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+			// fechar o documento (pronto para "impressão" (exibir o pdf))
+			document.close();
+			// Abrir o desktop do sistema operacional e usar o leitor padrão
+			// de pdf para exibir o documento
+			try {
+				Desktop.getDesktop().open(new File("os.pdf"));
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+	}
+
 	public void OnlyNumber(KeyEvent e) {
 		char c = e.getKeyChar();
 		if (Character.isLetter(c)) {
 			e.consume();
 		}
 	}
+
 }

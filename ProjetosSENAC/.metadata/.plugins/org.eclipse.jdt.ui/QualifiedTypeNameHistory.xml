@@ -36,11 +36,21 @@
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.net.URL"/>
     <fullyQualifiedTypeName name="org.dom4j.io.SAXReader"/>
-    <fullyQualifiedTypeName name="org.dom4j.Document"/>
-    <fullyQualifiedTypeName name="org.dom4j.Element"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="utils.Validador"/>
     <fullyQualifiedTypeName name="java.sql.SQLIntegrityConstraintViolationException"/>
-    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="javax.swing.JFormattedTextField.AbstractFormatter"/>
+    <fullyQualifiedTypeName name="java.awt.Desktop"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.awt.Image"/>
+    <fullyQualifiedTypeName name="com.itextpdf.text.pdf.PdfWriter"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="org.dom4j.Element"/>
+    <fullyQualifiedTypeName name="org.dom4j.Document"/>
+    <fullyQualifiedTypeName name="com.itextpdf.text.Document"/>
+    <fullyQualifiedTypeName name="com.itextpdf.text.Paragraph"/>
+    <fullyQualifiedTypeName name="com.itextpdf.text.Element"/>
+    <fullyQualifiedTypeName name="com.itextpdf.text.Image"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>

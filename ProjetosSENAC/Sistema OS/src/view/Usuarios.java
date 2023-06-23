@@ -353,7 +353,7 @@ public class Usuarios extends JDialog {
 		} else {
 			// lógica principal
 			// CRUD Create
-			String create = "insert into usuarios(nome,login,senha) values (?,?,md5(?))";
+			String create = "insert into usuarios (nome, login, senha) values (?,?, md5(?))";
 			// tratamento de exceções
 			try {
 				// abrir a conexão

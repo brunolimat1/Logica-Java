@@ -65,6 +65,7 @@ public class Clientes extends JDialog {
 	private JTextField txtCidade;
 	private JLabel lblUF;
 	private JComboBox<?> cboUf;
+	
 	private JTextField txtNumero;
 	private JScrollPane scrollPane_1;
 	@SuppressWarnings("rawtypes")
@@ -109,12 +110,12 @@ public class Clientes extends JDialog {
 		contentPanel.setLayout(null);
 
 		scrollPane_1 = new JScrollPane();
+		scrollPane_1.setVisible(false);
 		scrollPane_1.setBorder(null);
 		scrollPane_1.setBounds(60, 124, 380, 19);
 		contentPanel.add(scrollPane_1);
 		
 				listClientes = new JList();
-				listClientes.setVisible(false);
 				scrollPane_1.setViewportView(listClientes);
 				listClientes.addMouseListener(new MouseAdapter() {
 					@Override
@@ -152,7 +153,7 @@ public class Clientes extends JDialog {
 
 		JLabel lblCep = new JLabel("CEP:");
 		lblCep.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
-		lblCep.setBounds(10, 145, 38, 19);
+		lblCep.setBounds(379, 142, 38, 19);
 		contentPanel.add(lblCep);
 
 		JLabel lblEndereco = new JLabel("Endereço:");
@@ -208,7 +209,7 @@ public class Clientes extends JDialog {
 		}
 
 		txtCep = new JFormattedTextField(cep);
-		txtCep.setBounds(49, 146, 204, 19);
+		txtCep.setBounds(418, 142, 204, 19);
 		contentPanel.add(txtCep);
 
 		btnEditar = new JButton("");
@@ -300,7 +301,7 @@ public class Clientes extends JDialog {
 				buscarCep();
 			}
 		});
-		btnBuscarCep.setBounds(263, 141, 102, 28);
+		btnBuscarCep.setBounds(632, 135, 102, 28);
 		contentPanel.add(btnBuscarCep);
 
 		txtNumero = new JTextField();
@@ -316,7 +317,7 @@ public class Clientes extends JDialog {
 				
 				JLabel lblCpf = new JLabel("CPF:");
 				lblCpf.setFont(new Font("Swis721 Lt BT", Font.PLAIN, 15));
-				lblCpf.setBounds(484, 144, 64, 19);
+				lblCpf.setBounds(10, 142, 64, 19);
 				contentPanel.add(lblCpf);
 				
 				MaskFormatter cpf = null;
@@ -325,10 +326,11 @@ public class Clientes extends JDialog {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
 				txtCpf = new JFormattedTextField(cpf);
-				txtCpf.setBounds(530, 145, 204, 19);
+				txtCpf.setBounds(53, 143, 204, 19);
 				contentPanel.add(txtCpf);
+				
+				
 
 	}// FIM DO CONSTRUTOR
 
@@ -336,6 +338,7 @@ public class Clientes extends JDialog {
 		txtID.setText(null);
 		txtNome.setText(null);
 		txtTelefone.setText(null);
+		txtCpf.setText(null);
 		txtCep.setText(null);
 		txtEndereco.setText(null);
 		txtNumero.setText(null);
@@ -355,6 +358,9 @@ public class Clientes extends JDialog {
 		} else if (txtTelefone.getText().equals("(  )      .    ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o Telefone do Cliente!");
 			txtTelefone.requestFocus();
+		} else if (txtCpf.getText().equals("   .   .   -  ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o CPF do Cliente!");
+			txtCpf.requestFocus();
 		} else if (txtCep.getText().equals("     -   ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
 			txtCep.requestFocus();
@@ -374,19 +380,20 @@ public class Clientes extends JDialog {
 			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
 			cboUf.requestFocus();
 		} else {
-			String create = "insert into clientes (nome, telefone, cep, endereco, numero, complemento, bairro, cidade, uf) values (?,?,?,?,?,?,?,?,?)";
+			String create = "insert into clientes (nome, telefone, cpf, cep, endereco, numero, complemento, bairro, cidade, uf) values (?,?,?,?,?,?,?,?,?,?)";
 			try {
 				con = dao.conectar();
 				pst = con.prepareStatement(create);
 				pst.setString(1, txtNome.getText());
 				pst.setString(2, txtTelefone.getText());
-				pst.setString(3, txtCep.getText());
-				pst.setString(4, txtEndereco.getText());
-				pst.setString(5, txtNumero.getText());
-				pst.setString(6, txtComplemento.getText());
-				pst.setString(7, txtBairro.getText());
-				pst.setString(8, txtCidade.getText());
-				pst.setString(9, cboUf.getSelectedItem().toString());
+				pst.setString(3, txtCpf.getText());
+				pst.setString(4, txtCep.getText());
+				pst.setString(5, txtEndereco.getText());
+				pst.setString(6, txtNumero.getText());
+				pst.setString(7, txtComplemento.getText());
+				pst.setString(8, txtBairro.getText());
+				pst.setString(9, txtCidade.getText());
+				pst.setString(10, cboUf.getSelectedItem().toString());
 				pst.executeUpdate();
 				JOptionPane.showMessageDialog(null, "Cliente Cadastrado!");
 				limpar();
@@ -416,9 +423,6 @@ public class Clientes extends JDialog {
 		} else if (txtNumero.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Número de Residência do Cliente!");
 			txtNumero.requestFocus();
-		} else if (txtComplemento.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha o Complemento da Residência do Cliente!");
-			txtComplemento.requestFocus();
 		} else if (txtBairro.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Bairro do Cliente!");
 			txtBairro.requestFocus();
@@ -429,7 +433,7 @@ public class Clientes extends JDialog {
 			JOptionPane.showMessageDialog(null, "Preencha a Unidade Federal(UF)!");
 			cboUf.requestFocus();
 		} else {
-			String update = "update clientes set nome=?,telefone=?,cpf=?,cep=?,endereco=?,numero=?,complemento=?,bairro=?,cidade=?,uf=? where idcli=?";
+			String update = "update clientes set nome=?,telefone=?,cpf=?,cep=?,endereco=?,numero=?,bairro=?,cidade=?,uf=? where idcli=?";
 			try {
 				con = dao.conectar();
 				pst = con.prepareStatement(update);
@@ -437,10 +441,9 @@ public class Clientes extends JDialog {
 				pst.setString(1, txtNome.getText());
 				pst.setString(2, txtTelefone.getText());
 				pst.setString(3, txtCpf.getText());
-				pst.setString(3, txtCep.getText());
-				pst.setString(4, txtEndereco.getText());
-				pst.setString(5, txtNumero.getText());
-				pst.setString(6, txtComplemento.getText());
+				pst.setString(4, txtCep.getText());
+				pst.setString(5, txtEndereco.getText());
+				pst.setString(6, txtNumero.getText());
 				pst.setString(7, txtBairro.getText());
 				pst.setString(8, txtCidade.getText());
 				pst.setString(9, cboUf.getSelectedItem().toString());
@@ -461,6 +464,9 @@ public class Clientes extends JDialog {
 		} else if (txtTelefone.getText().equals("(  )      .    ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o Telefone do Cliente!");
 			txtTelefone.requestFocus();
+		} else if (txtCpf.getText().equals("   .   .   -  ")) {
+			JOptionPane.showMessageDialog(null, "Preencha o CPF do Cliente!");
+			txtCpf.requestFocus();
 		} else if (txtCep.getText().equals("     -   ")) {
 			JOptionPane.showMessageDialog(null, "Preencha o CEP do Cliente!");
 			txtCep.requestFocus();
@@ -470,9 +476,6 @@ public class Clientes extends JDialog {
 		} else if (txtNumero.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Número de Residência do Cliente!");
 			txtNumero.requestFocus();
-		} else if (txtComplemento.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha o Complemento da Residência do Cliente!");
-			txtComplemento.requestFocus();
 		} else if (txtBairro.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o Bairro do Cliente!");
 			txtBairro.requestFocus();
@@ -579,13 +582,14 @@ public class Clientes extends JDialog {
 					txtID.setText(rs.getString(1));
 					txtNome.setText(rs.getString(2));
 					txtTelefone.setText(rs.getString(3));
-					txtCep.setText(rs.getString(4));
-					txtEndereco.setText(rs.getString(5));
-					txtNumero.setText(rs.getString(6));
-					txtComplemento.setText(rs.getString(7));
-					txtBairro.setText(rs.getString(8));
-					txtCidade.setText(rs.getString(9));
-					cboUf.setSelectedItem(rs.getString(10));
+					txtCpf.setText(rs.getString(4));
+					txtCep.setText(rs.getString(5));
+					txtEndereco.setText(rs.getString(6));
+					txtNumero.setText(rs.getString(7));
+					txtComplemento.setText(rs.getString(8));
+					txtBairro.setText(rs.getString(9));
+					txtCidade.setText(rs.getString(10));
+					cboUf.setSelectedItem(rs.getString(11));
 					btnCadastrar.setEnabled(true);
 					btnEditar.setEnabled(true);
 					btnExcluir.setEnabled(true);

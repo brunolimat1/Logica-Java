@@ -74,4 +74,6 @@ select * from servicos
 inner join clientes
 on servicos.id = clientes.idcli;
 
+select * from servicos inner join clientes on servicos.id = clientes.idcli where OS = 1;
+
 select * from servicos;
