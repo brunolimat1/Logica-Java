@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -83,6 +84,7 @@ public class Servicos extends JDialog {
 	 */
 	@SuppressWarnings("rawtypes")
 	public Servicos() {
+		setModal(true);
 		setTitle("Serviços");
 		setBounds(100, 100, 612, 452);
 		getContentPane().setLayout(new BorderLayout());
@@ -345,8 +347,8 @@ public class Servicos extends JDialog {
 					// esconder a lista
 					scrollPane.setVisible(false);
 					// setar os campos
-					txtNome.setText(rs.getString(2));
-					txtID.setText(rs.getString(1));
+					txtNome.setText(rs.getString(1));
+					txtID.setText(rs.getString(2));
 				} else {
 					JOptionPane.showMessageDialog(null, "ID inexistente");
 				}
@@ -375,14 +377,15 @@ public class Servicos extends JDialog {
 			JOptionPane.showMessageDialog(null, "Preencha o Valor");
 			txtValor.requestFocus();
 		} else {
-			String create = "insert into servicos(equipamentos,defeito,valor, id) values (?,?,?,?)";
+			String create = "insert into servicos(equipamentos,defeito,valor,cliente,id) values (?,?,?,?,?)";
 			try {
 				con = dao.conectar();
 				pst = con.prepareStatement(create);
 				pst.setString(1, txtEquipamentos.getText());
 				pst.setString(2, txtDefeito.getText());
 				pst.setString(3, txtValor.getText());
-				pst.setString(4, txtID.getText());
+				pst.setString(4, txtNome.getText());
+				pst.setString(5, txtID.getText());
 				pst.executeUpdate();
 				JOptionPane.showMessageDialog(null, "OS cadastrado!");
 				limparCampos();
@@ -408,8 +411,8 @@ public class Servicos extends JDialog {
 				txtEquipamentos.setText(rs.getString(3));
 				txtDefeito.setText(rs.getString(4));
 				txtValor.setText(rs.getString(5));
-				txtID.setText(rs.getString(7));
-				txtNome.setText(rs.getString(8));
+				txtNome.setText(rs.getString(7));
+				txtID.setText(rs.getString(8));
 			} else {
 				JOptionPane.showMessageDialog(null, "OS não cadastrada!");
 			}
@@ -420,42 +423,42 @@ public class Servicos extends JDialog {
 
 	}// fim do método buscar
 
-	private void editar() {
-		if (txtNome.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Escolha o Cliente");
-			txtNome.requestFocus();
-		} else if (txtOS.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha a OS!");
-			txtOS.requestFocus();
-		} else if (txtData.getText().equals("  /  /    ")) {
-			JOptionPane.showMessageDialog(null, "Preencha a Data!");
-			txtData.requestFocus();
+	public void editar() {
+		String comando = "update servicos set data_os=?,equipamentos=?,defeito=?,valor=? where os=?";
+		if (txtID.getText().isEmpty()) {
+			JOptionPane.showInternalMessageDialog(null, "O campo ID não pode estar vazio.");
+			txtID.requestFocus();
 		} else if (txtEquipamentos.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha os Equipamentos!");
+			JOptionPane.showInternalMessageDialog(null, "O campo Equipamentos não pode estar vazio.");
 			txtEquipamentos.requestFocus();
 		} else if (txtDefeito.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha o Defeito");
+			JOptionPane.showInternalMessageDialog(null, "O campo txtDefeito não pode estar vazio.");
 			txtDefeito.requestFocus();
 		} else if (txtValor.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha o Valor");
-			txtValor.requestFocus();
+			JOptionPane.showInternalMessageDialog(null, "O campo txtDefeito não pode estar vazio.");
+			txtDefeito.requestFocus();
 		} else {
-			String update = "update servicos set os=?,data_os=?,equipamentos=?,defeito=?,valor=? where id=?";
 			try {
 				con = dao.conectar();
-				pst = con.prepareStatement(update);
-				pst.setString(6, txtID.getText());
-				pst.setString(1, txtOS.getText());
-				pst.setString(2, txtData.getText());
-				pst.setString(3, txtEquipamentos.getText());
-				pst.setString(4, txtDefeito.getText());
-				pst.setString(5, txtValor.getText());
+				pst = con.prepareStatement(comando);
+
+				pst.setString(1, txtData.getText());
+				pst.setString(2, txtEquipamentos.getText());
+				pst.setString(3, txtDefeito.getText());
+				pst.setString(4, txtValor.getText());
+				pst.setString(5, txtOS.getText());
+
 				pst.executeUpdate();
-				JOptionPane.showMessageDialog(null, "Dados da OS editados com sucesso!");
+				JOptionPane.showMessageDialog(null, "Dados editados com sucesso.");
 				limparCampos();
+
 				con.close();
+			} catch (SQLException se) {
+				// TODO: handle exception
+				JOptionPane.showMessageDialog(null, se);
 			} catch (Exception e) {
-				System.out.println(e);
+				// TODO: handle exception
+				JOptionPane.showMessageDialog(null, e);
 			}
 		}
 	}

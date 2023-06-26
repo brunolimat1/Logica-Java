@@ -30,7 +30,6 @@
     <fullyQualifiedTypeName name="javax.swing.JDesktopPane"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="br.com.projeto.papelaria.repository.AtualizarApagar"/>
-    <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="br.com.projeto.papelaria.dominio.Contato"/>
     <fullyQualifiedTypeName name="br.com.projeto.papelaria.dao.DAOContato"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
@@ -53,4 +52,5 @@
     <fullyQualifiedTypeName name="com.itextpdf.text.Image"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
 </qualifiedTypeNameHistroy>

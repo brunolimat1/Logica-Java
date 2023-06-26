@@ -192,7 +192,7 @@ public class Relatorios extends JDialog {
 			document.add(new Paragraph(" ")); //pular uma linha
 			//----------------------------------------------------------
 			//query (instrução sql para gerar o relatório de clientes)
-			String readServicos = "select os,data_os,equipamentos,defeito,valor from servicos order by id";
+			String readServicos = "select os,cliente,data_os,equipamentos,defeito,valor from servicos order by id";
 			try {
 				//abrir a conexão com o banco
 				con = dao.conectar();
@@ -202,18 +202,20 @@ public class Relatorios extends JDialog {
 				rs = pst.executeQuery();
 				//atenção uso do while para trazer todos os clientes
 				// Criar uma tabela de duas colunas usando o framework(itextPDF)
-				PdfPTable tabela = new PdfPTable(5); //(2) número de colunas
+				PdfPTable tabela = new PdfPTable(6); //(2) número de colunas
 				// Criar o cabeçalho da tabela
 				PdfPCell col1 = new PdfPCell(new Paragraph("OS"));
-				PdfPCell col2 = new PdfPCell(new Paragraph("Data da OS"));
-				PdfPCell col3 = new PdfPCell(new Paragraph("Equipamentos"));
-				PdfPCell col4 = new PdfPCell(new Paragraph("Defeitos"));
-				PdfPCell col5 = new PdfPCell(new Paragraph("Valores"));
+				PdfPCell col2 = new PdfPCell(new Paragraph("Clientes"));
+				PdfPCell col3 = new PdfPCell(new Paragraph("Data da OS"));
+				PdfPCell col4 = new PdfPCell(new Paragraph("Equipamentos"));
+				PdfPCell col5 = new PdfPCell(new Paragraph("Defeitos"));
+				PdfPCell col6 = new PdfPCell(new Paragraph("Valores"));
 				tabela.addCell(col1);
 				tabela.addCell(col2);
 				tabela.addCell(col3);
 				tabela.addCell(col4);
 				tabela.addCell(col5);
+				tabela.addCell(col6);
 				while (rs.next()) {
 					//popular a tabela
 					tabela.addCell(rs.getString(1));
@@ -221,6 +223,7 @@ public class Relatorios extends JDialog {
 					tabela.addCell(rs.getString(3));
 					tabela.addCell(rs.getString(4));
 					tabela.addCell(rs.getString(5));
+					tabela.addCell(rs.getString(6));
 				}				
 				//adicionar a tabela ao documento pdf
 				document.add(tabela);

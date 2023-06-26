@@ -52,6 +52,8 @@ update usuarios set nome = 'robson vaamonde' where id = 3;
 
 update clientes set nome = 'ricardo' where id = 1;
 
+update servicos set os = 1 where id = 6;
+
 -- login(autenticação)
 select * from usuarios where login = "admin" and senha = md5('admin');
 
@@ -63,7 +65,7 @@ create table servicos (
 	equipamentos varchar (100) not null,
     defeito varchar (150) not null,
     valor decimal (10,2),
-    id int not null,
+    id int not null, cliente varchar (50) not null,
     foreign key (id) references clientes(idcli)
 );
 
@@ -75,5 +77,7 @@ inner join clientes
 on servicos.id = clientes.idcli;
 
 select * from servicos inner join clientes on servicos.id = clientes.idcli where OS = 1;
+
+select * from servicos inner join clientes on servicos.id = clientes.idcli order by id;
 
 select * from servicos;
