@@ -1,0 +1,443 @@
+1
+00:00:00,330 --> 00:00:06,090
+Então continuando com essa saga aqui de registrar o usuário a gente precisa corrigir essa sem que a
+
+2
+00:00:06,090 --> 00:00:08,650
+gente precisa fazer um raio-X de 100.
+
+3
+00:00:08,860 --> 00:00:09,270
+E aí.
+
+4
+00:00:09,270 --> 00:00:12,620
+Isso aqui não é criptografar a senha é diferente.
+
+5
+00:00:12,630 --> 00:00:16,470
+A gente vai fazer um recorte de 100 que não tem como voltar.
+
+6
+00:00:16,470 --> 00:00:24,120
+Não tem como criptografar sem que no caso a gente precisa vai precisar checar se esse regime bate com
+
+7
+00:00:24,780 --> 00:00:26,610
+o beco é aqui que a gente vai utilizar.
+
+8
+00:00:26,610 --> 00:00:30,500
+Então como é que a gente vai fazer isso na hora de registrar o usuário.
+
+9
+00:00:30,510 --> 00:00:37,450
+A gente vai precisar de outro pacote clima bem quente aí essa aqui a gente vai fazer assim.
+
+10
+00:00:37,920 --> 00:00:43,530
+VIR AQUI FALAR ele me é bem corruPT B.
+
+11
+00:00:45,490 --> 00:00:52,940
+Enquanto ele está lá a gente vai utilizar ele aqui então aqui no nosso login móvel a gente vai falar
+
+12
+00:00:52,980 --> 00:00:56,180
+com b ok ok.
+
+13
+00:00:57,460 --> 00:01:01,340
+Essa é igual e caia bem.
+
+14
+00:01:01,750 --> 00:01:07,270
+Essa ideia aí como é que a gente vai trocar a nossa senha assim que passou por toda validação aqui no
+
+15
+00:01:07,270 --> 00:01:08,330
+nosso registro.
+
+16
+00:01:08,770 --> 00:01:12,100
+A gente vai tentar registrar o usuário aqui né.
+
+17
+00:01:12,100 --> 00:01:12,940
+Tô aqui.
+
+18
+00:01:13,150 --> 00:01:21,980
+Logo antes de tentar registrar o usuário a gente vai falar uma vez ponto Bare ponto peça o dia é igual
+
+19
+00:01:21,980 --> 00:01:29,180
+ao seguinte eu preciso de um salto aqui antes disso então só voltando aqui um pouquinho.
+
+20
+00:01:29,290 --> 00:01:32,710
+Preciso criar um conceito de Salt igual ao seguinte.
+
+21
+00:01:32,820 --> 00:01:34,600
+B clipe de S.
+
+22
+00:01:34,900 --> 00:01:36,750
+Ponto salte.
+
+23
+00:01:36,750 --> 00:01:37,470
+5.
+
+24
+00:01:37,520 --> 00:01:43,020
+Aqui e aí agora sim eu tenho um salto agora voltando aqui eu vou falar desse ponto bate ponto.
+
+25
+00:01:43,020 --> 00:01:45,470
+Passo World recebe disse.
+
+26
+00:01:45,520 --> 00:01:48,340
+B clipe PTN no caso de S.
+
+27
+00:01:48,380 --> 00:01:49,150
+Ponto
+
+28
+00:01:51,520 --> 00:01:55,780
+esqueci o nome do método Reach 7.5.
+
+29
+00:01:56,290 --> 00:01:57,890
+E aí ele vai fazer o resto.
+
+30
+00:01:57,900 --> 00:02:07,090
+Desse ponto bate ponto pés de Ron Wood aqui com o meu Salt.
+
+31
+00:02:08,350 --> 00:02:15,040
+Agora sim a gente está gerando um 1 Salt que a gente está fazendo um resto da sanha baseado no valor
+
+32
+00:02:15,040 --> 00:02:18,190
+das 100 e desses saltos que ele mesmo que gera aqui.
+
+33
+00:02:18,280 --> 00:02:25,390
+Sei que você não precisa decorar você pode sempre ler a documentação lá e daí eu estou criando aqui
+
+34
+00:02:25,400 --> 00:02:27,960
+assim agora a gente pode registrar o usuário.
+
+35
+00:02:28,330 --> 00:02:33,040
+Então como é que a gente vai fazer isso eu vou registrar novamente com os mesmos dados aqui.
+
+36
+00:02:33,040 --> 00:02:39,580
+Deixa eu ver se eu tenho que que tem por registrar novamente esse usuário e só vai ver outra falha de
+
+37
+00:02:39,580 --> 00:02:45,940
+segurança que é que a gente não está checando se usuários já existe lá então ele vai criar novamente
+
+38
+00:02:45,940 --> 00:02:47,380
+esse uso anual.
+
+39
+00:02:47,830 --> 00:02:49,860
+Saiu aqui do meu login.
+
+40
+00:02:49,980 --> 00:02:50,890
+Bom voltei aqui.
+
+41
+00:02:50,890 --> 00:02:55,290
+Pessoal já foi registrado aqui saiu do meu login sei por que cargas d'água.
+
+42
+00:02:56,050 --> 00:03:03,640
+Mas aqui já foi registrado agora se você observar nossa senha já tá criptografada sem graça não é criptografia
+
+43
+00:03:03,640 --> 00:03:06,280
+isso aqui e daí.
+
+44
+00:03:06,280 --> 00:03:09,670
+Aqui Agora não tem como ninguém descobrir que valor.
+
+45
+00:03:09,730 --> 00:03:12,920
+Isso é um desses casos em que isso é o que é né.
+
+46
+00:03:12,940 --> 00:03:18,990
+Só que o problema aqui é o seguinte Agora a gente tem dois usuários com o nome Otávio Miranda Black.
+
+47
+00:03:19,010 --> 00:03:24,370
+Como é que a gente ficaria se esse usuário já existe na base de dados então vamos fazer isso aqui já
+
+48
+00:03:24,380 --> 00:03:32,220
+também pra gente não permitir que dois meios iguais sejam registrado registrados na base de dados.
+
+49
+00:03:32,530 --> 00:03:37,140
+Então o que eu vou criar o seguinte vou criar aqui.
+
+50
+00:03:37,960 --> 00:03:42,140
+Aqui eu posso tirar isso daqui daqui se eu quiser eu posso colocar aqui no caso aqui.
+
+51
+00:03:42,640 --> 00:03:45,460
+Por causa do seguinte eu vou checar isso aqui antes aqui.
+
+52
+00:03:45,840 --> 00:03:52,350
+Então o que eu vou falar o seguinte aliás a gente pode fazer um método ou fazer isso pra gente se for
+
+53
+00:03:52,350 --> 00:03:53,240
+o caso.
+
+54
+00:03:53,430 --> 00:03:56,390
+A gente pode fazer um método chacais pra gente.
+
+55
+00:03:56,430 --> 00:03:58,620
+Então vem esse ponto.
+
+56
+00:03:58,730 --> 00:04:00,060
+Uso existe
+
+57
+00:04:02,880 --> 00:04:07,750
+vai checar se o usuário existe User existe.
+
+58
+00:04:08,110 --> 00:04:13,270
+E aqui eu vou mexer na base de dados então normal novamente assim.
+
+59
+00:04:13,810 --> 00:04:14,420
+E aí.
+
+60
+00:04:14,420 --> 00:04:20,180
+Aqui eu tenho falar ao Haiti para esperar isso daqui.
+
+61
+00:04:20,320 --> 00:04:26,130
+Então assim que a gente vai mexer na base de dados e a gente vai falar o seguinte é bem simples na verdade
+
+62
+00:04:26,130 --> 00:04:29,560
+a gente vai checar o login móvel.
+
+63
+00:04:29,820 --> 00:04:41,030
+A gente precisa esperar que ocorra ainda então ao it login móvel ponto onde pode ser fim de um ano porque
+
+64
+00:04:41,040 --> 00:04:47,210
+no caso como é que a gente vai checar esse fim a gente vai mandar um objeto aqui com email.
+
+65
+00:04:47,300 --> 00:04:54,720
+Se o IMEI foi igual desse ponto bate ponto meio então aqui eu estou encontrando um registro na base
+
+66
+00:04:54,720 --> 00:04:58,950
+de dados que tem o e-mail igual ou o IMI que está sendo enviado aqui.
+
+67
+00:04:58,980 --> 00:05:02,070
+Isso daqui vai me retornar ou o usuário ou não.
+
+68
+00:05:02,610 --> 00:05:04,670
+Então como é que eu vou aqui que eu vou fazer aqui.
+
+69
+00:05:04,680 --> 00:05:08,340
+Vou jogar isso aqui numa variável com este uso igual.
+
+70
+00:05:08,340 --> 00:05:13,690
+Isso daqui eu vou checar se essa variável foi preenchida e uso.
+
+71
+00:05:13,860 --> 00:05:25,960
+Se o usuário for preenchido esse ponto errou esse ponto Patch o usuário já existe beleza eu posso deixar
+
+72
+00:05:25,960 --> 00:05:27,840
+esse aqui juntinho para ficar mais junto aqui.
+
+73
+00:05:28,060 --> 00:05:34,690
+Legal e aqui eu vou checar denovo porque eu vou chacais denovo porque é o seguinte esse meu válida tá
+
+74
+00:05:34,690 --> 00:05:41,980
+recebendo uso vá o os dados puros do formulário e está fazendo uma checagem muito importante.
+
+75
+00:05:42,460 --> 00:05:47,790
+Eu não quero que o código passe desse local dessa linha aqui.
+
+76
+00:05:47,920 --> 00:05:51,580
+Caso ocorra qualquer erro nos dados puros do formulário.
+
+77
+00:05:51,610 --> 00:05:57,310
+Se passar tudo bem ele vai passar de novo agora ele vai fazer uma outra checagem pra mim quer checar
+
+78
+00:05:57,310 --> 00:06:04,660
+na base de dados com dados do formulário com o IMEI do formulário no caso se checar que a gente está
+
+79
+00:06:04,660 --> 00:06:07,720
+mandando aqui o e-mail checar se esse usuário existe.
+
+80
+00:06:07,720 --> 00:06:12,640
+Se esse usuário existir aí sim eu vou ter que checar de novo se existe algum erro porque aqui eu estou
+
+81
+00:06:12,640 --> 00:06:15,400
+mandando um erro pra lá falando que o usuário já existe.
+
+82
+00:06:15,880 --> 00:06:22,600
+Então agora isso aqui deve retornar já falando se existe ou não se não existir eu crio se existir volta
+
+83
+00:06:22,600 --> 00:06:25,720
+para o formulário lá ficou esse erro aqui.
+
+84
+00:06:26,500 --> 00:06:27,710
+Então mantenha as taxas daqui.
+
+85
+00:06:27,940 --> 00:06:38,640
+Vou tentar de novo com esse dado Otavio Miranda BR é a senha 1 2 3 4 5 6 é enviada usuário já existe
+
+86
+00:06:38,650 --> 00:06:41,970
+ou seja ele não vai registrar mais esse usuário.
+
+87
+00:06:42,100 --> 00:06:47,910
+Otávio Miranda na base de dados ou qualquer outro mito que já existia lá então a gente pode agora só
+
+88
+00:06:47,900 --> 00:06:53,770
+para a gente fazer o teste final dessa aula a gente pode agora excluir a gente pode inclusive excluir
+
+89
+00:06:53,770 --> 00:06:55,710
+essa tabela inteira.
+
+90
+00:06:56,070 --> 00:07:02,470
+E para excluir eu preciso digitar o nome da tabela aqui e lobbies e daí a gente pede pra ele registrar
+
+91
+00:07:02,470 --> 00:07:11,560
+novamente pra gente gente pode incluir excluir abaixo dados inteiros se for o caso nova agenda só pra
+
+92
+00:07:11,770 --> 00:07:13,950
+começar do zero de novo.
+
+93
+00:07:14,200 --> 00:07:18,530
+E daí agora pode ser que dê alguns erros ali na nossa aplicação.
+
+94
+00:07:18,850 --> 00:07:19,490
+Vamos testar.
+
+95
+00:07:19,960 --> 00:07:21,280
+Vamos voltar aqui.
+
+96
+00:07:21,700 --> 00:07:27,250
+Eu não coloquei link aqui nessa agenda vamos colocar um link pra Bali pra gente não cair mais nessa
+
+97
+00:07:27,250 --> 00:07:31,600
+armadilha nave vamos colocar um link Barra aqui na agenda.
+
+98
+00:07:31,600 --> 00:07:37,810
+Beleza feito aqui a gente pode atualizar e clicar agora a gente volta pra Rome e não tem link pra gente
+
+99
+00:07:37,810 --> 00:07:38,920
+ir para a página de login.
+
+100
+00:07:38,920 --> 00:07:42,580
+Depois a gente cria isso também login Index.
+
+101
+00:07:42,760 --> 00:07:49,420
+Beleza vou tentar agora registrar o usuário Otávio Miranda Berrini que eu estava colocando 1 2 3 4 5
+
+102
+00:07:49,420 --> 00:07:58,640
+6 enviando a gente foi o usuário foi criado com sucesso aqui beleza e aí só olhando aqui nosso usuário
+
+103
+00:07:58,640 --> 00:08:06,120
+foi criado aqui em lobbies tranquilo e agora a gente vai tentar de novo criar esse mesmo usuário então
+
+104
+00:08:06,230 --> 00:08:11,510
+Otávio Miranda BR 1 2 3 4 5 6 é enviado.
+
+105
+00:08:11,580 --> 00:08:12,650
+Usuário já existe.
+
+106
+00:08:12,650 --> 00:08:14,840
+Vamos conferir aqui Refresh
+
+107
+00:08:17,500 --> 00:08:23,670
+beleza não foi criado mas então a gente concluiu com sucesso a parte de cadastro do usuário.
+
+108
+00:08:23,710 --> 00:08:31,150
+Agora o que a gente vai fazer na próxima aula é fazer o usuário poder se logar entrar no sistema utilizando
+
+109
+00:08:31,150 --> 00:08:33,330
+esses dados de usuário sem que cadastro.
+
+110
+00:08:33,350 --> 00:08:36,490
+Que beleza está aí esse pessoal te vejo na próxima aula.
+
+111
+00:08:36,490 --> 00:08:37,280
+Grande abraço.

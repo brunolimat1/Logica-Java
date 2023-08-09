@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Sistema OS/src/img/1976059_camera_images_photo_picture_icon.png&apos; to &apos;photo.png&apos;" description="Rename resource &apos;1976059_camera_images_photo_picture_icon.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/img/1976059_camera_images_photo_picture_icon.png" name="photo.png" stamp="1690907847693" updateReferences="true"/>
+</session>

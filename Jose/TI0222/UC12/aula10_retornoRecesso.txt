@@ -1,0 +1,6 @@
+UC 12 - Sistema OS (encerramento: 23/08)
+
+Login / restrições de acesso
+
+- Perfil de usuário
+- Correção de BUGs

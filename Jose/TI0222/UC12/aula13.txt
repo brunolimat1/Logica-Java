@@ -1,0 +1,5 @@
+Atividade de avaliação
+
+Tabela de fornecedores:
+- Acrescentar os campos indicados (script em anexo)
+- Corrigir os métodos

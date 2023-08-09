@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+D:\Java\Bruno Lima\ProjetosSENAC\.metadata\.plugins\org.eclipse.jdt.core
+1535177651.index
+66371234.index
+1865797976.index
+2264350439.index
+3257276594.index
+2172722434.index
+2581330050.index

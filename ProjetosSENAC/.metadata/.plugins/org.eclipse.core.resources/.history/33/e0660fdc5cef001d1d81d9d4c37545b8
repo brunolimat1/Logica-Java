@@ -1,0 +1,64 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+
+public class Clientes extends JDialog {
+	private JTextField txtBrunoDeLima;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Clientes dialog = new Clientes();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Clientes() {
+		setTitle("Cadastro");
+		setBounds(100, 100, 456, 634);
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Cadastro de Clientes");
+		lblNewLabel.setFont(new Font("Bookman Old Style", Font.BOLD, 17));
+		lblNewLabel.setBounds(123, 11, 185, 14);
+		getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nome:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1.setBounds(10, 47, 46, 14);
+		getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Email:");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1.setBounds(10, 100, 46, 14);
+		getContentPane().add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("Telefone:");
+		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1_1.setBounds(10, 137, 62, 14);
+		getContentPane().add(lblNewLabel_1_1_1);
+		
+		txtBrunoDeLima = new JTextField();
+		txtBrunoDeLima.setBounds(10, 65, 200, 20);
+		getContentPane().add(txtBrunoDeLima);
+		txtBrunoDeLima.setColumns(10);
+
+	}
+}

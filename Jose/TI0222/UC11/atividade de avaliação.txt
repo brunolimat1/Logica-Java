@@ -1,0 +1,13 @@
+Sistema para gestão de serviços e controle de estoque
+Prazo final de entrega: 11/09
+
+1) Criar um repositório GitHub com o nome do projeto
+2) Sincronizar o repositório com o computador local
+   (documentação: Aula 11 - UC 12)
+3) No GitHub:
+   - Personalizar o README.md (selos, print de tela etc.)
+   - Criar uma licença MIT
+   - Preencher a descrição(about)
+4)
+5)
+6)

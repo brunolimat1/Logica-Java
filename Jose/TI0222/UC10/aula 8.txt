@@ -1,0 +1,17 @@
+Uso de banco de dados para desenvolvimento de um sistema de gestão de serviços:
+
+- Cadastro (usuário, clientes, os) (CRUD)
+- Autenticação (login)
+- Relacionamento de tabelas (1 - N)
+
+________________________________________________
+Atividade individual:
+
+Escolha do cliente
+Personalização da tela principal:
+- Logo (identididade visual)
+- Sobre (botão e a tela Sobre)
+- 4 botões (usuários, clientes, serviço e relatórios)
+- Rodapé (com data e ícone de status da conexão)
+Resolução entre 640 x 480 até 800 x600
+Criação do repositório Github (feito)

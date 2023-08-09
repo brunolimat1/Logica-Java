@@ -1,0 +1,10 @@
+Atividade de avaliação
+Sistema OS - individual
+
+Tela de serviços:
+Botão OS
+Impressão (documento PDF) da Ordem de serviço
+
+Tela de relatórios:
+Botão clientes (nome, fone etc.)
+Botão de serviços (serviços)

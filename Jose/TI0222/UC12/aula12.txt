@@ -1,0 +1,8 @@
+Atividade de avaliação (individual)
+
+1) Mudar o texto da tela sobre:
+   - Sistema para gestão de serviços e controle de estoque
+   - Inserir link para o repositório GitHub
+   dica: https://youtu.be/sKO2C58yf28  (11:00 em diante)
+
+2) Tela de login com perfil e correção de BUG(editar senha)

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+
+<style>
+    h1{
+        text-align: center;
+        font-family: "arial";
+        margin: 10px auto;
+    }
+    form{
+        width: 40%;
+        margin: 10px auto;
+        text-align: center;
+    }
+    input[type=text]{
+        border: 0px;
+        border-bottom: 2px solid silver;
+        outline-color: limegreen;
+        font-family: "arial";
+        font-size: 10pt;
+        padding: 10px;
+        
+    }
+</style>
+
+</head>
+
+<body onload="exibirCategorias()">
+    <h1>Categorias</h1>
+    <section id="cad">
+        <form onsubmit="return false">
+            <input type="text" id="nome" placeholder="Nome da Categoria">
+            <input type="text" id="descricao" placeholder="Descrição">
+            <input type="submit" value="Cadastrar" id="btncadastrar">
+         </form>
+    </section>
+
+    <section id="display">
+        <table>
+            <thead>
+                 <tr>
+                     <th>Id Categoria</th>
+                     <th>Nome da Categoria</th>
+                     <th>Descrição da Categoria</th>
+                     <th>atualizar</th>
+                     <th>apagar</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

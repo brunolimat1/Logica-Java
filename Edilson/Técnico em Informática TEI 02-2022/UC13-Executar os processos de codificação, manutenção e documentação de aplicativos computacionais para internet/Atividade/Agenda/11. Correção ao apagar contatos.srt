@@ -1,0 +1,123 @@
+1
+00:00:00,540 --> 00:00:06,210
+Fala pessoal nessa aula a gente vai corrigir um probleminha que acabou ficando na aula passada e o aluno
+
+2
+00:00:06,540 --> 00:00:12,750
+Wilhelm percebeu isso e acabou me alertando aqui que a gente passou bem rápido pela parte de excluir
+
+3
+00:00:13,130 --> 00:00:19,700
+e acabei não percebendo que eu tinha deixado um barzinho vizinho aqui nesse local que ia de contato.
+
+4
+00:00:19,770 --> 00:00:25,260
+Você está vendo que a gente está utilizando o filho bom em deleite e eu acabei confundindo e mandando
+
+5
+00:00:25,260 --> 00:00:31,080
+diretamente o áudio que isso não vai funcionar e vai acabar excluindo o contato errado.
+
+6
+00:00:31,080 --> 00:00:31,970
+Deixa eu te mostrar.
+
+7
+00:00:32,280 --> 00:00:35,220
+Eu tenho um contato sem um C2 e C3.
+
+8
+00:00:35,220 --> 00:00:40,660
+Se eu mandar excluir o contato C2 não vai excluir o C2 mas você exclui o.
+
+9
+00:00:40,680 --> 00:00:43,850
+O primeiro contato que foi registrado que é esse aqui na verdade.
+
+10
+00:00:44,230 --> 00:00:50,730
+Então se ele excluir ele essa vai ver que não foi o C2 excluído foi o seu 1 ali né no caso isso aconteceu
+
+11
+00:00:50,730 --> 00:00:52,460
+por causa disso daqui.
+
+12
+00:00:52,470 --> 00:00:56,160
+Deixa eu te mostrar aqui aqui no meu deleite.
+
+13
+00:00:56,250 --> 00:01:02,240
+Fim do Ano em deleite eu acabei confundindo com o método um iPad e mandei só de direto.
+
+14
+00:01:02,250 --> 00:01:08,790
+Na verdade esse fim do One em deleite ele vai receber um objeto de filtro pra você filtrar o que você
+
+15
+00:01:08,790 --> 00:01:10,070
+quer deletar né no caso.
+
+16
+00:01:10,360 --> 00:01:18,750
+Eu mandei só aí direto aqui na verdade eu deveria mandar o objeto com o Haiti né.
+
+17
+00:01:18,780 --> 00:01:23,330
+A chave aí é o valor no Haiti que no caso dessa maneira.
+
+18
+00:01:23,700 --> 00:01:27,800
+Agora sim vamos fazer o teste novamente eu vou cadastrar esses contatos aqui de novo.
+
+19
+00:01:29,010 --> 00:01:33,380
+Vou apagar o C3 e o C2 e vou cadastrar eles rapidinho novamente.
+
+20
+00:01:34,260 --> 00:01:41,840
+Sem um local um telefone qualquer aqui C2 C2.
+
+21
+00:01:42,340 --> 00:01:49,110
+Colocar um telefone qualquer aqui de novo e o C3 é só pra gente ter 3 contatos e a gente conseguir perceber
+
+22
+00:01:49,560 --> 00:01:51,660
+se o erro foi ou não corrigido.
+
+23
+00:01:51,720 --> 00:01:52,770
+Eu sei que foi.
+
+24
+00:01:52,970 --> 00:01:57,450
+Na verdade só estou te mostrando aqui agora sim eu quero apagar o contato C2.
+
+25
+00:01:57,590 --> 00:02:01,440
+Ouvir aqui clicar no C2 e agora sim o C2 foi apagado.
+
+26
+00:02:01,440 --> 00:02:06,800
+Por exemplo eu quero o C3 agora o C3 vai ser apagado sim e agora eu sei.
+
+27
+00:02:07,130 --> 00:02:13,620
+E agora você foi apagado então uma correção foi essa que nesse trecho aqui de código do delete só modificar
+
+28
+00:02:13,620 --> 00:02:19,950
+isso aqui aí pra um objeto com filtro e daí pode ser um filtro que você quiser.
+
+29
+00:02:19,980 --> 00:02:20,600
+Beleza.
+
+30
+00:02:20,650 --> 00:02:24,060
+Tá esse pessoal eu vou deixar essa aula que é assim e a gente vê na próxima.
+
+31
+00:02:24,360 --> 00:02:25,070
+Grande abraço.

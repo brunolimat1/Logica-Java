@@ -1,0 +1,1343 @@
+1
+00:00:00,390 --> 00:00:06,420
+Fala Pessoal no objetivo dessa sessão aqui vai ser criar essa rota aqui que a gente precisa agora que
+
+2
+00:00:06,420 --> 00:00:08,460
+é a de criar um contato né.
+
+3
+00:00:08,460 --> 00:00:10,110
+Como é que a gente vai fazer isso.
+
+4
+00:00:10,140 --> 00:00:15,820
+A gente precisa primeiramente da rota né no caso de show lembrar que qualquer rota contato indexa aqui.
+
+5
+00:00:16,650 --> 00:00:22,400
+Então vão criar aqui rotas vou comentar aqui rotas de contato.
+
+6
+00:00:22,650 --> 00:00:25,630
+E aí eu vou copiar uma rota aqui para agilizar para a gente.
+
+7
+00:00:26,060 --> 00:00:31,720
+Vou mudar aqui só para contato e aqui também vai ser contato.
+
+8
+00:00:31,720 --> 00:00:33,980
+No caso a gente ainda não tem esse controle.
+
+9
+00:00:33,990 --> 00:00:38,470
+Contato a gente precisa importar a ideia aqui também.
+
+10
+00:00:38,540 --> 00:00:46,880
+Aqui você seleciona logo encontrou d para editar os dois contatos e aí agora a gente pode criar esse
+
+11
+00:00:46,880 --> 00:00:47,470
+controle.
+
+12
+00:00:47,480 --> 00:00:52,520
+Aqui em SC Esse RC controla senil fail ponto.
+
+13
+00:00:52,540 --> 00:00:56,100
+JS só que beleza criado o nosso controle.
+
+14
+00:00:56,120 --> 00:01:02,460
+A gente precisa agora dessa decisão dessa função aqui no caso estão esportes.
+
+15
+00:01:02,800 --> 00:01:06,480
+Ponto indexa igual a uma fantoche.
+
+16
+00:01:06,520 --> 00:01:15,470
+Pode ser que também tanto faz é que esse e daí vão completar a função que beleza feita aqui vou mandar
+
+17
+00:01:15,470 --> 00:01:19,370
+só o rei esse ponto pra gente vê alguma coisa na tela.
+
+18
+00:01:20,280 --> 00:01:25,390
+E daí vamos enviar agora atualizar a página aqui pra gente ver aqui na Terra.
+
+19
+00:01:26,420 --> 00:01:32,450
+Tudo até aqui funcionando conforme esperado agora a gente precisa renderizar uma página HTML com um
+
+20
+00:01:32,450 --> 00:01:37,760
+formulário com nome sobrenome telefone e meio do cliente.
+
+21
+00:01:37,760 --> 00:01:39,620
+Como é que a gente pode fazer isso.
+
+22
+00:01:39,980 --> 00:01:46,670
+Vamos copiar uma dessas desses Vhils nossos aqui pode ser o Index ele tá meio aglomerado mas ele te
+
+23
+00:01:46,670 --> 00:01:48,350
+remove um monte de coisa dele aqui.
+
+24
+00:01:48,740 --> 00:01:57,410
+Vamos chamar de contato ponto jazz e daí vamos ouvir um monte de coisa aqui não há muita coisa não só
+
+25
+00:01:57,410 --> 00:02:03,210
+essa tabela aqui que a gente precisava remover e editar aqui contato.
+
+26
+00:02:03,220 --> 00:02:12,040
+E aí eu pretendo utilizar essa página pra editar e pra criar contatos dar o ou digite seu contato abaixo.
+
+27
+00:02:14,080 --> 00:02:19,920
+Beleza e vamos copiar um formulário um desses formulários o login aqui qualquer um já está selecionado
+
+28
+00:02:19,940 --> 00:02:20,300
+aqui.
+
+29
+00:02:20,310 --> 00:02:24,510
+Olha que coincidência mentira eu tinha feito isso antes.
+
+30
+00:02:24,670 --> 00:02:32,180
+Tô aqui a gente vai mudar esse registro pra contatou Barra Register e daí vamos remover esse pessoal
+
+31
+00:02:32,340 --> 00:02:37,930
+aqui que a gente não precisa e vai mudar que agora vou fechar esse aqui pra você ver melhor.
+
+32
+00:02:38,200 --> 00:02:39,480
+Vamo colocar nome
+
+33
+00:02:41,980 --> 00:02:49,200
+nome aqui vai ser imputado do top Tech aqui também no meme do campo sempre muito importante.
+
+34
+00:02:49,200 --> 00:02:50,520
+Nem me no back end.
+
+35
+00:02:51,670 --> 00:03:05,610
+Então vão colocar sobrenome email e telefone e sobrenome email e telefone telefone.
+
+36
+00:03:05,610 --> 00:03:14,880
+Beleza aqui é tipo email aqui é teu e aqui tá Itaipu aqui vão mudar os nomes aqui quem não pode esquecer
+
+37
+00:03:14,880 --> 00:03:17,240
+disso o sobrenome.
+
+38
+00:03:17,280 --> 00:03:23,240
+Aqui a gente vai colocar email e aqui tem telefone.
+
+39
+00:03:23,250 --> 00:03:28,270
+Beleza feita aqui vou mudar o botão aqui também pra salvar.
+
+40
+00:03:28,540 --> 00:03:31,080
+Beleza vamos dar uma olhada na página não.
+
+41
+00:03:31,100 --> 00:03:34,520
+A gente tem que ir no controle da renda.
+
+42
+00:03:34,920 --> 00:03:41,100
+Na página contato Pato beleza vamos voltar aqui atualizar.
+
+43
+00:03:41,100 --> 00:03:43,500
+Vamos ver de novo.
+
+44
+00:03:43,500 --> 00:03:45,820
+Beleza falta aqui o nosso contato.
+
+45
+00:03:45,840 --> 00:03:50,870
+Agora o que eu quero fazer é o seguinte eu não quero que eu estou logado aqui mas eu quero.
+
+46
+00:03:50,880 --> 00:03:54,510
+Se eu saí eu não quero conseguir acessar essa página.
+
+47
+00:03:54,510 --> 00:03:57,880
+Essa página só pode ser acessada por usuários logado.
+
+48
+00:03:57,890 --> 00:04:06,710
+Então vamos fazer um miúdo que checa se existe o uso na sessão e quando a gente quer logo o usuário
+
+49
+00:04:06,710 --> 00:04:12,370
+a gente cadastrou e usa na ação então a gente vai fazer disse Miguel que faz essa checagem pra gente.
+
+50
+00:04:12,630 --> 00:04:16,680
+Daí é só a gente utilizar o nosso amigo como é que a gente cria esse vídeo.
+
+51
+00:04:16,680 --> 00:04:18,990
+Vamos ver nos nossos heróis.
+
+52
+00:04:19,550 --> 00:04:24,870
+é daí que a gente vai dar uns esportes deixou pressione as teclas aqui.
+
+53
+00:04:24,870 --> 00:04:27,650
+Esportes ponto login.
+
+54
+00:04:27,760 --> 00:04:37,460
+Quais igual a seguinte Rui Reis Net Neca o padrão aqui do Midori no caso.
+
+55
+00:04:37,640 --> 00:04:41,760
+E daí vão colocar vão fazer a checagem.
+
+56
+00:04:41,880 --> 00:04:45,540
+é diferente de Rei que ponto 7 x 1 ponto e usa.
+
+57
+00:04:45,540 --> 00:04:47,940
+Quer dizer que o usuário não está logado.
+
+58
+00:04:48,010 --> 00:04:50,590
+A gente vai fazer Rei que ponto o flash.
+
+59
+00:04:50,670 --> 00:04:57,930
+E aí a gente vai mandar uma mensagem de erro e erros para que a gente vai mandar você precisa fazer
+
+60
+00:04:58,110 --> 00:04:59,020
+login.
+
+61
+00:04:59,070 --> 00:04:59,510
+Ponto.
+
+62
+00:04:59,520 --> 00:05:03,630
+Só isso aí é que a gente vai falar vai salvar a sessão.
+
+63
+00:05:03,750 --> 00:05:07,760
+E aqui no caso eu vou redirecionar a página do caso.
+
+64
+00:05:07,770 --> 00:05:12,810
+Então sempre que eu vou redirecionar a página é importante que eu salve a sessão antes para garantir
+
+65
+00:05:12,810 --> 00:05:13,650
+que ela foi salva.
+
+66
+00:05:13,950 --> 00:05:15,790
+Então Rei que ponto fecha um ponto.
+
+67
+00:05:15,850 --> 00:05:18,760
+Saif sei que vai receber uma função de caubói.
+
+68
+00:05:18,920 --> 00:05:26,100
+Então vou fazer essa função e vou dar um responde o rei Direct e eu vou redirecionar.
+
+69
+00:05:26,100 --> 00:05:33,030
+Quem não tiver logado e tiver tentando acessar essa página eu vou redirecionar a pessoa pra Rome e daí
+
+70
+00:05:33,030 --> 00:05:38,280
+eu tenho que dar um britânico pra garantir que essa função não vai passar pra baixo sem passar daqui.
+
+71
+00:05:38,280 --> 00:05:42,280
+Quer dizer que o usuário está logado eu posso mandar ele participar do próximo Midway.
+
+72
+00:05:42,930 --> 00:05:45,780
+Então agora só a gente utilizar esse milhão é nosso aqui.
+
+73
+00:05:46,910 --> 00:05:48,250
+Como é que a gente vai fazer isso.
+
+74
+00:05:48,250 --> 00:05:52,190
+Vamos ver aqui nas rotas vou me importar aquele amigo nosso.
+
+75
+00:05:52,450 --> 00:06:04,600
+Eu vou fazer desporto em casa ou pegar a senha login wi fi igual Wi caia e aí o arquivo de mídia esse
+
+76
+00:06:04,830 --> 00:06:10,440
+c Barra milhoes Barra Mi 2 ficou muito úmido aqui né.
+
+77
+00:06:11,020 --> 00:06:11,980
+Mas é assim mesmo.
+
+78
+00:06:12,220 --> 00:06:18,970
+Então aqui eu vou pegar aqui no caso aqui login o iPad vou por onde eu quero por exemplo se eu não sei
+
+79
+00:06:18,990 --> 00:06:23,640
+eu quero que essa página aqui não esteja acessível pra quem não está logado.
+
+80
+00:06:23,890 --> 00:06:29,300
+Eu vou para o miúdo no meio do caminho que ainda aqui eu vou colocar mais um parâmetro com esse miúdo.
+
+81
+00:06:29,830 --> 00:06:35,760
+Nesse caso eu já não posso conseguir acessar mais essa página aí você precisa fazer login.
+
+82
+00:06:35,760 --> 00:06:39,170
+B no caso você precisa fazer login eu não consigo acessar.
+
+83
+00:06:39,550 --> 00:06:42,990
+E se eu entrar com o meu usuário que a gente criou na lei anterior.
+
+84
+00:06:43,160 --> 00:06:52,180
+Otávio Miranda br Jeremy o ponto com 1 2 3 4 5 6 agora eu devo conseguir acessar essa página.
+
+85
+00:06:52,180 --> 00:06:53,630
+Beleza isso que eu queria.
+
+86
+00:06:53,650 --> 00:06:59,800
+Agora a gente vai tratar dessa parte do registro né no caso a gente vai receber os dados e esse formulário
+
+87
+00:07:00,040 --> 00:07:03,490
+que vai cadastrar o usuário na base de dados como é que a gente vai fazer isso.
+
+88
+00:07:03,580 --> 00:07:10,390
+A gente vai precisar de um modo mais uma bota que no caso é que vai receber um post e essa volta vai
+
+89
+00:07:10,390 --> 00:07:11,540
+ser Register.
+
+90
+00:07:12,100 --> 00:07:17,920
+E daí eu vou criar lá no controle esse essa função Register aqui no controle.
+
+91
+00:07:17,920 --> 00:07:26,170
+Eu vou duplicar isso aqui vou mudar aqui pra Register Register e essa função aqui ela não vai.
+
+92
+00:07:26,650 --> 00:07:32,110
+Ela não vai mostrar nada na tela só vai receber os dados salvando a base de dados e voltar para para
+
+93
+00:07:32,110 --> 00:07:34,830
+alguma página ou redirecionar para alguma outra página.
+
+94
+00:07:35,210 --> 00:07:42,670
+E aí eu vou dar um respondo Send aqui só pra deixar pronto aqui mas agora a gente precisa do modem né.
+
+95
+00:07:42,690 --> 00:07:45,540
+O contrato do contrato aqui no caso.
+
+96
+00:07:45,880 --> 00:07:46,930
+Então vamos criar um modem.
+
+97
+00:07:46,920 --> 00:07:49,970
+Vamos copiar esse rombo contra o C Control V.
+
+98
+00:07:50,020 --> 00:07:58,500
+Vou dar um e-mail me vou colocar lo contato móvel pela ex feito aqui eu vou só fechar como aqui no caso
+
+99
+00:07:58,520 --> 00:08:05,050
+eu não preciso dela e vou mudar todas as palavras Rome para contato.
+
+100
+00:08:06,280 --> 00:08:09,600
+Vamos fazer estou pensando que vamos criar.
+
+101
+00:08:09,600 --> 00:08:15,370
+A gente criou com classe de login anteriormente para criar esse aqui e agora com ela falando que você
+
+102
+00:08:15,400 --> 00:08:24,580
+acha da IBM com Eu não roubo com fantoche ou então fantoche e um contato daí aqui a gente vai já é o
+
+103
+00:08:24,580 --> 00:08:31,330
+consultor aqui então que a gente vai receber um Bari e vai falar desse ponto Bari igual Bari é a mesma
+
+104
+00:08:31,330 --> 00:08:34,700
+coisa mudou o jeito de escrever aqui no caso.
+
+105
+00:08:35,000 --> 00:08:39,560
+Esse ponto é igual ou é vazio.
+
+106
+00:08:39,560 --> 00:08:48,670
+E aí vi esse ponto contato é igual não beleza feito aqui a gente pode criar também um contato ponto
+
+107
+00:08:48,670 --> 00:08:59,170
+Prototype ponto Register e daí é homofobia função normal aqui que a gente vai fazer o que a gente vai
+
+108
+00:08:59,170 --> 00:09:07,240
+falar desse ponto valida pra gente vamos copiar esse válida lá do login que a gente já fez isso anteriormente
+
+109
+00:09:07,240 --> 00:09:16,820
+eu vou copiar esta que a gente não tem como utilizar esses válida isso pelo Inep com herança ou reutilizar
+
+110
+00:09:16,820 --> 00:09:19,130
+esse aqui porque cada formulário dá um jeito.
+
+111
+00:09:19,270 --> 00:09:25,390
+Então a gente vai validar cada formulário de uma maneira diferente mas eu vou copiar isso daqui pra
+
+112
+00:09:25,390 --> 00:09:32,620
+gente não perder tempo eu vou só editar esses módulos aqui lá na caso e aqui como consultor fantoche
+
+113
+00:09:32,710 --> 00:09:40,230
+você vai ver como a gente vai passar de um para o outro no caso então vou pegar esse contato ponto Prototype
+
+114
+00:09:40,270 --> 00:09:46,400
+vou colocar aqui antes do valida e aqui eu tenho que dar igual a uma fantochada beleza feita aqui.
+
+115
+00:09:46,420 --> 00:09:48,150
+Agora vamos fazer isso no outro lá.
+
+116
+00:09:48,150 --> 00:09:58,150
+Então aqui a mesma coisa que aí vai ser igual a uma fantoche beleza pronto modifiquem Di foi de classe
+
+117
+00:09:58,500 --> 00:10:02,500
+pra construir foi no chão assim num estalar de dedos.
+
+118
+00:10:02,500 --> 00:10:07,700
+Aqui faltou o Vale deitou aqui gente vai precisar porque o contato tem Mimi também.
+
+119
+00:10:07,690 --> 00:10:13,500
+A gente vai colocar com este vale e deita igual e caia.
+
+120
+00:10:13,670 --> 00:10:16,260
+Falei da beleza.
+
+121
+00:10:16,730 --> 00:10:19,170
+E daí que a gente vai mudar um pouco a validação.
+
+122
+00:10:19,180 --> 00:10:25,580
+A gente não tem senha no contato nem no caso e vai mudar também um pouco os dados aqui por exemplo.
+
+123
+00:10:25,780 --> 00:10:28,660
+Meu contato vai precisar ter nome.
+
+124
+00:10:28,660 --> 00:10:33,880
+Deixa eu colocar o nome realmente e o iPad então precisa ser enviado obrigatoriamente.
+
+125
+00:10:34,120 --> 00:10:36,250
+Então tu e os outros não são.
+
+126
+00:10:36,250 --> 00:10:43,090
+Por incrível que pareça você pode ter contatos que você não sabe o sobrenome que você não sabe o email
+
+127
+00:10:43,210 --> 00:10:47,150
+ou o que você não sabe o telefone mas que você pode saber uma coisa.
+
+128
+00:10:47,200 --> 00:10:49,830
+Uma coisa é certeza você vai saber o nome.
+
+129
+00:10:50,050 --> 00:10:54,970
+Aí você pode saber ou o telefone ou e-mail desse contato se você não souber não tem como você registrar
+
+130
+00:10:54,970 --> 00:10:58,350
+o contato que o sobrenome vai ser.
+
+131
+00:10:58,390 --> 00:11:01,460
+Não precisa nem era o caso falso.
+
+132
+00:11:01,520 --> 00:11:02,250
+Quais.
+
+133
+00:11:02,520 --> 00:11:05,100
+E aí eu vou falar que o default é uma esfinge vazia.
+
+134
+00:11:05,180 --> 00:11:08,400
+Você não foi enviado salvá la como um estilingue vazio.
+
+135
+00:11:08,820 --> 00:11:16,090
+E daí o Emílio vai ser também a mesma coisa então posso até copiar isso aqui mais duas vezes vou colocar
+
+136
+00:11:16,160 --> 00:11:19,270
+Emilio aqui e é igualzinho.
+
+137
+00:11:19,270 --> 00:11:25,810
+O telefone também e eu quero também criar uma outra coisa aqui que acham que vai ser a data em que foi
+
+138
+00:11:25,810 --> 00:11:27,710
+criado e então criado.
+
+139
+00:11:28,510 --> 00:11:35,950
+E daí o hype da data da data aqui vai ser daí tirando o caso e o iPad não precisa porque isso aqui vai
+
+140
+00:11:35,950 --> 00:11:39,730
+ser automático e o default vai ser deste ponto final.
+
+141
+00:11:39,760 --> 00:11:46,900
+Ou seja a hora em que ele for cadastrado vai ser salvo aquela data naquele momento por padrão.
+
+142
+00:11:47,170 --> 00:11:51,390
+Então a gente não precisa se preocupar com esse canal porque ele vai ser totalmente automático.
+
+143
+00:11:52,060 --> 00:11:57,450
+Então a gente só precisa se preocupar com os outros que não vamos colocar isso aqui como nome.
+
+144
+00:11:57,920 --> 00:11:59,620
+E aí vamo duplicar esse aqui.
+
+145
+00:11:59,620 --> 00:12:03,190
+Mais uma duas três quatro vezes.
+
+146
+00:12:03,370 --> 00:12:14,260
+Aqui vai ser sobrenome aqui vai ser mil e aqui vai ser telefone.
+
+147
+00:12:14,340 --> 00:12:15,740
+Beleza feita aqui agora.
+
+148
+00:12:15,750 --> 00:12:21,890
+A gente já tratou aqui os dados e agora a gente precisa fazer as validações que a gente precisa validar
+
+149
+00:12:21,890 --> 00:12:24,020
+o nome e um campo requerido.
+
+150
+00:12:24,270 --> 00:12:29,320
+Então se não enviar o nome não tem jeito de a gente registrar o usuário lá né.
+
+151
+00:12:29,460 --> 00:12:36,650
+O caso aqui e-mail ou telefone precisam ser enviado só que não precisa ser os dois dessa seriamente
+
+152
+00:12:36,690 --> 00:12:38,300
+pode ser mas não precisa.
+
+153
+00:12:38,590 --> 00:12:41,640
+Então como é que a gente vai fazer essa checagem que a gente vai fazer.
+
+154
+00:12:41,910 --> 00:12:51,900
+A primeira coisa é diferente de diz ponto e ponto o nome a gente vai lançar um erro disse o erros.
+
+155
+00:12:52,240 --> 00:13:01,750
+E aí gente a ponto Pancho na nosso toda hora o ponto Pancho e vão colocar aqui nome é um campo obrigatório
+
+156
+00:13:03,670 --> 00:13:05,950
+beleza e agora no e-mail.
+
+157
+00:13:05,980 --> 00:13:11,860
+Aqui vai dar vai dar algum erro porque nesse caso do jeito que eu estou checando aqui para validar o
+
+158
+00:13:11,880 --> 00:13:18,760
+e-mail ele sempre vai validar o IMEI e aí pode existir contatos que você não saiba o IMEI que você vai
+
+159
+00:13:18,760 --> 00:13:21,970
+cadastrar mas vai cadastrar só o telefone por exemplo.
+
+160
+00:13:22,570 --> 00:13:30,020
+Então aqui eu tenho que checar antes desse ponto para ponto email e aqui.
+
+161
+00:13:30,020 --> 00:13:37,170
+Essa checagem ficou só sei o IMEI for enviado for tiver algum valor no IMI e você valida se não passa
+
+162
+00:13:37,170 --> 00:13:38,100
+para o próximo.
+
+163
+00:13:38,160 --> 00:13:45,180
+Sei que aquela avaliação de curto circuito no caso é aqui se o nome for enviado não for enviado você
+
+164
+00:13:45,300 --> 00:13:53,970
+vai dar esse erro aqui e aqui a gente precisa checar o seguinte se não for enviado nem o email por email
+
+165
+00:13:54,120 --> 00:13:57,610
+e nem o nome diz.
+
+166
+00:13:57,690 --> 00:14:01,320
+Desse ponto bate ponto o nome e o telefone.
+
+167
+00:14:02,250 --> 00:14:10,620
+A gente vai dar um erro aqui a gente vai falar o seguinte Aqui se nem o IMEI e nem o telefone foi enviado
+
+168
+00:14:10,620 --> 00:14:12,520
+você não está cadastrado no contato.
+
+169
+00:14:12,530 --> 00:14:15,450
+Está colocando um nome só não adianta.
+
+170
+00:14:15,450 --> 00:14:29,770
+Então a gente vai falar pelo menos um contato precisa ser enviado eu o telefone certo.
+
+171
+00:14:30,240 --> 00:14:35,190
+Então fizemos essa avaliação o que acho que não precisamos avaliar mais nada.
+
+172
+00:14:36,330 --> 00:14:40,000
+Acho que é isso mesmo aqui no nosso registro e já estava lidando.
+
+173
+00:14:40,010 --> 00:14:45,230
+A gente vai checar aqui e vi esse ponto e ponto leve.
+
+174
+00:14:45,420 --> 00:14:46,830
+Maior que zero.
+
+175
+00:14:47,220 --> 00:14:55,020
+A gente vai dar um britânico se passado aqui a gente pode registrar o contato então essa função vai
+
+176
+00:14:55,170 --> 00:14:59,680
+trabalhar direto com a base de dados então ela precisa ser assíncrona né.
+
+177
+00:14:59,700 --> 00:15:01,390
+E aqui ao Haiti.
+
+178
+00:15:01,620 --> 00:15:02,420
+E daí.
+
+179
+00:15:02,460 --> 00:15:08,800
+Contato ponto cliente e contato modo né.
+
+180
+00:15:08,810 --> 00:15:10,440
+No caso do cliente.
+
+181
+00:15:10,990 --> 00:15:15,680
+E daí vi esse ponto Bare eu estou mandando o objeto aqui já pronto.
+
+182
+00:15:15,740 --> 00:15:21,370
+é aqui que vi esse ponto o contato é igual a esse daqui que é esse contato.
+
+183
+00:15:21,470 --> 00:15:24,550
+Quando ele for salvo ele vai ser retornado pra isso daqui.
+
+184
+00:15:24,550 --> 00:15:26,460
+O contato nessa chave contato.
+
+185
+00:15:26,450 --> 00:15:28,170
+Que beleza.
+
+186
+00:15:28,790 --> 00:15:34,010
+Eu acho que agora a gente já pode testar mas aí a gente vai ter que fazer o seguinte sempre que a gente
+
+187
+00:15:34,010 --> 00:15:41,400
+cria uma função assíncrona quer dizer que essa função também vai retornar uma promessa pra cadeia Aline
+
+188
+00:15:41,450 --> 00:15:48,920
+então aqui no caso meu controle essa isso daqui precisa ser assim que também é assim.
+
+189
+00:15:49,860 --> 00:15:50,320
+E daí.
+
+190
+00:15:50,360 --> 00:15:53,200
+Eu preciso aqui fazer um negócio assim.
+
+191
+00:15:53,330 --> 00:16:00,420
+Por exemplo eu preciso vir aqui e falar sempre ao Haiti só que eu preciso importar o contato que estou
+
+192
+00:16:00,410 --> 00:16:09,980
+escrevendo antes de portar contato é igual e caia aí dois posso Barra modos Barra contato e daí eu vou
+
+193
+00:16:09,980 --> 00:16:19,310
+falar no caso que eu preciso ainda instancia nossa eu estava longe contato igual a mil contato e daí
+
+194
+00:16:19,650 --> 00:16:21,120
+até que ponto bare.
+
+195
+00:16:22,100 --> 00:16:22,740
+E aí pronto.
+
+196
+00:16:22,820 --> 00:16:25,140
+Agora sim eu posso falar ao it.
+
+197
+00:16:25,220 --> 00:16:29,120
+Contato ponto Register beleza.
+
+198
+00:16:29,130 --> 00:16:36,420
+Então agora sim agora a gente fez e agora que a gente vai checar que a gente vai checar se existia erros
+
+199
+00:16:36,600 --> 00:16:40,670
+e contato ponto e ponto leve.
+
+200
+00:16:40,760 --> 00:16:47,510
+Maior que zero quer dizer que tem erros aqui na casa então a gente pode até copiar alguma coisa aqui
+
+201
+00:16:47,540 --> 00:16:48,610
+do nosso amigo.
+
+202
+00:16:48,710 --> 00:16:49,960
+Eu fechei ele Jane.
+
+203
+00:16:50,120 --> 00:16:56,380
+A gente acabou de escrever uma função aqui igualzinha essa no Midori a gente pode até copiar aqui é
+
+204
+00:16:56,390 --> 00:16:58,880
+igualzinho aqui é só mudar pra isso.
+
+205
+00:16:58,970 --> 00:17:06,380
+Então a gente vai colocar aqui e e aí ia aqui ao invés de mandar uma mensagem informando mandar contato
+
+206
+00:17:06,380 --> 00:17:10,790
+ponto iguais e aí aqui vai salvar a sessão.
+
+207
+00:17:10,790 --> 00:17:16,010
+Só que a gente não vai redirecionar pra gente vai redirecionar para a página anterior Black.
+
+208
+00:17:16,340 --> 00:17:22,610
+Beleza passou daqui a gente pode mandar uma mensagem falando Olha que legal sou usuário foi registrado
+
+209
+00:17:22,880 --> 00:17:28,050
+tal Success on tá aqui eu vou mandar uma chuvinha né realmente.
+
+210
+00:17:28,070 --> 00:17:36,680
+Contato registrado com sucesso beleza e redireciona de volta no caso.
+
+211
+00:17:37,140 --> 00:17:42,380
+E é aqui importante a gente vou ver isso daqui eu não sei se a gente esqueceu de fazer isso em algum
+
+212
+00:17:42,380 --> 00:17:52,890
+anterior mas é importante sempre importante envolver um traficante não Quiet aí começou logo aqui no.
+
+213
+00:17:53,100 --> 00:18:02,670
+Ou então a gente redireciona renderizar a página 404 então ele é Fotolog e é esse ponto render.
+
+214
+00:18:02,900 --> 00:18:07,050
+Página 404 você é uma esfinge.
+
+215
+00:18:07,120 --> 00:18:08,150
+Beleza.
+
+216
+00:18:08,590 --> 00:18:11,950
+Vou dar um tema aqui para garantir o item Renda.
+
+217
+00:18:12,110 --> 00:18:20,050
+Sei que beleza vamos testar isso daqui pra gente ver escrito muito código sem ter para mandar para ver
+
+218
+00:18:20,120 --> 00:18:21,630
+vazio beleza.
+
+219
+00:18:21,910 --> 00:18:29,540
+O nome é um campo obrigatório pelo menos um contato precisa ser enviado email telefone enviar um email.
+
+220
+00:18:29,650 --> 00:18:31,860
+Essa mensagem tem que somente ao meu ver.
+
+221
+00:18:31,990 --> 00:18:34,330
+Aqui eu preciso roubar alguma coisa né.
+
+222
+00:18:36,160 --> 00:18:43,530
+E nós a nossa validação atrasando a gente enviar sumiu agora vamos enviar o 2.
+
+223
+00:18:43,750 --> 00:18:45,310
+Vamos já cadastrar um contato.
+
+224
+00:18:45,310 --> 00:18:48,480
+Luiz Otávio teste.
+
+225
+00:18:48,620 --> 00:18:54,010
+Vou até este ponto com só o telefone dele enviado.
+
+226
+00:18:54,010 --> 00:18:55,850
+Contato registrado com sucesso.
+
+227
+00:18:55,840 --> 00:18:57,910
+Vamos dar uma olhada aqui.
+
+228
+00:18:58,130 --> 00:18:58,900
+2 Collection
+
+229
+00:19:02,030 --> 00:19:03,550
+para meus contatos
+
+230
+00:19:06,990 --> 00:19:12,700
+mal estar registrada aqui perfeitamente tem até a data em que ele foi criado aqui.
+
+231
+00:19:12,880 --> 00:19:15,010
+Perfeito funcionando aqui.
+
+232
+00:19:15,220 --> 00:19:20,470
+A nossa criação só que eu não quero que ele volte pra essa página eu quero que é assim que eu criar
+
+233
+00:19:20,470 --> 00:19:26,190
+o contato ele vai para a página de edição do contato a gente já vai deixar isso pronto.
+
+234
+00:19:26,310 --> 00:19:26,950
+Aula mesmo.
+
+235
+00:19:26,950 --> 00:19:28,620
+Então como é que a gente vai fazer aquilo.
+
+236
+00:19:28,640 --> 00:19:34,610
+Rei direto aqui vai vc que a gente vai colocar ele pra ser redirecionado.
+
+237
+00:19:35,800 --> 00:19:37,560
+Vou colocar templates.
+
+238
+00:19:37,690 --> 00:19:42,820
+Vamos colocar a barra contato da Index barra o pedido.
+
+239
+00:19:42,850 --> 00:19:50,700
+Contato então vamos colocar contato ponto contato ponto de apoio contato ponto contato.
+
+240
+00:19:50,710 --> 00:19:51,930
+Porque aqui dentro.
+
+241
+00:19:52,540 --> 00:20:01,060
+Esse contato que a gente está acessando diz representa essa variável contato que a gente está retornando
+
+242
+00:20:01,060 --> 00:20:02,010
+aqui no caso.
+
+243
+00:20:02,900 --> 00:20:08,740
+Então na verdade aí esse objeto de contato o vice representa ele dentro da classe aqui.
+
+244
+00:20:08,950 --> 00:20:15,250
+Por isso que aqui fora a gente acessa contato ponto contato é esse aí que é simplesmente esse campo
+
+245
+00:20:15,250 --> 00:20:21,060
+do mongo DB que o usuário que vai ser esse número aqui desse local aqui.
+
+246
+00:20:21,730 --> 00:20:34,440
+Então beleza feita aqui vamos testar de novo Maria Joaquina Maria Arroba e meio ponto com um 2 três
+
+247
+00:20:34,710 --> 00:20:37,380
+um telefone aqui beleza cadastrado.
+
+248
+00:20:37,380 --> 00:20:43,460
+Ela tem que agora para a página lá deu algo não deu não tô aqui e a gente está na página.
+
+249
+00:20:43,540 --> 00:20:47,990
+Aqui que não funcionou esse aqui porque a gente não tem essa rota hein.
+
+250
+00:20:48,070 --> 00:20:52,710
+E aí eu quero deixar pronto isso daqui pra gente fazer a edição de usuário.
+
+251
+00:20:52,710 --> 00:21:00,060
+Sei que não é tão complexo assim que a gente vai fazer o seguinte vão criar essa rota vou pegar aqui
+
+252
+00:21:00,060 --> 00:21:06,800
+a barra ainda Barra e Dique no caso vão criar essa rota então em outros a gente vai duplicar isso aqui
+
+253
+00:21:06,910 --> 00:21:12,070
+e vai seguir essa rota e daí vai ser contato Barra índex Barra.
+
+254
+00:21:12,130 --> 00:21:20,380
+A idia que é um parâmetro de RL e aqui a gente vai chamar de Edit índex aqui que é o nome que eu dei
+
+255
+00:21:20,380 --> 00:21:22,090
+pra esse aqui Index.
+
+256
+00:21:22,380 --> 00:21:29,980
+A gente vai ver no nosso controle que vai criar esse esportes ponto Edit Index igual Funchal.
+
+257
+00:21:30,190 --> 00:21:32,750
+E aí Rei que fez a mesma coisa.
+
+258
+00:21:33,230 --> 00:21:33,710
+E daí.
+
+259
+00:21:33,740 --> 00:21:42,110
+Esse Edit indexar que ele tem que renderizar essa mesma coisa que contato só que eu quero receber o
+
+260
+00:21:42,110 --> 00:21:45,470
+contato e o contato aqui sem contato.
+
+261
+00:21:45,560 --> 00:21:51,140
+Igual contato pra eu poder acessar os dados do contato dentro da página lá.
+
+262
+00:21:51,320 --> 00:21:52,800
+Como é que a gente vai fazer isso.
+
+263
+00:21:52,810 --> 00:21:54,670
+Vamos escrever essa.
+
+264
+00:21:55,160 --> 00:21:59,190
+Essa funçao que estão aqui de cara eu vou falar.
+
+265
+00:21:59,350 --> 00:22:01,710
+Se eu não receber esse parâmetro de eu errei.
+
+266
+00:22:01,710 --> 00:22:11,270
+Li aqui esse dia que eu já vou matar aqui então vou falar é diferente de Rei que ponto Section R que
+
+267
+00:22:11,380 --> 00:22:12,210
+ponto.
+
+268
+00:22:12,800 --> 00:22:14,330
+Não sei que ponto para ambos.
+
+269
+00:22:14,330 --> 00:22:22,820
+Gente que cabeça vontade eu vou dar um britânico na real esse ponto rendeu 404 então vou renderizar
+
+270
+00:22:22,820 --> 00:22:24,600
+uma página 404 aqui.
+
+271
+00:22:24,740 --> 00:22:26,690
+Se não foi enviado esse parâmetro.
+
+272
+00:22:26,720 --> 00:22:33,780
+Outra coisa que eu vou checar aqui rápida e fi Rei que ponto para você.
+
+273
+00:22:33,800 --> 00:22:35,420
+Na verdade eu não vou fazer isso aqui não.
+
+274
+00:22:35,470 --> 00:22:39,830
+Eu ia checar se é uma estrovenga aqui mas estou dando muita responsabilidade pra isso aqui.
+
+275
+00:22:41,120 --> 00:22:49,580
+Então vou fazer o seguinte agora eu vou criar aqui no contato modo eu vou buscar aquele contato por
+
+276
+00:22:49,580 --> 00:22:56,930
+aí então vou criar aqui em algum lugar aqui para fazer o contato ponto Prototype ponto.
+
+277
+00:22:56,990 --> 00:23:09,590
+Na verdade eu nem preciso atrelar isso ao Prototype que eu posso fazer contato ponto busca por aí.
+
+278
+00:23:10,360 --> 00:23:21,680
+Assim eu vou fazer igual fantoche dessa maneira aqui e daí eu vou receber um dia aqui e vou fazer assim
+
+279
+00:23:24,740 --> 00:23:30,450
+deixa eu pensar aqui como é que a gente vai fazer a gente esse aqui vai ter que ser assim né.
+
+280
+00:23:30,470 --> 00:23:42,290
+Assim que a gente vai ter que falar com este e usa igual ao it contatou Model ponto funk vai por esse
+
+281
+00:23:42,310 --> 00:23:42,880
+aí.
+
+282
+00:23:43,280 --> 00:23:47,060
+Então isso aqui vai me retornar o usuário conste aqui tá errado.
+
+283
+00:23:47,240 --> 00:23:53,930
+Ou vai me retornar ao usuário ou vai ou isso vai me retornar um usuário vai me retornar no meu caso
+
+284
+00:23:54,050 --> 00:23:56,190
+então posso utilizar esse aqui.
+
+285
+00:23:56,190 --> 00:23:58,820
+Isso daqui não está atrelado ao Prototype.
+
+286
+00:23:58,880 --> 00:24:04,910
+Quer dizer que eu não preciso instante a isso daqui pra utilizar essa função seria uma função estática
+
+287
+00:24:04,910 --> 00:24:06,820
+aqui no caso estão vindo aqui.
+
+288
+00:24:06,890 --> 00:24:08,200
+A gente pode fazer isso.
+
+289
+00:24:09,110 --> 00:24:14,930
+Por exemplo eu posso utilizar direto a caça C para falar esse aqui também vai ter que ser o tipo que
+
+290
+00:24:14,930 --> 00:24:18,620
+é aquela outra assim que nem no caso porque aquela outra lá também é assim.
+
+291
+00:24:19,160 --> 00:24:26,570
+Então a gente vai falar com este e usa aqui eu preciso retornar o usuário no contato modo eu preciso
+
+292
+00:24:26,570 --> 00:24:27,990
+dar um britânico e uso.
+
+293
+00:24:28,510 --> 00:24:30,090
+Eu não retornei nada aqui.
+
+294
+00:24:30,300 --> 00:24:32,300
+Eles estão voltando aqui.
+
+295
+00:24:32,390 --> 00:24:42,180
+A gente tava lá coxa e usa igual ao Haiti contato ponto busca por aí.
+
+296
+00:24:42,320 --> 00:24:48,220
+E aí eu mando o aí que vai ser que ponto paramos.
+
+297
+00:24:48,540 --> 00:24:49,310
+Ponto.
+
+298
+00:24:49,630 --> 00:24:51,130
+E daí ir lá dentro.
+
+299
+00:24:51,130 --> 00:25:01,690
+Aí sim aqui eu quero checar mas foi um bispo daqui então vou checar a senha e taipa off aí de diferente
+
+300
+00:25:01,870 --> 00:25:12,250
+e suingue eu vou dar um britânico beleza só isso que eu queria fazer então agora agora a gente tem um
+
+301
+00:25:12,690 --> 00:25:13,560
+usa aqui.
+
+302
+00:25:13,560 --> 00:25:20,880
+Se a gente tiver o usuário a gente vai renderizar a paisagem então a gente vai falar e e usa
+
+303
+00:25:25,470 --> 00:25:33,960
+aliás a gente pode fazer é diferente de usa se o usuário não existe a mesmíssima coisa que a gente renderia
+
+304
+00:25:33,960 --> 00:25:39,890
+uma página 404 se ele existir aí a gente passa pra cá e faz isso daqui.
+
+305
+00:25:40,350 --> 00:25:49,410
+A gente vai dá criar aqui uma chave chamada de contato igual e uso ele no caso eu deveria chamar isso
+
+306
+00:25:49,420 --> 00:25:52,670
+de contato né no caso deixe eu voltar aqui.
+
+307
+00:25:52,680 --> 00:26:03,470
+Poderia chamar isso de contato e daí aqui eu poderia eu poderia usar só a palavra contato aqui que ia
+
+308
+00:26:03,470 --> 00:26:06,820
+dar certo terminou o código.
+
+309
+00:26:07,200 --> 00:26:16,220
+Opa voltar aqui colocassem beleza agora sim deve funcionar então vou me testar isso daqui vamos vir
+
+310
+00:26:16,220 --> 00:26:21,290
+aqui em contato e vão tentar pegar o nome do contato que vou colocar nesse input aqui.
+
+311
+00:26:21,470 --> 00:26:25,410
+Um velho igual a isso daqui.
+
+312
+00:26:26,330 --> 00:26:28,070
+Contato ponto nome.
+
+313
+00:26:28,100 --> 00:26:29,580
+Vamos ver se vai funcionar.
+
+314
+00:26:31,680 --> 00:26:34,410
+Então está aqui ou nome Mari perfeitamente.
+
+315
+00:26:34,410 --> 00:26:35,810
+Então foi lindo.
+
+316
+00:26:36,810 --> 00:26:40,540
+Então voltando aqui a gente vai colocar em todos aqui.
+
+317
+00:26:40,590 --> 00:26:47,520
+Nome e contato nome e sobrenome mi telefone nome sobrenome.
+
+318
+00:26:48,610 --> 00:26:51,570
+Email e telefone
+
+319
+00:26:56,370 --> 00:27:01,850
+beleza está tudo aqui os dados dela só que se tende a cada novo usuário vai daí.
+
+320
+00:27:02,340 --> 00:27:05,020
+Então contatos vão corrigir também.
+
+321
+00:27:05,050 --> 00:27:11,730
+Então a gente vai comandar um contato feito aqui no controle no índex aqui a gente vai mandar um objeto
+
+322
+00:27:11,730 --> 00:27:15,260
+aqui fingindo que tem um contato alguém não contato.
+
+323
+00:27:15,340 --> 00:27:17,080
+Três pontos um objeto vazio.
+
+324
+00:27:17,300 --> 00:27:19,470
+E isso já corrige esse erro aqui.
+
+325
+00:27:19,700 --> 00:27:25,920
+A aqui já deve funcionar normal aqui para cadastrar um novo usuário e aí usuários que a gente termina
+
+326
+00:27:25,920 --> 00:27:27,380
+de cadastrar o teste.
+
+327
+00:27:27,450 --> 00:27:33,810
+Um teste 2 teste três arroba teste ponto com.
+
+328
+00:27:34,380 --> 00:27:40,260
+E aí o telefone que se a gente enviar ele já cai aqui pra gente editar.
+
+329
+00:27:40,530 --> 00:27:45,540
+E aí eu não vou fazer essa parte de edição nessa algo que senão vai ficar muito longa na próxima aula
+
+330
+00:27:45,540 --> 00:27:47,570
+a gente já cai nesse trecho aqui.
+
+331
+00:27:47,700 --> 00:27:55,470
+Já para editar esse usuario acho que vai dar também pra gente já inclui a parte de deletar o usuário
+
+332
+00:27:55,500 --> 00:27:56,010
+também.
+
+333
+00:27:56,280 --> 00:27:59,690
+Ou então listar ele aqui na página inicial que também é bem simples.
+
+334
+00:28:00,030 --> 00:28:00,540
+Então beleza.
+
+335
+00:28:00,540 --> 00:28:03,900
+Pessoal vou deixar essa aula aqui assim e a gente se vê na proximal.
+
+336
+00:28:03,900 --> 00:28:04,610
+Grande abraço.

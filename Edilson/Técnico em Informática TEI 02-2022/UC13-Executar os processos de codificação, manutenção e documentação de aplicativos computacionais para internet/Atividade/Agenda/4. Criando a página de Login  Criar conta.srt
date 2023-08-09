@@ -1,0 +1,707 @@
+1
+00:00:00,300 --> 00:00:01,320
+Fala pessoal.
+
+2
+00:00:01,320 --> 00:00:07,440
+O objetivo dessa aula aqui vai ser criar a página de login aqui para a gente ter os formulários lá na
+
+3
+00:00:07,440 --> 00:00:08,280
+página de login.
+
+4
+00:00:08,280 --> 00:00:13,290
+Pra isso a gente vai precisar mexer em rotas enfim a gente vai precisar mexer em algumas coisas aqui.
+
+5
+00:00:13,680 --> 00:00:16,080
+Então vamos dar uma olhada como é que está as nossas fotos.
+
+6
+00:00:16,090 --> 00:00:17,770
+Olha nossas rotas aqui.
+
+7
+00:00:17,830 --> 00:00:24,900
+A gente não precisa nem disso e nem diz a gente só precisa dessa página inicial por enquanto a gente
+
+8
+00:00:24,900 --> 00:00:27,560
+vai ter que recriar aquele contato ali que a gente criou.
+
+9
+00:00:27,780 --> 00:00:32,940
+Mas por enquanto a gente só precisa disso e eu vou modificar o tipo de nomenclatura que a gente está
+
+10
+00:00:32,940 --> 00:00:33,910
+utilizando.
+
+11
+00:00:33,930 --> 00:00:41,550
+Tudo que for por exemplo a raiz da cor da rota que eu estou tentando acessar eu vou chamar de Index.
+
+12
+00:00:41,970 --> 00:00:48,510
+Então por exemplo se a gente vier aqui no nosso os controles como controle esse isso daqui também a
+
+13
+00:00:48,510 --> 00:00:50,630
+gente não precisa desse conteúdo.
+
+14
+00:00:50,640 --> 00:00:57,360
+Por enquanto isso objeto aqui a gente vai precisar mas disse aqui também a gente não precisa mas a gente
+
+15
+00:00:57,360 --> 00:01:01,060
+vai criar os nossos aqui deixou aumentar a letra aqui pra você.
+
+16
+00:01:02,050 --> 00:01:04,370
+Então aqui eu vou tirar essas coisas aqui.
+
+17
+00:01:04,380 --> 00:01:06,740
+Vou deixar o mais limpo possível está aqui.
+
+18
+00:01:06,760 --> 00:01:13,650
+Esse Página Inicial vou chamar de índex beleza e aí esse reencontro Controller aqui eu não vou precisar
+
+19
+00:01:13,650 --> 00:01:15,140
+desse contato Controller.
+
+20
+00:01:15,180 --> 00:01:22,120
+Aqui vou mover para a lixeira e daí aqui eu vou modificar aqui também para indexar.
+
+21
+00:01:22,680 --> 00:01:25,050
+Como vc não deu nenhum erro na aplicação.
+
+22
+00:01:25,050 --> 00:01:29,930
+Bom parece que tá tudo rodando vamos voltar aqui e atualizar a página tudo rodando ainda.
+
+23
+00:01:29,930 --> 00:01:31,620
+Perfeito.
+
+24
+00:01:32,010 --> 00:01:37,040
+Uma linha aqui pra gente começar com um prato limpo.
+
+25
+00:01:37,050 --> 00:01:39,060
+Quem tem mania de falar essa palavra.
+
+26
+00:01:39,120 --> 00:01:40,480
+Prato limpo.
+
+27
+00:01:40,500 --> 00:01:42,830
+Provavelmente você já deve ter percebido isso.
+
+28
+00:01:42,840 --> 00:01:48,270
+Bom agora a gente vai criar as rotas do nosso bloguinho que a gente vai precisar do login.
+
+29
+00:01:48,270 --> 00:01:50,240
+Primeira coisa de um controle né.
+
+30
+00:01:50,310 --> 00:01:57,870
+Se a gente vai mexer em rotas a gente vai necessariamente precisar de um controle uma rota vai delegar
+
+31
+00:01:57,870 --> 00:02:02,700
+a tarefa de executar as coisas dentro daquela rota para um controle.
+
+32
+00:02:02,730 --> 00:02:05,190
+Então a gente precisa criar um controle.
+
+33
+00:02:05,190 --> 00:02:06,620
+Eu vou comentar aqui.
+
+34
+00:02:07,500 --> 00:02:11,700
+Rotas de login e ver quais rotas a gente vai precisar.
+
+35
+00:02:11,820 --> 00:02:20,260
+Inicialmente a gente só vai precisar do ponto Gayet e daí a gente vai colocar a Rota login né.
+
+36
+00:02:20,280 --> 00:02:23,980
+No caso aqui BA e aí a página inicial do login vai ser indexa.
+
+37
+00:02:24,030 --> 00:02:29,820
+Você pode omitir esse daqui mas eu vou deixar só por questão de didática eu acho que vai ficar mais
+
+38
+00:02:29,820 --> 00:02:30,860
+fácil para você entender.
+
+39
+00:02:31,350 --> 00:02:35,340
+Então essa tudo que foi um deles está vendo aqui e aqui poderia ter um index.
+
+40
+00:02:35,340 --> 00:02:37,530
+Mas eu vou deixar sem indexação.
+
+41
+00:02:37,620 --> 00:02:38,300
+Tudo o que for.
+
+42
+00:02:38,550 --> 00:02:42,690
+A página inicial daquela rota vai chamar Inbox beleza.
+
+43
+00:02:42,960 --> 00:02:47,910
+Voltando aqui do jeito que estava eu vou deixar essa rota de login como indexa e a gente vai precisar
+
+44
+00:02:47,910 --> 00:02:51,650
+chamar um Controller que chama login Controller.
+
+45
+00:02:51,870 --> 00:02:53,730
+Só que a gente não tem isso aqui ainda.
+
+46
+00:02:53,730 --> 00:02:59,690
+Então eu vou só criar aqui o login encontrou o meu ponto indexa e aí vai quebrar aplicação nesse momento.
+
+47
+00:03:00,260 --> 00:03:00,620
+Porquê.
+
+48
+00:03:00,720 --> 00:03:02,870
+Porque não existe esse controle.
+
+49
+00:03:02,900 --> 00:03:08,220
+A gente está chamando uma coisa que nem existia e que eu vou dar um espacinho aqui e aqui a gente vai
+
+50
+00:03:08,220 --> 00:03:14,580
+ter mais um controle que vai chamar ao invés de Rome no lugar que Rommel posso selecionar pressionar
+
+51
+00:03:14,580 --> 00:03:18,260
+Control d para selecionar os dois e mudar para login.
+
+52
+00:03:18,280 --> 00:03:21,810
+Eu já mudei tanto aqui quanto aqui para login.
+
+53
+00:03:21,810 --> 00:03:27,520
+Só que agora eu estou chamando login mas ainda assim a gente não tem um arquivo aqui nos controles.
+
+54
+00:03:27,530 --> 00:03:35,460
+Então a gente vai criar mil fail login Controller pontos JS da empresa presta bastante atenção em letras
+
+55
+00:03:35,460 --> 00:03:41,150
+maiúsculas e minúsculas porque no Windows no Mac costuma não dar problema.
+
+56
+00:03:41,520 --> 00:03:47,880
+Se você errar uma letra maiúscula com outra minúscula mas no Linux que geralmente é o seu servidor vai
+
+57
+00:03:47,880 --> 00:03:48,870
+ser Linux.
+
+58
+00:03:48,930 --> 00:03:54,990
+Vai daí seu nome tiver com letra maiúscula ou minúscula diferente do nome real do arquivo.
+
+59
+00:03:54,990 --> 00:04:01,230
+O Linux faz distinção entre letras maiúsculas e minúsculas e beleza feito aqui no nosso controle.
+
+60
+00:04:01,230 --> 00:04:03,480
+A gente pode criar esse índex aqui.
+
+61
+00:04:03,480 --> 00:04:04,820
+Como é que a gente vai fazer isso.
+
+62
+00:04:04,830 --> 00:04:05,690
+ESPORTES.
+
+63
+00:04:07,090 --> 00:04:07,930
+ESPORTES.
+
+64
+00:04:07,930 --> 00:04:08,410
+Ponto.
+
+65
+00:04:08,440 --> 00:04:09,370
+INDEXAR.
+
+66
+00:04:09,370 --> 00:04:11,170
+Isso aqui vai ser uma função né.
+
+67
+00:04:11,530 --> 00:04:15,600
+Então pode ser tanto ou maior Wolfgang Schäuble quanto uma função normal.
+
+68
+00:04:15,640 --> 00:04:21,250
+E daí criada aqui a nossa função agora a gente pode renderizar alguma coisa renderizar o quê se não
+
+69
+00:04:21,250 --> 00:04:25,060
+existe o arquivo de login então nos nossos rios.
+
+70
+00:04:25,300 --> 00:04:29,940
+A gente não tem um arquivo de login como é que a gente vai fazer isso a gente pode fazer nesse ponto
+
+71
+00:04:29,940 --> 00:04:30,920
+renda.
+
+72
+00:04:31,060 --> 00:04:34,670
+De cara sim e mandar o arquivo o login aqui.
+
+73
+00:04:34,720 --> 00:04:41,350
+E daí a gente vai vir aqui e vai criar esse arquivo eu posso até copiar o meu indexa aqui contra o sei
+
+74
+00:04:41,350 --> 00:04:42,350
+contra o V.
+
+75
+00:04:42,490 --> 00:04:44,470
+Aí vai criar um index Cop.
+
+76
+00:04:44,500 --> 00:04:50,530
+Eu vou renomear ele para Lublin e daí a gente já deve ter agora a nossa página de login eu posso fechar
+
+77
+00:04:50,530 --> 00:04:57,100
+esse daqui pois diminuiu um pouco a letra que está muito grande e daí agora a gente já deve ter renderizados
+
+78
+00:04:57,100 --> 00:05:03,820
+aqui e o nosso login mas na verdade aqui eu estou mexendo no novo controle eu posso achar esse aqui
+
+79
+00:05:03,870 --> 00:05:05,620
+esse aqui que a gente vai mexer.
+
+80
+00:05:05,620 --> 00:05:11,440
+Beleza vamos testar essa rota de login então a gente vai acessar essa rota login Barra indexa aqui dá
+
+81
+00:05:11,440 --> 00:05:17,760
+uma olhada aqui para login Barra Inbox beleza acesse aqui.
+
+82
+00:05:17,760 --> 00:05:23,190
+Não mudou nada por aqui porque eu to render usando o mesmo tempo aí China no caso aqui quase o mesmo
+
+83
+00:05:23,190 --> 00:05:28,530
+tempo que eu copiei colei mas aqui no caso que a gente vai fazer o seguinte a gente vai colocar aqui
+
+84
+00:05:28,770 --> 00:05:30,450
+por exemplo o login.
+
+85
+00:05:30,440 --> 00:05:38,500
+A gente pode falar sei lá algum tem aqui qualquer faça login ou crie sua conta abaixo.
+
+86
+00:05:40,040 --> 00:05:42,080
+E aí que eu vou criado.
+
+87
+00:05:42,130 --> 00:05:43,600
+Vamos só conferir aqui tá aqui.
+
+88
+00:05:44,170 --> 00:05:50,560
+E aqui eu vou tirar essa mensagem de erro por enquanto e eu vou tirar essa tabela aqui que a gente não
+
+89
+00:05:50,560 --> 00:05:52,950
+precisa por enquanto aqui.
+
+90
+00:05:53,280 --> 00:05:59,770
+A minha ideia vai ser a seguinte eu vou criar duas colunas aqui embaixo aqui então vou criar as colunas
+
+91
+00:05:59,770 --> 00:06:02,860
+dentro dessa coluna do meio mesmo que eu vou fazer isso.
+
+92
+00:06:03,250 --> 00:06:10,310
+Tive ponto UOL E aí vivo e ponto como pode ser com o LG no caso aqui.
+
+93
+00:06:10,910 --> 00:06:16,930
+E daí eu vou duplicar isso aqui eu vou ter duas colunas aqui uma coluna aqui vai ter o título por exemplo
+
+94
+00:06:16,930 --> 00:06:30,580
+de faça seu cadastro e a outra que de baixo vai ter o título de agora quatro aqui entra no sistema.
+
+95
+00:06:30,590 --> 00:06:33,480
+Vou fazer login com o que você quiser na verdade aqui.
+
+96
+00:06:33,600 --> 00:06:37,370
+Eu não estou muito preocupado com isso estou mais preocupado com a funcionalidade em si.
+
+97
+00:06:38,100 --> 00:06:43,950
+E daí aqui você vai ter um formulário de cadastro para o usuário criar a conta dele aqui em um formulário
+
+98
+00:06:43,950 --> 00:06:44,430
+de login.
+
+99
+00:06:44,430 --> 00:06:47,520
+Você pode separar essas coisas se você quiser.
+
+100
+00:06:47,580 --> 00:06:51,720
+Se você acha mais simples assim eu estou fazendo aqui só por questão de tempo mesmo.
+
+101
+00:06:51,750 --> 00:06:58,560
+Agora vamos pegar um formulário qualquer aqui no Botsuana Burti chapa forte e aí a gente edita ele do
+
+102
+00:06:58,560 --> 00:06:59,550
+jeito que a gente quiser.
+
+103
+00:07:00,180 --> 00:07:05,400
+Então vamos colocar eu acho que a última coisa que a gente vai precisar copiar aqui do bootstrap é esse
+
+104
+00:07:05,400 --> 00:07:07,080
+forma aqui para aí mais rapidinho.
+
+105
+00:07:07,770 --> 00:07:15,200
+Então vou criar esse formulário você parar essas colunas assim pra gente não confundir que as diz porque
+
+106
+00:07:15,240 --> 00:07:16,810
+são muitas dívidas.
+
+107
+00:07:17,320 --> 00:07:24,840
+Vou colocar aqui esse formulário vou ajustar aqui ou HTML e daqui eu vou tirar muitas das coisas daqui
+
+108
+00:07:24,840 --> 00:07:30,810
+que num programa real você deixaria eu vou tirar porque pra pra gente conseguir enxergar melhor então
+
+109
+00:07:30,810 --> 00:07:33,490
+vou tirar la encerrou.
+
+110
+00:07:34,230 --> 00:07:41,240
+Ia de sky Bay isso aqui vou tirar o dia eu não preciso disso aqui e vou colocar um meme aqui.
+
+111
+00:07:41,920 --> 00:07:44,130
+Nem me igual a mim.
+
+112
+00:07:44,910 --> 00:07:46,800
+Vou tirar esse foco do lábio.
+
+113
+00:07:46,800 --> 00:07:48,890
+Vou ficar só com o lábio mesmo.
+
+114
+00:07:48,960 --> 00:07:57,860
+Vou colocar seu email que seu email aí aqui vai ficar igual vou tirar esse texto aqui de baixas mal
+
+115
+00:07:57,900 --> 00:08:03,890
+e meu Help aqui a gente não precisa disso e vou pagar esse de baixo aqui isso tudo aqui de baixo eu
+
+116
+00:08:03,890 --> 00:08:11,000
+vou deixar só o botão aqui e daí a gente pode agora duplicar isso aqui eu vou vou mudar o texto do botão
+
+117
+00:08:11,000 --> 00:08:13,020
+pra criar minha conta.
+
+118
+00:08:13,700 --> 00:08:23,040
+Vou duplicar isso daqui a essa esse grupo inteiro eu vou duplicar pra gente criar 100 e sem colocar
+
+119
+00:08:23,130 --> 00:08:28,990
+sua senha e aqui ao invés de taipa e meio vai ser taipa pés.
+
+120
+00:08:29,460 --> 00:08:39,340
+E aqui nem me vai c peço também sem nem no caso da molhada como é que ficou aqui a gente tem já tem
+
+121
+00:08:39,340 --> 00:08:45,040
+esse filme lá a gente pode colocar um parágrafo aqui em cima explicando alguma coisa por exemplo aqui
+
+122
+00:08:45,040 --> 00:08:56,430
+a gente pode colocar em se você ainda não tem conta CRI e preencha o formulário abaixo.
+
+123
+00:08:57,460 --> 00:09:03,160
+Pronto aqui agora a gente já tem um parágrafo aqui e a gente pode também.
+
+124
+00:09:03,490 --> 00:09:08,540
+Aqui a gente já tem agora um parágrafo a gente pode também duplicar isso aqui para o lado de cá pra
+
+125
+00:09:08,560 --> 00:09:15,370
+já já fazia a parte de lobbying aqui no forma a gente vai precisar criar uma rota pra receber os dados
+
+126
+00:09:15,370 --> 00:09:23,710
+desse formulário então eu já vou colocar aqui a rota seguinte Barra Lublin Barra Register e aqui nesse
+
+127
+00:09:23,740 --> 00:09:26,890
+registo que a gente vai receber os dados do post.
+
+128
+00:09:26,890 --> 00:09:33,060
+Só que esse formulário aqui ele não tem método e o método de o padrão de um formulário que não tem método
+
+129
+00:09:33,310 --> 00:09:35,470
+e Gayet que a gente quer.
+
+130
+00:09:35,700 --> 00:09:37,610
+Então um método igual.
+
+131
+00:09:37,620 --> 00:09:40,120
+Poxa beleza feito aqui.
+
+132
+00:09:40,150 --> 00:09:43,880
+Agora eu acho que está pronta a gente pode copiar isso daqui tudo.
+
+133
+00:09:43,930 --> 00:09:50,350
+Esse forme inteiro pro lado de cá copia também pro lado de cá pra outra coluna também.
+
+134
+00:09:51,240 --> 00:09:58,800
+E daí aqui eu só vou mudar o texto assim faça seu login e daí aqui.
+
+135
+00:09:58,850 --> 00:10:06,430
+Se você já tem uma conta se você já tem uma conta faça login abaixo.
+
+136
+00:10:07,480 --> 00:10:14,610
+E daí que eu vou mudar para login Barra login ficou redundante mas ficou logo um login porque só pra
+
+137
+00:10:14,890 --> 00:10:18,530
+para as nossas botas ficarem no padrão organizado que eu te falei.
+
+138
+00:10:18,640 --> 00:10:21,530
+Se você quiser mudar o nome da rota não faz problema nenhum.
+
+139
+00:10:21,760 --> 00:10:27,810
+E aqui não tem diferença nenhuma no caso aqui a gente só vai mandar o formulário para um local diferente
+
+140
+00:10:28,270 --> 00:10:31,340
+mudar o texto do botão pra entrar.
+
+141
+00:10:32,420 --> 00:10:33,970
+E aí vamos dar uma olhada aqui.
+
+142
+00:10:34,240 --> 00:10:39,150
+Então a gente ficou com esses dois formulários na mesma página que ficou feio ficou.
+
+143
+00:10:39,580 --> 00:10:44,770
+Mas como eu te falei a intenção aqui é fazer a funcionalidade não.
+
+144
+00:10:44,810 --> 00:10:45,900
+O design é esse.
+
+145
+00:10:46,530 --> 00:10:55,520
+E aí voltando aqui eu vou colocar só aqui no título e vou mudar aqui pra fazer e criar conta.
+
+146
+00:10:56,020 --> 00:11:01,860
+Ou entre pra ficar mais coerente né porque estava só o login aqui.
+
+147
+00:11:02,370 --> 00:11:04,930
+Faça login o que crie sua contrabaixo.
+
+148
+00:11:04,950 --> 00:11:10,530
+Beleza se a gente enviar esse formulário que é o que vai acontecer vou me enviar aqui para ver erro
+
+149
+00:11:10,530 --> 00:11:19,110
+404 porque se eu enviar esse outro formulário 404 porque que falta nos dois formulários o CC SRF token
+
+150
+00:11:19,260 --> 00:11:27,000
+no caso é por isso a gente está vendo aquele erro 404 por causa do nosso milho é aqui que a gente está
+
+151
+00:11:27,000 --> 00:11:32,190
+checando que a outra coisa você já corrigisse aqui eu não vou tirar isso daqui.
+
+152
+00:11:32,370 --> 00:11:33,140
+Vou deixar só.
+
+153
+00:11:33,180 --> 00:11:38,970
+Se acontecer qualquer erro ou mais qualquer erro mesmo eu não quero que seja um passo para frente então
+
+154
+00:11:38,970 --> 00:11:45,210
+a gente já vai exibir renderizar a página 404 para o cliente vou colocar um Mac foi até bom dar uma
+
+155
+00:11:45,210 --> 00:11:50,820
+olhada aqui que eu já corrigisse então qualquer erro que eu quero correr na aplicação a gente não vai
+
+156
+00:11:50,820 --> 00:11:55,240
+passar pra frente já vai exibir uma página 404 pro cliente.
+
+157
+00:11:55,560 --> 00:12:00,930
+Beleza vamos colocar o CS R.R. Tolkien que nos formulários ele pode colocar em qualquer lugar porque
+
+158
+00:12:00,930 --> 00:12:07,610
+na verdade esses Putin diz Aqui você vai ser bem escondido e Putin idem.
+
+159
+00:12:07,700 --> 00:12:09,310
+Nem me andei lá.
+
+160
+00:12:09,360 --> 00:12:10,870
+Sr F.
+
+161
+00:12:11,040 --> 00:12:18,290
+No caso aqui e agora o velho dele vai ser o seguinte vai ser o nosso C S F.
+
+162
+00:12:18,360 --> 00:12:19,570
+Tolkien.
+
+163
+00:12:19,860 --> 00:12:25,740
+Beleza agora a gente pode copiar esse Putin por um outro forme também pode ser em qualquer lugar contanto
+
+164
+00:12:25,740 --> 00:12:27,480
+que esteja dentro do.
+
+165
+00:12:27,600 --> 00:12:28,930
+Pode ser em qualquer lugar.
+
+166
+00:12:29,190 --> 00:12:31,390
+E aí vamos atualizar a página.
+
+167
+00:12:31,440 --> 00:12:37,570
+Agora essa gente enviar essa que a gente deve ver um erro que não existe arrota que vão criao Keynote
+
+168
+00:12:37,710 --> 00:12:39,150
+puxe o login.
+
+169
+00:12:39,140 --> 00:12:39,710
+Bom dia cia.
+
+170
+00:12:39,780 --> 00:12:40,050
+Quê.
+
+171
+00:12:40,070 --> 00:12:45,170
+Porque não existe essa rota que a gente vai criar essa rota mas eu não vou fazer isso na próxima aula.
+
+172
+00:12:45,300 --> 00:12:51,020
+Conforme eu te falei vou tentar fazer aulas mais curtas e mais específicas pra o seu melhor entendimento
+
+173
+00:12:51,020 --> 00:12:51,360
+é claro.
+
+174
+00:12:51,360 --> 00:12:57,780
+Então a gente já fez os dois formulários agora a gente vai fazer a funcionar ali funcionalidade de um
+
+175
+00:12:57,780 --> 00:13:01,230
+deles e depois nas próximas aulas de outro e assim por diante.
+
+176
+00:13:01,290 --> 00:13:04,410
+Então vou deixar essa aula aqui assim e a gente se vê na próxima aula.
+
+177
+00:13:04,410 --> 00:13:05,100
+Grande abraço.

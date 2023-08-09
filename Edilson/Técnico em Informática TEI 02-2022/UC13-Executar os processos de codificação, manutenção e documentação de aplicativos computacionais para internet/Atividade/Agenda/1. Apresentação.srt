@@ -1,0 +1,359 @@
+1
+00:00:00,300 --> 00:00:06,240
+Fala pessoal nessa sessão a gente vai criar esse projeto aqui que é um projeto bem simples mas que vai
+
+2
+00:00:06,240 --> 00:00:12,400
+te dar uma boa ideia de como unir tudo o que você aprendeu nas aulas anteriores.
+
+3
+00:00:12,420 --> 00:00:20,350
+A gente vai utilizar a cinquentinha ou seja promessas no caso classes enfim a gente vai utilizar tudo
+
+4
+00:00:20,350 --> 00:00:23,360
+o que a gente aprendeu nas aulas anteriores ou praticamente tudo.
+
+5
+00:00:23,730 --> 00:00:30,690
+Além de a gente também utilizar o Express aqui para a gente fazer algumas coisas por exemplo essa agenda
+
+6
+00:00:30,690 --> 00:00:34,250
+aqui apesar de tão simples assim ela tem um sistema de login.
+
+7
+00:00:34,290 --> 00:00:37,920
+Por exemplo eu não poderia vir aqui editar essa página e ser interrogada.
+
+8
+00:00:37,920 --> 00:00:39,440
+Não posso editar isso aqui.
+
+9
+00:00:39,480 --> 00:00:43,230
+Não posso excluir esse contato que eu tenho entre logar aqui.
+
+10
+00:00:43,510 --> 00:00:48,130
+Eu vou te mostrar aqui como como ela vai funcionar mais ou menos andar aqui na página inicial.
+
+11
+00:00:48,140 --> 00:00:52,190
+A gente tem os contatos que eu criei aqui nessa agenda aqui.
+
+12
+00:00:52,550 --> 00:00:59,610
+E aí a gente vai também fazer um crude né então a gente vai criar editar excluir coisas da base de dados
+
+13
+00:00:59,610 --> 00:01:03,600
+e listar isso aqui a listagem como você está vendo aqui.
+
+14
+00:01:03,600 --> 00:01:06,080
+Além disso a gente vai criar um sistema de login.
+
+15
+00:01:06,150 --> 00:01:08,930
+Eu não me preocupei nada com design.
+
+16
+00:01:09,060 --> 00:01:14,970
+Tanto que você vai ver a gente vai pegar os trechos de código lá do bootstrap já prontos e vai jogar
+
+17
+00:01:14,970 --> 00:01:15,270
+aqui.
+
+18
+00:01:15,270 --> 00:01:19,360
+Só vamos fazer a funcionalidade mas isso é nas suas aulas.
+
+19
+00:01:19,560 --> 00:01:25,860
+Eu me proponho pai me preocupei muito mais com a funcionalidade em si do que com um design por assim
+
+20
+00:01:25,860 --> 00:01:27,060
+dizer e daí.
+
+21
+00:01:27,060 --> 00:01:32,490
+Aqui a gente tem mensagens de gente pode por exemplo tentar criar uma conta o MIM invada sem precisar
+
+22
+00:01:32,580 --> 00:01:34,350
+ter tantos caracteres.
+
+23
+00:01:34,350 --> 00:01:40,020
+E aqui também a gente poderia tentar logar se a gente quisesse e dar o mesmo erro.
+
+24
+00:01:40,020 --> 00:01:41,830
+Outra coisa é essa.
+
+25
+00:01:41,850 --> 00:01:49,230
+Isso aqui faz e ele vai fazer um raio-X da senha utilizando Berkut aqui no caso então isso significa
+
+26
+00:01:49,230 --> 00:01:56,670
+que se o usuário se cadastrar aqui com a senha 1 2 3 4 5 6 a gente nunca vai salvar essa sim como sendo
+
+27
+00:01:56,760 --> 00:02:04,350
+1 2 3 4 5 6 na base de dados eu posso até te mostrar aqui no Atlas aqui no mongo DB deixou abrir aqui
+
+28
+00:02:04,410 --> 00:02:07,340
+os login aqui no caso para você.
+
+29
+00:02:07,360 --> 00:02:14,890
+Olhe que esse usuário tem assim 1 2 3 4 5 6 mas aqui no mongo DB Atlas olha como é que foi apresentada
+
+30
+00:02:14,890 --> 00:02:17,650
+aqui essa senha e esses caracteres aqui.
+
+31
+00:02:17,760 --> 00:02:25,400
+Não sei se dá pra ver que fica muito pequeno aqui no mongo DB mas esses caracteres aqui representam
+
+32
+00:02:25,440 --> 00:02:27,560
+assim 1 2 3 4 5 6.
+
+33
+00:02:27,620 --> 00:02:34,540
+Isso é o Kadafi lá de novo a senha 1 2 6 4 5 6 não vai ser não vão ser esses caracteres vai ser diferente.
+
+34
+00:02:34,590 --> 00:02:40,570
+Então a gente vai fazer um abaixo de 100 e depois quando o usuário logar a gente checa Ceci Ravache
+
+35
+00:02:40,590 --> 00:02:46,920
+bate com o rasto do bico você vai ver isso posteriormente o que eu quero falar também visando a segurança
+
+36
+00:02:46,920 --> 00:02:47,710
+aqui no caso.
+
+37
+00:02:48,510 --> 00:02:54,060
+Outra coisa que a gente fez aqui foi o sistema Inside login então eu posso vir aqui criar uma conta
+
+38
+00:02:54,060 --> 00:03:04,340
+com sei lá um e-mail qualquer meio arroba roubar meio ponto com esse ponto com colocassem aqui 1 2 3
+
+39
+00:03:04,340 --> 00:03:06,200
+4 5 6 de novo.
+
+40
+00:03:06,200 --> 00:03:11,760
+Eu vou criar minha conta ele vai dar mensagens com flash Messages lembro que eu te falei do Flex mestre
+
+41
+00:03:11,830 --> 00:03:12,510
+X.
+
+42
+00:03:12,650 --> 00:03:18,260
+Se eu atualizar a página aqui agora eu vou ver que essa mensagem some ela se auto destrói e agora eu
+
+43
+00:03:18,260 --> 00:03:28,490
+posso vir percorreu no Leblon acho que foi mil a arroba é o ponto com que 1 2 3 4 5 6.
+
+44
+00:03:28,590 --> 00:03:31,300
+Isso então fiz login aqui no sistema.
+
+45
+00:03:31,780 --> 00:03:37,560
+E agora que os menus já mudaram agora eu consigo já excluir alguma coisa aqui por exemplo ou excluído
+
+46
+00:03:37,830 --> 00:03:41,010
+daqui eu posso vir clicar excluir foi apagado.
+
+47
+00:03:41,230 --> 00:03:45,550
+Não posso vir a editar um contador falar Otávio ou outra coisa qualquer.
+
+48
+00:03:45,880 --> 00:03:52,180
+Então a gente vai fazer um crude mesmo na base de dados aqui e aqui também eu posso sair se eu quiser.
+
+49
+00:03:52,180 --> 00:03:56,320
+Então você viu que nessa página que eu veja bem eu vou entrar nessa página.
+
+50
+00:03:56,380 --> 00:04:02,290
+Essa página quem cadastra contato só usuários logado podem acessar essa pasta.
+
+51
+00:04:02,290 --> 00:04:08,140
+Então por exemplo se eu sair do sistema e tentar acessar aquela pasta falar você precisa fazer login
+
+52
+00:04:08,170 --> 00:04:10,440
+para acessar essa página no caso.
+
+53
+00:04:10,900 --> 00:04:17,590
+Então muito interessante porque você vai aprender a juntar as coisas o controle arrota o controle o
+
+54
+00:04:17,590 --> 00:04:23,020
+modo e o viu que você vai utilizar para fazer algumas coisas inclusive a gente tem uns controles que
+
+55
+00:04:23,020 --> 00:04:29,810
+ficaram até bem grandioso aqui deixa eu te mostra que nosso SRC controles não módulos né.
+
+56
+00:04:29,920 --> 00:04:34,180
+A gente tem três controles aqui contatou Rome e login.
+
+57
+00:04:34,330 --> 00:04:40,150
+E a gente tem três módulos também em contato modo contato volume e login também.
+
+58
+00:04:40,150 --> 00:04:46,660
+Por exemplo se você acessar o contato aqui vou me mordeu o que a gente está utilizando agora que eu
+
+59
+00:04:46,670 --> 00:04:49,520
+houve esse contato aqui.
+
+60
+00:04:49,780 --> 00:04:51,350
+Ele ficou até bem grande aqui.
+
+61
+00:04:51,370 --> 00:04:59,500
+Se você observar que a gente faz muito uso de promessas de 5.8 aqui muitos métodos assim que aqui se
+
+62
+00:04:59,500 --> 00:05:02,040
+você olhar nos controles também.
+
+63
+00:05:02,540 --> 00:05:04,160
+O contato aqui tem muitos.
+
+64
+00:05:04,210 --> 00:05:11,090
+Muita coisa assim que também aqui muitos e muitas funções assíncrona aqui também é interessante para
+
+65
+00:05:11,100 --> 00:05:14,250
+a gente esperar coisas que acontecem na base de dados.
+
+66
+00:05:14,260 --> 00:05:20,830
+Ficou até bem grande que o controle de rotas tem bastante coisa que nessas horas a gente tem milho para
+
+67
+00:05:20,830 --> 00:05:26,380
+controlar páginas que precisam de login então você vai aprender a juntar muita coisa.
+
+68
+00:05:26,400 --> 00:05:29,830
+Existem muitos vídeos aqui muitas e muitos incluídos aqui.
+
+69
+00:05:29,830 --> 00:05:31,900
+Se você observar tem várias coisas.
+
+70
+00:05:31,900 --> 00:05:37,060
+Por exemplo se você entrar num índex você vai ver que a gente está importando alguma algumas coisas
+
+71
+00:05:37,060 --> 00:05:38,830
+dos nossos include.
+
+72
+00:05:38,830 --> 00:05:46,360
+Enfim como eu te falei é um projeto não não é um projeto muito comum que eu posso dizer muito grande
+
+73
+00:05:46,360 --> 00:05:46,550
+né.
+
+74
+00:05:46,930 --> 00:05:52,930
+Mas eu penso que vai te dar uma ideia muito boa de como juntar as coisas que você aprendeu até aqui.
+
+75
+00:05:53,290 --> 00:05:56,180
+Então isso foi só uma apresentação da nossa agenda aqui.
+
+76
+00:05:56,350 --> 00:05:59,410
+A gente vai utilizar o mongo DB para salvar essas coisas aqui.
+
+77
+00:05:59,440 --> 00:06:06,010
+Como você está vendo aqui estão a sete chaves da que a gente está utilizando para salvar os dados de
+
+78
+00:06:06,010 --> 00:06:07,390
+login dos usuários.
+
+79
+00:06:07,390 --> 00:06:11,250
+Aqui a gente tem uma tabela entre aspas aqui de login.
+
+80
+00:06:11,950 --> 00:06:19,140
+E a gente tem também contatos aqui que são onde os contatos estão sendo salvos.
+
+81
+00:06:19,630 --> 00:06:25,290
+Então Só apagam daqui ele vai ser apagado diretamente da base de dados é claro.
+
+82
+00:06:25,830 --> 00:06:27,020
+Então esse pessoal é esse.
+
+83
+00:06:27,020 --> 00:06:33,000
+é essa a parte que essa aula aqui não foi nem uma aula foi só uma apresentação pra eu te mostrar qual
+
+84
+00:06:33,120 --> 00:06:39,620
+é o objetivo dessa seção e criar um crude com usando e que se parece com mongo DB mas com tudo o que
+
+85
+00:06:39,620 --> 00:06:41,660
+a gente aprendeu na sessão anterior.
+
+86
+00:06:41,660 --> 00:06:47,330
+Então a gente vai unir tudo e nasce só uma ideia porque a gente vai usar muita coisa de Javascript puro
+
+87
+00:06:47,330 --> 00:06:49,670
+além do Express e do mongo DB também.
+
+88
+00:06:49,890 --> 00:06:51,440
+Então isso eu vou deixar essa aula aqui.
+
+89
+00:06:51,740 --> 00:06:55,150
+E a gente se vê já começando esse projeto na próxima.
+
+90
+00:06:55,340 --> 00:06:56,050
+Grande abraço.

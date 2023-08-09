@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="limparCampos"/>
+		<list key="findhistory">
+			<item value="limparTudo"/>
+			<item value="limpar"/>
+			<item value="cpf"/>
+			<item value="Clientes"/>
+			<item value="Fornecedores2"/>
+			<item value="btnUsers_1"/>
+			<item value="btnUsers1"/>
+			<item value="txtTelefone_1"/>
+			<item value="Cpf"/>
+			<item value="scrollPane_1"/>
+			<item value="listID_1"/>
+			<item value="cliente"/>
+			<item value="saldo"/>
+			<item value="pst"/>
+			<item value="btnBuscar_1"/>
+		</list>
+		<list key="replacehistory">
+			<item value="limparCampos"/>
+			<item value="cnpj"/>
+			<item value=""/>
+			<item value="Fornecedores"/>
+			<item value="btnUsers"/>
+			<item value="txtCpf"/>
+			<item value="scrollPane"/>
+			<item value="listID"/>
+			<item value="getCliente()"/>
+			<item value="setSaldo"/>
+			<item value="setCliente"/>
+			<item value="btnBuscar"/>
+			<item value="btnLimpar"/>
+			<item value="btnExcluir"/>
+			<item value="btnEditar"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1001"/>
+		<item key="DIALOG_Y_ORIGIN" value="227"/>
+		<item key="DIALOG_WIDTH" value="322"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

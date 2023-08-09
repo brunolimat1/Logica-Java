@@ -1,0 +1,775 @@
+1
+00:00:00,540 --> 00:00:06,660
+Fala Pessoal essa é a última aula dessa seção aqui eu vou te propor um desafio e eu não vou resolver
+
+2
+00:00:06,660 --> 00:00:07,570
+esse desafio.
+
+3
+00:00:07,680 --> 00:00:16,770
+Fica como desafio mesmo para você aqui o seguinte a gente precisa validar o front end dessa aplicação
+
+4
+00:00:16,770 --> 00:00:20,430
+que a gente acabou de fazer porque a gente só validou o B.
+
+5
+00:00:20,760 --> 00:00:26,400
+Eu vou fazer uma validação aqui em um dos formulários aqui eu vou escolher agora vou te mostrar vou
+
+6
+00:00:26,850 --> 00:00:31,920
+te mostrar não vou te relembrar porque a gente já passou por isso nesse curso.
+
+7
+00:00:31,920 --> 00:00:39,270
+E daí você o seu objetivo nesse desafio é fazer a validação de todos os formulários que tem nesse curso
+
+8
+00:00:39,550 --> 00:00:47,310
+novo front end também porque a gente já fez do back end agora a validação vai ser frontal no navegador
+
+9
+00:00:47,310 --> 00:00:48,720
+do cliente.
+
+10
+00:00:48,720 --> 00:00:53,880
+Então vamos iniciar aqui pra começar eu vou iniciar do zero só pra você relembrar então empenhei me
+
+11
+00:00:53,880 --> 00:00:56,500
+Start para iniciar a aplicação.
+
+12
+00:00:56,580 --> 00:01:04,670
+Eu tenho outro outra aba aqui de terminal aqui vou abri o MPM deve pra rodar o IP.
+
+13
+00:01:04,950 --> 00:01:10,830
+Beleza não está contudo aberto que deixou abrir que eu estou logado com um usuário que me viu o local
+
+14
+00:01:10,890 --> 00:01:18,630
+que eu vou sair e daí eu vou validar esse formulário que na verdade esses dois aqui eu vou formular
+
+15
+00:01:18,780 --> 00:01:24,720
+vou validar porque eles são iguais esses dois formulários eles só enviam os dados pra locais diferentes
+
+16
+00:01:25,080 --> 00:01:32,100
+mas eles são iguais e geralmente isso não vai acontecer no mundo real você não vai encontrar dois formulários
+
+17
+00:01:32,100 --> 00:01:37,410
+exatamente iguais que você consegue com uma mesma classe e validar os dois.
+
+18
+00:01:37,410 --> 00:01:39,110
+Então fica a dica aí eu vou.
+
+19
+00:01:39,240 --> 00:01:42,360
+Só vou validar os dois ao mesmo tempo porque os dois são iguais.
+
+20
+00:01:42,720 --> 00:01:49,300
+Então vamos começar aqui a gente vai mexer agora na pasta de Frontin onde vamos já começar a limpar
+
+21
+00:01:49,300 --> 00:01:50,270
+os daqui.
+
+22
+00:01:50,290 --> 00:01:56,700
+Gente não precisa desse consolou aqui e eu vou comentar esse CCS aqui que a gente não está utilizando
+
+23
+00:01:56,700 --> 00:02:04,170
+né no caso a gente poderia ter tirado a configuração do IP aqui e se for o caso essa parte dissesse
+
+24
+00:02:04,170 --> 00:02:09,720
+esse aqui todo e deixar só a nossa parte de JavaScript mesmo.
+
+25
+00:02:09,720 --> 00:02:12,930
+Deixa eu ver aqui se tem mais alguma coisa para remover.
+
+26
+00:02:12,930 --> 00:02:19,260
+Não ficou só o JavaScript mesmo CSS a gente nem está utilizando aqui está tudo certo aqui tudo funcionando
+
+27
+00:02:19,260 --> 00:02:19,870
+ainda beleza.
+
+28
+00:02:21,270 --> 00:02:27,510
+Então o que a gente vai fazer aqui agora e vou criar uma pasta aqui dentro chamada de sei lá módulos
+
+29
+00:02:27,550 --> 00:02:34,270
+modo de uso e daí eu vou criar um arquivo por formulário uma classe para o formulário.
+
+30
+00:02:34,280 --> 00:02:39,450
+Essa classe vai ser responsável por validar esse formulário então por exemplo eu vou vir aqui falar
+
+31
+00:02:39,450 --> 00:02:48,300
+Nil fail e vamos validar o login então vou chamar esse arquivo de login e daí eu vou dar um aqui exporte
+
+32
+00:02:49,600 --> 00:02:59,980
+default Class login beleza e aí já criamos a nossa classe aqui e daí a gente já pode colocar um concerto
+
+33
+00:02:59,980 --> 00:03:00,580
+aqui dentro.
+
+34
+00:03:00,580 --> 00:03:07,480
+Se for o caso ele já faz o seguinte eu vou colocar duas classes aqui nesses formulários que eu te falei
+
+35
+00:03:07,480 --> 00:03:14,770
+que eu ia validar na página de login tem dois formulários a gente tem deixa eu só conferir aqui vou
+
+36
+00:03:14,770 --> 00:03:18,920
+deixar meu console aqui aberto começou a ler aqui.
+
+37
+00:03:18,940 --> 00:03:20,550
+Beleza está aparecendo ainda.
+
+38
+00:03:20,550 --> 00:03:26,170
+Olá Mundo que a gente colocou um espacinho aqui nesse formulário ali que está colado aqui.
+
+39
+00:03:26,890 --> 00:03:34,710
+Então vamos aqui colocar uns 5 para dar uma margem pra eles dois aqui né.
+
+40
+00:03:34,790 --> 00:03:41,940
+E aqui também beleza vamos dar uma olhada se mudou beleza agora estão passados aqui tranquilo agora
+
+41
+00:03:42,000 --> 00:03:49,070
+eu vou colocar uma classe em cada um deles então vou colocar uma classe pra esse aqui classe pode ser
+
+42
+00:03:49,080 --> 00:03:57,600
+forme cadastro né só verifica quando você for adicionar a classe C já não tem por exemplo aqui nesse
+
+43
+00:03:57,600 --> 00:03:59,120
+input já tem uma classe.
+
+44
+00:03:59,120 --> 00:04:06,150
+Se você quiser colocar outra dá um espacinho aqui na mesma no mesmo atributo aqui não cria outra classe
+
+45
+00:04:06,150 --> 00:04:07,100
+aqui no caso.
+
+46
+00:04:07,290 --> 00:04:09,990
+Dica boba mas tem que falar.
+
+47
+00:04:10,370 --> 00:04:18,720
+Então vem aqui fora vamos colocar nesse outro aqui forme login beleza entao agora eu tenho as duas classes
+
+48
+00:04:18,720 --> 00:04:26,400
+aqui eu vou fazer sim eu vou vir aqui no login vou receber forme classe como eu falei eu ia fazer essa
+
+49
+00:04:26,430 --> 00:04:32,550
+classe para validar os dois ao mesmo tempo que eles são iguais mas isso não vai acontecer sempre no
+
+50
+00:04:32,550 --> 00:04:38,930
+mundo real provavelmente você vai ter que criar mais classes para mais formulários aqui ou função construtora
+
+51
+00:04:39,100 --> 00:04:42,860
+ou objeto que você quiser utilizar para validar o forma aqui.
+
+52
+00:04:43,970 --> 00:04:50,010
+Então beleza feito aqui o que a gente pode fazer instancia essas classes como é que a gente faz importe
+
+53
+00:04:51,360 --> 00:04:56,960
+como default aqui que a gente está exportando exporte default classe login default.
+
+54
+00:04:57,060 --> 00:05:02,810
+Quer dizer que eu posso dar qualquer nome pra ela mas eu vou dar o nome login mesmo importe login Froome
+
+55
+00:05:02,910 --> 00:05:06,630
+e aí o arquivo que está na pasta molde Barra login.
+
+56
+00:05:06,810 --> 00:05:13,110
+Beleza agora a gente pode distanciar essa classe não conste login e veja bem que a maiúsculo aqui é
+
+57
+00:05:13,130 --> 00:05:29,230
+minúscula igual a mil Lobinho e daí eu passo a classe do Fome forme cadastro e no outro aqui de outra
+
+58
+00:05:29,250 --> 00:05:32,280
+equipe de cadastro vou chamar também.
+
+59
+00:05:33,330 --> 00:05:37,160
+Aliás esse aqui tá login no caso é esse aqui cadastro.
+
+60
+00:05:37,200 --> 00:05:44,310
+Agora sim tá certo e eu vou criar só pra utilizar esse daqui não ficar o meu esse link reclamando aqui
+
+61
+00:05:44,310 --> 00:05:47,260
+que essa constante está criada mas não tá utilizado.
+
+62
+00:05:47,440 --> 00:05:58,130
+Eu vou criar um método chamado MIT lá dentro pra iniciar os dois cadastro cadastro NIT beleza e daí
+
+63
+00:05:58,140 --> 00:06:07,990
+aqui a gente tem que agora criao emite beleza feito aqui a gente agora vai selecionar o formulário então
+
+64
+00:06:07,990 --> 00:06:18,190
+desse ponto forte igual a Tóquio Mint Tóquio e Selecta e daí eu vou selecionar a forma classe que eu
+
+65
+00:06:18,190 --> 00:06:21,830
+estou mandando aqui no atributo dessa forma classe.
+
+66
+00:06:22,010 --> 00:06:22,920
+Deixe eu vir aqui.
+
+67
+00:06:23,050 --> 00:06:28,990
+Estou mandando um ponto aqui eu tinha então beleza vai funcionar e daí aqui eu vou chamar o método que
+
+68
+00:06:28,990 --> 00:06:34,390
+não existe dois eventos que são os eventos que a gente vai capturar na verdade vai ser só um para esse
+
+69
+00:06:34,390 --> 00:06:35,250
+formulário.
+
+70
+00:06:35,350 --> 00:06:39,950
+Eu vou criar esse método eventos a Doc mente ponto.
+
+71
+00:06:40,450 --> 00:06:41,070
+Pode ser.
+
+72
+00:06:41,260 --> 00:06:43,530
+Não vai ser um fórum desse.
+
+73
+00:06:43,630 --> 00:06:51,090
+E aí eu vou checar aqui antes de fechar o evento eu vou checar se o formulário existe então é diferente
+
+74
+00:06:51,090 --> 00:06:53,590
+de esse ponto forte se eu for não existe.
+
+75
+00:06:53,590 --> 00:06:55,410
+Não faz nada então um retorno.
+
+76
+00:06:55,580 --> 00:06:57,030
+E aí sim ele existe.
+
+77
+00:06:57,030 --> 00:07:01,560
+Esse ponto foi um ponto ad Event Event List né.
+
+78
+00:07:02,940 --> 00:07:03,370
+E daí.
+
+79
+00:07:03,370 --> 00:07:05,520
+Qual evento Meet.
+
+80
+00:07:06,850 --> 00:07:19,540
+Beleza e agora eu vou só dar um ponto Prevent preveem para Event default aqui e eu não recebi Ué em
+
+81
+00:07:19,580 --> 00:07:21,710
+menos aqui.
+
+82
+00:07:22,250 --> 00:07:24,420
+Pronto agora é ponto Prevent default.
+
+83
+00:07:24,430 --> 00:07:33,630
+Vou dar um alerta de forma não enviado como eu te falei eu vou fazer essa validação bem simples mais
+
+84
+00:07:33,630 --> 00:07:40,080
+simples que eu puder aqui mas você pode fazer de um jeito bem mais robusto aqui estou tentando enviar
+
+85
+00:07:40,080 --> 00:07:42,450
+o formulário mas não estou vendo o alerta aqui.
+
+86
+00:07:43,370 --> 00:07:44,880
+Vão tentar entender por quê.
+
+87
+00:07:44,920 --> 00:07:49,570
+Agora sim pq não tinha atualizado app que esse aqui também não foi enviado nenhum dos dois.
+
+88
+00:07:51,370 --> 00:07:57,130
+Beleza então agora a gente vai fazer o seguinte vamos criar aqui um deles.
+
+89
+00:07:57,250 --> 00:07:58,620
+Ponto vale.
+
+90
+00:07:58,770 --> 00:08:00,290
+Deite.
+
+91
+00:08:00,450 --> 00:08:08,440
+A gente cria se esse método aqui vale deite e a gente vai checar os campos quais campo são.
+
+92
+00:08:08,440 --> 00:08:15,940
+Então vamos passar o evento pra cá e aí que a gente pegou o elemento então ele ponto e ponto Taiga só
+
+93
+00:08:15,940 --> 00:08:20,620
+pra eu ter aqui no caso o elemento o formulário que está sendo manipulado.
+
+94
+00:08:20,620 --> 00:08:21,890
+Mas não não precisava.
+
+95
+00:08:21,890 --> 00:08:29,230
+Estou só criando aqui por sei lá porque eu gosto de ter o elemento aqui mas eu acho que eu vou utilizar.
+
+96
+00:08:29,850 --> 00:08:34,890
+E assim eu vou falar com este mil e mil.
+
+97
+00:08:34,900 --> 00:08:36,170
+Pode ser o caso aqui.
+
+98
+00:08:36,550 --> 00:08:40,410
+E aí eu vou falar Element ponto Coil e Selecta.
+
+99
+00:08:40,600 --> 00:08:51,480
+E daí eu vou selecionar o input que tem o deixe eu fechar o curso e que o input aqui tem um Mime igual
+
+100
+00:08:51,480 --> 00:09:01,940
+a minha beleza e o outro aqui vai ser password né no caso eu vou selecionar o input que tem.
+
+101
+00:09:03,120 --> 00:09:10,200
+Nem me passa pela ex e agora eu vou só logar essas coisas se eu fechar aqui pra você ver o corte completo
+
+102
+00:09:10,200 --> 00:09:17,910
+deixe eu falar com soli ponto log e meio input ponto velho e peça Word input.
+
+103
+00:09:17,910 --> 00:09:20,130
+Ponto velho beleza.
+
+104
+00:09:20,160 --> 00:09:26,880
+A gente já colocou isso aqui e aqui a gente não recebeu o evento olha aí agora você aqui a gente já
+
+105
+00:09:26,880 --> 00:09:30,410
+salvou mais o MP que vai levar um tempinho para atualizar.
+
+106
+00:09:30,420 --> 00:09:39,900
+Vamos ver se já atualizou aqui vou atualizar a página ou clicar ou defende um login minha 19 login 19
+
+107
+00:09:40,060 --> 00:09:45,670
+e defende o que acabei de mandar ué aqui ou ali dentro.
+
+108
+00:09:45,990 --> 00:09:46,880
+Ponto.
+
+109
+00:09:50,110 --> 00:09:51,130
+Esse ponto vale.
+
+110
+00:09:51,540 --> 00:10:01,930
+Aqui estão meu e uma faixa parece que tá tudo certo e defende deixe eu vir aqui aqui carregou aqui esse
+
+111
+00:10:01,930 --> 00:10:04,510
+login voltando aqui
+
+112
+00:10:07,600 --> 00:10:07,970
+ué
+
+113
+00:10:11,070 --> 00:10:12,800
+está aqui sim.
+
+114
+00:10:13,610 --> 00:10:17,760
+Como vamos continuar aqui no desenvolvimento.
+
+115
+00:10:17,760 --> 00:10:20,240
+Agora sim pq não tinha atualizado a Rebeca.
+
+116
+00:10:20,240 --> 00:10:25,120
+Agora se eu colocar alguma coisa aqui só que eu tenho um Emmy vale daqui para a China.
+
+117
+00:10:25,410 --> 00:10:29,190
+A gente vê os dados ao Emmy e isso aí é só isso que a gente precisa.
+
+118
+00:10:29,190 --> 00:10:35,430
+12 dado que agora a gente pode validar exatamente como a gente validou aqui por exemplo no login em
+
+119
+00:10:35,470 --> 00:10:45,350
+moda eu a gente válida aqui em que a gente fez a validação não foi nulo não abriu o controle argentino
+
+120
+00:10:45,410 --> 00:10:54,430
+login Model Model o login em moda a gente valida aqui no valida a gente valida isso daqui aqui é meio
+
+121
+00:10:54,440 --> 00:10:57,010
+vale deitou aqui no caso o Emmy foi válido.
+
+122
+00:10:57,020 --> 00:11:02,720
+A gente fala em mim inválidos e se a senha for menor que três caracteres ou maior que 50 caracteres
+
+123
+00:11:02,720 --> 00:11:08,840
+a gente valida então é isso que a gente faz validar pra evitar que o cliente vá lá no servidor pra só
+
+124
+00:11:08,840 --> 00:11:14,130
+para buscar essa informação a gente já vai validar aqui na cara do forno sem atualizar a página.
+
+125
+00:11:14,500 --> 00:11:19,930
+E daí como é que a gente faria isso a gente poderia usar o vale deitou aqui também né.
+
+126
+00:11:19,940 --> 00:11:30,740
+Então fazer o seguinte importe vale deita from fale e diga beleza vamos validar o IMI aqui e aí vai
+
+127
+00:11:30,740 --> 00:11:31,910
+ser aquele esquema né.
+
+128
+00:11:31,950 --> 00:11:37,670
+Eu vou criar uma variável aqui uma flag de erro e aí eu vou colocá la como falso como.
+
+129
+00:11:37,670 --> 00:11:39,390
+Ou seja não existe erro.
+
+130
+00:11:39,440 --> 00:11:49,260
+Se existir eu vou vou virar aquela flecha como tu então vou colocar hífen diferente de Vale e d ponto.
+
+131
+00:11:49,260 --> 00:11:59,470
+Isso é meio meio input desponta o velho a gente manda um alerta eu vou mandar um alerta só que para
+
+132
+00:11:59,470 --> 00:12:05,070
+o usuário você pode fazer daquela outra maneira mais avançada que eu já te mostrei criar um destino
+
+133
+00:12:05,380 --> 00:12:10,660
+depois do campo enfim você pode fazer daquela maneira que eu estou fazendo assim pra ir mais depressa
+
+134
+00:12:10,660 --> 00:12:12,620
+também pra não ficar redundante.
+
+135
+00:12:12,630 --> 00:12:23,300
+A coisa aqui na casa voltando aqui é meio e meio inválida que aí eu vou ser o erro como futuro.
+
+136
+00:12:23,320 --> 00:12:24,510
+Ocorreu um erro.
+
+137
+00:12:24,520 --> 00:12:31,720
+Depois eu só checa com essa Flag tem TV e até então não envio o formulário então voltando aqui na verdade
+
+138
+00:12:31,720 --> 00:12:37,120
+a gente já não tá enviando o formulário a gente faz checar essa Flag pra gente enviar o formulário no
+
+139
+00:12:37,120 --> 00:12:39,550
+caso que quando a gente fala e prevê default.
+
+140
+00:12:39,550 --> 00:12:49,990
+O formulário não vai mais ser enviado to aqui a gente vai checar se então peça de input aponta o velho
+
+141
+00:12:49,990 --> 00:13:00,580
+e ponto leve e peça ou de outro ponto vale ponto leve menor que 3 ou 10 ou de input ponto vale ponto
+
+142
+00:13:00,580 --> 00:13:04,140
+ou lé maior q 50.
+
+143
+00:13:04,140 --> 00:13:13,720
+A gente vai falar senha precisa ter entre 3 e 50 caracteres.
+
+144
+00:13:13,730 --> 00:13:22,680
+Blz que a gente vai falar Só se não tiver erro é diferente de ele que é o elemento nosso aqui ponto
+
+145
+00:13:22,710 --> 00:13:30,060
+Sammy te envia o nosso elemento aqui a gente não precisa mais desse consolou tão só de fazer isso aqui
+
+146
+00:13:30,060 --> 00:13:35,380
+que a gente fez e eu acho que eu posso diminuir um pouco aqui só de fazer isso aqui que a gente fez.
+
+147
+00:13:35,550 --> 00:13:42,480
+A gente já já validou os dois formulários porque que a gente distanciou essa classe com duas com dois
+
+148
+00:13:42,480 --> 00:13:49,260
+objetos diferentes no caso então a gente tinha que no meio login igual e o login com essa classe aqui
+
+149
+00:13:49,270 --> 00:13:56,030
+de HTML e cadastro igual a mil login com essa outra classe de formulário aqui no caso e a gente inicializar
+
+150
+00:13:56,080 --> 00:13:57,180
+os dois aqui.
+
+151
+00:13:57,300 --> 00:14:02,790
+Se você observar aqui agora a gente já vai testar e validando os dois campos aqui eu vou atualizar a
+
+152
+00:14:02,790 --> 00:14:08,970
+página vou fechar isso aqui vou tentar enviar email inválido de carro e aí também vai dar duas mensagens
+
+153
+00:14:08,970 --> 00:14:13,980
+em seguida pq a gente fez duas validações por isso que eu te falo que às vezes é melhor e você coloca
+
+154
+00:14:13,980 --> 00:14:19,830
+um trechinho aqui embaixo aqui trechinho bonitinho falando vermelhinho e sim falando Olha esse campo
+
+155
+00:14:19,830 --> 00:14:23,760
+aqui tá errado viu usuário aí enviar aqui.
+
+156
+00:14:23,790 --> 00:14:25,500
+Esse aqui também dá a mesma coisa.
+
+157
+00:14:25,500 --> 00:14:30,750
+Então agora se eu colocar um email válido Luísa roubou o Gmail e só não faltou o ponto.
+
+158
+00:14:30,840 --> 00:14:33,830
+Vai dar erro de novo em mim vale 100 vale.
+
+159
+00:14:34,230 --> 00:14:39,210
+Agora se eu colocar o ponto com me enviar vai dar só sanha inválida.
+
+160
+00:14:39,210 --> 00:14:39,830
+Beleza.
+
+161
+00:14:39,960 --> 00:14:46,680
+Só que se eu colocar 1 2 1 2 3 4 5 6 agora ele deve passar beleza usuário não existe porque eu tentei
+
+162
+00:14:46,680 --> 00:14:48,480
+fazer login com um usuário que não existe.
+
+163
+00:14:49,020 --> 00:14:54,980
+Então vou tentar cadastrar e se isolar Luíza roubou de mim mesma coisa e agora vou tentar enviar não
+
+164
+00:14:54,990 --> 00:15:00,810
+vai enviar nem no caso não vai fazer essa viagem que eu fazia anteriormente e vai validar a senha também.
+
+165
+00:15:00,810 --> 00:15:07,320
+Agora vamos colocar o ponto como mandar enviar ele agora só estava lidando assim era porque a gente
+
+166
+00:15:07,320 --> 00:15:07,960
+não mandou.
+
+167
+00:15:07,980 --> 00:15:12,040
+Então vou mandar 1 2 3 4 5 6 e enviar.
+
+168
+00:15:12,570 --> 00:15:16,380
+E aí beleza o usuário cadastrado com sucesso ou seja nessa.
+
+169
+00:15:16,380 --> 00:15:23,490
+Só nessa brincadeirinha que a gente fez a gente economizou várias idas lá no servidor pra tentar validar
+
+170
+00:15:23,490 --> 00:15:26,660
+o campo e a gente já validou aqui sem atualizar a página.
+
+171
+00:15:26,670 --> 00:15:33,240
+Muito interessante você pode levar essa avaliação para o próximo nível e exibir um trechinho aqui embaixo
+
+172
+00:15:33,300 --> 00:15:35,350
+do campo e a gente mostrar como fazer isso.
+
+173
+00:15:35,430 --> 00:15:41,070
+Um trechinho aqui embaixo desse outro campo você pode até usar o arco que a gente viu anteriormente
+
+174
+00:15:41,070 --> 00:15:47,430
+também pra fazer faz uma volta lá que você checa se o usuário que está tentando logar já existe aí você
+
+175
+00:15:47,430 --> 00:15:49,020
+valida isso também.
+
+176
+00:15:49,020 --> 00:15:54,630
+Enfim você pode levar isso para um outro nível né no caso aqui eu estou só te mostrando um exemplo simples
+
+177
+00:15:54,780 --> 00:15:55,230
+porquê.
+
+178
+00:15:55,230 --> 00:15:58,040
+Justamente porque isso é um desafio aqui no casa.
+
+179
+00:15:58,140 --> 00:16:04,740
+Então vou tentar logar com aquele zoar não vai dar né no caso então vou me colocar Luiz arroba GM ponto
+
+180
+00:16:04,800 --> 00:16:07,530
+com 1 2 3 4 5.
+
+181
+00:16:07,530 --> 00:16:16,410
+A senha está errada não vai jogar beleza o IS rouba GM e ponto com 1 2 3 4 5 6 agora vai logo beleza.
+
+182
+00:16:16,620 --> 00:16:22,290
+Então a gente fez essa validação e conforme eu te falei eu gostaria muito que você seguisse esse meu
+
+183
+00:16:22,290 --> 00:16:28,320
+conselho e tentasse validar esse formulário aqui que é o formulário de cadastro e automaticamente você
+
+184
+00:16:28,320 --> 00:16:35,000
+validando este formulário Você também vai estar validando o outro formulário que este formulário aqui
+
+185
+00:16:35,010 --> 00:16:41,690
+é porque eles são a mesma página no caso então você já vai estar validando esse outro formulário também.
+
+186
+00:16:41,790 --> 00:16:47,130
+Beleza então esse pessoal vou deixar esse desafio aqui no ano novamente eu não vou resolver esse desafio
+
+187
+00:16:47,130 --> 00:16:55,530
+vou deixar como dever de casa mesmo pra você e a gente se vê já na próxima sessão minha minha intenção
+
+188
+00:16:55,530 --> 00:17:02,430
+com a próxima sessão e a gente fazer depois dessa aplicação num servidor real Linux a gente vai criar
+
+189
+00:17:02,430 --> 00:17:08,790
+uma conta lá no Google Cloud Platform gratuito por um ano Ok a gente vai criar uma conta lá no Google
+
+190
+00:17:08,790 --> 00:17:15,770
+Cloud Platform vai criar um servidor lá e daí a gente vai entrar nesse servidor Linux vai usar o Gui.
+
+191
+00:17:15,770 --> 00:17:21,300
+Enfim você vai ver na próxima sessão vai ser muito massa porque a gente vai jogar esse servidor nosso
+
+192
+00:17:21,300 --> 00:17:23,400
+aqui não é tão especial.
+
+193
+00:17:23,400 --> 00:17:26,200
+Vou deixar essa aula aqui sim e a gente se vê na praça.
+
+194
+00:17:26,310 --> 00:17:26,990
+Grande abraço.

@@ -1,0 +1,1051 @@
+1
+00:00:00,470 --> 00:00:05,990
+Fala Pessoal continuando aqui agora a gente vai logar o nosso usuário só que antes disso eu quero já
+
+2
+00:00:05,990 --> 00:00:10,280
+colocar um link para acessar a página de entrar aqui.
+
+3
+00:00:10,280 --> 00:00:17,990
+Como é que a gente vai fazer isso a gente vai bem SLC viu isso e daí incluídos aí na nave B a gente
+
+4
+00:00:17,990 --> 00:00:20,050
+vai adicionar mais um link desse aqui.
+
+5
+00:00:20,510 --> 00:00:28,010
+Depois a gente vai corrigir para usuários logado Não não é pra quem tiver logado não vai isso ver um
+
+6
+00:00:28,010 --> 00:00:36,940
+link de saiu mas por enquanto vou me deixar assim eu vou colocar entre e aí o link da Roma dá do login
+
+7
+00:00:36,940 --> 00:00:43,560
+então login Barra Index eles vão voltar aqui na página dá uma olhada aqui.
+
+8
+00:00:43,640 --> 00:00:49,010
+A gente tem um link que entra e aí a gente pode querer ou criar um usuário ou tentar logar aqui.
+
+9
+00:00:49,540 --> 00:00:54,830
+E aí agora a gente vai fazer esse trecho então antes antes disso antes de fazer isso também eu quero
+
+10
+00:00:54,830 --> 00:00:59,350
+corrigir um negócio que a gente deixou errada aqui na parte de cadastro de usuário.
+
+11
+00:00:59,540 --> 00:01:07,740
+Se você observar aqui em si vou abrir o login Controller que a gente vai precisar dele de todo jeito
+
+12
+00:01:08,140 --> 00:01:15,820
+e o modo e o login no modo dele eu quero te mostrar um negócio a gente fez um bloco de raquete aqui
+
+13
+00:01:16,350 --> 00:01:24,140
+que na verdade vai impedir que esse bloco de toque aqui funcione por aqui porque a gente já tá capturando
+
+14
+00:01:24,180 --> 00:01:30,100
+erro aqui então eu não vou querer capturar esse erro ranking dar um nome tirar esse bloco de quiet daqui
+
+15
+00:01:30,530 --> 00:01:31,030
+porque.
+
+16
+00:01:31,060 --> 00:01:37,020
+Porque a gente já está capturando esse erro aqui nesse trajeto.
+
+17
+00:01:37,120 --> 00:01:43,360
+Então no caso do seu capturar esse erro aqui esse aqui não vai funcionar mais então vamos deixar só
+
+18
+00:01:43,360 --> 00:01:44,810
+esse aqui funcionando.
+
+19
+00:01:44,830 --> 00:01:46,500
+Beleza corrigido esse daqui.
+
+20
+00:01:47,560 --> 00:01:50,950
+Agora sim a gente pode passar pra frente.
+
+21
+00:01:51,280 --> 00:01:52,570
+é isso mesmo beleza.
+
+22
+00:01:53,570 --> 00:01:56,330
+Então agora vamos testar essa foto aqui de login.
+
+23
+00:01:56,330 --> 00:02:06,060
+Eu tenho usuario lá na base de dados chamado Otávio Miranda br rouba GM ponto com 100 1 2 3 4 5 6.
+
+24
+00:02:06,190 --> 00:02:09,160
+Aí pra entrar Keynote post login login.
+
+25
+00:02:09,170 --> 00:02:16,490
+Porque não existe essa rota então vamos criar essa rota vamos duplicar esse daqui e aí vamos fazer login
+
+26
+00:02:16,640 --> 00:02:19,720
+login aqui e aqui login Controller registro.
+
+27
+00:02:19,820 --> 00:02:22,590
+A gente vai fazer login.
+
+28
+00:02:22,670 --> 00:02:29,120
+Esse método login dentro do controle aqui do do usuário aqui mesmo estão aqui.
+
+29
+00:02:29,120 --> 00:02:35,200
+Isso aqui vai ser muito similar a esse daqui no caso mas a gente vai mudar alguma coisa algumas coisas.
+
+30
+00:02:35,290 --> 00:02:45,370
+Então vou copiar isso aqui e vou editar ele mesmo e esse aqui vai chamar login beleza e aqui assim que
+
+31
+00:02:45,390 --> 00:02:46,980
+mesmo a mesma coisa aqui.
+
+32
+00:02:47,060 --> 00:02:47,760
+Perfeito.
+
+33
+00:02:47,760 --> 00:02:48,600
+Tudo certo.
+
+34
+00:02:48,600 --> 00:02:54,110
+Só que aqui eu não vou falar regista aqui eu vou pedir pra logar né.
+
+35
+00:02:54,110 --> 00:02:57,020
+Pode ser ou login no caso aqui.
+
+36
+00:02:57,300 --> 00:03:00,440
+E aí a gente pode criar no modo esse login.
+
+37
+00:03:00,750 --> 00:03:07,140
+E aí é a mesma coisa aqui também vai ser assim que login.
+
+38
+00:03:07,160 --> 00:03:12,690
+E daí a gente vai logar esse usuário aqui mas ainda a gente vai chamar esse valida que também é a mesma
+
+39
+00:03:12,690 --> 00:03:13,310
+coisa.
+
+40
+00:03:13,490 --> 00:03:19,020
+Vou valer vou utilizar as mesmas coisas que utilizei no anterior pra gente poupar um pouco de tempo
+
+41
+00:03:19,020 --> 00:03:22,080
+se você quiser criar um específico para login.
+
+42
+00:03:22,230 --> 00:03:24,740
+Pode também não há problema nenhum nisso daí.
+
+43
+00:03:25,910 --> 00:03:32,290
+E daí o que a gente vai checar é o seguinte lembra que a gente fez esse uso e que existe aqui.
+
+44
+00:03:32,760 --> 00:03:42,960
+Esse método tá aqui a esse método ele configura a avaria a gente pode até configurar aqui não vai dar
+
+45
+00:03:42,960 --> 00:03:45,890
+porque ele vai lançar um erro a gente vai ter que fazer isso de novo.
+
+46
+00:03:46,140 --> 00:03:52,760
+Copiar essa linha que usa 5x porque ela faz exatamente o que a gente vai precisar aqui no login então
+
+47
+00:03:52,770 --> 00:03:59,240
+aqui abaixo eu vou falar com usa igual a usa ao Haiti login.
+
+48
+00:03:59,340 --> 00:04:06,650
+E aí eu vou encontrar o usuário por e-mail e daí se o usuário não existir eu vou ter que lançar.
+
+49
+00:04:06,720 --> 00:04:13,690
+Tá certo vai funcionar que ele usa esses mesmo e eu só vou dar uma ajustada nele que a deixa eu voltar
+
+50
+00:04:14,040 --> 00:04:15,460
+e esse uso existe.
+
+51
+00:04:15,480 --> 00:04:21,360
+Vai ter que configurar minha variava desse ponto e usa ao invés de fazer isso aqui dessa maneira aqui
+
+52
+00:04:21,400 --> 00:04:29,540
+eu que estou fazendo com este uso eu vou vou utilizar desse ponto e usa igual a isso daqui.
+
+53
+00:04:29,730 --> 00:04:30,210
+Beleza.
+
+54
+00:04:30,210 --> 00:04:38,040
+E daí eu vou checar aqui embaixo aqui eu não preciso de Kouchner no caso ficando doido e aqui eu vou
+
+55
+00:04:38,040 --> 00:04:42,670
+checar aqui embaixo ao invés de checar o uso checado disse e usa.
+
+56
+00:04:42,750 --> 00:04:51,130
+Beleza feita aqui se o usuário já existe ele vai lançar um erro aqui de usuários já existe né no caso
+
+57
+00:04:53,850 --> 00:04:59,260
+verdade não estou pensando aqui eu acho que não vai dar certo né não vai dar certo a gente utilizar
+
+58
+00:04:59,260 --> 00:05:04,960
+esse método porque ele vai lançar um erro e a gente precisa desses erros pra trabalhar não vai dar certo
+
+59
+00:05:04,960 --> 00:05:12,610
+mesmo mas aqui pode continuar assim não tenho problema nenhum vou voltar aqui e vou configurar aqui
+
+60
+00:05:12,610 --> 00:05:13,480
+no login.
+
+61
+00:05:13,480 --> 00:05:19,390
+Essa essa variável que desse jeito aqui está a mesma coisa que a gente tava fazendo a gente vai validar
+
+62
+00:05:19,390 --> 00:05:26,890
+o IMEI aqui e depois checar se o usuário existe aqui se ele existir ele vai ser configurado pra essa
+
+63
+00:05:26,890 --> 00:05:33,170
+variável que e daí a gente vai ter o usuário nessa variável mas a gente ainda precisa checar a senha
+
+64
+00:05:33,170 --> 00:05:39,860
+e lembra que a senha Crypto tem um rácio de 100 agora a gente não tem a senha propriamente dita do usuário.
+
+65
+00:05:39,910 --> 00:05:46,420
+Agora que a gente vai fazer fazer o backup vai validar a senha desse usuário como é que a gente faz
+
+66
+00:05:46,420 --> 00:05:46,810
+isso.
+
+67
+00:05:47,950 --> 00:05:51,150
+A gente vai fazer assim vamos fazer.
+
+68
+00:05:51,730 --> 00:06:00,730
+A gente tinha carência e Beckett GS ponto com pé 5 aqui e aqui se eu passar o mouse aqui eu vou ver
+
+69
+00:06:00,730 --> 00:06:01,960
+o que eu preciso mandar.
+
+70
+00:06:02,290 --> 00:06:08,130
+Eu preciso mandar a senha e o racha ou racha é o que está salvo na base de dados que é o que a gente
+
+71
+00:06:08,140 --> 00:06:10,080
+salvou lá como senha do usuário.
+
+72
+00:06:10,080 --> 00:06:14,400
+Esse é o racha a senha que a gente vai mandar uma estrovenga que a gente está recebendo aqui.
+
+73
+00:06:14,470 --> 00:06:19,240
+Desse ponto bate ponto peça onde e a senha.
+
+74
+00:06:19,510 --> 00:06:19,950
+E daí.
+
+75
+00:06:19,960 --> 00:06:23,910
+O racha é o que está na base de dados então desse ponto e usa.
+
+76
+00:06:23,930 --> 00:06:24,930
+Ponto.
+
+77
+00:06:25,330 --> 00:06:30,730
+Só que é o seguinte Aqui antes de fazer essa checagem eu tenho que ver se o usuário existe e se ele
+
+78
+00:06:30,730 --> 00:06:35,390
+não existe na verdade o contrário do desse user que existe.
+
+79
+00:06:35,480 --> 00:06:37,410
+Vou checar se ele não existe.
+
+80
+00:06:37,600 --> 00:06:42,110
+Aí eu vou eu vou lançar um e não é diferente.
+
+81
+00:06:42,140 --> 00:06:55,770
+Desse ponto e usei a gente pode colocar desse ponto errou nesse ponto pois usuário não existe você poderia
+
+82
+00:06:55,770 --> 00:07:02,490
+aqui já de cara pra não informar muito para o usuário que é o erro porque isso pode ser uma falha de
+
+83
+00:07:02,490 --> 00:07:03,900
+segurança também né.
+
+84
+00:07:03,960 --> 00:07:09,680
+Aí você pode falar pelo usuario sem inválidos já de cara aqui mas aqui eu tenho que dar um grito e então
+
+85
+00:07:09,690 --> 00:07:11,430
+vou precisar de corpo nesse aqui.
+
+86
+00:07:12,580 --> 00:07:17,640
+Corpo nesse e fica ainda uma me colocar eu vou retornar aqui eu não vou deixar passar daqui
+
+87
+00:07:20,830 --> 00:07:22,570
+beleza e aqui aí.
+
+88
+00:07:22,570 --> 00:07:26,240
+Aí sim sim o usuário que a pessoa digitou existe aqui.
+
+89
+00:07:26,260 --> 00:07:31,570
+Aí a gente vai passar pra cá pra comparar Olha eu vou comparar sem que ele tá enviando com racha que
+
+90
+00:07:31,570 --> 00:07:33,320
+eu tenho lá na base de dados.
+
+91
+00:07:33,340 --> 00:07:40,080
+Se passar a gente pode checar até invertidos se a gente quiser é diferente disso daqui.
+
+92
+00:07:40,960 --> 00:07:42,910
+A gente pode falar o seguinte
+
+93
+00:07:45,910 --> 00:07:55,280
+desse ponto erramos a gente fala aqui que é um puxa e olha que nem no caso do Posh
+
+94
+00:07:58,090 --> 00:08:06,050
+sanha inválida beleza e daí a gente retorna aqui pra não passar daqui e daí passando daqui.
+
+95
+00:08:06,170 --> 00:08:08,480
+A gente já vai ter usuário logado.
+
+96
+00:08:08,480 --> 00:08:11,550
+Na verdade a gente já tem esse usuário aqui né.
+
+97
+00:08:11,570 --> 00:08:13,370
+A gente só está chegando aqui.
+
+98
+00:08:13,460 --> 00:08:15,450
+Se o usuário está ou não logado.
+
+99
+00:08:15,460 --> 00:08:22,160
+Se ele passar daqui a gente vai criar uma sessão aqui mas não nesse local a gente vai criar sessão lá
+
+100
+00:08:22,170 --> 00:08:23,590
+no no controle.
+
+101
+00:08:24,020 --> 00:08:30,170
+Então nesse local que a gente está fazendo a gente está criando usando o nosso modelo de login a nossa
+
+102
+00:08:30,170 --> 00:08:36,080
+classe de login e a gente pede pra fazer o login e vai se ocorrer algum erro.
+
+103
+00:08:36,140 --> 00:08:41,720
+A gente vai falar alguma coisa aqui no caso aqui vai aparecer lá as mensagens de erro a mesma coisa
+
+104
+00:08:42,170 --> 00:08:46,030
+e daí a gente salva a sessão e retorna se não tiver nenhum erro.
+
+105
+00:08:46,040 --> 00:08:57,110
+A gente pode falar para o usuário você fez você login com sucesso ou você fez você entrou no sistema.
+
+106
+00:08:57,110 --> 00:08:59,900
+Beleza e daí a gente volta pra lá.
+
+107
+00:08:59,900 --> 00:09:03,730
+Só que antes de fazer isso aqui eu preciso fazer outra coisa.
+
+108
+00:09:03,890 --> 00:09:09,620
+Eu preciso criar uma sessão daquele usuário precisa falar lembra que a gente falou que sessão é para
+
+109
+00:09:09,830 --> 00:09:16,350
+identificar este navegador aqui como sendo mil um navegador um navegador seu aí da sua casa como sendo
+
+110
+00:09:16,350 --> 00:09:17,570
+o seu navegador.
+
+111
+00:09:17,570 --> 00:09:19,910
+Eu preciso identificar isso como é que eu faço isso.
+
+112
+00:09:20,060 --> 00:09:29,840
+Eu vou jogar o usuário para dentro da sessão então rei que ponto Section ponto e uso é igual a login
+
+113
+00:09:30,230 --> 00:09:38,470
+ponto e usa então beleza agora a gente vai ter e a gente pode até fazer uma c uma outra uma outra checagem
+
+114
+00:09:38,470 --> 00:09:46,140
+aqui se for o caso se não tiver essa variável e use por exemplo lá dentro você pode fazer essa outra
+
+115
+00:09:46,440 --> 00:09:56,370
+checagem que eu para garantir e fiz login login ponto e uso é diferente no caso porque ele vai ser nulo
+
+116
+00:09:56,380 --> 00:09:58,440
+aqui se usa isso aqui.
+
+117
+00:09:58,770 --> 00:10:01,990
+Ele vai ser nulo se ele não tiver sido configurada aqui.
+
+118
+00:10:02,490 --> 00:10:09,390
+O caso então se não existisse o usuário aqui nesse caso aqui a gente vai.
+
+119
+00:10:09,390 --> 00:10:13,380
+A gente não vai logar o usuário não vai permitir que ele Log.
+
+120
+00:10:13,680 --> 00:10:16,210
+Então se não tiver nenhum erro a gente vai logar ele aqui.
+
+121
+00:10:16,530 --> 00:10:19,080
+Eu acho que não precisa fazer isso aqui.
+
+122
+00:10:19,080 --> 00:10:27,340
+Deixa eu ver nesse local o usuário já vai ter um erro no caso usuário não existe nesse local que é que
+
+123
+00:10:27,460 --> 00:10:34,830
+é o perigo mas na verdade vai existir outro erro aqui disse invalida e daí a gente pode até garantir
+
+124
+00:10:34,830 --> 00:10:43,890
+aqui falando que vi esse ponto de ponto e usa igual ano porque é o seguinte a gente configurou esse
+
+125
+00:10:43,890 --> 00:10:46,710
+uso aqui nesse caso aqui né.
+
+126
+00:10:46,820 --> 00:10:54,210
+A gente configurou esse usuário então aqui a gente está garantindo que ele vai continuar sendo nu pra
+
+127
+00:10:54,210 --> 00:11:01,380
+não ter nenhum problema então a gente nem precisa checar isso aqui mas não sei se existia algum erro
+
+128
+00:11:01,380 --> 00:11:06,750
+lá na base de dados de todo jeito o usuário vai ser o mesmo e daí a gente vai terminar o nosso código
+
+129
+00:11:06,870 --> 00:11:08,710
+aqui nesse local né no caso.
+
+130
+00:11:09,480 --> 00:11:16,920
+Então beleza e aqui você entrou no sistema e aí a gente joga c r que fecha um e usa igual login ponto
+
+131
+00:11:16,920 --> 00:11:17,310
+e uso.
+
+132
+00:11:17,320 --> 00:11:21,030
+Vamos testar essa funcionalidade para ver se está funcionando.
+
+133
+00:11:21,210 --> 00:11:27,780
+Aqui está tudo certo as rotas aqui aparentemente estão certas então vamos logar esse usuário então voltando
+
+134
+00:11:27,780 --> 00:11:29,890
+eu vou atualizar a página aqui.
+
+135
+00:11:30,600 --> 00:11:32,490
+Vou tentar com o usuário que não existe.
+
+136
+00:11:32,490 --> 00:11:37,650
+Luiz Otávio Miranda rouba Jheimy o ponto.
+
+137
+00:11:37,680 --> 00:11:47,770
+Vamos ver se isso aqui logo 1 2 3 4 5 6 usuário não existe beleza e aí Otávio Miranda br.
+
+138
+00:11:48,050 --> 00:11:55,140
+GM ponto com um 2 3 vou colocar só um dois três e vou enviar a senha em um vale da beleza.
+
+139
+00:11:55,280 --> 00:12:04,470
+E aí vamos só conferir se ele vai logar Otávio Miranda a ponto com Otávio Miranda br A rouba GM e o
+
+140
+00:12:04,470 --> 00:12:08,380
+ponto com 1 2 3 4 5 6 agora ele deve logar.
+
+141
+00:12:08,400 --> 00:12:10,390
+Então você entrou no sistema.
+
+142
+00:12:10,610 --> 00:12:13,230
+E daí vamos dar uma olhada aqui se não tem nenhum erro.
+
+143
+00:12:13,230 --> 00:12:19,490
+Beleza não tem nenhum erro aqui e outra coisa aqui deixa a gente a se aqui no que.
+
+144
+00:12:19,770 --> 00:12:23,580
+Então beleza a gente já alugou o usuário aqui no sistema.
+
+145
+00:12:23,790 --> 00:12:29,340
+E aí como é que a gente pode ter certeza que a gente logo esse usuário do sistema a gente pode tanto
+
+146
+00:12:29,340 --> 00:12:36,870
+d Bulgária acessar por exemplo seu vê em qualquer outro aqui por exemplo nu no index do login eu vou
+
+147
+00:12:36,870 --> 00:12:42,170
+falar antes da horrenda eu aqui eu vou falar com Sully ponto O.
+
+148
+00:12:42,900 --> 00:12:46,670
+Até que ponto 7 é um ponto e usa esse daqui.
+
+149
+00:12:46,680 --> 00:12:52,410
+Aqui que a seção do meu usuário então agora eu devo ver os dados do meu usuário que estão atualizando
+
+150
+00:12:52,410 --> 00:12:53,830
+a página que está vendo aqui.
+
+151
+00:12:54,300 --> 00:12:57,830
+Meus ora é esse aqui Otávio Miranda br geme aí.
+
+152
+00:12:57,990 --> 00:12:59,460
+Esse é o raio x da sanha dele.
+
+153
+00:12:59,460 --> 00:13:05,170
+Mas não tem problema em está aqui não é esse é o pedido do nosso usuário beleza está logado aqui já
+
+154
+00:13:06,420 --> 00:13:07,990
+e daí o que a gente vai fazer.
+
+155
+00:13:08,040 --> 00:13:16,230
+A gente pode agora jogar essa seção pra dentro das nossas páginas o nosso Miro aqui por exemplo eu vou
+
+156
+00:13:16,230 --> 00:13:19,260
+ver aqui onde eu estou colocando as mensagens de erro.
+
+157
+00:13:19,260 --> 00:13:29,520
+Isso é que eu vou colocar também a esse ponto Section igual a esse ponto usa no caso do Holocausto ponto
+
+158
+00:13:29,520 --> 00:13:40,470
+Section igual a Rec ponto 7 ou na verdade eu vou jogar.
+
+159
+00:13:40,510 --> 00:13:48,060
+Eu tô pensando que eu tô achando que eu vou jogar ao invés de sete e eu inteira eu vou jogar usa aqui
+
+160
+00:13:49,150 --> 00:13:50,440
+usa dessa maneira.
+
+161
+00:13:50,440 --> 00:14:00,890
+Assim usa esse ponto Holocausto ponto e usa e Harry ponto Section ponto e usa beleza feito aqui.
+
+162
+00:14:01,310 --> 00:14:05,220
+E agora a gente pode checar alguma coisa ali dentro por exemplo.
+
+163
+00:14:05,720 --> 00:14:14,720
+Na navegação aqui a gente pode checar por exemplo se o usuário estiver logado não estiver logado ao
+
+164
+00:14:14,730 --> 00:14:17,860
+contrário é diferente de uso.
+
+165
+00:14:18,750 --> 00:14:21,360
+A gente vai não vai exibir.
+
+166
+00:14:21,420 --> 00:14:23,330
+A gente vai exibir se aqui no caso né.
+
+167
+00:14:23,340 --> 00:14:29,280
+Então vamos fazer isso aqui se não tiver usuário.
+
+168
+00:14:29,310 --> 00:14:31,530
+Se o usuário não tiver logado vai aparecer entra.
+
+169
+00:14:31,530 --> 00:14:34,000
+Se ele tiver logado não vai aparecer aqui.
+
+170
+00:14:34,530 --> 00:14:37,580
+Voltando aqui agora deve sumir se entrar aqui ainda.
+
+171
+00:14:37,700 --> 00:14:40,810
+Vamos atualizar sumiu entra porque eu estou logado.
+
+172
+00:14:40,900 --> 00:14:42,840
+Tal está funcionando perfeitamente.
+
+173
+00:14:42,840 --> 00:14:45,890
+Se eu saí e a gente ainda não fez essa parte saí.
+
+174
+00:14:45,900 --> 00:14:51,380
+Mas a gente já faz isso agora mesmo tem que exibir aqui de novo.
+
+175
+00:14:51,380 --> 00:14:54,720
+Então vamos fazer o seguinte como é que a gente vai fazer para o usuário sai.
+
+176
+00:14:54,930 --> 00:14:56,360
+Vamos criar uma rota aqui.
+
+177
+00:14:56,730 --> 00:15:02,510
+Vamos criar essa rota chamada de login Barra Longa Out pra sair e aí no local.
+
+178
+00:15:02,520 --> 00:15:11,460
+Aqui no controle e a gente vai criar esse logar aqui e daí a gente vai aqui vai ser ao invés de Postiga.
+
+179
+00:15:11,580 --> 00:15:16,550
+E daí a gente vai cair no controle e criar esse logotipo que na verdade é bem simples.
+
+180
+00:15:16,670 --> 00:15:22,450
+Então log esportes ponto log out.
+
+181
+00:15:23,600 --> 00:15:24,620
+Igual uma fantoche.
+
+182
+00:15:25,460 --> 00:15:25,820
+E daí.
+
+183
+00:15:25,810 --> 00:15:32,210
+Aqui a gente só vai matar sessão então a gente vai falar Rei que ponto Section ponto destrói.
+
+184
+00:15:34,180 --> 00:15:40,660
+Destrói e daí a gente já pode mandar o usuário pra qualquer página pra onde ele veio por exemplo.
+
+185
+00:15:41,170 --> 00:15:44,340
+Mas eu vou fazer o seguinte responderei direto.
+
+186
+00:15:44,980 --> 00:15:48,130
+E aí eu vou redirecionar esse usuário pra home do site.
+
+187
+00:15:48,610 --> 00:15:49,180
+E daí.
+
+188
+00:15:49,180 --> 00:15:52,560
+Beleza feita aqui outra coisa também.
+
+189
+00:15:52,720 --> 00:15:55,070
+O SEGUINTE EU VOU COLOCAR NO MEU índex aqui.
+
+190
+00:15:55,660 --> 00:15:58,930
+Vou colocar aquelas mensagens lá porque elas não estão aqui.
+
+191
+00:15:58,930 --> 00:16:03,060
+Era nesse local que me vou colocar aquelas mensagens aqui.
+
+192
+00:16:04,830 --> 00:16:11,890
+Vou colocar include e aí incluo dessa barra mestra diz.
+
+193
+00:16:13,160 --> 00:16:18,880
+E vamos voltar aqui e vão ver se está tudo funcionando só entrar aqui ok que foi o problema Keynote.
+
+194
+00:16:19,430 --> 00:16:27,330
+Inclusive faltou o D que me incluo desse beleza beleza tudo funcionando aqui.
+
+195
+00:16:27,370 --> 00:16:30,960
+Entrei certinho agora eu preciso de ver o link de logotipo.
+
+196
+00:16:30,970 --> 00:16:33,440
+é por isso que não consegui sair ali.
+
+197
+00:16:33,880 --> 00:16:41,200
+Então se o usuário não vão fazer diferente diz que fica mais confuso deixei vamos fazer e assim vão
+
+198
+00:16:41,200 --> 00:16:45,880
+fazer se o usuário estiver logado aparece o link de site.
+
+199
+00:16:45,910 --> 00:16:48,170
+Ao contrário disso aparece o link que entra.
+
+200
+00:16:48,790 --> 00:16:52,260
+Vamos fechar aqui e aí.
+
+201
+00:16:52,300 --> 00:16:58,310
+Isso daqui passa pra baixo se ele estiver logado ele vai vir na verdade um link pra sair.
+
+202
+00:16:58,360 --> 00:16:59,660
+Então vai vir aqui.
+
+203
+00:16:59,890 --> 00:17:08,150
+A gente vai colocar outro link que saia que saia e daí login Barra log Alt aqui.
+
+204
+00:17:09,120 --> 00:17:09,610
+Beleza.
+
+205
+00:17:10,060 --> 00:17:15,670
+Então voltando aqui atualizando que ele está vendo o link de site e o link que tem aqui eu posso clicar
+
+206
+00:17:15,670 --> 00:17:16,300
+em Sair.
+
+207
+00:17:17,710 --> 00:17:23,110
+Daí a gente saiu a gente agora está vendo o link entra e aí a gente vê outra coisa que eu quero fazer
+
+208
+00:17:23,110 --> 00:17:23,410
+também.
+
+209
+00:17:23,470 --> 00:17:27,450
+Se eu tiver logado eu não quero que ele veja essa página aqui.
+
+210
+00:17:27,700 --> 00:17:30,070
+Essa página de criar conta ou entrar aqui.
+
+211
+00:17:30,060 --> 00:17:35,390
+Então como é que a gente faz isso eu vou entrar de novo Otávio Miranda br.
+
+212
+00:17:35,540 --> 00:17:40,900
+GM e ponto com um dois três quatro cinco seis e aí eu entro no sistema.
+
+213
+00:17:41,100 --> 00:17:45,450
+Se encontrar essa página aqui não pode ser exibida mas para um usuário logado.
+
+214
+00:17:45,450 --> 00:17:46,900
+Então como é que eu faço isso.
+
+215
+00:17:47,740 --> 00:17:54,180
+Eu vou vir aqui no meu controle onde eu não indexa aqui pode ser não indexar que eu posso falar sem
+
+216
+00:17:54,400 --> 00:17:55,050
+hífen.
+
+217
+00:17:55,360 --> 00:18:02,200
+Aqui eu vou dar um jeito nisso e aí eu vou falar é rei que é assim que eu vou checar sempre se o usuário
+
+218
+00:18:02,200 --> 00:18:09,020
+está logado se existe essa essa seção usa aqui o usuário está logado eu posso dar um britânico.
+
+219
+00:18:09,080 --> 00:18:17,470
+Respondo renda e eu vou renderizar outra página login por exemplo logado e daí eu vou vir aqui na página
+
+220
+00:18:17,690 --> 00:18:26,710
+não tem a página de login essa eu vou copiar ela e vou renomear ela para login logado login logado.
+
+221
+00:18:26,970 --> 00:18:29,360
+Aí você pode fazer isso de qualquer maneira que você quiser.
+
+222
+00:18:29,360 --> 00:18:36,070
+Essa foi uma maneira mais simples que eu achei que e daí eu posso excluir essas coisas daqui de baixo.
+
+223
+00:18:36,310 --> 00:18:40,270
+Fazer login essas coisas todas aqui eu vou pagar isso aqui.
+
+224
+00:18:40,570 --> 00:18:42,810
+Sobrou uma dívida que sobrou.
+
+225
+00:18:42,970 --> 00:18:44,050
+Duas vezes aqui
+
+226
+00:18:46,970 --> 00:18:52,220
+não precisa de mensagens aqui eu acho mas eu vou deixar as mensagens ali e aqui em cima eu vou colocar
+
+227
+00:18:52,220 --> 00:19:02,160
+só assim eu posso até colocar lá e falar o e-mail do usuário por exemplo que está logado igual a isso
+
+228
+00:19:02,170 --> 00:19:03,340
+aqui ou lá e usa.
+
+229
+00:19:03,350 --> 00:19:03,830
+Ponto.
+
+230
+00:19:03,880 --> 00:19:04,400
+Emílio
+
+231
+00:19:06,930 --> 00:19:16,280
+você aí vou colocar uma mensagem você precisa sair para criar outra conta pronto.
+
+232
+00:19:16,330 --> 00:19:19,280
+Aí vamos testar aqui essa página aqui não deve mais aparecer.
+
+233
+00:19:19,360 --> 00:19:26,170
+Olá Otávio Miranda br eu não sou eu que lá você precisa sair para criar outra conta e aí toda vez que
+
+234
+00:19:26,170 --> 00:19:32,940
+eu acessar a página de login aqui eu vou ver essa mesma coisa aqui e daí seu sai eu vou virar a página
+
+235
+00:19:33,150 --> 00:19:35,460
+de entrar e criar conta comigo.
+
+236
+00:19:36,000 --> 00:19:45,000
+Então beleza me entrar só para fazer mais um teste Otávio Miranda PR rouba GM ponto com 1 2 6 4 5 6
+
+237
+00:19:46,140 --> 00:19:48,170
+e aí gente logo aí a gente está à.
+
+238
+00:19:48,300 --> 00:19:49,800
+Por isso que eu deixei as mensagens.
+
+239
+00:19:49,800 --> 00:19:55,740
+Foi legal ter deixado as mensagens que apareceu aqui e daí eu estou numa página que eu estou logado
+
+240
+00:19:55,740 --> 00:19:56,140
+aqui.
+
+241
+00:19:56,400 --> 00:20:03,660
+Então a gente fez isso com sucesso a gente cadastrou o usuário a gente fez o resto de senha do usuário.
+
+242
+00:20:03,660 --> 00:20:09,690
+A gente fez o sistema de login né para o usuário realizar o seu login entrar na conta dele.
+
+243
+00:20:09,690 --> 00:20:16,380
+Deixa eu só fazer um teste com o usuário vale daqui pra garantia vou fazer um teste com Luiz Otávio
+
+244
+00:20:16,500 --> 00:20:28,190
+Otavio Miranda arroba GM e outro com 1 2 3 4 5 6 usuário não existe e não tenho sessão aqui é muito
+
+245
+00:20:28,190 --> 00:20:30,730
+mais legal não o lobo não fez nada.
+
+246
+00:20:30,740 --> 00:20:34,060
+E aí eu colocar Otávio Miranda br.
+
+247
+00:20:34,070 --> 00:20:43,700
+GM O ponto com uma 7 6 5 4 3 2 1 Vou tentar logar sem inválida e realmente não fez login em beleza.
+
+248
+00:20:43,700 --> 00:20:50,890
+Otávio Miranda br A GM é ponto com 1 2 3 4 5 6 1 a entrar.
+
+249
+00:20:50,900 --> 00:20:51,950
+Agora sim entro.
+
+250
+00:20:52,250 --> 00:20:59,310
+Então beleza está funcionando perfeito só remover esse link que a gente não precisa desse link no momento.
+
+251
+00:20:59,370 --> 00:21:07,910
+E já vamos deixar um outro criado ali que é o de cadastrar contatos tão bom na nave aqui vamos só modificar
+
+252
+00:21:07,920 --> 00:21:13,130
+esse aqui Movile aqui pra ir pra cima que vamos colocar aqui assim.
+
+253
+00:21:15,580 --> 00:21:23,650
+Cadastrar um cadastra contatos e daí a gente vai agora começar a trabalhar na rota de contatos.
+
+254
+00:21:23,710 --> 00:21:30,880
+Nessa aula não se preocupe eu vou cortar essa aula mas eu vou colocar contato Barra Index e daí a gente
+
+255
+00:21:30,880 --> 00:21:32,520
+vai listar os contatos.
+
+256
+00:21:32,570 --> 00:21:32,810
+Não.
+
+257
+00:21:32,920 --> 00:21:38,020
+A gente vai criar o Fórum aqui pra criar os contatos e novos contatos.
+
+258
+00:21:38,160 --> 00:21:44,780
+A gente vai realmente fazer um crude né a gente vai inserir contato vai ter a possibilidade de tanto
+
+259
+00:21:44,980 --> 00:21:51,290
+inserir contato quanto editar um contato quanto excluir um contato e listar também os contatos.
+
+260
+00:21:51,530 --> 00:21:54,130
+é aqui que vai vir o nosso crude que a gente vai começar.
+
+261
+00:21:54,430 --> 00:21:57,020
+Mas isso pra próxima aula essa aula fica por aqui.
+
+262
+00:21:57,280 --> 00:22:00,010
+Então vou deixar essa aula sim a gente se vê na processual.
+
+263
+00:22:00,010 --> 00:22:00,700
+Grande abraço.

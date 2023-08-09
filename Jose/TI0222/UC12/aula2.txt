@@ -1,0 +1,7 @@
+Busca avançada (estilo google)
+
+evento keyRealesed (txtNome)
+//método listarUsuarios
+
+evento mouseClicked (listaUsuarios)
+//buscarUsuarioLista

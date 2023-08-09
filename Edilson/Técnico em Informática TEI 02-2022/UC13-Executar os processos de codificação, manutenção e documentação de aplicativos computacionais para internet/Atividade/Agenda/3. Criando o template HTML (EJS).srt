@@ -1,0 +1,755 @@
+1
+00:00:00,620 --> 00:00:06,110
+Fala pessoal dessa aula a gente vai começar a fazer aquele projeto que eu te apresentei nessa sessão
+
+2
+00:00:06,120 --> 00:00:14,400
+na Casa é pra gente começar a gente já fez um bom aqui não é nenhum template já com o IP com.
+
+3
+00:00:14,640 --> 00:00:21,050
+Enfim com muita coisa não vou falar tudo que tem aqui mas esse tempo aí que eu deixei na aula anterior
+
+4
+00:00:21,050 --> 00:00:28,100
+pra você baixar caso você não tenha seguido comigo até aqui pra mim aqui que essa pasta dá aula 17 a
+
+5
+00:00:28,100 --> 00:00:30,920
+última da sessão de novo dia a penúltima.
+
+6
+00:00:30,920 --> 00:00:36,140
+No caso da sessão de hoje a gente vai ter essa pasta que não vou fazer o seguinte eu vou copiar ela
+
+7
+00:00:36,720 --> 00:00:43,670
+e vou colar ela só que eu vou colar ela aqui na raiz do meu projeto e eu vou chamar essa pasta que vai
+
+8
+00:00:43,670 --> 00:00:45,910
+ter uma aula 17.
+
+9
+00:00:45,950 --> 00:00:54,060
+Se você tiver feito isso eu vou chamar esse projeto de projeto Agenda tudo junto com o nome.
+
+10
+00:00:54,140 --> 00:01:03,560
+é importante ressaltar que fica pode dar algum problema se você colocar palavras acentuadas espaços
+
+11
+00:01:03,560 --> 00:01:09,500
+essas coisas assim no nome do seu projeto então evita de fazer isso é outra coisa que eu vou fazer também
+
+12
+00:01:09,580 --> 00:01:10,290
+e abri.
+
+13
+00:01:10,310 --> 00:01:17,540
+Se você tiver baixado da dos recursos da aula daí o nome é uma pasta compactada você precisa desse compactar
+
+14
+00:01:17,540 --> 00:01:20,750
+e aí você move para a pasta de seu projeto.
+
+15
+00:01:20,750 --> 00:01:28,190
+Você precisa também criar um ponto no caso que tem esse Connection Playing com a nossa conexão com mongo
+
+16
+00:01:28,190 --> 00:01:29,020
+DB.
+
+17
+00:01:29,030 --> 00:01:34,910
+Outra coisa importante que tem que fazer nesse ponto aqui é mudar o nome da base de dados eu vou chamar
+
+18
+00:01:34,910 --> 00:01:42,440
+de agenda aqui no caso pra gente ter essa base de dados agenda que aliás eu já tenho acho esse nome
+
+19
+00:01:42,440 --> 00:01:44,870
+lá com a agenda que eu criei anteriormente.
+
+20
+00:01:45,230 --> 00:01:48,880
+Então vou chamar isso de nova agenda.
+
+21
+00:01:49,280 --> 00:01:51,940
+Mas você pode chamar a base de dados do que você quiser.
+
+22
+00:01:51,950 --> 00:01:55,790
+Isso aqui eu estou alterando o nome da base de dados.
+
+23
+00:01:55,790 --> 00:02:01,700
+Beleza outra coisa também que a gente vai fazer é abrir a pasta do projeto direto aqui não vai ficar
+
+24
+00:02:01,700 --> 00:02:05,240
+atrapalhando trabalhando com esse mundo de pasta aqui.
+
+25
+00:02:06,620 --> 00:02:11,420
+Então vamos abrir a pasta desse projeto que vou vir aqui Open Folder.
+
+26
+00:02:11,480 --> 00:02:17,360
+Vou vir na minha pasta JS e daí eu vou lá naquela pasta do projeto Agenda aqui.
+
+27
+00:02:17,360 --> 00:02:23,680
+Feito isso eu vou dar Ok e daí eu já vou ter essa pasta aberta aqui pra mim e daí aquele esquema de
+
+28
+00:02:23,680 --> 00:02:25,110
+semblante sempre né.
+
+29
+00:02:25,160 --> 00:02:30,590
+Eu não vou utilizar o terminal do Visual Studio Code que eu prefiro utilizar o terminal do meu próprio
+
+30
+00:02:30,590 --> 00:02:37,100
+sistema aqui pra isso eu vou só copiar o caminho da pasta você pode continuar utilizando o terminal
+
+31
+00:02:37,100 --> 00:02:42,980
+do próprio Visual Studio tudo certo isso aqui é uma preferência minha mesmo eu vou utilizar aqui o terminal
+
+32
+00:02:42,980 --> 00:02:43,640
+do sistema.
+
+33
+00:02:43,640 --> 00:02:52,060
+Então vou abrir essa pasta e eu vou aqui eu já vou falar me é pra instalar tudo dentro dessa pasta aqui
+
+34
+00:02:52,060 --> 00:02:54,520
+pra instalar os módulos que a gente vai precisar.
+
+35
+00:02:54,810 --> 00:02:56,610
+E aí eu vou deixar terminando aqui.
+
+36
+00:02:57,080 --> 00:03:04,000
+Aí a gente vai criar um template pra essa agenda então a gente não vai mais utilizar o nosso template
+
+37
+00:03:04,000 --> 00:03:08,120
+que a gente vem utilizando o tempo inteiro que esse tempo aqui eu também.
+
+38
+00:03:08,150 --> 00:03:11,150
+Eu particularmente vou apagar isso daqui.
+
+39
+00:03:11,480 --> 00:03:18,880
+E esse ponto TXT que eu deixei pra você e alguns exemplos pra você usar as tags ideias vou pagar isso
+
+40
+00:03:18,880 --> 00:03:22,090
+aqui porque eu não vou precisar dele neste projeto.
+
+41
+00:03:22,090 --> 00:03:24,270
+Você provavelmente pode precisar.
+
+42
+00:03:24,270 --> 00:03:28,430
+Então não precisa fazer isso se não quiser deixe eu vir aqui.
+
+43
+00:03:28,510 --> 00:03:33,760
+Já terminou hoje já terminou a instalação de tudo que a gente pode falar em prime Start para iniciar
+
+44
+00:03:33,760 --> 00:03:35,170
+o nosso projeto aqui.
+
+45
+00:03:35,190 --> 00:03:40,190
+A gente já pode também abrir no navegador clicando no link aqui dessa maneira.
+
+46
+00:03:40,210 --> 00:03:46,730
+Então eu já tenho aqui o meu humilde template antigo e a gente vai criar um novo template utilizando
+
+47
+00:03:46,730 --> 00:03:47,830
+o bootstrap.
+
+48
+00:03:47,830 --> 00:03:52,110
+Como esse curso não é voltado para CSS a gente não vai não.
+
+49
+00:03:52,120 --> 00:03:54,730
+Não vou ensinar esse CSS aqui.
+
+50
+00:03:55,090 --> 00:04:01,390
+Eu vou utilizar o que está do Buscapé para a gente fazer esse template vai ser rapidinho.
+
+51
+00:04:01,390 --> 00:04:09,890
+Então a gente vai pesquisar por bots but escape e daí a gente vai acessar esse site Get the bootstrap
+
+52
+00:04:09,920 --> 00:04:15,330
+pontocom e daí a gente vai clicar no botão Get destaca started.
+
+53
+00:04:15,860 --> 00:04:21,280
+é daí que a gente vai encontrar esse template está aí template que a gente vai copiar.
+
+54
+00:04:21,280 --> 00:04:25,280
+Todo esse tempo aqui vai colocar aqui.
+
+55
+00:04:25,360 --> 00:04:34,730
+Eu sei que o bootstrap a gente pode passar o bot pelo app que a gente pode instalar e também utilizando
+
+56
+00:04:34,730 --> 00:04:35,290
+o empenho.
+
+57
+00:04:35,380 --> 00:04:37,080
+Mas a gente não vai fazer isso aqui.
+
+58
+00:04:37,090 --> 00:04:44,140
+A gente vai copiar isso aqui mesmo dessa maneira que feito esse aqui a gente vai remover todo esse trecho
+
+59
+00:04:44,140 --> 00:04:47,920
+do começo do Bari até do começo do HTML.
+
+60
+00:04:48,310 --> 00:04:55,040
+Até o início do bar a gente vai cortar isso aqui e vai mover para dentro do nosso include essa rede
+
+61
+00:04:55,090 --> 00:04:56,870
+já existe esse arquivo aqui dentro.
+
+62
+00:04:56,920 --> 00:05:00,930
+A gente vai colar isso daqui e a gente vai mover todo esse trecho.
+
+63
+00:05:00,940 --> 00:05:07,850
+Só vai ficar esse h um melodia que dentro dele que vai mover todo esse trecho aqui de baixo pra parte
+
+64
+00:05:07,870 --> 00:05:11,240
+pra foto aqui no nosso arquivo incluídos.
+
+65
+00:05:11,710 --> 00:05:13,300
+E a gente vai colar aqui.
+
+66
+00:05:13,300 --> 00:05:19,360
+A gente não pode esquecer também de colocar o nosso próprio script então aqui Aquino abaixo dos excluídos
+
+67
+00:05:19,360 --> 00:05:26,950
+do bootstrap quando é que a gente vai colocar os equipes SRC e a gente vai colocar o nosso Barra acessa
+
+68
+00:05:27,360 --> 00:05:28,470
+o nosso bando né.
+
+69
+00:05:28,510 --> 00:05:37,080
+Bah JS Barra bando pontos JS beleza feito esse daqui.
+
+70
+00:05:37,080 --> 00:05:44,730
+Agora a gente já tem alguma coisa pra começar só que a gente também já ainda tem o nosso CSS antigo
+
+71
+00:05:44,740 --> 00:05:46,940
+deixa eu te mostrar aqui que você vai entender.
+
+72
+00:05:47,010 --> 00:05:52,580
+A gente ainda tem esse está aí o ponto CSS que tem muito CSS nele e ele vai nos atrapalhar.
+
+73
+00:05:52,620 --> 00:06:00,420
+Por exemplo se eu vir aqui eu vou abrir uma outra aba de terminal vou falar ele me deve pra o inicial
+
+74
+00:06:00,420 --> 00:06:08,840
+e pé então vou ficar com ele rodando o Express do lado de cá e o app rodando do lado de cá.
+
+75
+00:06:08,850 --> 00:06:14,760
+A gente não vai utilizar muito nesse começo e bípede é só pra ele recarregar o CSS é nosso para você
+
+76
+00:06:14,760 --> 00:06:16,250
+ver o que vai ocorrer.
+
+77
+00:06:16,560 --> 00:06:20,260
+Se eu abri minha página agora é atualizar a gente vai ter isso daqui.
+
+78
+00:06:20,270 --> 00:06:24,280
+Deixa eu acho que eu errei algum caminho que vamos olhar aqui.
+
+79
+00:06:24,500 --> 00:06:25,360
+A.
+
+80
+00:06:25,500 --> 00:06:28,680
+Barra JS Barra banda ou ponto.
+
+81
+00:06:28,690 --> 00:06:32,360
+JS bom parece que tá certo.
+
+82
+00:06:32,360 --> 00:06:36,070
+Deixa eu dar um control aqui só pra ver a nossa gente.
+
+83
+00:06:36,070 --> 00:06:45,030
+Só tenho meu esqueci de importar aqui no indexa eu preciso de importar aqui o Rede é o futuro aqui que
+
+84
+00:06:45,030 --> 00:06:52,470
+eu esqueci agora a gente vai incluir esses arquivos aqui e vamos colocar include e aí deixa aumentar
+
+85
+00:06:52,470 --> 00:06:59,620
+um pouquinho a letra pra você vamos colocar incluídas Barra e aí o nome do Rede e depois do futuro então
+
+86
+00:06:59,980 --> 00:07:09,150
+de que e embaixo falta futebol beleza.
+
+87
+00:07:09,180 --> 00:07:12,970
+Feito isso aqui agora sim a gente deve ter o nosso CCs.
+
+88
+00:07:13,130 --> 00:07:18,290
+Tá vendo a gente tem o nosso CCS antigo que tá meio que conflitante quando boto fé.
+
+89
+00:07:18,680 --> 00:07:25,890
+Então a gente vai pegar o nosso SS antigo aqui no front end Asset CSS está aí o ponto CSS.
+
+90
+00:07:25,890 --> 00:07:31,860
+Vamos pagar tudo o que está aqui voltando aqui agora a gente deve ter alguma coisa mais limpa só esperar
+
+91
+00:07:31,860 --> 00:07:33,400
+o MP atualizar ali.
+
+92
+00:07:33,400 --> 00:07:34,950
+Beleza tô aqui.
+
+93
+00:07:35,080 --> 00:07:40,750
+Agora está tudo limpo tudo só com Butch Chulapa e daí o que a gente vai fazer para a gente pode fechar
+
+94
+00:07:40,750 --> 00:07:42,760
+essa passa de front end.
+
+95
+00:07:43,240 --> 00:07:49,370
+é o que a gente vai fazer agora é colocar uma nave ali pra gente então a gente vai ver no site do bonde
+
+96
+00:07:49,370 --> 00:07:55,960
+swap a gente vai pesquisar aqui por nave bar e aqui nesse link de nave Bar.
+
+97
+00:07:55,990 --> 00:08:02,200
+A gente vai copiar pra mim era que tem que essa aqui a gente vai copiar esse código que é essa na Barra
+
+98
+00:08:02,230 --> 00:08:09,130
+que a gente vai tirar um monte de coisa dela mas essa aqui que eu vou utilizar não vou pegar ela vou
+
+99
+00:08:09,130 --> 00:08:16,870
+criar um arquivo aqui na minha pasta viu esse RC Vhils inclusive eu vou criar uma pasta chamada de nave
+
+100
+00:08:16,870 --> 00:08:23,770
+ponto s isso vai ser a nave base do nosso site Não vou colar aqui eu posso diminuiu um pouco agora ficou
+
+101
+00:08:23,770 --> 00:08:30,410
+muito grande a letra Eu vou fazer o seguinte eu vou apagar esse fórum aqui inteiro sabendo do forma
+
+102
+00:08:30,490 --> 00:08:33,190
+até o fechamento da Pague.
+
+103
+00:08:33,880 --> 00:08:36,780
+Vou pagar eu vou só deixar esse link.
+
+104
+00:08:36,970 --> 00:08:43,840
+Esse daqui que tá escrito o link que ele que é esse aqui eu vou pagar esse Ely esse primeiro li aqui
+
+105
+00:08:44,400 --> 00:08:51,990
+e vou pagar esse Eli até o fechamento da web ele gente vai ficar só com um li que a gente pode duplicar
+
+106
+00:08:51,990 --> 00:08:54,160
+ele outra coisa.
+
+107
+00:08:54,160 --> 00:08:55,950
+Deixa eu te mostrar como é que ficou aqui.
+
+108
+00:08:56,470 --> 00:09:02,800
+Ela vai estar clara eu não incluir ela novamente deixou de duplicar aqui no meu índex ponto essa eu
+
+109
+00:09:02,800 --> 00:09:11,290
+vou duplicar o arquivo nave e daí eu vou duplicar aqui essa linha e mudar o Rede pra nave no caso e
+
+110
+00:09:11,290 --> 00:09:15,410
+daí a gente vai conseguir ver ela agora agora só que ela tá branca.
+
+111
+00:09:15,400 --> 00:09:20,050
+Eu não quero ela branquinha eu não quero esse link do lado de cá eu quero esse link do lado de cá.
+
+112
+00:09:20,800 --> 00:09:27,940
+Então a gente vai fazer isso daqui a gente vai pegar o EME e ri alto aqui que está na mesa o l o l aqui
+
+113
+00:09:27,970 --> 00:09:30,270
+vai colocar ele alto.
+
+114
+00:09:30,670 --> 00:09:37,050
+E outra coisa a gente vai mudar um nome nave baixa para a agenda que a gente vai mudar essa Taiga aqui
+
+115
+00:09:37,070 --> 00:09:39,400
+ou nave Bay lá é disparado daqui.
+
+116
+00:09:39,570 --> 00:09:43,730
+Eu topo todas as palavras lá TI que você vai mudar pra daqui.
+
+117
+00:09:43,930 --> 00:09:48,790
+Beleza feito isso agora a gente deve ter uma nave bem escura como eu queria.
+
+118
+00:09:49,060 --> 00:09:57,370
+Agora a gente vai começar a ajustar o meio aqui esse valor eu vou fazer isso do jeito mais simples e
+
+119
+00:09:57,370 --> 00:09:58,780
+bobo possível.
+
+120
+00:09:58,900 --> 00:10:04,760
+Vou criar um contêiner eu vou pagar esse valor aqui vou querer um contêiner de e ponto contêiner.
+
+121
+00:10:04,810 --> 00:10:10,540
+O caso você pode fazer isso tudo direto na casa estou fazendo por etapa para você entender ou criar
+
+122
+00:10:10,540 --> 00:10:11,200
+um contêiner.
+
+123
+00:10:11,200 --> 00:10:21,280
+Vou criar uma URL e daí dentro da UOL Vou criar três colunas Dive ponto Dive e ponto com eles traço
+
+124
+00:10:21,410 --> 00:10:24,060
+elegia traço 12 2.
+
+125
+00:10:24,190 --> 00:10:27,820
+No caso que vou criar três dessas a do meio.
+
+126
+00:10:27,820 --> 00:10:32,680
+Eu vou mudar para oito e aí a gente vai trabalhar nessa coluna do meio.
+
+127
+00:10:32,710 --> 00:10:36,800
+Essas duas A gente não vai mexer nelas só para a gente ter um espacinho ali no meio.
+
+128
+00:10:37,570 --> 00:10:38,700
+E aí aqui no meio.
+
+129
+00:10:38,710 --> 00:10:43,960
+Nessa como quem elegeu oito eterna onde vai vir o nosso conteúdo então a gente pode falar por exemplo
+
+130
+00:10:44,350 --> 00:10:49,840
+a gente pode já criar nossa página 404 e remover o arquivo 404 por exemplo.
+
+131
+00:10:50,770 --> 00:10:59,110
+H um ponto display traço um ponto que te senta para ficar no centro.
+
+132
+00:10:59,110 --> 00:11:08,420
+A gente vai colocar erro 404 e aí embaixo a gente vai criar um P Ponto teste senta e ponto lit.
+
+133
+00:11:08,990 --> 00:11:15,670
+E daí que a gente vai colocar a página que você procura.
+
+134
+00:11:15,670 --> 00:11:18,870
+Não existe só para a gente testar.
+
+135
+00:11:18,910 --> 00:11:22,600
+Essa vai ser a nossa página de erro 404 eu já vou mover pra lá.
+
+136
+00:11:22,800 --> 00:11:27,100
+Então o que a gente tem a página de erro 404 a página que você procura não existe.
+
+137
+00:11:27,100 --> 00:11:34,620
+Eu vou só dar um espaço aqui pra isso eu vou colocar um m m y traço 5.
+
+138
+00:11:34,660 --> 00:11:37,030
+Aqui nessa coluna elegeu 8 também.
+
+139
+00:11:37,030 --> 00:11:40,590
+Então outra classe aqui a gente vai ter um certo espaço aqui.
+
+140
+00:11:40,720 --> 00:11:46,930
+Beleza feito isso a gente pode copiar todo esse conteúdo e mover para o arquivo 404 que a gente vai
+
+141
+00:11:46,930 --> 00:11:51,050
+utilizar como nossa página 404.
+
+142
+00:11:51,070 --> 00:11:56,380
+Outra coisa que a gente pode fazer aqui também é o seguinte.
+
+143
+00:11:56,380 --> 00:12:02,740
+Agora a gente vai colocar algumas coisas aqui só pra gente ver o conteúdo como aquele vai aparecer na
+
+144
+00:12:02,740 --> 00:12:07,920
+tela então a gente vai tirar esse display um do agora eu estou mexendo no indexar.
+
+145
+00:12:07,930 --> 00:12:16,160
+A gente vai tirar esse display aqui para não ficar muito grande vai chamar isso daqui de agenda esse
+
+146
+00:12:16,160 --> 00:12:17,790
+é o título da nossa agenda aqui.
+
+147
+00:12:17,800 --> 00:12:23,150
+Se você conferindo a gente tem agenda aqui e aí aqui pode vir qualquer texto que você quiser a gente
+
+148
+00:12:23,150 --> 00:12:35,650
+vai colocar por exemplo seus contatos estão abaixo e aí aqui logo abaixo do P A gente pode fazer o seguinte
+
+149
+00:12:36,250 --> 00:12:41,970
+criar uma cria um teste de mensagens no caso Audi pontuou.
+
+150
+00:12:42,130 --> 00:12:42,520
+Eu vou.
+
+151
+00:12:42,550 --> 00:12:48,730
+Vou criar uma linha para as próprias mensagens então por exemplo se eu quiser utilizar a mensagem em
+
+152
+00:12:48,730 --> 00:12:55,200
+outro lugar da página já tem a linha coluna pronta inaudível ou de ponto como é.
+
+153
+00:12:55,390 --> 00:13:00,460
+Aí a mensagem é o seguinte Dive e ponto Aulete e ponto a LET.
+
+154
+00:13:00,490 --> 00:13:03,710
+E aí tendência Access tem várias.
+
+155
+00:13:03,730 --> 00:13:05,380
+Então essa vai ser a de erro.
+
+156
+00:13:05,410 --> 00:13:14,070
+Então vou colocar um erro qualquer e aí vamos dar uma olhada aqui como é que ficou beleza essa vai ser.
+
+157
+00:13:14,170 --> 00:13:20,590
+Essas vão ser as nossas mensagens de erro que vão aparecer provavelmente aqui mesmo.
+
+158
+00:13:20,590 --> 00:13:28,120
+Outra coisa que eu vou fazer aqui é o seguinte eu tô achando Mt 5 muito eu vou mudar pra MP3 aqui porque
+
+159
+00:13:28,120 --> 00:13:31,760
+está dando um espaço muito grande que eu clique aqui.
+
+160
+00:13:32,170 --> 00:13:38,080
+Eu quero um espaço um pouco menor beleza isso aqui e agora eu vou criar uma tabela que é onde a gente
+
+161
+00:13:38,080 --> 00:13:40,590
+vai listar os contatos aqui.
+
+162
+00:13:40,970 --> 00:13:52,410
+Aqui embaixo eu vou falar Dive é ponto responsivo traço Bo e daí vou criar uma tribo ou ponto tribo
+
+163
+00:13:52,560 --> 00:13:54,120
+que é uma tribo com classe D.
+
+164
+00:13:54,120 --> 00:14:02,770
+Bom vou criar por exemplo uma TV com quatro tevês aqui então a gente pode fazer esse TR e aí um sinal
+
+165
+00:14:02,980 --> 00:14:08,060
+de maior que td vezes 4 que eu acho isso.
+
+166
+00:14:08,290 --> 00:14:15,630
+E daí que a gente pode criar o nome Luiz por exemplo Otávio que vão ser os contatos nossos mesmo aqui
+
+167
+00:14:15,640 --> 00:14:18,590
+viria o telefone alguma coisa assim.
+
+168
+00:14:18,830 --> 00:14:19,850
+é aqui um email.
+
+169
+00:14:19,910 --> 00:14:26,730
+Então Otavio Otavio Miranda roubou GM Bond com beleza feito isso aqui.
+
+170
+00:14:27,160 --> 00:14:31,920
+A gente pode duplicar se aqui umas duas ou três vezes só pra ver o conteúdo.
+
+171
+00:14:31,930 --> 00:14:35,380
+A gente vai vir aqui são os nossos contatos eles vão ser exibidos.
+
+172
+00:14:35,540 --> 00:14:40,100
+Isso aqui é só um template estático que a gente vai claro substituir por coisa dinâmica.
+
+173
+00:14:40,400 --> 00:14:43,470
+Mas era só pra gente ver como é que está ficando.
+
+174
+00:14:43,610 --> 00:14:47,970
+Aí eu vou dar um espacinho dela aqui também então aqui na tribo vou colocar um Emmy.
+
+175
+00:14:48,040 --> 00:14:56,640
+São mais um top Bora no caso o que contradiz e aí vamos checar beleza já está com espaço tranquilo.
+
+176
+00:14:56,820 --> 00:15:03,940
+Eu vou colocar na agenda também vou colocar aqui e só três pra ter um espaço entre tudo ali.
+
+177
+00:15:04,650 --> 00:15:09,100
+Então tranquilo agora a gente tem a nossa agenda aqui e a gente já tem um template pronto.
+
+178
+00:15:09,120 --> 00:15:13,640
+Então agora a gente pode começar a fazer as coisas aqui.
+
+179
+00:15:13,950 --> 00:15:17,850
+Nesse caso a nossa aula foi só criar o template em si.
+
+180
+00:15:18,000 --> 00:15:21,050
+A gente vai ainda utilizar isso daqui.
+
+181
+00:15:21,320 --> 00:15:23,990
+Vou deixar essa aula aqui assim pra ela não ficar muito longo.
+
+182
+00:15:23,990 --> 00:15:28,670
+Vou tentar fazer aulas menores eu vi que tem muita gente reclamando do tamanho das aulas.
+
+183
+00:15:28,710 --> 00:15:34,740
+Vou tentar fazer aulas menores com coisas mais específicas pra quem tiver dificuldade com essas aulas
+
+184
+00:15:34,750 --> 00:15:41,310
+mais uma vez eu vou deixar o meu tempo assim porque isso daqui vai ser a base pra gente substituir tudo
+
+185
+00:15:41,310 --> 00:15:43,360
+isso aqui pra conteúdo dinâmico.
+
+186
+00:15:43,350 --> 00:15:48,540
+A única coisa que eu vou fazer aqui no momento só apagar todas essas terras vou deixar só uma que a
+
+187
+00:15:48,540 --> 00:15:51,990
+gente só precisa de uma aqui desse jeito.
+
+188
+00:15:52,170 --> 00:15:58,660
+Beleza agora sim beleza então vou deixar Saulo que é assim e a gente vê na praça mal.
+
+189
+00:15:58,680 --> 00:15:59,430
+Grande abraço.

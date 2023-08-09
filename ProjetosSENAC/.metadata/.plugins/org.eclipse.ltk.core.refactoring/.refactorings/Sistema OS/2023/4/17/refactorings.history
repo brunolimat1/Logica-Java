@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Validador.java&apos; to &apos;Sistema OS/src/utils&apos;&#x0D;&#x0A;- Original project: &apos;Sistema OS&apos;&#x0D;&#x0A;- Destination element: &apos;Sistema OS/src/utils&apos;&#x0D;&#x0A;- Original element: &apos;view.Validador.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;utils" element1="/src&lt;view{Validador.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1682366374452" units="1" version="1.0"/>
+</session>

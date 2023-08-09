@@ -1,0 +1,20 @@
+Resolução de BuGs - tela de Login/usuários
+Uso do componente JcheckBox "Check"
+
+Revisão git e GitHub
+
+Passo 1) Criar o token
+Passo 2) Criar o repositório no GitHub
+Passo 3) Criar o repositório local na pasta do projeto
+Passo 4) na raiz da pasta do projeto iniciar o git:
+git init
+Passo 5) Adicionar os arquivos no repositótio local
+git status
+git add .
+git status
+Passo 6) Documentar a versão do projeto
+git status
+git commit -m "adicionado arquivos do projeto"
+git status
+git push
+

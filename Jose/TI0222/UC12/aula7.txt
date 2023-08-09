@@ -1,0 +1,128 @@
+//IMPRESSÃO DE RELATÓRIOS
+
+private void relatorioClientes() {
+	//instanciar um objeto para construir a página pdf
+	Document document = new Document();
+	//configurar como A4 e modo paisagem
+	//document.setPageSize(PageSize.A4.rotate());
+	//gerar o documento pdf
+	try {
+		//criar um documento em branco (pdf) de nome clientes.pdf
+		PdfWriter.getInstance(document, new FileOutputStream("clientes.pdf"));
+		//abrir o documento (formatar e inserir o conteúdo)
+		document.open();
+		//adicionar a data atual
+		Date dataRelatorio = new Date();
+		DateFormat formatador = DateFormat.getDateInstance(DateFormat.FULL);
+		document.add(new Paragraph(formatador.format(dataRelatorio)));
+		//adicionar um páragrafo
+		document.add(new Paragraph("Clientes:"));
+		document.add(new Paragraph(" ")); //pular uma linha
+		//----------------------------------------------------------
+		//query (instrução sql para gerar o relatório de clientes)
+		String readClientes = "select nome,fone from clientes order by nome";
+		try {
+			//abrir a conexão com o banco
+			con = dao.conectar();
+			//preparar a query (executar a instrução sql)
+			pst = con.prepareStatement(readClientes);
+			//obter o resultado (trazer do banco de dados)
+			rs = pst.executeQuery();
+			//atenção uso do while para trazer todos os clientes
+			// Criar uma tabela de duas colunas usando o framework(itextPDF)
+			PdfPTable tabela = new PdfPTable(2); //(2) número de colunas
+			// Criar o cabeçalho da tabela
+			PdfPCell col1 = new PdfPCell(new Paragraph("Cliente"));
+			PdfPCell col2 = new PdfPCell(new Paragraph("Fone"));
+			tabela.addCell(col1);
+			tabela.addCell(col2);
+			while (rs.next()) {
+				//popular a tabela
+				tabela.addCell(rs.getString(1));
+				tabela.addCell(rs.getString(2));
+			}				
+			//adicionar a tabela ao documento pdf
+			document.add(tabela);
+			//fechar a conexão com o banco
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	} catch (Exception e) {
+		System.out.println(e);
+	}
+	//fechar o documento (pronto para "impressão" (exibir o pdf))
+	document.close();
+	//Abrir o desktop do sistema operacional e usar o leitor padrão
+	//de pdf para exibir o documento
+	try {
+		Desktop.getDesktop().open(new File("clientes.pdf"));
+	} catch (Exception e) {
+		System.out.println(e);
+	}		
+}
+
+
+
+/**
+ * Impressão da OS
+ */
+private void imprimirOS() {
+	// instanciar objeto para usar os métodos da biblioteca
+	Document document = new Document();
+	// documento pdf
+	try {
+		// criar um documento em branco (pdf) de nome clientes.pdf
+		PdfWriter.getInstance(document, new FileOutputStream("os.pdf"));
+		// abrir o documento (formatar e inserir o conteúdo)
+		document.open();
+		String readOS = "";
+		// conexão com o banco
+		try {
+			// abrir a conexão
+			con = dao.conectar();
+			// preparar a execução da query (instrução sql)
+			pst = con.prepareStatement(readOS);
+			pst.setString(1, txtOS.getText());
+			// executar a query
+			rs = pst.executeQuery();
+			// se existir a OS
+			if (rs.next()) {					
+				//document.add(new Paragraph("OS: " + rs.getString(1)));
+				Paragraph os = new Paragraph ("OS: " + rs.getString(1));
+				os.setAlignment(Element.ALIGN_RIGHT);
+				document.add(os);
+					
+				Paragraph usuario = new Paragraph ("Equipamento: " + rs.getString(3));
+				usuario.setAlignment(Element.ALIGN_LEFT);
+				document.add(usuario);
+			
+				//imprimir imagens
+				Image imagem = Image.getInstance(Servico.class.getResource("/img/imagem.png"));
+				imagem.scaleToFit(192,148);
+				imagem.setAbsolutePosition(20, 670);
+				document.add(imagem);					
+			}
+			// fechar a conexão com o banco
+			con.close();
+			} catch (Exception e) {
+				System.out.println(e);
+		}
+	} catch (Exception e) {
+		System.out.println(e);
+	}
+	// fechar o documento (pronto para "impressão" (exibir o pdf))
+	document.close();
+	// Abrir o desktop do sistema operacional e usar o leitor padrão
+	// de pdf para exibir o documento
+	try {
+		Desktop.getDesktop().open(new File("os.pdf"));
+	} catch (Exception e) {
+		System.out.println(e);
+	}
+}
+
+
+
+
+

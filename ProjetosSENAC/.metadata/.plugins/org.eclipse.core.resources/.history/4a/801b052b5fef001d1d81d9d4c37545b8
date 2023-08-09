@@ -1,0 +1,140 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+
+public class Clientes extends JDialog {
+	private JTextField txtBrunoDeLima;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Clientes dialog = new Clientes();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Clientes() {
+		setTitle("Cadastro");
+		setBounds(100, 100, 456, 634);
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Cadastro de Clientes");
+		lblNewLabel.setFont(new Font("Bookman Old Style", Font.BOLD, 17));
+		lblNewLabel.setBounds(123, 11, 185, 14);
+		getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nome:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1.setBounds(10, 47, 46, 14);
+		getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Email:");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1.setBounds(10, 96, 38, 14);
+		getContentPane().add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("CPF:");
+		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1_1.setBounds(10, 191, 30, 14);
+		getContentPane().add(lblNewLabel_1_1_1);
+		
+		txtBrunoDeLima = new JTextField();
+		txtBrunoDeLima.setText("Bruno de Lima Soares");
+		txtBrunoDeLima.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtBrunoDeLima.setBounds(10, 65, 420, 20);
+		getContentPane().add(txtBrunoDeLima);
+		txtBrunoDeLima.setColumns(10);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		textField.setColumns(10);
+		textField.setBounds(10, 112, 420, 20);
+		getContentPane().add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		textField_1.setColumns(10);
+		textField_1.setBounds(10, 206, 200, 20);
+		getContentPane().add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		textField_2.setColumns(10);
+		textField_2.setBounds(230, 206, 200, 20);
+		getContentPane().add(textField_2);
+		
+		JLabel lblNewLabel_1_1_1_1 = new JLabel("CEP:");
+		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1_1_1.setBounds(230, 191, 30, 14);
+		getContentPane().add(lblNewLabel_1_1_1_1);
+		
+		JLabel lblNewLabel_1_1_2 = new JLabel("Endereço:");
+		lblNewLabel_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1_2.setBounds(10, 237, 72, 20);
+		getContentPane().add(lblNewLabel_1_1_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		textField_3.setColumns(10);
+		textField_3.setBounds(10, 258, 338, 20);
+		getContentPane().add(textField_3);
+		
+		JLabel lblNewLabel_1_1_2_1 = new JLabel("Número:");
+		lblNewLabel_1_1_2_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1_2_1.setBounds(358, 237, 62, 20);
+		getContentPane().add(lblNewLabel_1_1_2_1);
+		
+		textField_4 = new JTextField();
+		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		textField_4.setColumns(10);
+		textField_4.setBounds(358, 258, 72, 20);
+		getContentPane().add(textField_4);
+		
+		JLabel lblNewLabel_1_1_1_2 = new JLabel("Telefone:");
+		lblNewLabel_1_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1_1_2.setBounds(10, 145, 62, 14);
+		getContentPane().add(lblNewLabel_1_1_1_2);
+		
+		textField_5 = new JTextField();
+		textField_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		textField_5.setColumns(10);
+		textField_5.setBounds(10, 160, 200, 20);
+		getContentPane().add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		textField_6.setColumns(10);
+		textField_6.setBounds(230, 160, 200, 20);
+		getContentPane().add(textField_6);
+		
+		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Gênero:");
+		lblNewLabel_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1_1_1_1.setBounds(230, 145, 52, 14);
+		getContentPane().add(lblNewLabel_1_1_1_1_1);
+
+	}
+}

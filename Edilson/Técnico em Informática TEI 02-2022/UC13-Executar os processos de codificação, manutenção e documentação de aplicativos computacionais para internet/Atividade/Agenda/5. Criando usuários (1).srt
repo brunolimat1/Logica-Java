@@ -1,0 +1,1675 @@
+1
+00:00:00,240 --> 00:00:07,500
+Fala pessoal nessa aula a gente vai fazer a funcionalidade de cadastrar o usuário aqui no nosso sistema.
+
+2
+00:00:07,500 --> 00:00:12,740
+Algo muito importante muito legal pra você aprender que a gente vai fazer também um esquema aqui de
+
+3
+00:00:12,750 --> 00:00:15,120
+validar o IMI que está sendo enviado.
+
+4
+00:00:15,120 --> 00:00:20,920
+A gente vai criptografar sem paragens não Salvar senha em texto puro na base de dados enfim.
+
+5
+00:00:21,030 --> 00:00:22,680
+Eu acho que é interessante.
+
+6
+00:00:22,970 --> 00:00:28,930
+Então o que a gente vai fazer a gente precisa criar essa rota né seu mandar algum dado pra cá a gente
+
+7
+00:00:28,980 --> 00:00:31,560
+eu preciso colocar o IMI mais ou menos.
+
+8
+00:00:31,560 --> 00:00:35,770
+Se eu mandar esse dado pra cá a gente vai ver que note que o login disse.
+
+9
+00:00:35,800 --> 00:00:36,210
+Por quê.
+
+10
+00:00:36,210 --> 00:00:38,500
+Porque não existe essa rota.
+
+11
+00:00:39,150 --> 00:00:41,020
+A gente vai criar essa rota.
+
+12
+00:00:41,100 --> 00:00:46,490
+Não é guerra mas é Posh e chama e diz Beleza.
+
+13
+00:00:46,530 --> 00:00:55,860
+Agora a gente vai mudar também o nome do método lá dentro do do controlador de login então Controller
+
+14
+00:00:56,350 --> 00:00:57,410
+login controller.
+
+15
+00:00:57,450 --> 00:01:02,910
+A gente tem esse método aqui mas a gente não tem ainda esse método do registro de aumentar um pouquinho
+
+16
+00:01:02,910 --> 00:01:06,360
+a letra para você então não criar esse aqui.
+
+17
+00:01:06,390 --> 00:01:09,670
+Esportes ponto registra.
+
+18
+00:01:10,260 --> 00:01:11,820
+Esse aqui pode ser uma função pode ser.
+
+19
+00:01:11,820 --> 00:01:15,690
+Tanto é que gente como a gente fala ou forçava o normal.
+
+20
+00:01:16,560 --> 00:01:20,240
+Então que esse e daí.
+
+21
+00:01:20,250 --> 00:01:28,590
+Aqui dentro a gente pode falar alguma coisa para dizer responde sem esse ponto sem de lá só só para
+
+22
+00:01:28,590 --> 00:01:33,330
+a gente vê que assim que a gente reenviar esse formulário a gente vai ver.
+
+23
+00:01:33,330 --> 00:01:40,530
+Deveria vir um olá agora eu vou vou ter que faltar aqui porque eu enviei o formulário antes de recarregar
+
+24
+00:01:40,530 --> 00:01:43,090
+aqui agora sim a gente está vendo o Slack.
+
+25
+00:01:43,250 --> 00:01:49,950
+Beleza não a gente recebeu mas a gente não vai fazer nenhuma validação de dados aqui nesse local no
+
+26
+00:01:49,950 --> 00:01:50,530
+controle.
+
+27
+00:01:50,550 --> 00:01:53,050
+Quem trata de dados é o modem.
+
+28
+00:01:53,070 --> 00:01:59,640
+Por isso a gente precisa criar um móvel para o login minha que eu vou fazer o seguinte eu vou copiar
+
+29
+00:01:59,640 --> 00:02:01,980
+isso aqui vai ser mais ou menos igual do rombo.
+
+30
+00:02:02,110 --> 00:02:04,250
+Eu vou copiar esse modelo da rua.
+
+31
+00:02:04,470 --> 00:02:10,520
+Vou dar um contra você contra um vou criar um login login modelo.
+
+32
+00:02:11,510 --> 00:02:12,080
+E daí.
+
+33
+00:02:12,240 --> 00:02:17,940
+Eu posso fechar esse home que por enquanto é meio sem login modo tudo o que tem a palavra Rome.
+
+34
+00:02:18,000 --> 00:02:20,040
+Eu vou substituir pra login.
+
+35
+00:02:20,160 --> 00:02:23,100
+Como é que eu faço isso eu vou selecionar a palavra Rome.
+
+36
+00:02:23,400 --> 00:02:30,570
+Vou pressionar contra o D para selecionar todas ou uma duas três quatro cinco e seis.
+
+37
+00:02:30,690 --> 00:02:36,170
+Agora sim eu posso apagar e aí no caso colocar Lou Lou.
+
+38
+00:02:36,420 --> 00:02:41,730
+Eu já tenho todos os locais você vai me ver fazendo isso várias vezes não por isso que eu estou te falando.
+
+39
+00:02:41,730 --> 00:02:46,440
+Como fazer isso aqui pelo menos a tecla de atalho aqui no Linux é controlada.
+
+40
+00:02:46,440 --> 00:02:51,880
+Eu não sei se é igual em outros sistemas que eu utilizo Linux mesmo.
+
+41
+00:02:51,990 --> 00:02:54,280
+Então beleza feito aqui o que a gente pode fazer.
+
+42
+00:02:54,280 --> 00:02:58,150
+A gente quer receber o que for postado aqui.
+
+43
+00:02:58,320 --> 00:03:03,460
+A gente quer receber dentro aqui dessa classe aqui login como é que a gente vai fazer isso.
+
+44
+00:03:03,520 --> 00:03:06,430
+Bom deixa eu te mostrar aqui eu vou dar um responde o Send.
+
+45
+00:03:06,740 --> 00:03:07,260
+REI.
+
+46
+00:03:07,290 --> 00:03:08,070
+Ponto.
+
+47
+00:03:08,170 --> 00:03:13,270
+Blog onde vem o post de formulários a gente já viu isso em aulas anteriores.
+
+48
+00:03:13,350 --> 00:03:19,830
+Então sempre que eu postar alguma coisa pra essa página o rei que ponto Bare vai ser preenchido com
+
+49
+00:03:19,830 --> 00:03:21,430
+os dados do meu formulário.
+
+50
+00:03:21,450 --> 00:03:27,240
+Então se vier aqui eu por exemplo a gente olhar aqui no login a gente vai postar esse formulário aqui.
+
+51
+00:03:27,240 --> 00:03:30,750
+A gente tem quase campus aqui email e password.
+
+52
+00:03:30,780 --> 00:03:35,180
+Além do CS RF Tolkien que também esse campo também vai pra lá.
+
+53
+00:03:35,490 --> 00:03:41,430
+Então você vai ver que é assim que eu preencher o formulário e enviar para cá voltou lhes a página.
+
+54
+00:03:41,430 --> 00:03:48,960
+Vou colocar Luiz rouba a e vou colocar aqui assim 1 2 3 4 5 6 e vou enviar a gente está vendo os dados
+
+55
+00:03:48,960 --> 00:03:53,190
+aqui a deixa aumentar um pouco pra você ver o CRC se o Sr.
+
+56
+00:03:53,190 --> 00:03:56,770
+Tolkien quer usar isso aqui a gente não vai mexer né.
+
+57
+00:03:56,820 --> 00:04:00,030
+E a gente está vendo o email que eu postei e o persuade.
+
+58
+00:04:00,070 --> 00:04:06,780
+Mas como é que eu vou passar esses dados daqui do controle que é onde a gente está pegando pra dentro
+
+59
+00:04:06,780 --> 00:04:12,320
+do login modo simples a gente já tem uma pré classe aqui e vamos acabar de construir.
+
+60
+00:04:12,690 --> 00:04:13,870
+Então construa.
+
+61
+00:04:14,320 --> 00:04:17,830
+A gente vai receber um Bari aqui nessa classe e daí.
+
+62
+00:04:17,850 --> 00:04:24,360
+Aqui dentro a gente pode colocar um atributo da classe D esse ponto Bari é igual a Bari então agora
+
+63
+00:04:24,360 --> 00:04:28,440
+a gente vai ter disponível o Bari em todos os métodos da classe.
+
+64
+00:04:28,770 --> 00:04:30,990
+Mas como é que eu vou passar ele pra cá.
+
+65
+00:04:30,990 --> 00:04:37,110
+Simples não vou importar esse arquivo aqui pq a gente tá exportando essa classe aqui então vou importar
+
+66
+00:04:37,110 --> 00:04:39,700
+esse arquivo aqui no lobbying Controller.
+
+67
+00:04:39,870 --> 00:04:44,550
+Como a gente vai fazer com este login igual a pecuária.
+
+68
+00:04:44,780 --> 00:04:45,290
+E daí.
+
+69
+00:04:45,300 --> 00:04:52,050
+Dois pontos Barra Models e Barra login moda e agora a gente já tem o login.
+
+70
+00:04:52,050 --> 00:04:54,080
+Então a gente pode fazer assim aqui dentro.
+
+71
+00:04:54,360 --> 00:04:55,600
+Com este login.
+
+72
+00:04:55,680 --> 00:04:59,880
+Veja bem esse login com letra maiúscula e C com letra minúscula.
+
+73
+00:04:59,880 --> 00:05:03,190
+Isso aqui vai ser uma instância Instância da classe.
+
+74
+00:05:03,190 --> 00:05:09,170
+Tá igual mil login e eu vou mandar um rei que ponto Bari pra dentro da minha classe.
+
+75
+00:05:09,240 --> 00:05:10,350
+Só vou fazer isso aqui.
+
+76
+00:05:10,380 --> 00:05:15,380
+A gente já viu a classe já criou essa chave aqui dentro da classe.
+
+77
+00:05:15,420 --> 00:05:20,310
+Beleza então a gente já tem essa chave aqui como é que a gente faria isso aqui de fora da classe.
+
+78
+00:05:21,450 --> 00:05:27,900
+A gente pode vir aqui voltar aqui e ali fazer o seguinte se eu estou mandando isso aqui aqui dentro
+
+79
+00:05:28,270 --> 00:05:35,700
+do da classe E eu tô pegando esse aqui numa chave da classe aqui que é Bari eu posso vir aqui e pegar
+
+80
+00:05:35,820 --> 00:05:39,050
+login ponto Bari.
+
+81
+00:05:39,330 --> 00:05:45,830
+Então a gente tem a mesmíssima coisa só que agora isso daqui está passando por dentro da minha classe
+
+82
+00:05:46,160 --> 00:05:52,400
+e agora eu vou validar esses dados aqui dentro da classe da maneira que eu preferi checar o IMEI eu
+
+83
+00:05:52,400 --> 00:05:56,830
+posso criar erros aqui enfim eu vou fazer uma validação completa aqui.
+
+84
+00:05:56,830 --> 00:06:02,510
+A gente nunca vai confiar no que o usuário digita pra dizer pra gente no formulário.
+
+85
+00:06:02,600 --> 00:06:09,630
+A gente sempre tem que validar checar todos os dados que foram digitados por questão de segurança a
+
+86
+00:06:09,630 --> 00:06:15,460
+gente não pode simplesmente pegar o formulário falei Olha aqui os dados e jogar na base de dados.
+
+87
+00:06:15,830 --> 00:06:19,120
+Até porque vai gerar inconsistência lá nos nossos dados.
+
+88
+00:06:19,160 --> 00:06:24,290
+Beleza então a gente já sabe como pegar isso aqui e a gente já olhou aqui né no caso deixa eu colocar
+
+89
+00:06:24,290 --> 00:06:26,190
+aqui pra você tá a mesma coisa aqui.
+
+90
+00:06:27,450 --> 00:06:32,150
+Então agora como é que a gente vai fazer essa validação deixa eu te explicar qual vai ser a lógica aqui
+
+91
+00:06:32,150 --> 00:06:33,160
+que a gente vai utilizar.
+
+92
+00:06:33,500 --> 00:06:40,010
+Vou deixar aqui que ponto Baile do mesmo jeito e eu vou fechar isso daqui eu não novo.
+
+93
+00:06:40,040 --> 00:06:43,860
+A gente vai precisar desse aqui vou deixar de lado fica aqui.
+
+94
+00:06:43,940 --> 00:06:51,950
+A gente vai fazer o seguinte a gente vai criar uma flash de heróis aqui dentro que é a lei que a gente
+
+95
+00:06:51,950 --> 00:06:54,090
+vai criar também o vice pontuou.
+
+96
+00:06:54,110 --> 00:06:56,230
+Uso por exemplo igual não.
+
+97
+00:06:56,630 --> 00:06:58,050
+Então tipo.
+
+98
+00:06:58,400 --> 00:07:00,380
+Se tiver algum erro dentro desse.
+
+99
+00:07:00,380 --> 00:07:05,900
+Isso é um vazio né no caso se tiver algum erro aqui dentro quer dizer que não posso cadastrar o meu
+
+100
+00:07:05,900 --> 00:07:07,220
+usuário na base de dados.
+
+101
+00:07:08,360 --> 00:07:15,740
+Então essa essa variável de RS ai de erros vai controlar se meu usuário pode ou não ser criado na base
+
+102
+00:07:15,740 --> 00:07:21,050
+de dados ou se eu preciso voltar para o usuário falar Olha tem um erro aqui em determinado campo.
+
+103
+00:07:21,140 --> 00:07:23,010
+Como é que a gente vai fazer isso sempre.
+
+104
+00:07:23,240 --> 00:07:32,900
+A gente vai vir aqui criar o vale e daqui um método que valida por exemplo e daí a gente vai validar
+
+105
+00:07:32,900 --> 00:07:37,110
+os campos aqui validação e lei como que a gente vai validar esses campos.
+
+106
+00:07:37,110 --> 00:07:45,090
+Ele vai validar o seguinte o email o email precisa ser válido.
+
+107
+00:07:45,780 --> 00:07:51,500
+Por exemplo a senha precisa ter entre 3 e 50 caracteres.
+
+108
+00:07:51,510 --> 00:07:54,110
+Por exemplo esse vai.
+
+109
+00:07:54,110 --> 00:08:00,860
+Essa vai ser a validação mas eu não quero chamar essa validação aqui no meu controle eu falar tipo login
+
+110
+00:08:00,920 --> 00:08:07,550
+ponto válida eu não quero fazer isso eu quero falar de cara que login ponto por exemplo cria o usuário.
+
+111
+00:08:07,550 --> 00:08:11,250
+Ou melhor chamar de Register.
+
+112
+00:08:11,740 --> 00:08:16,570
+Então como é que eu vou fazer isso eu vou fazer esse método registra validar os dados.
+
+113
+00:08:16,580 --> 00:08:24,710
+Então como que a gente faz isso eu vou criar um outro método registrar e aí eu vou chamar desse ponto
+
+114
+00:08:24,710 --> 00:08:26,080
+válida aqui dentro.
+
+115
+00:08:26,090 --> 00:08:28,920
+Então esse próprio método registrou aqui.
+
+116
+00:08:28,990 --> 00:08:35,840
+Ele chama esse método válida e esse método valida vai precisar fazer uma coisa também que vai ser meio
+
+117
+00:08:35,900 --> 00:08:43,340
+comum em todos os modos eu vou fazer isso eu vou fazer alguma coisa errada desse ponto clin clin data
+
+118
+00:08:43,790 --> 00:08:53,660
+clique aqui por exemplo e daí esse Kleina vai ser responsável por fazer só o seguinte Clin Esse Kleina
+
+119
+00:08:53,750 --> 00:08:59,690
+vai fazer o seguinte ele vai rodar no meio vai fazer um Ford nas chaves do meu bel Barigui tudo que
+
+120
+00:08:59,690 --> 00:09:05,040
+eu recebi aqui e vai garantir que tudo o que está dentro do meu baile é uma historinha.
+
+121
+00:09:05,060 --> 00:09:08,810
+Eu não quero nada que não seja uma historinha.
+
+122
+00:09:09,540 --> 00:09:17,340
+E aí como é que eu vou fazer isso eu vou fazer por exemplo com este Xavi por exemplo que ao invés de
+
+123
+00:09:17,340 --> 00:09:24,400
+ser office vai ser vai ter que ser um porque eu vou fazer o Lupi nas chaves do objeto então com um cheque
+
+124
+00:09:24,590 --> 00:09:31,710
+em desconto para que a gente tem todas as chaves do bar que não como é que a gente tinha acesso ao valor
+
+125
+00:09:31,710 --> 00:09:35,380
+agora a gente vai uma vez ponto Bari.
+
+126
+00:09:35,660 --> 00:09:39,820
+E aí acho que no caso que a gente usa a notação com o Sheik.
+
+127
+00:09:40,200 --> 00:09:52,460
+Só que eu quero fazer aqui eu quero checar o seguinte top off Bari chave diferente de estilingue e aí
+
+128
+00:09:52,460 --> 00:09:54,640
+como é que eu faça essa checagem com fi.
+
+129
+00:09:54,890 --> 00:09:58,370
+Então é isso daqui.
+
+130
+00:09:58,400 --> 00:10:06,800
+Se for diferente de uma que eu vou simplesmente falar com o que fazer com que a chave o valor dessa
+
+131
+00:10:06,950 --> 00:10:13,850
+chave qualquer chave que seja tenha uma string vazia ou seja c Qualquer coisa que tiver dentro dessa
+
+132
+00:10:13,850 --> 00:10:16,280
+chave do barco que já está recebendo.
+
+133
+00:10:16,280 --> 00:10:21,830
+Veja bem esse Bali e o formulário são os campos do formulário que a gente está recebendo geralmente
+
+134
+00:10:21,830 --> 00:10:24,890
+vai ver como foi mesmo mas eu quero garantir isso.
+
+135
+00:10:25,480 --> 00:10:32,070
+Então aqui no caso se tiver alguma coisa que não é uma xingue eu vou converter pra uma esfinge vazia.
+
+136
+00:10:32,270 --> 00:10:33,270
+Beleza.
+
+137
+00:10:33,650 --> 00:10:39,530
+Feito isso aqui o que a gente vai fazer aqui embaixo é garantir que a gente só tem os campos que a gente
+
+138
+00:10:39,530 --> 00:10:41,220
+precisa neste modo.
+
+139
+00:10:41,420 --> 00:10:45,730
+Então quais os campos que a gente precisa que mil ME LEMBRE QUE O SR.
+
+140
+00:10:45,830 --> 00:10:51,980
+Tolkien estava vindo junto com fogo se a gente salvar a base de dados ele vai também junto para a base
+
+141
+00:10:51,980 --> 00:10:58,660
+de dados com as outras chaves então pra garantir isso eu vou fazer na mão aqui mesmo desse ponto Bari
+
+142
+00:10:58,790 --> 00:11:08,990
+é igual a PT com chave m o que é disse do Bahia e Ponto email e a senha né que peça Boyd é outra coisa
+
+143
+00:11:08,990 --> 00:11:15,220
+que eu tô esquecendo já já a gente faz desse ponto bate ponto password então aqui eu estou garantindo
+
+144
+00:11:15,220 --> 00:11:18,380
+que meu objeto vai ter somente os campos que eu quero.
+
+145
+00:11:18,840 --> 00:11:25,330
+E fazendo isso aqui eu lembrei que a gente ainda não configurou o modem que encima o modem ou ainda
+
+146
+00:11:25,330 --> 00:11:29,360
+está com título e descrição que a gente tinha feito nas aulas anteriores.
+
+147
+00:11:29,440 --> 00:11:35,080
+Então vou pagar isso aqui vou configurar o meu modo assim pra eu ter um usuário e senha na base de dados
+
+148
+00:11:35,080 --> 00:11:36,740
+eu preciso de um email.
+
+149
+00:11:36,810 --> 00:11:42,100
+Ele vai ser do tipo estilingue e ele é requerido mesmo e eu também preciso de uma senha.
+
+150
+00:11:43,440 --> 00:11:50,420
+Que vai ser também requerida e também vai ser uma historinha não é isso é um modo email e senha do login
+
+151
+00:11:50,430 --> 00:11:53,000
+ESQUEMA QUE BELEZA feito isso aqui.
+
+152
+00:11:53,100 --> 00:11:58,720
+A gente agora pode validar os dados sempre que você está vendo que tem uma cadeia Quine aqui.
+
+153
+00:11:58,950 --> 00:12:01,150
+Eu vou chamar login ponto O.
+
+154
+00:12:02,070 --> 00:12:04,620
+Então eu vou desencadear esse método.
+
+155
+00:12:04,620 --> 00:12:11,310
+Só que esse método chamo valida que vai validar os nossos campos o valida de cara já vai chamar o Kleina
+
+156
+00:12:11,370 --> 00:12:17,980
+que vai limpar o nosso objeto e daí agora a gente começa a validação então como é que vai ser essa validação.
+
+157
+00:12:18,270 --> 00:12:19,820
+O e-mail precisa ser válido.
+
+158
+00:12:19,830 --> 00:12:21,740
+Então como é que a gente pode checar esse.
+
+159
+00:12:22,020 --> 00:12:28,610
+A gente poderia facilmente criar uma expressão regular aqui e checar esse meio levá lo.
+
+160
+00:12:28,610 --> 00:12:33,280
+Mas alguém já fez isso pra gente e a gente não precisa ter esse trabalho.
+
+161
+00:12:33,590 --> 00:12:42,780
+Então como é que a gente vai fazer eu vou instalar um outro pacote aqui que chama vale da MPM e vale
+
+162
+00:12:42,890 --> 00:12:53,370
+deita e daí a gente vai importar esse vale deixe eu aqui em cima com este vale deita igual e caia VALE
+
+163
+00:12:55,410 --> 00:12:55,830
+E daí.
+
+164
+00:12:55,840 --> 00:13:02,750
+Aqui embaixo a gente vai checar sem assumir a vaga do hífen como que a gente chegaria normalmente.
+
+165
+00:13:02,850 --> 00:13:07,890
+Assim acaricia ali deita e fio vale dentro da lei.
+
+166
+00:13:08,060 --> 00:13:08,560
+Ponto.
+
+167
+00:13:08,560 --> 00:13:17,720
+Isso é meio desse ponto bate ponto em meio quer dizer que ler um email válido só que eu quero checar
+
+168
+00:13:17,810 --> 00:13:19,400
+invertido eu quero falar.
+
+169
+00:13:19,400 --> 00:13:25,770
+Se não for um email válido eu quero adicionar um erro dentro do meu Rei de erros aqui ainda é um nome
+
+170
+00:13:25,790 --> 00:13:31,250
+que eu vou fazer isso eu vou colocar um exclamação aqui falando se não for um email válido vou falar
+
+171
+00:13:31,250 --> 00:13:39,310
+desse ponto e ponto Patch eu vou colocar aqui dentro email válido.
+
+172
+00:13:39,530 --> 00:13:42,510
+Pronto já colocamos uma flag aqui.
+
+173
+00:13:42,520 --> 00:13:48,380
+Depois eu vou te mostrar como checar se daqui beleza chegamos a isso que é mais que a gente precisa.
+
+174
+00:13:48,410 --> 00:13:53,480
+Precisa ter entre 13 e 50 caracteres então é vice.
+
+175
+00:13:53,480 --> 00:13:55,270
+Ponto.
+
+176
+00:13:55,370 --> 00:14:12,900
+Ponto PS 2 ponto linha mas menor que 3 ou desse ponto Barra e ponto passo ponto leia maior que 50 maior
+
+177
+00:14:12,900 --> 00:14:20,490
+ou igual nem oque no caso pode ser menor menor mesmo nem no caso menor que 13 aqui pode ser maior ou
+
+178
+00:14:20,490 --> 00:14:22,090
+igual a 50.
+
+179
+00:14:22,090 --> 00:14:29,150
+Então se assim for tiver dois caracteres vai dar erro se tiver sim aqui pode ser maior também se você
+
+180
+00:14:29,150 --> 00:14:31,210
+você tiver 51 caracteres.
+
+181
+00:14:31,350 --> 00:14:32,000
+Vai daí.
+
+182
+00:14:32,280 --> 00:14:37,010
+Então a gente vai lançar o erro aqui novamente não vi esse ponto e.
+
+183
+00:14:37,440 --> 00:14:51,820
+Ponto Banshee a senha precisa estar entre três e precisa ter n precisa ter entre 3 e 50 caracteres.
+
+184
+00:14:51,820 --> 00:14:57,670
+Só essa validação que eu vou checar aqui então sou meio folgado e assim tiver entre 3 e 50 caracteres
+
+185
+00:14:57,690 --> 00:15:03,330
+quer dizer que pode passar aqui e a gente já passa para o próximo nível e daí o que eu vou fazer aqui
+
+186
+00:15:03,500 --> 00:15:07,680
+tá dando o link que tá já resolvido.
+
+187
+00:15:08,050 --> 00:15:13,880
+E aí agora o que eu vou fazer eu não preciso retornar nada nesse método aqui pq quem está checando a
+
+188
+00:15:13,880 --> 00:15:15,860
+validação é esse aqui.
+
+189
+00:15:16,280 --> 00:15:18,860
+Ou seja se existir algum erro aqui.
+
+190
+00:15:18,890 --> 00:15:26,150
+Quer dizer que eu não posso logar meu usuário com que eu vou checar isso eu vou checar assim e fui vice.
+
+191
+00:15:26,150 --> 00:15:27,760
+Ponto 2.
+
+192
+00:15:27,860 --> 00:15:32,400
+Ponto leve maior quiseram se tiver mais de 100.
+
+193
+00:15:32,450 --> 00:15:38,530
+Se o meu alguém não estiver vazio quer dizer que tem algo errado então eu vou dar um oi aqui e daí com
+
+194
+00:15:38,530 --> 00:15:42,870
+o Mac eu checar isso fora da minha função do mesmo jeito.
+
+195
+00:15:42,860 --> 00:15:55,520
+Eu poderia vir aqui e falar o seguinte eu poderia falar e fazer login ponto e esse ponto lá é maior
+
+196
+00:15:55,520 --> 00:15:56,400
+que zero.
+
+197
+00:15:56,540 --> 00:16:01,880
+Faça alguma coisa aqui e aí a gente vai fazer isso depois mas aqui eu só quero te mostrar esses erros
+
+198
+00:16:02,270 --> 00:16:10,920
+na prática então vou mandar ele aqui login ponto e você e daí vão vir aqui e vão enviar novamente para
+
+199
+00:16:10,920 --> 00:16:17,080
+mim pq esse me invalida que eu mandei vamo deixa aumentar aqui a foto e esse não é um e-mail vale.
+
+200
+00:16:17,090 --> 00:16:24,810
+Tá vendo aqui se alguém enviar esse forma imbecil vai gerar algum erro aqui vou atualizar e enviar email
+
+201
+00:16:24,900 --> 00:16:28,290
+inválido então no nosso Rei já tenho um e-mail inválido seu.
+
+202
+00:16:28,360 --> 00:16:33,220
+Por exemplo deixe eu diminuir de novo eu vou ter que ficar aumentando diminuindo M invade vale eu não
+
+203
+00:16:33,270 --> 00:16:36,680
+mandassem postal com alegria.
+
+204
+00:16:36,760 --> 00:16:40,410
+A senha precisa ter entre 3 e 50 caracteres.
+
+205
+00:16:40,450 --> 00:16:43,750
+A gente tem dois erros aqui já no mesmo forma.
+
+206
+00:16:44,010 --> 00:16:50,790
+Beleza então tá funcionando os nossos erros aqui estão voltando aqui que a gente precisa fazer agora
+
+207
+00:16:50,790 --> 00:16:57,180
+esse passado que a gente precisa registrar esse usuário na base de dados mas como é que a gente vai
+
+208
+00:16:57,180 --> 00:16:58,260
+fazer isso.
+
+209
+00:16:58,410 --> 00:17:05,540
+Sempre que eu fizer operações de base de dados eu preciso obrigatoriamente trabalhar com promessas né.
+
+210
+00:17:05,730 --> 00:17:11,700
+Porque isso aqui vai me retornar uma promessa e comecou utiliza o pronome se aqui eu crio um método
+
+211
+00:17:11,780 --> 00:17:15,570
+assim que então esse registro vai ter que ser um método assim.
+
+212
+00:17:16,790 --> 00:17:23,100
+E daí como é que eu vou fazer para registrar isso na base de dados eu vou falar login Model ponto cliente
+
+213
+00:17:23,810 --> 00:17:29,520
+e daí eu vou mandar o meu desse ponto pare então porque que eu estou mandando esse objeto aqui desse
+
+214
+00:17:29,520 --> 00:17:32,290
+jeito porque eu já lembrei esse objeto aqui.
+
+215
+00:17:32,400 --> 00:17:38,790
+Então eu posso confiar agora que esse objeto está limpo e só tem meio e peça nele mais nada.
+
+216
+00:17:39,150 --> 00:17:45,440
+Então aqui eu já resisto só que essa função é assim no caso eu preciso esperar.
+
+217
+00:17:45,500 --> 00:17:52,260
+Então eu preciso falar ao Haiti login modo só que eu quero preencher essa variável caso eu preciso recuperar
+
+218
+00:17:52,260 --> 00:17:56,540
+esse usuário que eu quero preencher essa variável com o usuário que está sendo criado aqui.
+
+219
+00:17:56,550 --> 00:17:57,690
+Então como é que eu faço isso.
+
+220
+00:17:57,990 --> 00:17:59,640
+Eu faço Koch usa.
+
+221
+00:17:59,960 --> 00:18:04,980
+Ou então ao invés de criar a variável eu posso falar desse ponto e usa igual a isso aqui.
+
+222
+00:18:05,400 --> 00:18:12,120
+Então agora se o usuário foi criado eu vou poder acessar o usuário aqui de fora login ponto e uso por
+
+223
+00:18:12,120 --> 00:18:13,340
+exemplo.
+
+224
+00:18:13,500 --> 00:18:17,750
+Beleza então a gente fez isso vamos testar isso daqui vamo.
+
+225
+00:18:17,790 --> 00:18:22,160
+Acho que a gente já pode testar isso daqui não tem coisas mas nada mais nada para a gente fazer.
+
+226
+00:18:22,150 --> 00:18:29,520
+Só que eu quero também que as minhas mensagens de erro sejam exibidas lá no formulário daquele jeito
+
+227
+00:18:29,520 --> 00:18:36,840
+que a gente testou anteriormente com um quadradinho vermelho assim que a gente fez lá na aula de templates
+
+228
+00:18:36,840 --> 00:18:38,280
+e eu não me engano.
+
+229
+00:18:38,280 --> 00:18:40,140
+Como é que eu vou fazer isso.
+
+230
+00:18:40,280 --> 00:18:41,910
+é simples eu vou fazer o seguinte.
+
+231
+00:18:41,940 --> 00:18:48,690
+Essa foi a outra coisa importantíssima aqui que a gente tá esquecendo sempre que é utilizar uma função
+
+232
+00:18:48,690 --> 00:18:50,430
+assim que é ao Haiti.
+
+233
+00:18:50,430 --> 00:18:55,920
+Desse jeito eu preciso envolver tudo o que for ao Haiti aqui num bloco jacket.
+
+234
+00:18:56,040 --> 00:19:03,710
+Então preciso fazer The Way porque se algum erro eu quero saber qual o erro que foi então Quiet e daí.
+
+235
+00:19:03,730 --> 00:19:08,860
+E aí eu vou logar o erro aqui começou ali pontuou louco só pra gente ver na tela.
+
+236
+00:19:08,880 --> 00:19:15,780
+Você pode fazer qualquer outra coisa mas a gente precisa envolver se aqui no bloco foi Quiet porque
+
+237
+00:19:15,810 --> 00:19:17,210
+senão a gente vai deixar pronto.
+
+238
+00:19:17,260 --> 00:19:20,460
+Promessa sem resolver aqui é com erro né.
+
+239
+00:19:20,460 --> 00:19:22,690
+E aí o programa vai parar de funcionar.
+
+240
+00:19:22,770 --> 00:19:23,380
+E aqui.
+
+241
+00:19:24,630 --> 00:19:32,280
+A gente precisa também porque uma vez que esse método é assim tudo o que ele retorna também é uma promessa.
+
+242
+00:19:32,670 --> 00:19:38,300
+Então o tipo assim pra ir pra eu esperar as coisas que esse método aqui vão realizar.
+
+243
+00:19:38,580 --> 00:19:41,910
+Eu preciso também que essa função seja assim.
+
+244
+00:19:42,350 --> 00:19:46,650
+E eu preciso também falar ao White aqui pra ele esperar.
+
+245
+00:19:46,650 --> 00:19:52,560
+E esse método registra que assíncrona pra ele resolver tudo que ele tem de resolver aqui.
+
+246
+00:19:52,820 --> 00:19:58,170
+Então agora a gente pode criar o nosso erro só que antes disso lembra que eu te falei que eu quero exibir
+
+247
+00:19:58,170 --> 00:20:00,290
+as mensagens lá no formulário.
+
+248
+00:20:00,300 --> 00:20:02,240
+Como é que eu vou falar isso eu vou falar REC.
+
+249
+00:20:02,400 --> 00:20:03,590
+Ponto Flash.
+
+250
+00:20:03,600 --> 00:20:05,790
+Aliás eu preciso checar se tem erro né.
+
+251
+00:20:05,800 --> 00:20:11,330
+Se existir erro login ponto é erro esse ponto leva maior que zero.
+
+252
+00:20:11,610 --> 00:20:15,940
+Quer dizer que eu preciso checar se eu não posso registrar esse uso.
+
+253
+00:20:16,200 --> 00:20:17,770
+Na verdade a gente já fez isso.
+
+254
+00:20:18,090 --> 00:20:21,960
+Essa checagem aqui dentro então ele não vai mesmo ser registrado.
+
+255
+00:20:21,960 --> 00:20:29,280
+Se existir algum erro mas aqui a gente vai exibir essas mensagens então a gente vai lá REC ponto o flash
+
+256
+00:20:29,370 --> 00:20:37,210
+que são as nossas mensagens a gente vai falar e Ross aqui e daí a gente vai colocar os erros aqui dentro
+
+257
+00:20:37,210 --> 00:20:37,410
+aqui.
+
+258
+00:20:37,420 --> 00:20:41,320
+Então a gente vai falar login ponto erros.
+
+259
+00:20:41,490 --> 00:20:48,240
+Só que agora como agora a gente vai redirecionar a página de volta para a página de login porque você
+
+260
+00:20:48,240 --> 00:20:50,820
+concorda comigo que seu envia esse formulário.
+
+261
+00:20:50,820 --> 00:20:51,960
+Eu vou parar aqui.
+
+262
+00:20:52,110 --> 00:20:55,360
+Eu preciso voltar para a página de login com erro aqui.
+
+263
+00:20:55,650 --> 00:20:57,360
+Então como é que eu faria isso assim.
+
+264
+00:20:57,630 --> 00:21:03,900
+Eu preciso salvar acessar o primeiro para garantir que essa seção vai ser salva e depois eu retorne
+
+265
+00:21:03,900 --> 00:21:04,990
+para a página de login.
+
+266
+00:21:05,190 --> 00:21:08,780
+Então Rei que ponto Section um ponto sem hífen.
+
+267
+00:21:09,020 --> 00:21:15,410
+E daí aqui eu vou falar sempre vou criar uma função de caubói aqui vou falar assim agora.
+
+268
+00:21:16,140 --> 00:21:23,040
+Agora que a sessão já foi salva está seguro de eu voltar vou falar nesse ponto ri Direct para redirecionar
+
+269
+00:21:23,040 --> 00:21:28,980
+a página pra onde back de onde ele veio de onde esse formulário fui eu vou voltar à página de volta
+
+270
+00:21:28,980 --> 00:21:29,370
+pra lá.
+
+271
+00:21:29,700 --> 00:21:32,150
+Então respondo Direct back.
+
+272
+00:21:32,250 --> 00:21:36,140
+Só que desse jeito que eu fiz aqui eu poderia até retornar aqui.
+
+273
+00:21:36,180 --> 00:21:42,510
+Nesse caso eu estou retornando pra essa função o que quer dizer que essa outra função de fora vai continuar
+
+274
+00:21:42,510 --> 00:21:44,310
+sendo executada até chegar aqui.
+
+275
+00:21:44,640 --> 00:21:49,010
+Então a gente não quer isso a gente vai falar aqui também de fora.
+
+276
+00:21:49,510 --> 00:21:56,400
+Beleza então agora a gente tá indo chegando aqui tentando registrar o usuário se não der vai voltar
+
+277
+00:21:56,400 --> 00:22:04,080
+pra página lá pra essa página de login que a gente criou com mensagens e como eu acessar essas mensagens
+
+278
+00:22:04,080 --> 00:22:05,540
+de erro aqui.
+
+279
+00:22:05,570 --> 00:22:12,870
+Bom é bem simples na verdade eu posso fazer o seguinte deixou aumentar um pouco a fonte pra você e daí
+
+280
+00:22:12,870 --> 00:22:18,260
+a gente vai pegar aquelas mensagens que a gente criou aqui no nosso indexa então aqui no nosso índex
+
+281
+00:22:18,330 --> 00:22:23,700
+em algum lugar aqui aqui nesse local a gente criou mensagens eu vou cortar isso aqui vou tirar isso
+
+282
+00:22:23,700 --> 00:22:29,230
+aqui fora daqui e vou criar um arquivo só para as mensagens na minha pasta.
+
+283
+00:22:29,240 --> 00:22:35,820
+Vhils include os então aqui na pasta de viu Vhils inclusive eu vou criar meça desse ponto.
+
+284
+00:22:35,850 --> 00:22:45,990
+HTML não é HTML e se deixa eu na minha aqui dias e aqui dentro eu vou colar essa mensagem só que eu
+
+285
+00:22:45,990 --> 00:22:52,510
+vou ter dois tipos de mensagens não vou mandar mensagens de voz e mensagens de sexo.
+
+286
+00:22:52,890 --> 00:22:56,630
+E aí como é que a gente vai fazer isso aqui para achar checar a gente vai fazer.
+
+287
+00:22:57,030 --> 00:23:02,750
+Eu vou abrir as tags do S e vou checar seu iPhone e erros.
+
+288
+00:23:03,140 --> 00:23:03,430
+E aí.
+
+289
+00:23:03,450 --> 00:23:04,970
+Isso aqui ainda não existe.
+
+290
+00:23:04,970 --> 00:23:07,210
+A gente vai criar se existe elas.
+
+291
+00:23:07,440 --> 00:23:11,180
+A gente vai inteirar sobre esses erros e mostrar os erros até lá.
+
+292
+00:23:11,310 --> 00:23:13,760
+Então vão fechar esse fim aqui embaixo.
+
+293
+00:23:13,800 --> 00:23:19,170
+E aqui como é que a gente vai inteirar sobre esses erros a gente vai jogar isso aqui dentro do Atlético
+
+294
+00:23:19,250 --> 00:23:22,310
+dessa caixinha que vai ser uma caixa vermelha.
+
+295
+00:23:22,590 --> 00:23:24,800
+Então vou falar assim.
+
+296
+00:23:24,960 --> 00:23:30,500
+Por exemplo erros ponto fora e e daí.
+
+297
+00:23:30,500 --> 00:23:31,570
+Aqui dentro eu vou falar.
+
+298
+00:23:31,640 --> 00:23:32,230
+é erro.
+
+299
+00:23:32,410 --> 00:23:32,810
+E aí.
+
+300
+00:23:32,930 --> 00:23:38,700
+é o funk que eu vou receber o erro nesse parâmetro e vou exibir esse erro aqui embaixo.
+
+301
+00:23:38,770 --> 00:23:45,470
+E aí eu tenho que aqui fechar as tags dou ideias não vou fechar aqui abrir fechar aqui e vou fazer a
+
+302
+00:23:45,470 --> 00:23:53,190
+mesma coisa aqui então aqui beleza feito aqui está criado aqui tá com estranhos aqui.
+
+303
+00:23:53,400 --> 00:24:01,860
+Bom eu acho que está tudo correto e inglês é coisa aqui foi hit.
+
+304
+00:24:01,970 --> 00:24:03,220
+Errou parece.
+
+305
+00:24:03,280 --> 00:24:04,540
+Parece que tá tudo correr dental.
+
+306
+00:24:04,540 --> 00:24:06,220
+Vou exibir os erros aqui.
+
+307
+00:24:06,220 --> 00:24:13,390
+Como é que eu faço gibi pra exibir abraçados dois dias e colocam um sinal de igual falo errou beleza
+
+308
+00:24:13,480 --> 00:24:14,640
+eu vou por um B.
+
+309
+00:24:14,770 --> 00:24:19,180
+Caso tenha mais um erro ele quebra a linha em cada um dos erros.
+
+310
+00:24:19,190 --> 00:24:21,130
+Então beleza a gente fez isso aqui.
+
+311
+00:24:21,160 --> 00:24:27,520
+Só que como eu te falei esse erros não existe aqui dentro e isso não existe aqui ainda.
+
+312
+00:24:27,640 --> 00:24:30,790
+Como é que eu vou pegar uma coisa que não existe aqui dentro.
+
+313
+00:24:30,800 --> 00:24:37,990
+Bom eu posso fazer o seguinte eu posso criar uma local global aqui pra todas pra todas as páginas do
+
+314
+00:24:37,990 --> 00:24:38,890
+nosso site.
+
+315
+00:24:39,010 --> 00:24:44,970
+Eu queria uma local e jogo as Messages relacionadas com as aqui dentro.
+
+316
+00:24:45,100 --> 00:24:47,070
+Como que eu faço isso eu vou no meu milho.
+
+317
+00:24:47,110 --> 00:24:49,680
+A gente já tem um milho global aqui no caso.
+
+318
+00:24:50,880 --> 00:24:57,380
+E aí no caso aqui a gente até tem dois milhões fazendo a mesma coisa.
+
+319
+00:24:57,420 --> 00:24:59,230
+Esse milho é esse milho.
+
+320
+00:24:59,290 --> 00:25:04,580
+Fazem a mesma coisa eu não vou mexer aqui pra não quebrar alguma coisa a gente tem que fazer uma coisa
+
+321
+00:25:04,580 --> 00:25:07,310
+a mais mas esse é que é esse que fazem a mesma coisa.
+
+322
+00:25:07,540 --> 00:25:09,140
+Então eu posso colocar em qualquer lugar.
+
+323
+00:25:09,150 --> 00:25:12,880
+Tá vendo que a gente já tinha uma local aqui então a gente vai falar.
+
+324
+00:25:13,030 --> 00:25:20,920
+E esse ponto Holocaust é aqui no lugar dessa eu vou colocar roupas então sempre em todas as todas as
+
+325
+00:25:20,920 --> 00:25:27,610
+páginas e a gente vai ter disponível essa Holocaust e Rosa que é justamente isso daqui que a gente fez
+
+326
+00:25:27,610 --> 00:25:28,540
+aqui essa aqui.
+
+327
+00:25:28,940 --> 00:25:36,140
+Então aqui eu vou colocar Rick ponto Flash pra eu capturar as mensagens de erro.
+
+328
+00:25:36,670 --> 00:25:44,050
+Beleza então até então a gente criou a página como mensagens e a gente também tá capturando aqui os
+
+329
+00:25:44,050 --> 00:25:48,470
+erros e jogando injetando isso dentro das nossas páginas no caso.
+
+330
+00:25:49,120 --> 00:25:55,060
+Então como é que a gente faz pra cá pra puxar essas mensagens pra dentro da onde a gente quer exibir
+
+331
+00:25:55,060 --> 00:26:00,340
+mensagens eu ouvi no login eu vou falar não de que eu quero exibir mensagens aqui eu não lembro mas
+
+332
+00:26:00,580 --> 00:26:03,030
+realmente eu não lembro mas eu acho que é por aqui.
+
+333
+00:26:03,280 --> 00:26:08,050
+Então aqui eu vou falar include vou abrir saga odiei essa que eu esqueci né.
+
+334
+00:26:08,090 --> 00:26:16,050
+Eu vou falar include e aí vou colocar um sinal de menos include incluídas Barra meça diz.
+
+335
+00:26:16,170 --> 00:26:18,220
+Só homem não precisa da extensão.
+
+336
+00:26:18,670 --> 00:26:19,750
+Então em teoria.
+
+337
+00:26:19,750 --> 00:26:22,180
+Agora a gente já deve ver mensagens aqui.
+
+338
+00:26:22,180 --> 00:26:28,510
+Vamos ver se vai funcionar vou autorizar paz daqui as mensagens daqui que tinham sido exibidas anteriormente.
+
+339
+00:26:28,510 --> 00:26:34,480
+Agora eu vou atualizar dê um problema aqui eu tá vendo a gente está vendo mensagens porque deixa eu
+
+340
+00:26:34,480 --> 00:26:36,300
+te mostrar aqui o que é esse erro.
+
+341
+00:26:37,780 --> 00:26:39,460
+Eu estou checando esse aqui é.
+
+342
+00:26:39,640 --> 00:26:40,290
+Erros.
+
+343
+00:26:40,530 --> 00:26:42,280
+E aí direto Estou chegando.
+
+344
+00:26:42,280 --> 00:26:49,840
+Só que um vazio que é o que está aparecendo aqui não é um falso e velho aqui em JavaScript não é um
+
+345
+00:26:49,840 --> 00:26:51,420
+vale não é considerado falso.
+
+346
+00:26:51,700 --> 00:26:58,790
+Então a gente pode checar valores ponto leve mesma coisa menor ou maior que zero.
+
+347
+00:26:58,850 --> 00:27:04,200
+Se tiver mais de 0 erro se não for um vazio a gente exibe aqui.
+
+348
+00:27:04,260 --> 00:27:08,770
+Agora sim não deve exibir nada mas seu mandar esse aqui vazias formulário.
+
+349
+00:27:08,880 --> 00:27:11,010
+Agora tem as mensagens aqui.
+
+350
+00:27:11,320 --> 00:27:13,650
+Me inválido a senha precisa ter que tal.
+
+351
+00:27:13,710 --> 00:27:19,040
+Se eu mandar um e-mail correto por exemplo Otávio Miranda GM ponto com e mandar.
+
+352
+00:27:19,050 --> 00:27:23,340
+Só tem a senha precisa ter entre 13 e 50 caracteres.
+
+353
+00:27:23,550 --> 00:27:28,460
+Então ele tá indo lá e voltando aqui com esse Direct Book que a gente fez aqui.
+
+354
+00:27:28,610 --> 00:27:32,280
+Esse daqui é de Black.
+
+355
+00:27:32,460 --> 00:27:38,170
+Beleza então fizemos a funcionalidade do erro mas cadê a criação do usuário.
+
+356
+00:27:38,340 --> 00:27:42,180
+Então aqui a gente já fez isso também na criação do usuário que foi aqui.
+
+357
+00:27:42,570 --> 00:27:46,590
+Ele já fez essa criação e aí uma correção que é muito importante.
+
+358
+00:27:46,590 --> 00:27:52,260
+Isso daqui também é uma função A5 que vai lançar uma exceção caso ocorra algum erro aqui ainda.
+
+359
+00:27:52,260 --> 00:27:55,710
+A gente precisa também envolver isso aqui.
+
+360
+00:27:56,010 --> 00:28:03,110
+Um cracker então foi e daí Quiet Cat.
+
+361
+00:28:03,820 --> 00:28:11,800
+E aí a gente pode fazer assim aquele Ticket né no caso aqui e eu vou mover todo esse trecho aqui pra
+
+362
+00:28:11,800 --> 00:28:17,170
+minha parte do painel que ele vai tentar executar isso aqui se ele não conseguiu corrigir qualquer erro.
+
+363
+00:28:17,170 --> 00:28:24,940
+A gente vai renderizar esse ponto render a página 404 então 404 e daí a gente vai logar também o erro
+
+364
+00:28:24,940 --> 00:28:27,880
+pra gente vender um console pontuou Long.
+
+365
+00:28:28,710 --> 00:28:33,850
+Beleza então agora a gente está seguro aqui porque agora a gente vai ver o erro e vai renderizar para
+
+366
+00:28:33,850 --> 00:28:39,500
+o cliente uma página 404 a gente pode até dar um britânico pra aqui também.
+
+367
+00:28:39,520 --> 00:28:42,490
+Pra finalizar isso aqui beleza.
+
+368
+00:28:42,820 --> 00:28:46,620
+Então tudo certo aqui a gente já está criando o usuário vamos ver.
+
+369
+00:28:47,020 --> 00:28:50,510
+Eu já tô com o Atlas aberto aqui só tem sete anos aqui né.
+
+370
+00:28:50,520 --> 00:28:57,750
+No caso por enquanto vamos tentar criar um usuário correto então Otávio Miranda br.
+
+371
+00:28:57,920 --> 00:29:01,890
+GM O ponto com a senha 1 2 3 4 5 6.
+
+372
+00:29:02,030 --> 00:29:02,560
+Enviar.
+
+373
+00:29:02,890 --> 00:29:06,110
+E aí a gente parou aqui porque a gente parou aqui.
+
+374
+00:29:06,130 --> 00:29:07,360
+Deixa eu te mostrar aqui.
+
+375
+00:29:07,900 --> 00:29:10,290
+Eu acho que esse usuário já foi criado.
+
+376
+00:29:10,360 --> 00:29:16,150
+Se a gente olhar aqui deter um usuários céticos aqui não notei não vão me olhar aqui.
+
+377
+00:29:16,150 --> 00:29:23,120
+Se der algum erro aqui e voltando aqui ou dê algum erro aqui eu vou molhar aqui.
+
+378
+00:29:23,880 --> 00:29:30,020
+Isso o que deu isso aqui porque o nosso modo é o nosso o aqui não é senha.
+
+379
+00:29:30,040 --> 00:29:31,570
+Esse campo é esse campo aqui.
+
+380
+00:29:31,600 --> 00:29:35,470
+Na verdade no nosso informe chama password não sei.
+
+381
+00:29:35,770 --> 00:29:40,120
+Então estás onde estão corrigindo aqui esse modo.
+
+382
+00:29:40,120 --> 00:29:45,760
+Agora sim a gente deve ver já vamos corrigir também isso daqui a pouco que você viu que ele parou aqui
+
+383
+00:29:45,760 --> 00:29:47,290
+sem erro nenhum né no caso.
+
+384
+00:29:47,620 --> 00:29:51,310
+Então a gente já vai também falar o ITA Direct Back.
+
+385
+00:29:51,340 --> 00:29:57,590
+Na verdade eu vou copiar esse trecho aqui de código e vou mandar uma mensagem disse Access aquele que
+
+386
+00:29:57,600 --> 00:29:58,120
+cesse.
+
+387
+00:29:58,240 --> 00:30:08,340
+Ao invés de arroz e daí aqui dentro vou mandar um texto falando seu usuário foi criado com sucesso e
+
+388
+00:30:08,350 --> 00:30:13,950
+daí é a mesma coisa que eu preciso salvar a sessão e retornar do mesmo jeito aqui.
+
+389
+00:30:14,620 --> 00:30:15,340
+E aí beleza.
+
+390
+00:30:15,340 --> 00:30:20,760
+Como é isso aqui aqui nas nossas mensagens a gente só fez erros então a gente vai duplicar esse aqui
+
+391
+00:30:22,580 --> 00:30:24,530
+assim e daí agora.
+
+392
+00:30:24,530 --> 00:30:28,710
+Isso aqui não tá aí a coisa vai se transformar em sã que cesse.
+
+393
+00:30:29,360 --> 00:30:36,990
+E daí aqui no erro também a gente vai mudar praça fixas beleza e aqui onde está a leste da índia vai
+
+394
+00:30:36,990 --> 00:30:41,240
+ser a leste sã essas e daí.
+
+395
+00:30:41,250 --> 00:30:46,000
+Agora sim agora a gente já deve ver também uma mensagem de sucesso ali na tela.
+
+396
+00:30:46,500 --> 00:30:48,510
+Então deixe eu voltar aqui.
+
+397
+00:30:48,600 --> 00:30:55,060
+A gente pode agora tentar novamente criar o usuário então vou atualizar aqui qualquer problema Access
+
+398
+00:30:55,630 --> 00:30:56,360
+defende.
+
+399
+00:30:56,700 --> 00:31:02,220
+Olha que interessante é esta tentando acessar uma variável que não existe porque por aqui a gente não
+
+400
+00:31:02,220 --> 00:31:09,540
+jogou essas Access nas nossas locais aqui no local os erros a gente precisa também do local.
+
+401
+00:31:09,630 --> 00:31:18,750
+Sei que cesse aqui é isso esse tipo de mensagem vai chamar se access to agora sim a gente já deve estar
+
+402
+00:31:18,900 --> 00:31:26,050
+agora vão tentar criar usuario Otávio Miranda br algo Jeremy eu ponto com 1 2 3 4 5 6.
+
+403
+00:31:26,210 --> 00:31:33,440
+Vou enviar e aí o usuário foi cadastrado então agora a gente já deve ter aqui na base de dados o usuário
+
+404
+00:31:33,850 --> 00:31:40,580
+usuarios lobbies que chamam aqui lobbies com o usuário só que o problema de segurança deixa eu te mostrar
+
+405
+00:31:40,580 --> 00:31:40,900
+aqui.
+
+406
+00:31:42,050 --> 00:31:46,550
+Vc dá para você vir aqui ao que peço onde veio como texto puro.
+
+407
+00:31:46,660 --> 00:31:52,830
+Eu não quero isso em hipótese alguma se algum dia a minha base de dados vazar eu vou estar vazando a
+
+408
+00:31:52,830 --> 00:31:56,000
+senha de todos os meus clientes e não pode acontecer isso.
+
+409
+00:31:56,360 --> 00:31:58,900
+Então como é que eu vou fazer eu vou excluir esse usuário.
+
+410
+00:31:58,950 --> 00:32:04,220
+E outra coisa também que a gente precisa fazer checar se esse usuário já existia aqui.
+
+411
+00:32:04,310 --> 00:32:10,430
+Eu vou cortar essa aula aqui nesse momento porque a gente já está com 33 minutos de aula eu vou cortar
+
+412
+00:32:10,520 --> 00:32:16,940
+a gente na próxima aula vai corrigir esse problema das 100 e fazer mais algumas checagens pra gente
+
+413
+00:32:18,140 --> 00:32:23,270
+ver se o usuário já existe o que já existe um usuário com aquele mi na base de dados a gente não vai
+
+414
+00:32:23,270 --> 00:32:23,930
+registrar.
+
+415
+00:32:24,290 --> 00:32:27,500
+Então vou deixar essa aula aqui sim já já a gente volto eu não vou nem conversar.
+
+416
+00:32:27,500 --> 00:32:32,900
+Na verdade eu vou recortar o vídeo mas eu vou continuar aqui nessa sequência que beleza então esse pessoal
+
+417
+00:32:32,900 --> 00:32:33,930
+vou deixar essa aula aqui.
+
+418
+00:32:34,070 --> 00:32:35,450
+A gente se vê na mal.
+
+419
+00:32:35,510 --> 00:32:36,170
+Grande abraço.

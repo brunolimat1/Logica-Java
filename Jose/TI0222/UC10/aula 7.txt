@@ -1,0 +1,18 @@
+Introdução à POO
+material de apoio:
+https://professorjosedeassis.github.io/javaSE/
+
+Abstração + construtor
+
+Exercício: POO 1
+Slides 62,63,64 e 65
+
+Dica:
+objeto (substantivo)
+atributo (adjetivo)
+método (verbo)
+
+_______________________________________________
+Criptografia de senhas (MySQL)
+md5()
+

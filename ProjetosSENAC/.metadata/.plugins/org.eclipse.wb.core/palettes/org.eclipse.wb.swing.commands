@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<addCategory
+		id="jcalendar-1.4_1690831316094"
+		name="jcalendar-1.4"
+		description="Container with import elements from D:/Java/Bruno Lima/ProjetosSENAC/Sistema OS/lib/jcalendar-1.4.jar"
+		visible="true"
+		open="true"/>
+	<addComponent
+		id="com.toedter.calendar.JDayChooser_1690831316094"
+		name="JDayChooser"
+		description="Custom component: com.toedter.calendar.JDayChooser"
+		visible="true"
+		class="com.toedter.calendar.JDayChooser"
+		category="jcalendar-1.4_1690831316094"/>
+	<addComponent
+		id="com.toedter.calendar.JMonthChooser_1690831316094"
+		name="JMonthChooser"
+		description="Custom component: com.toedter.calendar.JMonthChooser"
+		visible="true"
+		class="com.toedter.calendar.JMonthChooser"
+		category="jcalendar-1.4_1690831316094"/>
+	<addComponent
+		id="com.toedter.components.JLocaleChooser_1690831316094"
+		name="JLocaleChooser"
+		description="Custom component: com.toedter.components.JLocaleChooser"
+		visible="true"
+		class="com.toedter.components.JLocaleChooser"
+		category="jcalendar-1.4_1690831316094"/>
+	<addComponent
+		id="com.toedter.calendar.JCalendar_1690831316094"
+		name="JCalendar"
+		description="Custom component: com.toedter.calendar.JCalendar"
+		visible="true"
+		class="com.toedter.calendar.JCalendar"
+		category="jcalendar-1.4_1690831316094"/>
+	<addComponent
+		id="com.toedter.calendar.JDateChooser_1690831316094"
+		name="JDateChooser"
+		description="Custom component: com.toedter.calendar.JDateChooser"
+		visible="true"
+		class="com.toedter.calendar.JDateChooser"
+		category="jcalendar-1.4_1690831316094"/>
+	<addComponent
+		id="com.toedter.components.JSpinField_1690831316094"
+		name="JSpinField"
+		description="Custom component: com.toedter.components.JSpinField"
+		visible="true"
+		class="com.toedter.components.JSpinField"
+		category="jcalendar-1.4_1690831316094"/>
+	<addComponent
+		id="com.toedter.calendar.JYearChooser_1690831316094"
+		name="JYearChooser"
+		description="Custom component: com.toedter.calendar.JYearChooser"
+		visible="true"
+		class="com.toedter.calendar.JYearChooser"
+		category="jcalendar-1.4_1690831316094"/>
+	<editCategory
+		id="jcalendar-1.4_1690831316094"
+		name="JCalendar"
+		description="Container with import elements from D:/Java/Bruno Lima/ProjetosSENAC/Sistema OS/lib/jcalendar-1.4.jar"
+		visible="true"
+		open="true"/>
+</commands>

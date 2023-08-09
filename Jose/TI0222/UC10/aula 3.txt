@@ -1,0 +1,3 @@
+CRUD
+Material de apoio da aula:
+https://github.com/professorjosedeassis/mysql/tree/master/aula3

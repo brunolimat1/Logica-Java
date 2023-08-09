@@ -1,0 +1,16 @@
+Itens para o menu
+- cadastrar:
+	- usuario
+	- cliente
+	- fornecedor
+	- funcionario
+	- pedido
+	- produto
+- consulta
+	- usuario
+	- cliente
+	- fornecedor
+	- funcionario
+	- pedido
+	- produto
+	- pagamento
